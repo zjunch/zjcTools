@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="NinePicturesView">
+        <attr name="viewXSpaceSize" format="integer"/><!--x 间距-->
+        <attr name="viewYSpaceSize" format="integer"/><!--y 间距-->
+        <attr name="average2Enable" format="boolean"/><!--两张图张图一行两个-->
+        <attr name="average4Enable" format="boolean"/><!--四张图一行两个-->
+        <attr name="view12Enable" format="boolean"/><!--三张图 左边一个右边两个-->
+        <attr name="viewMaxCounts" format="integer"/><!--最多显示多少张-->
+        <attr name="viewFullOne" format="boolean"/><!--一张图的时候，一行一张-->
+        <attr name="viewShowText" format="boolean"/><!--是否有未展示的图片个数的文字显示-->
+        <attr name="viewCountTextColor" format="color" /><!--未读图片个数的文字颜色-->
+        <attr name="viewCountTextSize" format="integer"/><!--未读图片个数的文字大小-->
+    </declare-styleable>
+
+    <declare-styleable name="SettingView">
+        <!--是否显示底部分隔线-->
+        <attr name="isShowLine" format="boolean" />
+        <!--是否显示最左边点-->
+        <attr name="isShowPoint" format="boolean" />
+        <!--是否显示左侧title右右侧有个start-->
+        <attr name="isShowRightStart" format="boolean" />
+        <!--是否显示右侧箭头-->
+        <attr name="isShowRightArrow" format="boolean" />
+        <!--左侧标题-->
+        <attr name="titleText" format="string" />
+        <!--右侧描述的hint-->
+        <attr name="descHint" format="string" />
+        <!--右侧描述的字体颜色-->
+        <attr name="descColor" format="color" />
+        <!--右侧描述文字-->
+        <attr name="descText" format="string" />
+    </declare-styleable>
+
+
+    <!--自定义正方形布局-->
+    <declare-styleable name="ZSquareLayout">
+        <!--正方形布局大小取宽还是高度-->
+        <attr name="zjc_unify_width" format="boolean" />
+    </declare-styleable>
+
+
+    <!--自定义音频录制控件-->
+    <declare-styleable name="VMRecordView">
+        <!--取消颜色-->
+        <attr name="vm_cancel_color" format="color|integer" />
+        <!--触摸区域外圈颜色-->
+        <attr name="vm_outer_color" format="color|integer" />
+        <!--触摸区域内圈颜色-->
+        <attr name="vm_inner_color" format="color|integer" />
+        <attr name="vm_inner_size" format="dimension" />
+        <!--触摸区域提示文字-->
+        <attr name="vm_touch_normal_desc" format="string|reference" />
+        <attr name="vm_touch_cancel_desc" format="string|reference" />
+        <!--触摸提示文本颜色-->
+        <attr name="vm_desc_color" format="color|integer" />
+        <!--触摸提示文本大小-->
+        <attr name="vm_desc_size" format="dimension" />
+        <!--时间文本颜色-->
+        <attr name="vm_time_color" format="color|integer" />
+        <!--时间文本大小-->
+        <attr name="vm_time_size" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="StatusBarHeightView">
+        <attr name="use_type" format="integer">
+            <enum name="use_height" value="0" />
+            <enum name="use_padding_top" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <!--自定义ViewGroup-堆叠头像的点赞Layout-->
+    <declare-styleable name="ZPileLayout">
+        <attr name="PileLayout_vertivalSpace" format="dimension" />
+        <attr name="PileLayout_pileWidth" format="dimension" />
+    </declare-styleable>
+
+</resources>

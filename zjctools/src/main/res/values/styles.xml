@@ -1,0 +1,138 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="ZJCTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/zjcBlue</item>
+        <!--界面背景色，为了优化 UI，这里设置为透明-->
+        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <!--设置主题不需要ActionBar-->
+        <item name="windowActionBar">false</item>
+        <!--设置主题不需要Title-->
+        <item name="windowNoTitle">true</item>
+        <!--设置 ActionMode 效果，防止 ActionMode 将Toolbar顶下去-->
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>
+        <!--半透明状态栏-->
+        <item name="android:windowTranslucentStatus">false</item>
+        <!--设置导航栏半透明效果，TODO 设置导航栏半透明会导致布局下移，需注意-->
+        <item name="android:windowTranslucentNavigation">false</item>
+        <!--设置状态栏颜色-->
+    </style>
+
+    <!--启动主题-->
+    <style name="ZJCTheme.Launcher">
+        <item name="android:windowBackground">@drawable/bg_launcher_shape</item>
+    </style>
+
+    <!--授权弹窗主题-->
+    <style name="ZJCTheme.Permission">
+        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <style name="text_12_gray_99">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/zjcGray9</item>
+    </style>
+
+    <style name="text_12_black">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/zjcBlack</item>
+    </style>
+
+
+    <style name="text_12_white">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/zjcWhite</item>
+    </style>
+
+    <style name="text_11_white">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/zjcWhite</item>
+    </style>
+
+    <style name="text_11_black">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/zjcGray3</item>
+    </style>
+
+    <style name="text_10_white">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/zjcWhite</item>
+    </style>
+
+    <style name="text_16_white">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/zjcWhite</item>
+    </style>
+
+    <style name="text_16_black">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/zjcBlack</item>
+    </style>
+
+    <style name="text_15_black_66">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/zjcGray6</item>
+    </style>
+
+    <style name="text_14_black">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/zjcBlack</item>
+    </style>
+
+    <style name="text_14_red">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/zjcRed</item>
+    </style>
+
+    <style name="text_14_black33">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/zjcGray3</item>
+    </style>
+
+    <style name="text_14_gray_99">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/zjcGray9</item>
+    </style>
+
+    <style name="text_14_purple">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/zjcPurple</item>
+    </style>
+
+    <style name="text_14_white">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/zjcWhite</item>
+    </style>
+
+    <style name="text_18_black">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/zjcBlack</item>
+    </style>
+
+    <!--文字样式 Body1-->
+    <style name="ZjcText.Body1" parent="Base.TextAppearance.AppCompat.Body1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/zjc_Gray54</item>
+    </style>
+
+    <!--文字样式 Body2 有加粗效果-->
+    <style name="ZjcText.Body2" parent="Base.TextAppearance.AppCompat.Body2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/zjc_Gray54</item>
+    </style>
+
+
+
+</resources>
