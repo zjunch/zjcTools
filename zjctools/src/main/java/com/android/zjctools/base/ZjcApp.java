@@ -3,7 +3,7 @@ package com.android.zjctools.base;
 import android.app.Application;
 import android.content.Context;
 
-import com.android.zjctools.utils.ZjcTools;
+import com.android.zjctools.utils.ZTools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class ZjcApp extends Application {
         super.onCreate();
         mContext = this;
         //初始化工具库
-        ZjcTools.init(this);
+        ZTools.init(this);
     }
 
     /**

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ZjcSystem {
+public class ZSystem {
 
     /**
      * 借用牛逼哄哄的 lzan13 代码
@@ -32,7 +32,7 @@ public class ZjcSystem {
     // 线程池
     private static ExecutorService mExecutorPool = Executors.newCachedThreadPool();
 
-    private ZjcSystem() {
+    private ZSystem() {
         throw new AssertionError();
     }
 
@@ -61,7 +61,7 @@ public class ZjcSystem {
      * 复制到剪贴板
      */
     public static boolean copyToClipboard(String content) {
-        return copyToClipboard(ZjcTools.getContext(), content);
+        return copyToClipboard(ZTools.getContext(), content);
     }
 
     /**
@@ -73,7 +73,7 @@ public class ZjcSystem {
             c.setPrimaryClip(ClipData.newPlainText(context.getPackageName(), content));
             return true;
         } catch (Exception e) {
-            ZjcLog.e("copyToClipboard %s", e.getMessage());
+            ZLog.e("copyToClipboard %s", e.getMessage());
         }
         return false;
     }
@@ -100,7 +100,7 @@ public class ZjcSystem {
      * 获取应用程序名称
      */
     public static String getAppName() {
-        return getAppName(ZjcTools.getContext());
+        return getAppName(ZTools.getContext());
     }
 
     /**
@@ -124,7 +124,7 @@ public class ZjcSystem {
      * 获取应用当前版本号
      */
     public static long getVersionCode() {
-        return getVersionCode(ZjcTools.getContext());
+        return getVersionCode(ZTools.getContext());
     }
 
     /**
@@ -152,7 +152,7 @@ public class ZjcSystem {
      * 获取当前应用版本名称
      */
     public static String getVersionName() {
-        return getVersionName(ZjcTools.getContext());
+        return getVersionName(ZTools.getContext());
     }
 
     /**
@@ -176,7 +176,7 @@ public class ZjcSystem {
      * 获取当前进程名
      */
     public static String getProcessName() {
-        return getProcessName(ZjcTools.getContext());
+        return getProcessName(ZTools.getContext());
     }
 
     /**

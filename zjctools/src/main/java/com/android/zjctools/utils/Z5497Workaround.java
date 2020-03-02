@@ -19,10 +19,10 @@ import android.widget.FrameLayout;
  */
 
 
-public class Zjc5497Workaround {
+public class Z5497Workaround {
 
     public static void assistActivity(Activity content) {
-        new Zjc5497Workaround(content);
+        new Z5497Workaround(content);
     }
 
     private View mChildOfContent;
@@ -32,7 +32,7 @@ public class Zjc5497Workaround {
     private ViewGroup.LayoutParams frameLayoutParams;
 
 
-    private Zjc5497Workaround(Activity activity) {
+    private Z5497Workaround(Activity activity) {
         FrameLayout content = (FrameLayout) activity.findViewById(android.R.id.content);
         mChildOfContent = content.getChildAt(0);
 

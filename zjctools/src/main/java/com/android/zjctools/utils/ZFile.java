@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class ZjcFile {
+public class ZFile {
 
 
     /**
@@ -48,7 +48,7 @@ public class ZjcFile {
      * @param path 目录路径
      */
     public static boolean isDirExists(String path) {
-        if (ZjcStr.isEmpty(path)) {
+        if (ZStr.isEmpty(path)) {
             return false;
         }
         File dir = new File(path);
@@ -61,7 +61,7 @@ public class ZjcFile {
      * @param path 文件路径
      */
     public static boolean isFileExists(String path) {
-        if (ZjcStr.isEmpty(path)) {
+        if (ZStr.isEmpty(path)) {
             return false;
         }
         File file = new File(path);
@@ -72,7 +72,7 @@ public class ZjcFile {
      * 创建目录，多层目录会递归创建
      */
     public static boolean createDirectory(String path) {
-        if (ZjcStr.isEmpty(path)) {
+        if (ZStr.isEmpty(path)) {
             return false;
         }
         File dir = new File(path);
@@ -87,7 +87,7 @@ public class ZjcFile {
      */
     public static File createFile(String filepath) {
         boolean isSuccess;
-        if (ZjcStr.isEmpty(filepath)) {
+        if (ZStr.isEmpty(filepath)) {
             return null;
         }
         File file = new File(filepath);
@@ -118,7 +118,7 @@ public class ZjcFile {
         if (!createDirectory(path)) {
             return null;
         }
-        String filename = prefix + ZjcDate.filenameDateTime() + suffix;
+        String filename = prefix + ZDate.filenameDateTime() + suffix;
         return createFile(path + filename);
     }
 
@@ -130,7 +130,7 @@ public class ZjcFile {
      * @return 压缩结果
      */
     public static boolean zipFile(String srcPath, String destPath) {
-        if (ZjcStr.isEmpty(srcPath) || ZjcStr.isEmpty(destPath)) {
+        if (ZStr.isEmpty(srcPath) || ZStr.isEmpty(destPath)) {
             return false;
         }
         try {
@@ -155,7 +155,7 @@ public class ZjcFile {
 
             return true;
         } catch (IOException e) {
-            ZjcLog.e("压缩文件失败 %s", e.getMessage());
+            ZLog.e("压缩文件失败 %s", e.getMessage());
         }
         return false;
     }
@@ -168,21 +168,21 @@ public class ZjcFile {
      * @return 返回复制结果
      */
     public static File copyFile(String srcPath, String destPath) {
-        if (ZjcStr.isEmpty(srcPath)) {
-            ZjcLog.e("源文件不存在，无法完成复制");
+        if (ZStr.isEmpty(srcPath)) {
+            ZLog.e("源文件不存在，无法完成复制");
             return null;
         }
         File srcFile = new File(srcPath);
         if (!srcFile.exists()) {
-            ZjcLog.e("源文件不存在，无法完成复制");
+            ZLog.e("源文件不存在，无法完成复制");
             return null;
         }
-        if (ZjcStr.isEmpty(destPath)) {
-            ZjcLog.e("目标路径不能为 null");
+        if (ZStr.isEmpty(destPath)) {
+            ZLog.e("目标路径不能为 null");
             return null;
         }
         File destFile = new File(destPath);
-        ZjcLog.i(destFile.getParent());
+        ZLog.i(destFile.getParent());
         if (!isDirExists(destFile.getParent())) {
             createDirectory(destFile.getParent());
         }
@@ -198,9 +198,9 @@ public class ZjcFile {
             outputStream.close();
             return destFile;
         } catch (FileNotFoundException e) {
-            ZjcLog.e("拷贝文件出错：" + e);
+            ZLog.e("拷贝文件出错：" + e);
         } catch (IOException e) {
-            ZjcLog.e("拷贝文件出错：" + e);
+            ZLog.e("拷贝文件出错：" + e);
         }
         return null;
     }
@@ -209,7 +209,7 @@ public class ZjcFile {
      * 读取文件到 Bitmap
      */
     public static Bitmap fileToBitmap(String filepath) {
-        if (ZjcStr.isEmpty(filepath)) {
+        if (ZStr.isEmpty(filepath)) {
             return null;
         }
         File file = new File(filepath);
@@ -227,7 +227,7 @@ public class ZjcFile {
      * @return 返回Drawable资源
      */
     public static Drawable fileToDrawable(String filepath) {
-        if (ZjcStr.isEmpty(filepath)) {
+        if (ZStr.isEmpty(filepath)) {
             return null;
         }
         File file = new File(filepath);
@@ -291,7 +291,7 @@ public class ZjcFile {
      * 删除文件
      */
     public static boolean deleteFile(String filepath) {
-        if (ZjcStr.isEmpty(filepath)) {
+        if (ZStr.isEmpty(filepath)) {
             return false;
         }
         File file = new File(filepath);
@@ -320,7 +320,7 @@ public class ZjcFile {
      * @param deleteThis 删除自己
      */
     public static void deleteFolder(String path, boolean deleteThis) {
-        if (ZjcStr.isEmpty(path)) {
+        if (ZStr.isEmpty(path)) {
             return;
         }
         File fileSrc = new File(path);
@@ -441,7 +441,7 @@ public class ZjcFile {
      * @return 返回得到的路径
      */
     public static String getCacheFromData() {
-        return ZjcTools.getContext().getCacheDir().getPath() + "/";
+        return ZTools.getContext().getCacheDir().getPath() + "/";
     }
 
     /**
@@ -450,7 +450,7 @@ public class ZjcFile {
      * @return 返回得到的路径
      */
     public static String getCacheFromSDCard() {
-        return ZjcTools.getContext().getExternalCacheDir().getPath() + "/";
+        return ZTools.getContext().getExternalCacheDir().getPath() + "/";
     }
 
     /**
@@ -459,7 +459,7 @@ public class ZjcFile {
      * @return 返回得到的路径
      */
     public static String getFilesFromData() {
-        return ZjcTools.getContext().getFilesDir().getPath() + "/";
+        return ZTools.getContext().getFilesDir().getPath() + "/";
     }
 
     /**
@@ -468,7 +468,7 @@ public class ZjcFile {
      * @return 返回得到的路径
      */
     public static String getFilesFromSDCard() {
-        return ZjcTools.getContext().getExternalFilesDir("").getAbsolutePath() + "/";
+        return ZTools.getContext().getExternalFilesDir("").getAbsolutePath() + "/";
     }
 
     /**
@@ -477,7 +477,7 @@ public class ZjcFile {
      * @return 返回得到的路径
      */
     public static String getOBB() {
-        return ZjcTools.getContext().getObbDir().getAbsolutePath() + "/";
+        return ZTools.getContext().getObbDir().getAbsolutePath() + "/";
     }
 
     /**
@@ -529,7 +529,7 @@ public class ZjcFile {
      * @return 返回得到的路径
      */
     public static String getPackageName() {
-        return ZjcTools.getContext().getPackageName();
+        return ZTools.getContext().getPackageName();
     }
 
     /**
@@ -538,7 +538,7 @@ public class ZjcFile {
      * @return 返回得到的路径
      */
     public static String getPackageCode() {
-        return ZjcTools.getContext().getPackageCodePath();
+        return ZTools.getContext().getPackageCodePath();
     }
 
     /**
@@ -547,7 +547,7 @@ public class ZjcFile {
      * @return 返回得到的路径
      */
     public static String getPackageResource() {
-        return ZjcTools.getContext().getPackageResourcePath();
+        return ZTools.getContext().getPackageResourcePath();
     }
 
     /**
@@ -564,7 +564,7 @@ public class ZjcFile {
         boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
 
         // DocumentProvider
-        if (isKitKat && DocumentsContract.isDocumentUri(ZjcTools.getContext(), uri)) {
+        if (isKitKat && DocumentsContract.isDocumentUri(ZTools.getContext(), uri)) {
             // ExternalStorageProvider
             if (isExternalStorageDocument(uri)) {
                 final String docId = DocumentsContract.getDocumentId(uri);
@@ -581,7 +581,7 @@ public class ZjcFile {
                 final String id = DocumentsContract.getDocumentId(uri);
                 final Uri contentUri = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
 
-                return getDataColumn(ZjcTools.getContext(), contentUri, null, null);
+                return getDataColumn(ZTools.getContext(), contentUri, null, null);
             } else if (isMediaDocument(uri)) {
                 // MediaProvider
                 final String docId = DocumentsContract.getDocumentId(uri);
@@ -600,7 +600,7 @@ public class ZjcFile {
                 final String selection = "_id=?";
                 final String[] selectionArgs = new String[]{split[1]};
 
-                return getDataColumn(ZjcTools.getContext(), contentUri, selection, selectionArgs);
+                return getDataColumn(ZTools.getContext(), contentUri, selection, selectionArgs);
             }
         } else if ("content".equalsIgnoreCase(uri.getScheme())) {
             // MediaStore (and general)
@@ -610,7 +610,7 @@ public class ZjcFile {
                 //                return null;
                 return uri.getLastPathSegment();
             }
-            return getDataColumn(ZjcTools.getContext(), uri, null, null);
+            return getDataColumn(ZTools.getContext(), uri, null, null);
         } else if ("file".equalsIgnoreCase(uri.getScheme())) {
             // File
             return uri.getPath();

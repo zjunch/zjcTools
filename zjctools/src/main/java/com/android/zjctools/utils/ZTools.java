@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.android.zjctools.base.ZjcApp;
 
-public class ZjcTools {
+public class ZTools {
 
     /**
      * 借用牛逼哄哄的 lzan13 代码
@@ -28,7 +28,7 @@ public class ZjcTools {
      */
     public static void init(Context context, int logLevel) {
         mContext = context;
-        ZjcLog.setDebug(logLevel);
+        ZLog.setDebug(logLevel);
     }
 
     /**

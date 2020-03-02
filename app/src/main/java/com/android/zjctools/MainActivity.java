@@ -6,8 +6,8 @@ import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.bean.FunctionBean;
 import com.android.zjctools.permission.ZPermission;
 import com.android.zjctools.utils.ZDimen;
-import com.android.zjctools.utils.ZjcColor;
-import com.android.zjctools.utils.ZjcLog;
+import com.android.zjctools.utils.ZColor;
+import com.android.zjctools.utils.ZLog;
 import com.android.zjctools.widget.ItemDecoration;
 
 import me.drakeet.multitype.Items;
@@ -32,7 +32,7 @@ public class MainActivity extends ZBActivity {
         items.clear();
         for (int i = 0; i <1 ; i++) {
             items.add(new FunctionBean("底部弹出window",0));
-            items.add(new FunctionBean("测试图片的缓存路径",1));
+            items.add(new FunctionBean("九宫格",1));
         }
     }
 
@@ -41,7 +41,7 @@ public class MainActivity extends ZBActivity {
         recycleView=findViewById(R.id.recycleView);
         LinearLayoutManager manager= new LinearLayoutManager(this);
         recycleView.setLayoutManager(manager);
-        recycleView.addItemDecoration(ItemDecoration.createVertical(mActivity, ZjcColor.byRes(R.color.app_divide), ZDimen.dp2px(1)));
+        recycleView.addItemDecoration(ItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.app_divide), ZDimen.dp2px(1)));
         mBinder=new FunctionBinder(mActivity);
         mAdapter.register(FunctionBean.class,mBinder);
         mAdapter.setItems(items);
@@ -69,12 +69,12 @@ public class MainActivity extends ZBActivity {
         ZPermission.getInstance(this).requestCamera(new ZPermission.PCallback() {
             @Override
             public void onReject() {
-                ZjcLog.e("onReject");
+                ZLog.e("onReject");
             }
 
             @Override
             public void onComplete() {
-                ZjcLog.e("onComplete");
+                ZLog.e("onComplete");
 
             }
         });

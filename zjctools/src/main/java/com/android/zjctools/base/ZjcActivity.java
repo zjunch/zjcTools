@@ -3,7 +3,7 @@ package com.android.zjctools.base;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.android.zjctools.utils.ZjcLog;
+import com.android.zjctools.utils.ZLog;
 
 public class ZjcActivity extends AppCompatActivity {
 
@@ -21,37 +21,37 @@ public class ZjcActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        ZjcLog.v("%s onRestart", className);
+        ZLog.v("%s onRestart", className);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        ZjcLog.v("%s onStart", className);
+        ZLog.v("%s onStart", className);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        ZjcLog.v("%s onResume", className);
+        ZLog.v("%s onResume", className);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        ZjcLog.v("%s onPause", className);
+        ZLog.v("%s onPause", className);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        ZjcLog.v("%s onStop", className);
+        ZLog.v("%s onStop", className);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ZjcLog.v("%s onDestroy", className);
+        ZLog.v("%s onDestroy", className);
         ZjcApp.removeActivity(mActivity);
         mActivity = null;
     }
@@ -60,7 +60,7 @@ public class ZjcActivity extends AppCompatActivity {
      * 自定义 Activity 结束方法
      */
     protected void onFinish() {
-        ZjcLog.v("%s onFinish", className);
+        ZLog.v("%s onFinish", className);
         finish();
     }
 }

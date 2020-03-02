@@ -12,9 +12,9 @@ import android.view.animation.LinearInterpolator;
 
 import com.android.zjctools.permission.ZPermission;
 import com.android.zjctools.utils.ZDimen;
-import com.android.zjctools.utils.ZjcColor;
-import com.android.zjctools.utils.ZjcStr;
-import com.android.zjctools.utils.ZjcSystem;
+import com.android.zjctools.utils.ZColor;
+import com.android.zjctools.utils.ZStr;
+import com.android.zjctools.utils.ZSystem;
 import com.android.zjcutils.R;
 
 
@@ -36,23 +36,23 @@ public class VMRecordView extends View {
     // 画笔
     private Paint mPaint;
     // 控件背景颜色
-    private int mCancelColor = ZjcColor.byRes(R.color.zjc_red_87);
+    private int mCancelColor = ZColor.byRes(R.color.zjc_red_87);
 
     // 外圈的颜色、大小
-    private int mOuterColor = ZjcColor.byRes(R.color.zjc_green_38);
+    private int mOuterColor = ZColor.byRes(R.color.zjc_green_38);
     private int mOuterSize = ZDimen.dp2px(128);
     // 内圈录音按钮的颜色、大小
-    private int mInnerColor = ZjcColor.byRes(R.color.zjcGreen);
+    private int mInnerColor = ZColor.byRes(R.color.zjcGreen);
     private int mInnerSize = ZDimen.dp2px(96);
 
     // 触摸区域提示文本
     private String mDescNormal = "触摸录音";
     private String mDescCancel = "松开取消";
-    private int mDescColor = ZjcColor.byRes(R.color.zjcWhite);
+    private int mDescColor = ZColor.byRes(R.color.zjcWhite);
     private int mDescSize = ZDimen.dp2px(16);
 
     // 时间字体的大小、颜色
-    private int mTimeColor = ZjcColor.byRes(R.color.zjcGreen);
+    private int mTimeColor = ZColor.byRes(R.color.zjcGreen);
     private int mTimeSize = ZDimen.dp2px(14);
 
     //是否开始录制
@@ -139,10 +139,10 @@ public class VMRecordView extends View {
 
         mDescNormal = array.getString(R.styleable.VMRecordView_vm_touch_normal_desc);
         mDescCancel = array.getString(R.styleable.VMRecordView_vm_touch_cancel_desc);
-        if (ZjcStr.isEmpty(mDescNormal)) {
+        if (ZStr.isEmpty(mDescNormal)) {
             mDescNormal = "触摸录音";
         }
-        if (ZjcStr.isEmpty(mDescCancel)) {
+        if (ZStr.isEmpty(mDescCancel)) {
             mDescCancel = "松开取消";
         }
         mDescColor = array.getColor(R.styleable.VMRecordView_vm_desc_color, mDescColor);
@@ -194,7 +194,7 @@ public class VMRecordView extends View {
         if (isCancelRecord) {
             mPaint.setColor(mCancelColor);
         } else {
-            mPaint.setColor(ZjcColor.byRes(R.color.zjcTransparent));
+            mPaint.setColor(ZColor.byRes(R.color.zjcTransparent));
         }
         // 绘制背景
         canvas.drawRect(0, 0, mWidth, mHeight, mPaint);
@@ -226,7 +226,7 @@ public class VMRecordView extends View {
         int descColor;
         String desc;
         if (isCancelRecord) {
-            innerColor = ZjcColor.byRes(R.color.zjcWhite);
+            innerColor = ZColor.byRes(R.color.zjcWhite);
             descColor = mCancelColor;
             desc = mDescCancel;
         } else {
@@ -252,7 +252,7 @@ public class VMRecordView extends View {
     protected void drawTime(Canvas canvas) {
         int timeColor;
         if (isCancelRecord) {
-            timeColor = ZjcColor.byRes(R.color.zjcWhite);
+            timeColor = ZColor.byRes(R.color.zjcWhite);
         } else {
             timeColor = mTimeColor;
         }
@@ -262,7 +262,7 @@ public class VMRecordView extends View {
 
         int minute = (int) (mRecordTime / 1000 / 60);
         int seconds = (int) (mRecordTime / 1000 % 60);
-        String time = ZjcStr.byArgs("%02d'%02d''", minute, seconds);
+        String time = ZStr.byArgs("%02d'%02d''", minute, seconds);
 //        int millisecond = (int) (mRecordTime % 1000 / 100);
 //        String time = ZjcStr.byArgs("%02d'%02d''%d'''", minute, seconds, millisecond);
 
@@ -275,7 +275,7 @@ public class VMRecordView extends View {
      * 外圈动画
      */
     private void startOuterAnim() {
-        ZjcSystem.runInUIThread(() -> {
+        ZSystem.runInUIThread(() -> {
             ValueAnimator mAnimator = ValueAnimator.ofInt(mInnerSize, mInnerSize + mDecibel * mHeight / 10, mInnerSize);
             mAnimator.setDuration(mSampleTime);
             mAnimator.setRepeatCount(0);

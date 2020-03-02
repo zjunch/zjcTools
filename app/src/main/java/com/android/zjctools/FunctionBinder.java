@@ -33,5 +33,6 @@ public class FunctionBinder extends AppItemBinder<FunctionBean> {
     @Override
     protected void onBindView(AppHolder holder, FunctionBean item) {
         SettingView settingView= holder.getView(R.id.sv_set_title);
+        settingView.setTitle(item.title);
     }
 }

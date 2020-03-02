@@ -6,8 +6,8 @@ import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.util.Base64;
 import android.view.View;
-import com.android.zjctools.utils.ZjcFile;
-import com.android.zjctools.utils.ZjcLog;
+import com.android.zjctools.utils.ZFile;
+import com.android.zjctools.utils.ZLog;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -291,14 +291,14 @@ public class ZBitmap {
      * @return 压缩后的图片临时路径
      */
     public static String compressTempImage(String path) {
-        ZjcLog.d("compressTempImage start");
+        ZLog.d("compressTempImage start");
         Bitmap bitmap = compressByQuality(compressByDimension(path));
-        ZjcLog.d("compressTempImage end");
+        ZLog.d("compressTempImage end");
         //得到文件名
         String tempName = generateTempName(path);
         // 临时存放路径
-        String tempPath = ZjcFile.getCacheFromSDCard() + "temp";
-        ZjcFile.createDirectory(tempPath);
+        String tempPath = ZFile.getCacheFromSDCard() + "temp";
+        ZFile.createDirectory(tempPath);
         saveBitmapToSDCard(bitmap, tempPath + "/" + tempName);
         return tempPath + "/" + tempName;
     }
@@ -411,7 +411,7 @@ public class ZBitmap {
      * @param path   保存路径
      */
     public static boolean saveBitmapToSDCard(Bitmap bitmap, Bitmap.CompressFormat format, String path) {
-        ZjcLog.d("saveBitmapToSDCard -start-");
+        ZLog.d("saveBitmapToSDCard -start-");
         boolean result;
         OutputStream outputStream = null;
         try {
@@ -432,7 +432,7 @@ public class ZBitmap {
                 }
             }
         }
-        ZjcLog.d("saveBitmapToSDCard -end-");
+        ZLog.d("saveBitmapToSDCard -end-");
         return result;
     }
 }

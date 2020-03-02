@@ -5,7 +5,7 @@ import android.content.Context;
 import java.util.Arrays;
 import java.util.List;
 
-public class ZjcStr {
+public class ZStr {
 
     /**
      * 借用牛逼哄哄的 lzan13 代码
@@ -115,7 +115,7 @@ public class ZjcStr {
      * 根据资源 id 获取字符串
      */
     public static String byRes(int resId) {
-        return byRes(ZjcTools.getContext(), resId);
+        return byRes(ZTools.getContext(), resId);
     }
 
     /**
@@ -129,7 +129,7 @@ public class ZjcStr {
      * 根据资源 id 格式化字符串
      */
     public static String byResArgs(int resId, Object... args) {
-        return byResArgs(ZjcTools.getContext(), resId, args);
+        return byResArgs(ZTools.getContext(), resId, args);
     }
 
     /**

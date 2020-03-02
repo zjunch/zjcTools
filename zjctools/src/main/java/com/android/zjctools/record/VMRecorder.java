@@ -1,9 +1,9 @@
 package com.android.zjctools.record;
 import android.media.MediaRecorder;
-import com.android.zjctools.utils.ZjcDate;
-import com.android.zjctools.utils.ZjcFile;
-import com.android.zjctools.utils.ZjcLog;
-import com.android.zjctools.utils.ZjcStr;
+import com.android.zjctools.utils.ZDate;
+import com.android.zjctools.utils.ZFile;
+import com.android.zjctools.utils.ZLog;
+import com.android.zjctools.utils.ZStr;
 import java.io.IOException;
 
 
@@ -106,10 +106,10 @@ public class VMRecorder {
         // 设置录制状态
         isRecording = true;
 
-        if (ZjcStr.isEmpty(path)) {
+        if (ZStr.isEmpty(path)) {
             // 这里默认保存在 /sdcard/android/data/packagename/files/下
             //File file = VMFile.createFile(VMFile.getFilesFromSDCard(), "VMVoice_", ".amr");
-            mRecordFile = ZjcFile.getFilesFromSDCard() + "VMVoice_" + ZjcDate.filenameDateTime() + ".amr";
+            mRecordFile = ZFile.getFilesFromSDCard() + "VMVoice_" + ZDate.filenameDateTime() + ".amr";
         } else {
             //File file = VMFile.createFile(path, "VMVoice_", ".amr");
             mRecordFile = path;
@@ -127,7 +127,7 @@ public class VMRecorder {
             mMediaRecorder.start();
         } catch (IOException e) {
             reset();
-            ZjcLog.e("录音系统出现错误 %s", e.getMessage());
+            ZLog.e("录音系统出现错误 %s", e.getMessage());
             return ERROR_SYSTEM;
         }
         return ERROR_NONE;
@@ -147,18 +147,18 @@ public class VMRecorder {
                 // 停止录制
                 mMediaRecorder.stop();
             } catch (IllegalStateException e) {
-                ZjcLog.e("录音系统出现错误 %s", e.getMessage());
+                ZLog.e("录音系统出现错误 %s", e.getMessage());
                 reset();
                 return ERROR_SYSTEM;
             } catch (RuntimeException e) {
-                ZjcLog.e("录音系统出现错误 %s", e.getMessage());
+                ZLog.e("录音系统出现错误 %s", e.getMessage());
                 reset();
                 return ERROR_SYSTEM;
             }
         }
         // 根据录制结果判断录音是否成功
-        if (!ZjcFile.isFileExists(mRecordFile)) {
-            ZjcLog.e("录音失败没有生成文件");
+        if (!ZFile.isFileExists(mRecordFile)) {
+            ZLog.e("录音失败没有生成文件");
             return ERROR_FAILED;
         }
         return ERROR_NONE;
@@ -176,16 +176,16 @@ public class VMRecorder {
                 // 停止录制
                 mMediaRecorder.stop();
             } catch (IllegalStateException e) {
-                ZjcLog.e("录音系统出现错误 %s", e.getMessage());
+                ZLog.e("录音系统出现错误 %s", e.getMessage());
                 reset();
             } catch (RuntimeException e) {
-                ZjcLog.e("录音系统出现错误 %s", e.getMessage());
+                ZLog.e("录音系统出现错误 %s", e.getMessage());
                 reset();
             }
         }
         // 取消录音，删除文件
-        if (ZjcFile.isFileExists(mRecordFile)) {
-            ZjcFile.deleteFile(mRecordFile);
+        if (ZFile.isFileExists(mRecordFile)) {
+            ZFile.deleteFile(mRecordFile);
         }
     }
 

@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.concurrent.LinkedBlockingQueue;
-public class ZjcLog {
+public class ZLog {
 
     /**
      * 借用牛逼哄哄的 lzan13 代码
@@ -55,18 +55,18 @@ public class ZjcLog {
         mMaxCount = count;
         if (isEnableSave) {
             // 判断是否存在 sdcard
-            if (ZjcFile.hasSdcard()) {
-                mLogDir = ZjcFile.getFilesFromSDCard() + "logs/";
+            if (ZFile.hasSdcard()) {
+                mLogDir = ZFile.getFilesFromSDCard() + "logs/";
             } else {
-                mLogDir = ZjcFile.getFilesFromData() + "logs/";
+                mLogDir = ZFile.getFilesFromData() + "logs/";
             }
-            mLogPath = mLogDir + ZjcDate.filenameDate() + ".log";
-            ZjcFile.createFile(mLogPath);
+            mLogPath = mLogDir + ZDate.filenameDate() + ".log";
+            ZFile.createFile(mLogPath);
             mQueue = new LinkedBlockingQueue<>();
             startSaveThread();
 
             // 异步处理
-            ZjcSystem.runTask(() -> { checkLog();});
+            ZSystem.runTask(() -> { checkLog();});
         } else {
             if (mSaveThread != null) {
                 mSaveThread.interrupt();
@@ -206,7 +206,7 @@ public class ZjcLog {
         }
         if (isEnableSave && mQueue != null) {
             try {
-                mQueue.put(String.format("%s %s %s", ZjcDate.currentUTCDateTime(), mTag, message));
+                mQueue.put(String.format("%s %s %s", ZDate.currentUTCDateTime(), mTag, message));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -237,7 +237,7 @@ public class ZjcLog {
         File logDir = new File(mLogDir);
         FilenameFilter filter = (File dir, String name) -> {
             // 过滤日志文件
-            if (ZjcFile.parseSuffix(name).equals(".log")) {
+            if (ZFile.parseSuffix(name).equals(".log")) {
                 return true;
             }
             return false;
@@ -251,9 +251,9 @@ public class ZjcLog {
             int dot = file.getName().lastIndexOf(".");
             String zipPath = mLogDir + file.getName().substring(0, dot + 1) + "zip";
             if (i < mMaxCount) {
-                ZjcFile.zipFile(file.getAbsolutePath(), zipPath);
+                ZFile.zipFile(file.getAbsolutePath(), zipPath);
             }
-            ZjcFile.deleteFile(file.getAbsolutePath());
+            ZFile.deleteFile(file.getAbsolutePath());
         }
 
         /**
@@ -261,7 +261,7 @@ public class ZjcLog {
          */
         filter = (File dir, String name) -> {
             // 过滤日志文件
-            if (ZjcFile.parseSuffix(name).equals(".zip")) {
+            if (ZFile.parseSuffix(name).equals(".zip")) {
                 return true;
             }
             return false;
@@ -270,7 +270,7 @@ public class ZjcLog {
         files = logDir.listFiles(filter);
         sortFiles(files);
         for (int i = 2; i < files.length; i++) {
-            ZjcFile.deleteFile(files[i].getAbsolutePath());
+            ZFile.deleteFile(files[i].getAbsolutePath());
         }
     }
 

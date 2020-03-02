@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class ZjcDate {
+public class ZDate {
 
     /**
      * 借用牛逼哄哄的 lzan13 代码
@@ -96,7 +96,7 @@ public class ZjcDate {
      * @param dateStr 需要转换的日期
      */
     public static long milliFormUTC(String dateStr) {
-        if (ZjcStr.isEmpty(dateStr)) {
+        if (ZStr.isEmpty(dateStr)) {
             return 0l;
         }
         try {

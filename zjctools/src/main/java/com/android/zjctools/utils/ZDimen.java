@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Point;
-import android.util.TypedValue;
 import android.view.Display;
 import android.view.WindowManager;
 
@@ -40,7 +39,7 @@ public class ZDimen {
      * 获取屏幕大小
      */
     public static Point getScreenSize() {
-        return getScreenSize(ZjcTools.getContext());
+        return getScreenSize(ZTools.getContext());
     }
 
     /**
@@ -59,12 +58,12 @@ public class ZDimen {
      */
     public static int getStatusBarHeight() {
         int height = 0;
-        Resources res = ZjcTools.getContext().getResources();
+        Resources res = ZTools.getContext().getResources();
         int resId = res.getIdentifier(RES_STATUS_BAR_HEIGHT, "dimen", "android");
         if (resId > 0) {
             height = res.getDimensionPixelSize(resId);
         }
-        ZjcLog.i("statusBar.h." + height);
+        ZLog.i("statusBar.h." + height);
         return height;
     }
 
@@ -73,12 +72,12 @@ public class ZDimen {
      */
     public static int getNavigationBarHeight() {
         int height = 0;
-        Resources res = ZjcTools.getContext().getResources();
+        Resources res = ZTools.getContext().getResources();
         if (hasNavigationBar()) {
             String key = RES_NAV_BAR_HEIGHT;
             height = getInternalDimensionSize(res, key);
         }
-        ZjcLog.i("navigationbar.h." + height);
+        ZLog.i("navigationbar.h." + height);
         return height;
     }
 
@@ -88,7 +87,7 @@ public class ZDimen {
      * @param resId 尺寸资源id
      */
     public static int getDimenPixel(int resId) {
-        Resources res = ZjcTools.getContext().getResources();
+        Resources res = ZTools.getContext().getResources();
         int result = res.getDimensionPixelSize(resId);
         return result;
     }
@@ -99,7 +98,7 @@ public class ZDimen {
      * @param dp 控件尺寸大小
      */
     public static int dp2px(int dp) {
-        Resources res = ZjcTools.getContext().getResources();
+        Resources res = ZTools.getContext().getResources();
         float density = res.getDisplayMetrics().density;
         return (int) (dp * density + 0.5f);
     }
@@ -110,7 +109,7 @@ public class ZDimen {
      * @param sp 字体的尺寸大小
      */
     public static float sp2px(int sp) {
-        Resources res = ZjcTools.getContext().getResources();
+        Resources res = ZTools.getContext().getResources();
         float density = res.getDisplayMetrics().scaledDensity;
         return (int) (sp * density + 0.5f);
     }
@@ -168,7 +167,7 @@ public class ZDimen {
      */
     public static boolean hasNavigationBar() {
         boolean hasNavigationBar = false;
-        Resources rs = ZjcTools.getContext().getResources();
+        Resources rs = ZTools.getContext().getResources();
         int id = rs.getIdentifier("config_showNavigationBar", "bool", "android");
         if (id > 0) {
             hasNavigationBar = rs.getBoolean(id);
@@ -183,7 +182,7 @@ public class ZDimen {
                 hasNavigationBar = true;
             }
         } catch (Exception e) {
-            ZjcLog.e(e.getMessage());
+            ZLog.e(e.getMessage());
         }
         return hasNavigationBar;
     }

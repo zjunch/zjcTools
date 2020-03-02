@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.android.zjcutils.R;
-import com.android.zjctools.utils.ZjcLog;
+import com.android.zjctools.utils.ZLog;
 
 
 /**
@@ -68,7 +68,7 @@ public abstract class ZLazyFragment extends ZjcFragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        ZjcLog.d("setUserVisibleHint: %s, %b", className, isVisibleToUser);
+        ZLog.d("setUserVisibleHint: %s, %b", className, isVisibleToUser);
         // 保存当前 Fragment 显示状态
         isVisible = isVisibleToUser;
         // 触发懒加载
@@ -81,9 +81,9 @@ public abstract class ZLazyFragment extends ZjcFragment {
     private void lazyLoad() {
         // 只是打印输出当前状态
         if (isLoaded) {
-            ZjcLog.d("不是第一次加载数据 isVisible: %b, %s", isVisible, className);
+            ZLog.d("不是第一次加载数据 isVisible: %b, %s", isVisible, className);
         } else {
-            ZjcLog.d("第一次加载数据 isVisible: %b, %s", isVisible, className);
+            ZLog.d("第一次加载数据 isVisible: %b, %s", isVisible, className);
         }
         // 这里确定要不要执行数据加载
         if (isLoaded || !isVisible || !isInit) {

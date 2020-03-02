@@ -13,13 +13,13 @@ import android.view.View;
 import android.widget.TextView;
 
 
-import com.android.zjctools.utils.ZjcSystem;
+import com.android.zjctools.utils.ZSystem;
 import com.android.zjctools.base.ZConstant;
 import com.android.zjctools.base.ZjcActivity;
 import com.android.zjctools.router.ZRouter;
 import com.android.zjctools.widget.ZViewGroup;
 import com.android.zjcutils.R;
-import com.android.zjctools.utils.ZjcStr;
+import com.android.zjctools.utils.ZStr;
 
 import java.util.Iterator;
 import java.util.List;
@@ -69,7 +69,7 @@ public class ZPermissionActivity extends ZjcActivity {
      */
     private void init() {
         // 初始化获取数据
-        mAppName = ZjcSystem.getAppName(mActivity);
+        mAppName = ZSystem.getAppName(mActivity);
         mCallback = ZPermission.getInstance(mActivity).getPermissionCallback();
         mEnableDialog = getIntent().getBooleanExtra(ZConstant.ZJC_KEY_PERMISSION_ENABLE_DIALOG, false);
         mTitle = getIntent().getStringExtra(ZConstant.ZJC_KEY_PERMISSION_TITLE);
@@ -145,14 +145,14 @@ public class ZPermissionActivity extends ZjcActivity {
                 .inflate(R.layout.zjc_widget_permission_dialog, null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
-        if (ZjcStr.isEmpty(mTitle)) {
-            mTitle = ZjcStr.byRes(R.string.zjc_permission_title);
+        if (ZStr.isEmpty(mTitle)) {
+            mTitle = ZStr.byRes(R.string.zjc_permission_title);
         }
         builder.setTitle(mTitle);
         builder.setView(view);
         // 设置提醒信息
-        if (ZjcStr.isEmpty(mMessage)) {
-            mMessage = ZjcStr.byRes(R.string.zjc_permission_reason);
+        if (ZStr.isEmpty(mMessage)) {
+            mMessage = ZStr.byRes(R.string.zjc_permission_reason);
         }
         TextView contentView = view.findViewById(R.id.zjc_permission_dialog_content_tv);
         contentView.setText(mMessage);
