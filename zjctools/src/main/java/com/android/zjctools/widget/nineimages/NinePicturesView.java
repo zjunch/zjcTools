@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.android.zjctools.glide.GlideApp;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
 import com.bumptech.glide.Glide;
@@ -295,7 +296,12 @@ public class NinePicturesView extends RelativeLayout {
 
 
     private void loadImageView(final  ImageView imageView, final int index,int picWidth,int picHeight) {
-        Glide.with(getContext()).load(imageUrls.get(index)).placeholder(placeHolderId);
+//        Glide.with(getContext()).load(imageUrls.get(index)).placeholder(placeHolderId).into(imageView);
+        GlideApp.with(getContext())
+                .load(imageUrls.get(index))
+                .centerCrop()
+                .placeholder(placeHolderId)
+                .into(imageView);
         imageView.setOnClickListener(v -> {
             if (onclickItemListenr != null) {
                 onclickItemListenr.OnclickItem(imageView, index);
