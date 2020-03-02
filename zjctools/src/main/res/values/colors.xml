@@ -19,6 +19,7 @@
     <!--黑色-->
     <color name="zjcBlack">#000</color>
     <color name="zjcGray3">#333</color>
+    <color name="zjc_Gray38">#383838</color>
     <color name="zjcGray5">#555</color>
     <color name="zjcGray6">#666</color>
     <color name="zjcGray7">#777</color>
@@ -36,7 +37,11 @@
     <!--透明-->
     <color name="zjcTransparent">#00ffffff</color>
     <color name="zjc_half9">#90000000</color>
-
+    <color name="zjc_half8">#80000000</color>
+    <color name="zjc_half7">#70000000</color>
+    <color name="zjc_half6">#60000000</color>
+    <color name="zjc_half5">#50000000</color>
+    <color name="zjc_half3">#30000000</color>
 
 
     <!--app主色,更换时直接在app覆盖即可-->

@@ -32,6 +32,7 @@ public class MainActivity extends ZBActivity {
         items.clear();
         for (int i = 0; i <1 ; i++) {
             items.add(new FunctionBean("底部弹出window",0));
+            items.add(new FunctionBean("测试图片的缓存路径",1));
         }
     }
 
@@ -58,6 +59,8 @@ public class MainActivity extends ZBActivity {
         mBinder.setOnItemClickListener((action, item) -> {
             if(item.type==0){
                 Router.goMainBottomWindow(mActivity);
+            }else if(item.type==1){
+                Router.goTestGlideCach(mActivity);
             }
         });
     }

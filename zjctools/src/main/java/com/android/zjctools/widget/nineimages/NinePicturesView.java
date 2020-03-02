@@ -9,10 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.android.zjctools.glide.GlideApp;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
-import com.bumptech.glide.Glide;
 
 
 import java.util.ArrayList;
@@ -53,7 +51,6 @@ public class NinePicturesView extends RelativeLayout {
     boolean view12Enable=false;  //三张图，是否开启左边一个右边两个
     int view12_1Height,view12_2Height; //开启左边一个右边两个 左边一个image宽高
     int view12_1Width,view12_2Width;//开启左边一个右边两个 右边两个image宽高
-
 
     private  int placeHolderId=R.drawable.img_default_match;  //预加载图id
 
@@ -296,15 +293,17 @@ public class NinePicturesView extends RelativeLayout {
     }
 
 
-
-
+    /**
+     * 需要在设置imageurl之前设置
+     * @param imageView
+     * @param index
+     * @param picWidth
+     * @param picHeight
+     */
     private void loadImageView(final  ImageView imageView, final int index,int picWidth,int picHeight) {
-//        Glide.with(getContext()).load(imageUrls.get(index)).placeholder(placeHolderId).into(imageView);
-        GlideApp.with(getContext())
-                .load(imageUrls.get(index))
-                .centerCrop()
-                .placeholder(placeHolderId)
-                .into(imageView);
+        if(imgLoadUrlListener!=null){
+            imgLoadUrlListener.onImgLoad(imageView,imageUrls.get(index), index,picWidth,picHeight);
+        }
         imageView.setOnClickListener(v -> {
             if (onclickItemListenr != null) {
                 onclickItemListenr.OnclickItem(imageView, index);
@@ -342,11 +341,27 @@ public class NinePicturesView extends RelativeLayout {
     }
 
 
+    public void setImgLoadUrlListenr(ImgLoadUrlListener imgLoadUrlListener) {
+        this.imgLoadUrlListener = imgLoadUrlListener;
+    }
+
+    ImgLoadUrlListener imgLoadUrlListener;
+
+    public interface ImgLoadUrlListener {
+        void onImgLoad(ImageView imageView, String url, int index,int viewWidth,int viewHeight);
+    }
+
+
+
+
     public void setOnclickItemListenr(OnclickItemListenr onclickItemListenr) {
         this.onclickItemListenr = onclickItemListenr;
     }
 
     OnclickItemListenr onclickItemListenr;
+
+
+
 
     public interface OnclickItemListenr {
         void OnclickItem(View view, int position);

@@ -5,7 +5,7 @@ import com.android.zjctools.widget.dialog.ZPWindow;
 
 import java.util.List;
 
-public class DialogUtils {
+public class ZDialogUtils {
 
     /**
      * 显示底部选项弹窗

@@ -3,7 +3,7 @@ package com.android.zjctools;
 import android.widget.TextView;
 
 import com.android.zjctools.base.ZBActivity;
-import com.android.zjctools.utils.DialogUtils;
+import com.android.zjctools.utils.ZDialogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class BottomWindowActivity extends ZBActivity {
     protected void initListener() {
         super.initListener();
         tvShowBottomWindow.setOnClickListener(v -> {
-            DialogUtils.showBottomWindow(mActivity, strings, position -> {
+            ZDialogUtils.showBottomWindow(mActivity, strings, position -> {
 
             });
         });
