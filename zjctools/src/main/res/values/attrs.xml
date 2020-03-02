@@ -24,6 +24,8 @@
         <attr name="isShowRightStart" format="boolean" />
         <!--是否显示右侧箭头-->
         <attr name="isShowRightArrow" format="boolean" />
+        <!--左侧标题颜色-->
+        <attr name="titleColor" format="color" />
         <!--左侧标题-->
         <attr name="titleText" format="string" />
         <!--右侧描述的hint-->

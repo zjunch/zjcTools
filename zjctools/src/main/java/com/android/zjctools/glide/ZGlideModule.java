@@ -2,7 +2,7 @@ package com.android.zjctools.glide;
 
 import android.content.Context;
 
-import com.android.zjctools.Constants;
+import com.android.zjctools.ZConstants;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.Registry;
@@ -18,7 +18,7 @@ public class ZGlideModule extends AppGlideModule {
     public void applyOptions(Context context, GlideBuilder builder) {
         //        super.applyOptions(context, builder);
         int size = 200 * 1024 * 1024;
-        String dir = Constants.CACHE_IMAGES;
+        String dir = ZConstants.CACHE_IMAGES;
         builder.setDiskCache(new ExternalPreferredCacheDiskCacheFactory(context, dir, size));
     }
 

@@ -13,6 +13,9 @@ import android.view.View;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
 
+/**
+ * created zjun 2019-12-23
+ */
 
 public class CountTextView extends View {
     int mWidth, mHeight;

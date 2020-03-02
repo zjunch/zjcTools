@@ -18,8 +18,11 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 /**
- * 九宫格图片
+ * created zjun 2019-12-23
+ *              九宫格图片
  *             app:viewYSpaceSize="10"
  *             app:viewXSpaceSize="10"
  *             app:average2Enable="false"

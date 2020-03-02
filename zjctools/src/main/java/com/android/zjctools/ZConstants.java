@@ -1,5 +1,5 @@
 package com.android.zjctools;
 
-public class Constants {
+public class ZConstants {
     public  static final   String CACHE_IMAGES="images";
 }

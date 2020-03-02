@@ -11,7 +11,6 @@ import com.android.zjcutils.R;
 
 
 /**
- * 作者:东芝
  * 功能:状态栏高度View,用于沉浸占位
  */
 

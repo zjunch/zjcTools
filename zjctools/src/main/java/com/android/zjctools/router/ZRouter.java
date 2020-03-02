@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Parcelable;
 import android.provider.Settings;
+import android.support.v4.app.Fragment;
 
 import com.android.zjctools.permission.ZPermissionActivity;
 
@@ -177,11 +178,16 @@ public class ZRouter {
     /**
      * ------------------- 需要返回值的跳转 -------------------
      */
-    protected static void overlayResult(Context context, Intent intent, int requestCode) {
-        if (isActivity(context)) {
-            ((Activity) context).startActivityForResult(intent, requestCode);
+    protected static<T> void overlayResult(T  activityOrfragment, Intent intent,int resultCode) {
+        if(activityOrfragment instanceof Activity){
+            Activity activity= (Activity) activityOrfragment;
+            activity.startActivityForResult(intent,resultCode);
+        }else  if(activityOrfragment instanceof Fragment){
+            Fragment fragment= (Fragment) activityOrfragment;
+            fragment.startActivityForResult(intent,resultCode);
         }
     }
+
 
     /**
      * 设置返回值

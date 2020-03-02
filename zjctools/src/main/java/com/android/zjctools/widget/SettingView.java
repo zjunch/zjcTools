@@ -13,15 +13,18 @@ import android.widget.TextView;
 
 import com.android.zjcutils.R;
 
+/**
+ *  created zjun 2019-09-23
+ */
 
 public class SettingView extends LinearLayout {
 
-    TextView tvTitle,tvDesc,tvRightStar;
+    TextView tvTitle,tvDesc,tvRightStar,tvPoint;
     View mContentView,line;
     boolean isShowLine,isShowPoint,isShowRightStar,isShowRightArrow;
     private  String title,desc,descHint;
-    ImageView ivPoint,ivRightArrow;
-    private  int descColorId;
+    ImageView ivRightArrow;
+    private  int descColorId,titleColorId;
 
     public SettingView(Context context) {
         super(context);
@@ -36,6 +39,7 @@ public class SettingView extends LinearLayout {
         isShowRightStar = typedArray.getBoolean(R.styleable.SettingView_isShowRightStart, false);
         isShowRightArrow = typedArray.getBoolean(R.styleable.SettingView_isShowRightArrow, true);
         descColorId = typedArray.getColor(R.styleable.SettingView_descColor, getResources().getColor(R.color.zjcGray3));
+        titleColorId=typedArray.getColor(R.styleable.SettingView_titleColor, getResources().getColor(R.color.zjcGray3));
         title= typedArray.getString(R.styleable.SettingView_titleText);
         descHint= typedArray.getString(R.styleable.SettingView_descHint);
         desc= typedArray.getString(R.styleable.SettingView_descText);
@@ -48,7 +52,7 @@ public class SettingView extends LinearLayout {
         tvTitle=mContentView.findViewById(R.id.tvTitle);
         tvDesc=mContentView.findViewById(R.id.tvDesc);
         line=mContentView.findViewById(R.id.line);
-        ivPoint=mContentView.findViewById(R.id.ivPoint);
+        tvPoint=mContentView.findViewById(R.id.tvPoint);
         tvRightStar=mContentView.findViewById(R.id.tvRightStar);
         ivRightArrow=mContentView.findViewById(R.id.ivRightArrow);
     }
@@ -62,13 +66,38 @@ public class SettingView extends LinearLayout {
             tvDesc.setText(desc);
         }else if(!TextUtils.isEmpty(descHint)){
             tvDesc.setHint(descHint);
+        }else{
+            tvDesc.setHint("");
         }
+        tvTitle.setTextColor(titleColorId);
         tvDesc.setTextColor(descColorId);
-        ivPoint.setVisibility(isShowPoint?View.VISIBLE:View.GONE);
+        tvPoint.setVisibility(isShowPoint?View.VISIBLE:View.GONE);
         line.setVisibility(isShowLine?View.VISIBLE:View.GONE);
         tvRightStar.setVisibility(isShowRightStar?View.VISIBLE:View.GONE);
         ivRightArrow.setVisibility(isShowRightArrow?View.VISIBLE:View.GONE);
     }
+
+
+    /**
+     * 设置标题内容
+     * @param title
+     */
+    public void setTitle(String title){
+        if(tvTitle!=null){
+            tvTitle.setText(title);
+        }
+    }
+
+
+    /**
+     *左侧小红点背景
+     */
+    private  void setLeftPointBgR(int resId){
+        tvPoint.setBackgroundResource(resId);
+    }
+
+
+
 
 
     /**
