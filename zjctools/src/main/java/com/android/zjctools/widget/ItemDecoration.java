@@ -12,7 +12,7 @@ import android.view.View;
 /**
  * RecyclerView列表分割线，用于LinearLayoutManager布局
  */
-public class CommItemDecoration extends RecyclerView.ItemDecoration {
+public class ItemDecoration extends RecyclerView.ItemDecoration {
 
     private static final int HORIZONTAL_LIST = LinearLayoutManager.HORIZONTAL;
     private static final int VERTICAL_LIST = LinearLayoutManager.VERTICAL;
@@ -29,8 +29,8 @@ public class CommItemDecoration extends RecyclerView.ItemDecoration {
      * @param color  分割线颜色 例如：Color.parseString("#ff3300")
      * @param height 分割线高度（单位为PX）
      */
-    public static CommItemDecoration createVertical(Context context, @ColorInt int color, int height) {
-        return new CommItemDecoration(context, VERTICAL_LIST, color, height);
+    public static ItemDecoration createVertical(Context context, @ColorInt int color, int height) {
+        return new ItemDecoration(context, VERTICAL_LIST, color, height);
     }
 
     /**
@@ -39,11 +39,11 @@ public class CommItemDecoration extends RecyclerView.ItemDecoration {
      * @param color 分割线颜色 例如：Color.parseString("#ff3300")
      * @param width 分割线宽度（单位为PX）
      */
-    public static CommItemDecoration createHorizontal(Context context, @ColorInt int color, int width) {
-        return new CommItemDecoration(context, HORIZONTAL_LIST, color, width);
+    public static ItemDecoration createHorizontal(Context context, @ColorInt int color, int width) {
+        return new ItemDecoration(context, HORIZONTAL_LIST, color, width);
     }
 
-    private CommItemDecoration(Context context, int orientation, @ColorInt int color, int space) {
+    private ItemDecoration(Context context, int orientation, @ColorInt int color, int space) {
         mOrientation = orientation;
         if (space > 0) {
             mSpace = space;

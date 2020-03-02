@@ -8,12 +8,13 @@
     tools:context=".MainActivity">
 
     <include
+        android:id="@+id/title_bar"
         layout="@layout/bar_title"></include>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-       android:layout_centerInParent="true" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/title_bar"
+        android:id="@+id/recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

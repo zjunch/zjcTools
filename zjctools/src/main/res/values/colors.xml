@@ -41,4 +41,8 @@
 
     <!--app主色,更换时直接在app覆盖即可-->
     <color name="app_theme_color">#169DEF</color>
+
+    <!--分割线颜色-->
+    <color name="app_divide">#e6e7e9</color>
+
 </resources>

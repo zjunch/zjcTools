@@ -26,6 +26,7 @@ public abstract class ZBActivity extends ZjcActivity {
         initData();
         //返回键处理
         initBackView(R.id.ivBack);
+        initListener();
     }
 
     /**
@@ -68,6 +69,13 @@ public abstract class ZBActivity extends ZjcActivity {
      * 获取传参等数据
      */
     protected  void  getValues(){}
+
+
+    /**
+     * 监听事件
+     */
+    protected  void  initListener(){}
+
     /**
      * 加载布局 id
      * @return 返回布局 id

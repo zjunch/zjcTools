@@ -31,12 +31,21 @@ dependencies {
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // 引用新的布局方式库
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    // 引用recycleview
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     // Glide 图片加载库 https://github.com/bumptech/glide
     implementation('com.github.bumptech.glide:glide:4.9.0') {
         exclude group: "com.android.support"
     }
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    // RecyclerView 复杂布局实现 https://github.com/drakeet/MultiType
+    api 'me.drakeet.multitype:multitype:3.4.4'  
+
 }
 
 apply plugin: 'com.novoda.bintray-release'

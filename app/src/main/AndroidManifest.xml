@@ -6,10 +6,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".app.MyApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/ZJCTheme">
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".BottomWindowActivity"></activity>
         <activity android:name=".MainActivity"
             android:theme="@style/ZJCTheme.Launcher">
             <intent-filter>
