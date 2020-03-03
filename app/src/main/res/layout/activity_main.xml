@@ -9,7 +9,7 @@
 
     <include
         android:id="@+id/title_bar"
-        layout="@layout/bar_title"></include>
+        layout="@layout/zjc_bar_title"></include>
 
     <android.support.v7.widget.RecyclerView
         android:layout_below="@id/title_bar"
