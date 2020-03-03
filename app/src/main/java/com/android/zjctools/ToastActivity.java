@@ -23,7 +23,6 @@ public class ToastActivity extends ZBActivity {
         tvCenterSuccess=findViewById(R.id.tvCenterSuccess);
         tvBottomError=findViewById(R.id.tvBottomError);
         tvCenterError=findViewById(R.id.tvCenterError);
-
     }
 
     @Override

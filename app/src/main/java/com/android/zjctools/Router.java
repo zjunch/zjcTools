@@ -17,4 +17,7 @@ public class Router extends ZRouter {
     public static  void goToast(Activity activity){
         overlay(activity, ToastActivity.class);
     }
+    public static  void goSelectPictures(Activity activity){
+        overlay(activity, SelectActivity.class);
+    }
 }

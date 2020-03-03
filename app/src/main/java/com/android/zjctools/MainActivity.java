@@ -30,11 +30,10 @@ public class MainActivity extends ZBActivity {
     protected void getValues() {
         super.getValues();
         items.clear();
-        for (int i = 0; i <1 ; i++) {
-            items.add(new FunctionBean("底部弹出window",0));
-            items.add(new FunctionBean("九宫格",1));
-            items.add(new FunctionBean("toast",2));
-        }
+        items.add(new FunctionBean("底部弹出window",0));
+        items.add(new FunctionBean("九宫格",1));
+        items.add(new FunctionBean("toast",2));
+        items.add(new FunctionBean("选择图片",3));
     }
 
     @Override
@@ -64,6 +63,8 @@ public class MainActivity extends ZBActivity {
                 Router.goTestGlideCach(mActivity);
             }else if(item.type==2){
                 Router.goToast(mActivity);
+            }else if(item.type==3){
+                Router.goSelectPictures(mActivity);
             }
         });
     }
