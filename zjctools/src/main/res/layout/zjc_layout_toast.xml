@@ -25,6 +25,7 @@
             android:layout_toRightOf="@id/zjv_toast_icon"
             android:layout_width="wrap_content"
             style="@style/text_14_white"
+            android:layout_centerVertical="true"
             android:text="提示内容"
             android:gravity="center"
             android:layout_height="wrap_content"/>
