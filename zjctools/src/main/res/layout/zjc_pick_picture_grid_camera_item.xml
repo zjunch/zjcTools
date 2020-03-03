@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.zjctools.widget.ZSquareLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:id="@+id/zjc_pick_grid_camera_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/zjc_Gray54"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/zjc_dimen_36"
+            android:layout_height="@dimen/zjc_dimen_36"
+            android:src="@drawable/zjc_ic_camera"
+            android:tint="@color/zjc_white_54"
+            />
+        <TextView
+            android:text="@string/zjc_camera"
+            android:textColor="@color/zjc_white_54"
+            style="@style/ZjcText.Subhead"
+            />
+    </LinearLayout>
+</com.android.zjctools.widget.ZSquareLayout>

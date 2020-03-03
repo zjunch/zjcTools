@@ -134,5 +134,42 @@
     </style>
 
 
+    <!--文字样式 Subhead-->
+    <style name="ZjcText.Subhead" parent="Base.TextAppearance.AppCompat.Subhead">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/zjc_subhead</item>
+    </style>
+
+    <!--文字样式 Menu-->
+    <style name="ZjcText.Menu" parent="Base.TextAppearance.AppCompat.Menu">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/zjc_menu</item>
+    </style>
+
+    <!--文字样式 Title-->
+    <style name="ZjcText.Title" parent="Base.TextAppearance.AppCompat.Title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/zjcWhite</item>
+    </style>
+
+    <!--文字样式 Caption-->
+    <style name="ZjcText.Caption" parent="Base.TextAppearance.AppCompat.Caption">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/zjc_caption</item>
+    </style>
+
+    <!--自定义 Radio Button 样式-->
+    <style name="ZRadio" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/zjc_ic_radio_button_selector</item>
+    </style>
+
+    <!--自定义 Checkbox 样式-->
+    <style name="ZCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/zjc_ic_check_box_selector</item>
+    </style>
 
 </resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/zjc_top_bar_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/zjc_dimen_48"
+    tools:context="com.android.zjctools.widget.ZTopBar">
+    <!--左侧按钮-->
+    <ImageView
+        android:id="@+id/zjc_top_bar_icon"
+        android:padding="10dp"
+        android:layout_width="@dimen/zjc_dimen_48"
+        android:layout_height="@dimen/zjc_dimen_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:tint="@color/zjcWhite"
+        tools:src="@drawable/zjc_ic_back_color" />
+    <!--标题-->
+    <TextView
+        android:id="@+id/zjc_top_bar_title_tv"
+        style="@style/ZjcText.Title"
+        android:layout_width="@dimen/zjc_dimen_0"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textSize="@dimen/zjc_size_18"
+        app:layout_constraintBottom_toTopOf="@+id/zjc_top_bar_subtitle_tv"
+        app:layout_constraintEnd_toStartOf="@+id/zjc_top_bar_end_container"
+        app:layout_constraintStart_toEndOf="@+id/zjc_top_bar_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginEnd="@dimen/zjc_margin_large"
+        app:layout_goneMarginStart="@dimen/zjc_margin_large"
+        tools:text="图片" />
+    <!--子标题-->
+    <TextView
+        android:id="@+id/zjc_top_bar_subtitle_tv"
+        style="@style/ZjcText.Title"
+        android:layout_width="@dimen/zjc_dimen_0"
+        android:layout_below="@+id/zjc_top_bar_title_tv"
+        android:layout_alignParentBottom="true"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/zjc_subtitle"
+        android:textSize="@dimen/zjc_size_12"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/zjc_top_bar_title_tv"
+        app:layout_constraintStart_toStartOf="@+id/zjc_top_bar_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/zjc_top_bar_title_tv"
+        tools:text="子标题" />
+    <!--尾部容器-->
+    <LinearLayout
+        android:id="@+id/zjc_top_bar_end_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/zjc_top_bar_end_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginEnd="@dimen/zjc_margin_normal" />
+    <!--右侧的按钮-->
+    <TextView
+        android:id="@+id/zjc_top_bar_end_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/zjc_dimen_36"
+        android:layout_marginEnd="@dimen/zjc_dimen_8"
+        android:gravity="center"
+        android:paddingStart="@dimen/zjc_dimen_16"
+        android:paddingEnd="@dimen/zjc_dimen_16"
+        android:textColor="@color/zjcBlack"
+        android:textSize="@dimen/zjc_size_16"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/zjc_top_bar_end_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="确认" />
+    <!--右侧图标按钮-->
+    <ImageButton
+        android:id="@+id/zjc_top_bar_end_icon"
+        android:layout_width="@dimen/zjc_dimen_48"
+        android:layout_height="@dimen/zjc_dimen_48"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/zjc_ic_close" />
+</android.support.constraint.ConstraintLayout>

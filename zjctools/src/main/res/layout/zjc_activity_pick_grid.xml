@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zjc_theme_background">
+
+    <com.android.zjctools.widget.ZTopBar
+        android:id="@+id/zjc_common_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:zjc_end_btn="@string/zjc_pick_complete"
+        app:zjc_icon="@drawable/zjc_ic_back_color"
+        app:zjc_title_color="@color/zjc_title"
+        app:zjc_title="@string/zjc_pick_picture" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/zjc_common_top_bar">
+
+        <View
+            android:id="@+id/zjc_pick_grid_bottom_space"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zjc_dimen_0"
+            android:layout_alignParentBottom="true" />
+
+        <RelativeLayout
+            android:id="@+id/zjc_pick_grid_bottom_bar_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zjc_dimen_48"
+            android:layout_above="@+id/zjc_pick_grid_bottom_space">
+
+            <RelativeLayout
+                android:id="@+id/zjc_pick_grid_choose_folder_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/zjc_padding_large"
+                android:paddingRight="@dimen/zjc_padding_large">
+
+                <TextView
+                    android:id="@+id/zjc_pick_grid_choose_folder_tv"
+                    style="@style/ZjcText.Menu"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/zjc_dimen_96"
+                    android:text="@string/zjc_pick_all_picture" />
+
+                <ImageView
+                    android:layout_width="@dimen/zjc_dimen_12"
+                    android:layout_height="@dimen/zjc_dimen_12"
+                    android:layout_alignBottom="@id/zjc_pick_grid_choose_folder_tv"
+                    android:layout_toRightOf="@id/zjc_pick_grid_choose_folder_tv"
+                    android:src="@drawable/zjc_ic_triangle_indicator"
+                    android:tint="@color/zjc_Gray54" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/zjc_pick_grid_preview_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/zjc_padding_large"
+                android:paddingRight="@dimen/zjc_padding_large"
+                android:text="@string/zjc_pick_preview"
+                android:textAllCaps="false"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/zjc_pick_grid_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/zjc_pick_grid_bottom_bar_rl" />
+    </RelativeLayout>
+</RelativeLayout>

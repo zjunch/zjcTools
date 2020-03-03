@@ -80,4 +80,38 @@
         <attr name="PileLayout_pileWidth" format="dimension" />
     </declare-styleable>
 
+
+    <!--自定义剪切控件-->
+    <declare-styleable name="ZCropView">
+        <attr name="zjc_crop_mask_color" format="color|integer" />
+        <attr name="zjc_crop_border_color" format="color|integer" />
+        <attr name="zjc_crop_border_width" format="dimension" />
+        <attr name="zjc_crop_focus_width" format="dimension" />
+        <attr name="zjc_crop_focus_height" format="dimension" />
+        <attr name="zjc_crop_style" format="enum">
+            <enum name="rectangle" value="0" />
+            <enum name="circle" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <!--自定义 VMTopBar 控件-->
+    <declare-styleable name="ZTopBar">
+        <!--返回图标-->
+        <attr name="zjc_icon" format="reference" />
+        <!--标题-->
+        <attr name="zjc_title" format="string|reference" />
+        <!--子标题-->
+        <attr name="zjc_subtitle" format="string|reference" />
+        <!--右侧按钮-->
+        <attr name="zjc_end_btn" format="string|reference" />
+        <!--右侧图标-->
+        <attr name="zjc_end_icon" format="reference" />
+        <!--标题颜色-->
+        <attr name="zjc_title_color" format="color|integer" />
+        <!--子标题颜色-->
+        <attr name="zjc_subtitle_color" format="color|integer" />
+        <!--装饰分割线-->
+        <attr name="zjc_is_center" format="boolean" />
+    </declare-styleable>
 </resources>

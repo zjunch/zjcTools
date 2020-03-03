@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import com.android.zjctools.pick.ZPickerLoader;
 import com.github.chrisbanes.photoview.PhotoView;
 
-
 /**
  * Create by lzan13 on 2019-12-23 17:38
  * 图片加载接口实现

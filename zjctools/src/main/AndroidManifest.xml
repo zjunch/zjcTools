@@ -14,5 +14,32 @@
             android:theme="@style/ZJCTheme.Permission"
             android:configChanges="orientation|keyboardHidden" />
 
+
+        <!--选择器界面-->
+        <activity
+            android:name="com.android.zjctools.pick.ui.ZPickGridActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <!--剪切界面-->
+        <activity
+            android:name="com.android.zjctools.pick.ui.ZPickCropActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"/>
+        <!--预览界面-->
+        <activity
+            android:name="com.android.zjctools.pick.ui.ZPickPreviewActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="com.android.zjctools.pick.ZPickerProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/vm_provider_paths" />
+        </provider>
     </application>
 </manifest>

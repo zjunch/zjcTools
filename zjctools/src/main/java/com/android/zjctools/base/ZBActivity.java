@@ -2,12 +2,14 @@ package com.android.zjctools.base;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+
 import com.android.zjctools.toorbar.StatusBarUtil;
 import com.android.zjcutils.R;
 
 public abstract class ZBActivity extends ZjcActivity {
 
-    public Activity mActivity;
+    public FragmentActivity mActivity;
     private boolean isDarkTextStatusBar=true;  //状态栏字体颜色默认黑色
     @Override
     protected void onCreate(Bundle savedInstanceState) {

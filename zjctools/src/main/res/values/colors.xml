@@ -8,6 +8,8 @@
 
 
     <color name="zjcWhite">#FFF</color>
+    <color name="zjc_white_54">#89ffffff</color>
+
 
     <color name="zjcRed">#FF0000</color>
     <color name="zjc_red_87">#ddF44336</color>
@@ -42,7 +44,8 @@
     <color name="zjc_half6">#60000000</color>
     <color name="zjc_half5">#50000000</color>
     <color name="zjc_half3">#30000000</color>
-
+    <color name="zjc_black_87">#dd000000</color>
+    <color name="zjc_black_12">#1e000000</color>
 
     <!--app主色,更换时直接在app覆盖即可-->
     <color name="app_theme_color">#169DEF</color>
@@ -50,4 +53,15 @@
     <!--分割线颜色-->
     <color name="app_divide">#e6e7e9</color>
 
+
+    <color name="zjc_theme_background">#fff8f8f8</color>
+    <color name="zjc_white_87">#ddffffff</color>
+
+
+    <color name="zjc_menu">@color/zjc_black_87</color>
+    <color name="zjc_subhead">@color/zjc_black_87</color>
+
+    <color name="zjc_subtitle">@color/zjc_Gray54</color>
+    <color name="zjc_title">@color/zjc_black_87</color>
+    <color name="zjc_caption">@color/zjc_black_87</color>
 </resources>

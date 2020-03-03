@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zjcBlack">
+
+    <com.android.zjctools.widget.ZViewPager
+        android:id="@+id/zjc_pick_preview_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.android.zjctools.widget.ZTopBar
+        android:id="@+id/zjc_common_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/zjc_black_12"
+        app:zjc_end_btn="@string/zjc_pick_complete"
+        app:zjc_icon="@drawable/zjc_ic_back_color"
+        app:zjc_title="@string/zjc_pick_preview"
+        app:zjc_title_color="@color/zjc_white_87" />
+
+    <LinearLayout
+        android:id="@+id/zjc_preview_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/zjc_Gray54"
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <CheckBox
+                android:id="@+id/zjc_preview_origin_cb"
+                style="@style/ZRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/zjc_dimen_12"
+                android:paddingStart="@dimen/zjc_padding_normal"
+                android:text="原图(3.07M)"
+                android:textColor="@color/zjcWhite"
+                android:textSize="@dimen/zjc_size_16"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/zjc_preview_select_cb"
+                style="@style/ZCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/zjc_margin_large"
+                android:drawablePadding="@dimen/zjc_padding_small"
+                android:includeFontPadding="true"
+                android:paddingStart="@dimen/zjc_padding_normal"
+                android:text="选择"
+                android:textColor="@color/zjcWhite"
+                android:textSize="@dimen/zjc_size_16" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/zjc_preview_bottom_space"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+    </LinearLayout>
+</RelativeLayout>
