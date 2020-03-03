@@ -52,7 +52,6 @@ public class NinePicturesView extends RelativeLayout {
     int view12_1Height,view12_2Height; //开启左边一个右边两个 左边一个image宽高
     int view12_1Width,view12_2Width;//开启左边一个右边两个 右边两个image宽高
 
-    private  int placeHolderId=R.drawable.img_default_match;  //预加载图id
 
 
     public NinePicturesView(Context context) {
@@ -101,13 +100,6 @@ public class NinePicturesView extends RelativeLayout {
         return this;
     }
 
-    /**
-     * 设置预加载图
-     * @param imageId
-     */
-    public void setPlaceHolderId(int  imageId){
-        this.placeHolderId=imageId;
-    }
 
 
     /**
@@ -135,7 +127,6 @@ public class NinePicturesView extends RelativeLayout {
         for (int i = 0; i < imageUrls.size(); i++) {
             ImageView imageView=new ImageView(getContext());
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setImageResource(R.drawable.img_default_match);
             addView(imageView);
         }
         if (isShowText) {  //添加一个覆盖在最后一个imageview的数字文本

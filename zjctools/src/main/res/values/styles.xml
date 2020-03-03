@@ -24,7 +24,7 @@
 
     <!--启动主题-->
     <style name="ZJCTheme.Launcher">
-        <item name="android:windowBackground">@drawable/bg_launcher_shape</item>
+        <item name="android:windowBackground">@drawable/zjc_bg_launcher_shape</item>
     </style>
 
     <!--授权弹窗主题-->

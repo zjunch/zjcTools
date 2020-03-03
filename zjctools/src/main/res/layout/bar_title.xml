@@ -17,7 +17,7 @@
             android:layout_height="@dimen/zjc_dimen_40"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:src="@drawable/icon_back_color" />
+            android:src="@drawable/zjc_ic_back_color" />
 
         <TextView
             android:id="@+id/tvTitle"

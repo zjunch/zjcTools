@@ -13,4 +13,8 @@ public class Router extends ZRouter {
     public static  void goTestGlideCach(Activity activity){
         overlay(activity, GlideTestCachActivity.class);
     }
+
+    public static  void goToast(Activity activity){
+        overlay(activity, ToastActivity.class);
+    }
 }

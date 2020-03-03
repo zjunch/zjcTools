@@ -15,7 +15,7 @@
         <attr name="viewCountTextSize" format="integer"/><!--未读图片个数的文字大小-->
     </declare-styleable>
 
-    <declare-styleable name="SettingView">
+    <declare-styleable name="ZSettingView">
         <!--是否显示底部分隔线-->
         <attr name="isShowLine" format="boolean" />
         <!--是否显示最左边点-->

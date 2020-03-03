@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/zjc_toast_bg"
+        android:layout_width="wrap_content"
+        android:paddingTop="@dimen/zjc_dimen_8"
+        android:paddingBottom="@dimen/zjc_dimen_8"
+        android:paddingLeft="@dimen/zjc_dimen_20"
+        android:paddingRight="@dimen/zjc_dimen_20"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/zjc_shape_toast_fail"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/zjv_toast_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/zjc_dimen_12"
+            android:src="@drawable/zjc_ic_error"/>
+        <TextView
+            android:id="@+id/zjc_toast_content"
+            android:layout_toRightOf="@id/zjv_toast_icon"
+            android:layout_width="wrap_content"
+            style="@style/text_14_white"
+            android:text="提示内容"
+            android:gravity="center"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</RelativeLayout>

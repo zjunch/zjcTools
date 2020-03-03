@@ -33,6 +33,7 @@ public class MainActivity extends ZBActivity {
         for (int i = 0; i <1 ; i++) {
             items.add(new FunctionBean("底部弹出window",0));
             items.add(new FunctionBean("九宫格",1));
+            items.add(new FunctionBean("toast",2));
         }
     }
 
@@ -61,6 +62,8 @@ public class MainActivity extends ZBActivity {
                 Router.goMainBottomWindow(mActivity);
             }else if(item.type==1){
                 Router.goTestGlideCach(mActivity);
+            }else if(item.type==2){
+                Router.goToast(mActivity);
             }
         });
     }

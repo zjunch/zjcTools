@@ -5,11 +5,10 @@ import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.android.zjctools.base.AppItemBinder;
 import com.android.zjctools.bean.FunctionBean;
-import com.android.zjctools.widget.SettingView;
+import com.android.zjctools.widget.ZSettingView;
 
 public class FunctionBinder extends AppItemBinder<FunctionBean> {
 
@@ -32,7 +31,7 @@ public class FunctionBinder extends AppItemBinder<FunctionBean> {
 
     @Override
     protected void onBindView(AppHolder holder, FunctionBean item) {
-        SettingView settingView= holder.getView(R.id.sv_set_title);
+        ZSettingView settingView= holder.getView(R.id.sv_set_title);
         settingView.setTitle(item.title);
     }
 }

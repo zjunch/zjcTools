@@ -17,7 +17,7 @@ import com.android.zjcutils.R;
  *  created zjun 2019-09-23
  */
 
-public class SettingView extends LinearLayout {
+public class ZSettingView extends LinearLayout {
 
     TextView tvTitle,tvDesc,tvRightStar,tvPoint;
     View mContentView,line;
@@ -26,23 +26,23 @@ public class SettingView extends LinearLayout {
     ImageView ivRightArrow;
     private  int descColorId,titleColorId;
 
-    public SettingView(Context context) {
+    public ZSettingView(Context context) {
         super(context);
     }
 
-    public SettingView(Context context, @Nullable AttributeSet attrs) {
+    public ZSettingView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        mContentView= LayoutInflater.from(context).inflate(R.layout.layout_setting_view,this);
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.SettingView);
-        isShowLine = typedArray.getBoolean(R.styleable.SettingView_isShowLine, true);
-        isShowPoint = typedArray.getBoolean(R.styleable.SettingView_isShowPoint, false);
-        isShowRightStar = typedArray.getBoolean(R.styleable.SettingView_isShowRightStart, false);
-        isShowRightArrow = typedArray.getBoolean(R.styleable.SettingView_isShowRightArrow, true);
-        descColorId = typedArray.getColor(R.styleable.SettingView_descColor, getResources().getColor(R.color.zjcGray3));
-        titleColorId=typedArray.getColor(R.styleable.SettingView_titleColor, getResources().getColor(R.color.zjcGray3));
-        title= typedArray.getString(R.styleable.SettingView_titleText);
-        descHint= typedArray.getString(R.styleable.SettingView_descHint);
-        desc= typedArray.getString(R.styleable.SettingView_descText);
+        mContentView= LayoutInflater.from(context).inflate(R.layout.zjc_layout_setting_view,this);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZSettingView);
+        isShowLine = typedArray.getBoolean(R.styleable.ZSettingView_isShowLine, true);
+        isShowPoint = typedArray.getBoolean(R.styleable.ZSettingView_isShowPoint, false);
+        isShowRightStar = typedArray.getBoolean(R.styleable.ZSettingView_isShowRightStart, false);
+        isShowRightArrow = typedArray.getBoolean(R.styleable.ZSettingView_isShowRightArrow, true);
+        descColorId = typedArray.getColor(R.styleable.ZSettingView_descColor, getResources().getColor(R.color.zjcGray3));
+        titleColorId=typedArray.getColor(R.styleable.ZSettingView_titleColor, getResources().getColor(R.color.zjcGray3));
+        title= typedArray.getString(R.styleable.ZSettingView_titleText);
+        descHint= typedArray.getString(R.styleable.ZSettingView_descHint);
+        desc= typedArray.getString(R.styleable.ZSettingView_descText);
         typedArray.recycle();
         initView();
         setViews();
