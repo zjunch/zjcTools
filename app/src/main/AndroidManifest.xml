@@ -12,7 +12,7 @@
         android:theme="@style/ZJCTheme">
         <activity android:name=".SelectActivity"></activity>
         <activity android:name=".ToastActivity" />
-        <activity android:name=".GlideTestCachActivity" />
+        <activity android:name=".ninepicture.NinePictureActivity" />
         <activity android:name=".BottomWindowActivity" />
         <activity
             android:name=".MainActivity"

@@ -32,7 +32,7 @@ public class IMManager {
      * @param <T>
      */
     public static <T> void showSinglePicker(T t) {
-        showPicker(t, false, 1,null);
+        showPicker(t, 1,null);
     }
 
     /**
@@ -43,27 +43,33 @@ public class IMManager {
      * @param <T>
      */
     public static <T> void showMultiPicker(T t, int maxCounts,List<ZPictureBean> selectPictures) {
-        showPicker(t, true, maxCounts,selectPictures);
+        showPicker(t,  maxCounts,selectPictures);
     }
 
     /**
      * 统一处理图片选择展示
      *
      * @param t              上下文对象
-     * @param isMultiMode    是否多选
+     * @param
      * @param selectPictures 已选择图片
      * @param <T>
      */
-    private static <T> void showPicker(T t, boolean isMultiMode,int maxCounts, List<ZPictureBean> selectPictures) {
+    private static <T> void showPicker(T t,int maxCounts, List<ZPictureBean> selectPictures) {
 
         ZCropView.Style cropStyle = ZCropView.Style.RECTANGLE;
         boolean isSaveRectangle = true;
         boolean isShowCamera = true;
+        boolean isNeedCrop=false;
+        boolean isMultiMode=true;//是否多选
+        if(maxCounts==1){
+            isNeedCrop=true;
+            isMultiMode=false;
+        }
 
         ZPicker.getInstance()
             .setMultiMode(isMultiMode)
             //.setPictureLoader(new PickerLoader())
-            .setCrop(true)
+            .setCrop(isNeedCrop)
             //                    .setCropFocusWidth(mCropFocusWidth)
             //                    .setCropFocusHeight(mCropFocusHeight)
             //                    .setCropOutWidth(mCropOutWidth)

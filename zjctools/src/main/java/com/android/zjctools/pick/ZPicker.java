@@ -40,7 +40,7 @@ public class ZPicker {
     // 图片加载器接口，需要外部实现，减少三方库依赖
     private ILoaderListener mLoaderListener;
     // 是否开启裁剪，单选模式有效
-    private boolean mCrop = true;
+    private boolean mCrop = false;
     // 裁剪焦点框的宽度
     private int mCropFocusWidth = 256;
     // 裁剪焦点框的高度

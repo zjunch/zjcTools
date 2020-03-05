@@ -8,7 +8,7 @@ import com.android.zjctools.permission.ZPermission;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZLog;
-import com.android.zjctools.widget.ItemDecoration;
+import com.android.zjctools.widget.ZItemDecoration;
 
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
@@ -41,7 +41,7 @@ public class MainActivity extends ZBActivity {
         recycleView=findViewById(R.id.recycleView);
         LinearLayoutManager manager= new LinearLayoutManager(this);
         recycleView.setLayoutManager(manager);
-        recycleView.addItemDecoration(ItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.app_divide), ZDimen.dp2px(1)));
+        recycleView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.app_divide), ZDimen.dp2px(1)));
         mBinder=new FunctionBinder(mActivity);
         mAdapter.register(FunctionBean.class,mBinder);
         mAdapter.setItems(items);

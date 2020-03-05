@@ -2,38 +2,38 @@
 <resources>
 
 
-    <declare-styleable name="NinePicturesView">
-        <attr name="viewXSpaceSize" format="integer"/><!--x 间距-->
-        <attr name="viewYSpaceSize" format="integer"/><!--y 间距-->
-        <attr name="average2Enable" format="boolean"/><!--两张图张图一行两个-->
-        <attr name="average4Enable" format="boolean"/><!--四张图一行两个-->
-        <attr name="view12Enable" format="boolean"/><!--三张图 左边一个右边两个-->
-        <attr name="viewMaxCounts" format="integer"/><!--最多显示多少张-->
-        <attr name="viewFullOne" format="boolean"/><!--一张图的时候，一行一张-->
-        <attr name="viewShowText" format="boolean"/><!--是否有未展示的图片个数的文字显示-->
-        <attr name="viewCountTextColor" format="color" /><!--未读图片个数的文字颜色-->
-        <attr name="viewCountTextSize" format="integer"/><!--未读图片个数的文字大小-->
+    <declare-styleable name="ZNinePicturesView">
+        <attr name="zjc_nine_spacex" format="integer"/><!--x 间距-->
+        <attr name="zjc_nine_spacey" format="integer"/><!--y 间距-->
+        <attr name="zjc_nine_average2_enable" format="boolean"/><!--两张图张图一行两个-->
+        <attr name="zjc_nine_average4_enable" format="boolean"/><!--四张图一行两个-->
+        <attr name="zjc_nine_12_Enable" format="boolean"/><!--三张图 左边一个右边两个-->
+        <attr name="zjc_nine_max_counts" format="integer"/><!--最多显示多少张-->
+        <attr name="zjc_nine_full_One" format="boolean"/><!--一张图的时候，一行一张-->
+        <attr name="zjc_nine_show_un_counts" format="boolean"/><!--是否有未展示的图片个数的文字显示-->
+        <attr name="zjc_nine_un_counts_textColor" format="color" /><!--未读图片个数的文字颜色-->
+        <attr name="zjc_nine_un_counts_textSzie" format="integer"/><!--未读图片个数的文字大小-->
     </declare-styleable>
 
     <declare-styleable name="ZSettingView">
         <!--是否显示底部分隔线-->
-        <attr name="isShowLine" format="boolean" />
+        <attr name="zjc_sv_Line_enable" format="boolean" />
         <!--是否显示最左边点-->
-        <attr name="isShowPoint" format="boolean" />
+        <attr name="zjc_sv_point_enable" format="boolean" />
         <!--是否显示左侧title右右侧有个start-->
-        <attr name="isShowRightStart" format="boolean" />
+        <attr name="zjc_sv_start_enable" format="boolean" />
         <!--是否显示右侧箭头-->
-        <attr name="isShowRightArrow" format="boolean" />
+        <attr name="zjc_sv_arrow_enable" format="boolean" />
         <!--左侧标题颜色-->
-        <attr name="titleColor" format="color" />
+        <attr name="zjc_sv_title_Color" format="color" />
         <!--左侧标题-->
-        <attr name="titleText" format="string" />
+        <attr name="zjc_sv_title_text" format="string" />
         <!--右侧描述的hint-->
-        <attr name="descHint" format="string" />
+        <attr name="zjc_sv_desc_Hint" format="string" />
         <!--右侧描述的字体颜色-->
-        <attr name="descColor" format="color" />
+        <attr name="zjc_sv_desc_color" format="color" />
         <!--右侧描述文字-->
-        <attr name="descText" format="string" />
+        <attr name="zjc_sv_desc_text" format="string" />
     </declare-styleable>
 
 
@@ -66,7 +66,7 @@
         <attr name="vm_time_size" format="dimension" />
     </declare-styleable>
 
-    <declare-styleable name="StatusBarHeightView">
+    <declare-styleable name="ZStatusBarHeightView">
         <attr name="use_type" format="integer">
             <enum name="use_height" value="0" />
             <enum name="use_padding_top" value="1" />

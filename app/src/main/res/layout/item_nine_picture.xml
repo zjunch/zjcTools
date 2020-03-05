@@ -3,13 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.android.zjctools.widget.ZSettingView
-        android:id="@+id/sv_set_title"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
+
+    <com.android.zjctools.widget.nineimages.ZNinePicturesView
+        android:id="@+id/ninePics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:zjc_sv_desc_Hint=""
-        app:zjc_sv_Line_enable="false"
-        app:zjc_sv_title_text="底部弹出window"/>
+        app:zjc_nine_full_One="true"
+        app:zjc_nine_max_counts="9"
+        app:zjc_nine_average2_enable="true"
+        app:zjc_nine_show_un_counts="true"
+        app:zjc_nine_spacex="4"
+        app:zjc_nine_spacey="4"/>
 </LinearLayout>

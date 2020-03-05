@@ -32,7 +32,7 @@ import java.util.List;
  *             app:viewCountTextSize="30"
  *             app:viewFullOne="true"
  */
-public class NinePicturesView extends RelativeLayout {
+public class ZNinePicturesView extends RelativeLayout {
     int mWidth, mHeight;         //view 宽高，注意这里没兼容padding ，so 请用margin
     private List<String> imageUrls;
     private int picWidth, picHeight;        //正常图片的宽高
@@ -54,29 +54,29 @@ public class NinePicturesView extends RelativeLayout {
 
 
 
-    public NinePicturesView(Context context) {
+    public ZNinePicturesView(Context context) {
         this(context, null);
     }
 
-    public NinePicturesView(Context context, AttributeSet attrs) {
+    public ZNinePicturesView(Context context, AttributeSet attrs) {
         super(context, attrs);
         intValues(attrs);
     }
 
     private void intValues(AttributeSet attrs) {
         imageUrls = new ArrayList<>();
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.NinePicturesView);
-        viewXSpaceSize = ZDimen.dp2px(typedArray.getInt(R.styleable.NinePicturesView_viewXSpaceSize, viewXSpaceSize));
-        viewYSpaceSize = ZDimen.dp2px(typedArray.getInt(R.styleable.NinePicturesView_viewYSpaceSize, viewYSpaceSize));
-        average2Enable = typedArray.getBoolean(R.styleable.NinePicturesView_average2Enable, false);
-        average4Enable = typedArray.getBoolean(R.styleable.NinePicturesView_average4Enable, false);
-        viewShowText = typedArray.getBoolean(R.styleable.NinePicturesView_viewShowText, false);
-        viewFullOne = typedArray.getBoolean(R.styleable.NinePicturesView_viewFullOne, false);
-        view12Enable = typedArray.getBoolean(R.styleable.NinePicturesView_view12Enable, false);
-        viewMaxCounts = typedArray.getInt(R.styleable.NinePicturesView_viewMaxCounts, 9);
-        int viewCountSizeSP = typedArray.getInt(R.styleable.NinePicturesView_viewCountTextSize, 12);
-        viewCountTextSize= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,viewCountSizeSP,getResources().getDisplayMetrics());
-        viewCountTextColor= typedArray.getColor(R.styleable.NinePicturesView_viewCountTextColor, Color.BLACK);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZNinePicturesView);
+        viewXSpaceSize = ZDimen.dp2px(typedArray.getInt(R.styleable.ZNinePicturesView_zjc_nine_spacex, viewXSpaceSize));
+        viewYSpaceSize = ZDimen.dp2px(typedArray.getInt(R.styleable.ZNinePicturesView_zjc_nine_spacey, viewYSpaceSize));
+        average2Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_average2_enable, false);
+        average4Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_average4_enable, false);
+        viewShowText = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_show_un_counts, false);
+        viewFullOne = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_full_One, false);
+        view12Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_12_Enable, false);
+        viewMaxCounts = typedArray.getInt(R.styleable.ZNinePicturesView_zjc_nine_max_counts, 9);
+        int viewCountSizeSP = typedArray.getInt(R.styleable.ZNinePicturesView_zjc_nine_un_counts_textSzie, 12);
+        viewCountTextSize= ZDimen.dp2px(viewCountSizeSP);
+        viewCountTextColor= typedArray.getColor(R.styleable.ZNinePicturesView_zjc_nine_un_counts_textColor, Color.BLACK);
         typedArray.recycle();
     }
 
@@ -85,7 +85,7 @@ public class NinePicturesView extends RelativeLayout {
      * @param scale
      * @return
      */
-    public NinePicturesView setScale(double scale) {
+    public ZNinePicturesView setScale(double scale) {
         this.scale = scale;
         return this;
     }
@@ -95,7 +95,7 @@ public class NinePicturesView extends RelativeLayout {
      * @param scale
      * @return
      */
-    public NinePicturesView setFullOneScale(double scale) {
+    public ZNinePicturesView setFullOneScale(double scale) {
         this.fullOneScale = scale;
         return this;
     }
@@ -107,7 +107,7 @@ public class NinePicturesView extends RelativeLayout {
      * @param imgUrls
      * @return
      */
-    public NinePicturesView setImageUrls(List<String> imgUrls) {
+    public ZNinePicturesView setImageUrls(List<String> imgUrls) {
         this.imageUrls.clear();
         isShowText=false;
         removeAllViews();
@@ -130,7 +130,7 @@ public class NinePicturesView extends RelativeLayout {
             addView(imageView);
         }
         if (isShowText) {  //添加一个覆盖在最后一个imageview的数字文本
-            CountTextView textView = new CountTextView(getContext(),oldSize-imageUrls.size());
+            ZCountTextView textView = new ZCountTextView(getContext(),oldSize-imageUrls.size());
             textView.setTextColor(viewCountTextColor);
             textView.setTextSize(viewCountTextSize);
             addView(textView);
@@ -166,8 +166,8 @@ public class NinePicturesView extends RelativeLayout {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec,heightMeasureSpec);
         mWidth= MeasureSpec.getSize(widthMeasureSpec);
-        mHeight=getSelfHeight();//重新计算高度
         mesurePic();
+        mHeight=getSelfHeight();//重新计算高度
         setMeasuredDimension(mWidth, mHeight);
     }
 
@@ -212,8 +212,8 @@ public class NinePicturesView extends RelativeLayout {
             child.layout(view12_1Width+viewXSpaceSize,0, view12_1Width+viewXSpaceSize+view12_2Width, view12_2Height);
         }else if(index==2){
             child.layout(view12_1Width+viewXSpaceSize,view12_2Height+viewYSpaceSize, view12_1Width+viewXSpaceSize+view12_2Width, view12_2Height+viewYSpaceSize+view12_2Height);
-        }else if(isShowText&&getChildAt(imageUrls.size())instanceof CountTextView){
-            CountTextView textView= (CountTextView) getChildAt(getChildCount()-1);
+        }else if(isShowText&&getChildAt(imageUrls.size())instanceof ZCountTextView){
+            ZCountTextView textView= (ZCountTextView) getChildAt(getChildCount()-1);
             textView.layout(view12_1Width+viewXSpaceSize,view12_2Height+viewYSpaceSize, view12_1Width+viewXSpaceSize+view12_2Width, view12_2Height+viewYSpaceSize+view12_2Height);
         }
         if (child instanceof ImageView) {
@@ -242,8 +242,8 @@ public class NinePicturesView extends RelativeLayout {
             child.layout(left,top,right,bottom);
             ImageView imageView = (ImageView) child;
             loadImageView(imageView, index,picWidth,picHeight);
-        }else if(isShowText&&child instanceof CountTextView){//最后一个图片且有CountTextView, 覆盖最后图片上面
-           CountTextView textView= (CountTextView) child;
+        }else if(isShowText&&child instanceof ZCountTextView){//最后一个图片且有CountTextView, 覆盖最后图片上面
+           ZCountTextView textView= (ZCountTextView) child;
             index-=1;
             widthIndex = index % 2;//第几列
             heightIndex = index / 2;//第几行
@@ -270,11 +270,11 @@ public class NinePicturesView extends RelativeLayout {
                     heightIndex * viewYSpaceSize + heightIndex * picHeight + picHeight);
             ImageView imageView = (ImageView) child;
             loadImageView(imageView, index,picWidth,picHeight);
-        }else if(isShowText&&child instanceof CountTextView){
+        }else if(isShowText&&child instanceof ZCountTextView){
             index-=1;
             widthIndex = index % 3;//第几列
             heightIndex = index / 3;//第几行
-          CountTextView textView= (CountTextView) child;
+          ZCountTextView textView= (ZCountTextView) child;
             textView.layout(widthIndex * picWidth + widthIndex * viewXSpaceSize,
                     heightIndex * viewYSpaceSize + heightIndex * picHeight,
                     widthIndex * picWidth + (picWidth + widthIndex * viewXSpaceSize),
@@ -304,7 +304,6 @@ public class NinePicturesView extends RelativeLayout {
 
 
     private int getSelfHeight() {
-
         if(imageUrls==null||imageUrls.size()==0){
             return  0;
         }

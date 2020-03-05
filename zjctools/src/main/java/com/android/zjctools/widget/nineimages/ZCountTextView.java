@@ -17,7 +17,7 @@ import com.android.zjcutils.R;
  * created zjun 2019-12-23
  */
 
-public class CountTextView extends View {
+public class ZCountTextView extends View {
     int mWidth, mHeight;
     private Paint coverPaint;
     private  int mCount;
@@ -25,12 +25,9 @@ public class CountTextView extends View {
     private  int  mMarginBottom=30;// 半透明边框的下边距
     private  int xPadding=20;  //字题横向的padding
     private  int yPadding=8;//字题竖向的padding
-
-
-
     private   boolean isExactWidth=true;  //是否是固定半透明的宽度
     private   int    mExactHalfRectfWidth=90;  //固定半透明背景的宽
-    public CountTextView(Context context, int counts) {
+    public ZCountTextView(Context context, int counts) {
         this(context,null);
         this.mCount=counts;
     }
@@ -44,7 +41,7 @@ public class CountTextView extends View {
         postInvalidate();
 
     }
-    public CountTextView(Context context, @Nullable AttributeSet attrs) {
+    public ZCountTextView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         coverPaint=new Paint(Paint.ANTI_ALIAS_FLAG);
         int viewCountTextSize= (int) ZDimen.sp2px(12);

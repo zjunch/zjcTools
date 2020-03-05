@@ -25,7 +25,7 @@ import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.utils.ZStr;
 import com.android.zjctools.utils.ZToast;
-import com.android.zjctools.widget.ItemDecoration;
+import com.android.zjctools.widget.ZItemDecoration;
 import com.android.zjcutils.R;
 
 import java.util.ArrayList;
@@ -136,7 +136,8 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     private void initPictureRecyclerView() {
         mPictureAdapter = new ZPictureAdapter(mActivity, null);
         mRecyclerView.setLayoutManager(new GridLayoutManager(mActivity, 4));
-        mRecyclerView.addItemDecoration(ItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.zjcTransparent), ZDimen.dp2px(4)));
+        mRecyclerView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.zjcTransparent), ZDimen.dp2px(4)));
+        mRecyclerView.addItemDecoration(ZItemDecoration.createHorizontal(mActivity, ZColor.byRes(R.color.zjcTransparent), ZDimen.dp2px(4)));
         mRecyclerView.setAdapter(mPictureAdapter);
         mPictureAdapter.setClickListener((int position, Object object) -> {
             onPictureClick(position);
@@ -368,8 +369,6 @@ public class ZPickGridActivity extends ZPickBaseActivity {
             //如果是裁剪，因为裁剪指定了存储的Uri，所以返回的data一定为null
             if (resultCode == RESULT_OK && requestCode == ZConstant.ZJC_PICK_REQUEST_CODE_TAKE) {
                 //发送广播通知图片增加了
-                ZPicker.notifyGalleryChange(mActivity, ZPicker.getInstance().getTakeImageFile());
-
                 /**
                  * 2017-03-21 对机型做旋转处理
                  */
@@ -377,17 +376,18 @@ public class ZPickGridActivity extends ZPickBaseActivity {
 
                 ZPictureBean VMPictureBean = new ZPictureBean();
                 VMPictureBean.path = path;
-                ZPicker.getInstance().clearSelectedPictures();
+//                ZPicker.getInstance().clearSelectedPictures();
                 ZPicker.getInstance().addSelectedPicture(0, VMPictureBean, true);
+                ZPicker.notifyGalleryChange(mActivity, ZPicker.getInstance().getTakeImageFile());
                 if (ZPicker.getInstance().isCrop()) {
                     Intent intent = new Intent(mActivity, ZPickCropActivity.class);
                     startActivityForResult(intent, ZConstant.ZJC_PICK_REQUEST_CODE_CROP);  //单选需要裁剪，进入裁剪界面
-                } else {
-                    Intent intent = new Intent();
-                    List<ZPictureBean> result = ZPicker.getInstance().getSelectedPictures();
-                    intent.putParcelableArrayListExtra(ZConstant.KEY_PICK_RESULT_PICTURES, (ArrayList<? extends Parcelable>) result);
-                    setResult(RESULT_OK, intent);   //单选不需要裁剪，返回数据
-                    onFinish();
+                } else {   //单选不需要裁剪，返回数据
+//                    Intent intent = new Intent();
+//                    List<ZPictureBean> result = ZPicker.getInstance().getSelectedPictures();
+//                    intent.putParcelableArrayListExtra(ZConstant.KEY_PICK_RESULT_PICTURES, (ArrayList<? extends Parcelable>) result);
+//                    setResult(RESULT_OK, intent);
+//                    onFinish();
                 }
             } else if (isDirectCamera) {
                 onFinish();

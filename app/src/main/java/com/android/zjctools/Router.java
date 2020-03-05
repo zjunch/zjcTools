@@ -2,6 +2,7 @@ package com.android.zjctools;
 
 import android.app.Activity;
 
+import com.android.zjctools.ninepicture.NinePictureActivity;
 import com.android.zjctools.router.ZRouter;
 
 public class Router extends ZRouter {
@@ -11,7 +12,7 @@ public class Router extends ZRouter {
     }
 
     public static  void goTestGlideCach(Activity activity){
-        overlay(activity, GlideTestCachActivity.class);
+        overlay(activity, NinePictureActivity.class);
     }
 
     public static  void goToast(Activity activity){

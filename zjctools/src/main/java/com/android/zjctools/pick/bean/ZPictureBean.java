@@ -19,6 +19,7 @@ public class ZPictureBean implements Serializable, Parcelable {
     public int height;        //图片的高度
     public String mimeType;   //图片的类型
     public long addTime;      //图片的创建时间
+    public String compressPath;   //图片的压缩路径，防止重复压缩
 
     /**
      * 图片的路径和创建时间相同就认为是同一张图片
@@ -27,7 +28,7 @@ public class ZPictureBean implements Serializable, Parcelable {
     public boolean equals(Object o) {
         if (o instanceof ZPictureBean) {
             ZPictureBean bean = (ZPictureBean) o;
-            return this.path.equalsIgnoreCase(bean.path) && this.addTime == bean.addTime;
+            return this.path.equalsIgnoreCase(bean.path);
         }
 
         return super.equals(o);

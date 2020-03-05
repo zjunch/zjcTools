@@ -45,7 +45,7 @@ public class IMGLoader {
         ILoaderListener.Options options = new ILoaderListener.Options(cover);
         options.isRadius = true;
         options.radiusSize = ZDimen.dp2px(8);
-        load(context, options, imageView, R.drawable.ic_logo);
+        load(context, options, imageView, R.drawable.zjc_picture_default);
     }
 
     /**
@@ -58,7 +58,7 @@ public class IMGLoader {
     public static void loadCircleAvatar(Context context, String avatar, ImageView imageView) {
         ILoaderListener.Options options = new ILoaderListener.Options(avatar);
         options.isCircle = true;
-        load(context, options, imageView, R.drawable.ic_logo);
+        load(context, options, imageView, R.drawable.zjc_picture_default);
     }
 
     /**
@@ -72,7 +72,7 @@ public class IMGLoader {
         ILoaderListener.Options options = new ILoaderListener.Options(avatar);
         options.isRadius = true;
         options.radiusSize =ZDimen.dp2px(6);
-        load(context, options, imageView, R.drawable.ic_logo);
+        load(context, options, imageView, R.drawable.zjc_picture_default);
     }
 
     /**
@@ -123,7 +123,7 @@ public class IMGLoader {
      * @return
      */
     private static RequestBuilder<Drawable> placeholder(Context context, ILoaderListener.Options options) {
-        int resId = R.drawable.ic_logo;
+        int resId = R.drawable.zjc_picture_default;
         return placeholder(context, options, resId);
     }
 

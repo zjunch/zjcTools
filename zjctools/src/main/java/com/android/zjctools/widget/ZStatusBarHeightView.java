@@ -14,21 +14,21 @@ import com.android.zjcutils.R;
  * 功能:状态栏高度View,用于沉浸占位
  */
 
-public class StatusBarHeightView extends LinearLayout {
+public class ZStatusBarHeightView extends LinearLayout {
     private int statusBarHeight;
     private int type;
 
-    public StatusBarHeightView(Context context, @Nullable AttributeSet attrs) {
+    public ZStatusBarHeightView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(attrs);
     }
 
-    public StatusBarHeightView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ZStatusBarHeightView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(attrs);
     }
 
-    public StatusBarHeightView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ZStatusBarHeightView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr);
         init(attrs);
     }
@@ -44,8 +44,8 @@ public class StatusBarHeightView extends LinearLayout {
             statusBarHeight = 0;
         }
         if (attrs != null) {
-            TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.StatusBarHeightView);
-            type = typedArray.getInt(R.styleable.StatusBarHeightView_use_type, 0);
+            TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZStatusBarHeightView);
+            type = typedArray.getInt(R.styleable.ZStatusBarHeightView_use_type, 0);
             typedArray.recycle();
         }
         if (type == 1) {
