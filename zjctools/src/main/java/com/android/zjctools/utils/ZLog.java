@@ -18,7 +18,7 @@ public class ZLog {
      */
 
     // 这里设置默认的 Tag
-    private static String mTag = "VMTools";
+    private static String mTag = "zjcTools";
 
     // 日志级别，默认为 ERROR
     private static int mLevel = Level.ERROR;
