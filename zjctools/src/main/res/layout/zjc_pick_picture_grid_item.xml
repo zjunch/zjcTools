@@ -19,12 +19,11 @@
         android:layout_alignParentEnd="true"
         android:descendantFocusability="blocksDescendants"
         android:gravity="end|top"
-        android:background="@color/zjc_half8"
-        android:paddingBottom="@dimen/zjc_padding_small"
+        android:background="@color/zjcTransparent"
+        android:paddingBottom="@dimen/zjc_padding_large"
         android:paddingEnd="@dimen/zjc_padding_small"
-        android:paddingStart="@dimen/zjc_padding_small"
-        android:paddingTop="@dimen/zjc_padding_small"
-        >
+        android:paddingStart="@dimen/zjc_padding_large"
+        android:paddingTop="@dimen/zjc_padding_small">
         <CheckBox
             android:id="@+id/zjc_pick_grid_item_cb"
             android:layout_width="wrap_content"
