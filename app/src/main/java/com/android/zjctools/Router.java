@@ -1,9 +1,14 @@
 package com.android.zjctools;
 
 import android.app.Activity;
+import android.content.Context;
 
+import com.android.zjctools.display.DisplayMultiActivity;
 import com.android.zjctools.ninepicture.NinePictureActivity;
+import com.android.zjctools.router.ZParams;
 import com.android.zjctools.router.ZRouter;
+
+import java.util.List;
 
 public class Router extends ZRouter {
 
@@ -20,5 +25,16 @@ public class Router extends ZRouter {
     }
     public static  void goSelectPictures(Activity activity){
         overlay(activity, SelectActivity.class);
+    }
+
+
+    /**
+     * 展示图片
+     */
+    public static void goDisplayMulti(Context context, int position, List<String> pictureList) {
+       ZParams params = new ZParams();
+        params.what = position;
+        params.strList = pictureList;
+        overlay(context, DisplayMultiActivity.class, params);
     }
 }

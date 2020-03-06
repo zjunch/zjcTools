@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -22,19 +23,19 @@ import com.android.zjcutils.R;
 
 
 /**
- * Create by lzan13 on 2019/5/19 12:36
+ * Create by zjun on 2019/12/19
  *
  * 自定义 VMTopBar 控件
  */
 public class ZTopBar extends RelativeLayout {
 
     // 控件
-    private ImageView mIconBtn;
+    private ImageView mIconBackBtn; //左侧返回键
     private TextView mTitleView;
     private TextView mSubtitleView;
     private LinearLayout mEndContainer;
-    private TextView mEndBtn;
-    private ImageButton mEndIconBtn;
+    private TextView mEndBtn;   //右侧保存确定文字按钮
+    private ImageButton mEndIconBtn;//右侧删除等图片按钮
 
     // 设置数据
     private int mIcon;
@@ -71,7 +72,7 @@ public class ZTopBar extends RelativeLayout {
     private void init(Context context, AttributeSet attrs) {
         LayoutInflater.from(context).inflate(R.layout.zjc_widget_top_bar, this);
 
-        mIconBtn = findViewById(R.id.zjc_top_bar_icon);
+        mIconBackBtn = findViewById(R.id.zjc_top_bar_back_icon);
         mTitleView = findViewById(R.id.zjc_top_bar_title_tv);
         mSubtitleView = findViewById(R.id.zjc_top_bar_subtitle_tv);
         mEndContainer = findViewById(R.id.zjc_top_bar_end_container);
@@ -85,10 +86,10 @@ public class ZTopBar extends RelativeLayout {
         handleAttrs(context, attrs);
 
         if (mIcon == 0) {
-            mIconBtn.setVisibility(GONE);
+            mIconBackBtn.setVisibility(GONE);
         } else {
-            mIconBtn.setVisibility(VISIBLE);
-            mIconBtn.setImageResource(mIcon);
+            mIconBackBtn.setVisibility(VISIBLE);
+            mIconBackBtn.setImageResource(mIcon);
         }
 
         if (!ZStr.isEmpty(mTitle)) {
@@ -164,16 +165,23 @@ public class ZTopBar extends RelativeLayout {
     }
 
     /**
-     * 设置图标
+     * 设置返回键图标
      */
-    public void setIcon(int resId) {
+    public void setBackIcon(int resId) {
         mIcon = resId;
         if (mIcon == 0) {
-            mIconBtn.setVisibility(GONE);
+            mIconBackBtn.setVisibility(GONE);
         } else {
-            mIconBtn.setVisibility(VISIBLE);
-            mIconBtn.setImageResource(mIcon);
+            mIconBackBtn.setVisibility(VISIBLE);
+            mIconBackBtn.setImageResource(mIcon);
         }
+    }
+
+    /**
+     * 设置返回键图标颜色
+     */
+    public void setBackIconColor(int colorId) {
+        mIconBackBtn.setColorFilter(colorId, PorterDuff.Mode.SRC_IN);
     }
 
 
@@ -273,7 +281,7 @@ public class ZTopBar extends RelativeLayout {
     }
 
     /**
-     * 设置图标
+     * 设置返回键图标
      */
     public void setEndIcon(int resId) {
         mEndIcon = resId;
@@ -285,11 +293,12 @@ public class ZTopBar extends RelativeLayout {
         }
     }
 
+
     /**
      * 设置图标点击监听
      */
     public void setIconListener(OnClickListener listener) {
-        mIconBtn.setOnClickListener(listener);
+        mIconBackBtn.setOnClickListener(listener);
     }
 
     /**

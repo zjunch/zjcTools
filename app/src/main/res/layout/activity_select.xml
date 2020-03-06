@@ -14,13 +14,23 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/zjc_dimen_12"
     android:gravity="center"
-    android:text="选择图片"/>
+    android:text="选择多张图片"/>
+
+
+  <TextView
+      android:id="@+id/tvSelectSingle"
+      android:layout_marginTop="90dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/zjc_dimen_12"
+      android:gravity="center"
+      android:text="选择单张带裁剪图片"/>
   <com.android.zjctools.widget.nineimages.ZNinePicturesView
       android:id="@+id/ninePics"
       android:layout_width="match_parent"
       android:layout_height="300dp"
       app:zjc_nine_full_One="true"
       app:zjc_nine_max_counts="9"
-      android:layout_marginTop="100dp"
+      android:layout_marginTop="150dp"
       app:zjc_nine_average2_enable="true"/>
 </RelativeLayout>

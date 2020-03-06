@@ -9,8 +9,8 @@
     tools:context="com.android.zjctools.widget.ZTopBar">
     <!--左侧按钮-->
     <ImageView
-        android:id="@+id/zjc_top_bar_icon"
-        android:padding="10dp"
+        android:id="@+id/zjc_top_bar_back_icon"
+        android:padding="12dp"
         android:layout_width="@dimen/zjc_dimen_48"
         android:layout_height="@dimen/zjc_dimen_48"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +29,7 @@
         android:textSize="@dimen/zjc_size_18"
         app:layout_constraintBottom_toTopOf="@+id/zjc_top_bar_subtitle_tv"
         app:layout_constraintEnd_toStartOf="@+id/zjc_top_bar_end_container"
-        app:layout_constraintStart_toEndOf="@+id/zjc_top_bar_icon"
+        app:layout_constraintStart_toEndOf="@+id/zjc_top_bar_back_icon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_goneMarginEnd="@dimen/zjc_margin_large"
         app:layout_goneMarginStart="@dimen/zjc_margin_large"

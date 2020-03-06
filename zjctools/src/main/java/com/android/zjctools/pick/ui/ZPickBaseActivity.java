@@ -12,7 +12,7 @@ import com.android.zjcutils.R;
 
 
 /**
- * Create by lzan13 on 2019/05/19 20:20
+ * copy lzan13 代码
  * 选择器基类
  */
 public abstract class ZPickBaseActivity extends ZBActivity {

@@ -24,6 +24,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 
+import com.android.zjctools.pick.ZPicker;
 import com.android.zjctools.pick.bean.ZPictureBean;
 import com.android.zjctools.utils.ZDate;
 import com.android.zjctools.utils.ZDimen;
@@ -97,6 +98,9 @@ public class ZCropView extends AppCompatImageView {
     private boolean isInited = false;   // 是否经过了 onSizeChanged 初始化
     private boolean mSaving = false;    // 是否正在保存
     private static Handler mHandler = new InnerHandler();
+
+
+    File saveFile;   //保存的图片
 
     public ZCropView(Context context) {
         this(context, null);
@@ -591,6 +595,7 @@ public class ZCropView extends AppCompatImageView {
      * @param isSaveRectangle 是否希望按矩形区域保存图片
      */
     public void saveBitmapToFile(String folder, int expectWidth, int exceptHeight, boolean isSaveRectangle) {
+
         if (mSaving) {
             return;
         }
@@ -603,7 +608,7 @@ public class ZCropView extends AppCompatImageView {
 
         final Bitmap croppedImage = getCropBitmap(expectWidth, exceptHeight, isSaveRectangle);
         Bitmap.CompressFormat outputFormat = Bitmap.CompressFormat.JPEG;
-        File saveFile = ZFile.createFile(folder, "IMG_", ".jpg");
+        saveFile= ZFile.createFile(folder, "IMG_", ".jpg");
         if (mFocusStyle == Style.CIRCLE && !isSaveRectangle) {
             outputFormat = Bitmap.CompressFormat.PNG;
             saveFile = ZFile.createFile(folder, "IMG_", ".png");
@@ -618,6 +623,7 @@ public class ZCropView extends AppCompatImageView {
             public void run() {
                 boolean result = ZBitmap.saveBitmapToSDCard(croppedImage, finalOutputFormat, bean.path);
                 if (result) {
+                    ZPicker.notifyGalleryChange(getContext(), saveFile);//通知图片库更新
                     Message.obtain(mHandler, SAVE_SUCCESS, bean).sendToTarget();
                 } else {
                     Message.obtain(mHandler, SAVE_ERROR, bean).sendToTarget();

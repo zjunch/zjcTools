@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Create by lzan13 on 2019/05/17
+ * Create by zjun on 2019/12/17
  *
  * 图片预览界面
  */
@@ -81,13 +81,14 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
         mCurrentPosition = getIntent().getIntExtra(ZConstant.KEY_PICK_CURRENT_SELECTED_POSITION, 0);
         isPreviewFolder = getIntent().getBooleanExtra(ZConstant.KEY_PICK_PREVIEW_ALL, false);
         isOrigin = getIntent().getBooleanExtra(ZConstant.ZJC_KEY_PICK_IS_ORIGIN, false);
-
+        mPictures=new ArrayList<>();
         if (isPreviewFolder) {
-            mPictures = ZPicker.getInstance().getCurrentFolderPictures();
+           // mPictures = ZPicker.getInstance().getCurrentFolderPictures();
+            mPictures.addAll(ZPicker.getInstance().getCurrentFolderPictures());
         } else {
-            mPictures = ZPicker.getInstance().getSelectedPictures();
+           // mPictures = ZPicker.getInstance().getSelectedPictures();
+            mPictures.addAll(ZPicker.getInstance().getSelectedPictures());
         }
-
         mSelectedPictures = ZPicker.getInstance().getSelectedPictures();
         getTopBar().setTitle(ZStr.byResArgs(R.string.zjc_pick_preview_picture_count, mCurrentPosition + 1, mPictures.size()));
         getTopBar().setIconListener(v -> {

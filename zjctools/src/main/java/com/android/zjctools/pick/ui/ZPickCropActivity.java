@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Create by lzan13 on 2019/05/16 20:37
+ * copy lzan13 代码
  *
  * 修剪图片
  */
@@ -46,6 +46,7 @@ public class ZPickCropActivity extends ZPickBaseActivity implements ZCropView.On
             setResult(RESULT_CANCELED);
             onFinish();
         });
+        getTopBar().setTitleColor(R.color.zjcWhite);
         getTopBar().setEndBtnTextColor(ZColor.byRes(R.color.zjcWhite));
         getTopBar().setEndBtnListener(v -> mCropView.saveBitmapToFile(ZPicker.getInstance()
             .getCropCacheFolder(), mCropOutWidth, mCropOutHeight, mIsSaveRectangle));

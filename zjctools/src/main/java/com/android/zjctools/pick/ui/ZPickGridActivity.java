@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Crete by lzan13 on 2019/05/19 11:32
+ * Crete by zjun on 2019/12/14
  *
  * 图片选择界面
  */
@@ -92,7 +92,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
         mPreviewBtn.setOnClickListener(viewListener);
         mChangeDirView.setOnClickListener(viewListener);
         getTopBar().setIconListener(v -> onFinish());
-
+        getTopBar().setBackIconColor(ZColor.byRes(R.color.zjcBlack));
         if (ZPicker.getInstance().isMultiMode()) {
             getTopBar().setEndBtnListener(v -> {
                 Intent intent = new Intent();
@@ -249,6 +249,11 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     private void onPictureClick(int position) {
         // 判断第一个是不是相机，如果是，特殊处理
         if (ZPicker.getInstance().isShowCamera() && position == 0) {
+            if(ZPicker.getInstance().getSelectPictureCount()>=ZPicker.getInstance().getSelectLimit()){//图片个数超限
+                String toastMsg = ZStr.byResArgs(R.string.zjc_pick_select_limit, ZPicker.getInstance().getSelectLimit());
+                ZToast.create().showErrorBottom(toastMsg);
+                return;
+            }
             openCamera();
         } else {
             position = isShowCamera ? position - 1 : position;
@@ -368,7 +373,6 @@ public class ZPickGridActivity extends ZPickBaseActivity {
         } else {
             //如果是裁剪，因为裁剪指定了存储的Uri，所以返回的data一定为null
             if (resultCode == RESULT_OK && requestCode == ZConstant.ZJC_PICK_REQUEST_CODE_TAKE) {
-                //发送广播通知图片增加了
                 /**
                  * 2017-03-21 对机型做旋转处理
                  */
@@ -378,6 +382,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
                 VMPictureBean.path = path;
 //                ZPicker.getInstance().clearSelectedPictures();
                 ZPicker.getInstance().addSelectedPicture(0, VMPictureBean, true);
+                //发送广播通知图片增加了
                 ZPicker.notifyGalleryChange(mActivity, ZPicker.getInstance().getTakeImageFile());
                 if (ZPicker.getInstance().isCrop()) {
                     Intent intent = new Intent(mActivity, ZPickCropActivity.class);

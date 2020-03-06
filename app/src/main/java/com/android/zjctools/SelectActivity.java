@@ -17,15 +17,17 @@ import com.android.zjctools.bean.FunctionBean;
 import com.android.zjctools.glide.IMManager;
 import com.android.zjctools.pick.ZPicker;
 import com.android.zjctools.pick.bean.ZPictureBean;
+import com.android.zjctools.router.ZRouter;
 import com.android.zjctools.widget.nineimages.ZNinePicturesView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SelectActivity extends ZBActivity {
-    TextView tvSelect;
+    TextView tvSelect,tvSelectSingle;
     ZNinePicturesView ninePics;
     List<ZPictureBean> selecteds = new ArrayList<>();
+    int selectType=-1;
 
     @Override
     protected int layoutId() {
@@ -35,6 +37,7 @@ public class SelectActivity extends ZBActivity {
     @Override
     protected void initUI() {
         tvSelect = findViewById(R.id.tvSelect);
+        tvSelectSingle=findViewById(R.id.tvSelectSingle);
         ninePics = findViewById(R.id.ninePics);
     }
 
@@ -46,7 +49,18 @@ public class SelectActivity extends ZBActivity {
     protected void initListener() {
         super.initListener();
         tvSelect.setOnClickListener(v -> {
+            if(selectType==1){
+                selecteds.clear();
+            }
+            selectType=0;
             IMManager.showMultiPicker(mActivity, 9, selecteds);
+        });
+        tvSelectSingle.setOnClickListener(v -> {
+            if(selectType==0){
+                selecteds.clear();
+            }
+            selectType=1;
+            IMManager.showSinglePicker(mActivity);
         });
     }
 
@@ -65,7 +79,9 @@ public class SelectActivity extends ZBActivity {
             }
         });
         ninePics.setImageUrls(strings);
-
+        ninePics.setOnclickItemListenr((view, position) -> {
+            Router.goDisplayMulti(mActivity, position, strings);
+        });
     }
 
 

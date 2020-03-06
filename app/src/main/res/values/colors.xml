@@ -3,4 +3,6 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">@color/zjcBlue</color>
+    <color name="picture_in">#3a5d8e</color>
+
 </resources>

@@ -14,6 +14,8 @@
         <activity android:name=".ToastActivity" />
         <activity android:name=".ninepicture.NinePictureActivity" />
         <activity android:name=".BottomWindowActivity" />
+        <activity android:name=".display.DisplayMultiActivity" />
+        <activity android:name=".display.DisplaySingleActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/ZJCTheme.Launcher">
