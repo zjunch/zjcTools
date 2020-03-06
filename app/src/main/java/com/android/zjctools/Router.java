@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.android.zjctools.display.DisplayMultiActivity;
+import com.android.zjctools.file.TestFileActivity;
 import com.android.zjctools.ninepicture.NinePictureActivity;
 import com.android.zjctools.router.ZParams;
 import com.android.zjctools.router.ZRouter;
@@ -25,6 +26,10 @@ public class Router extends ZRouter {
     }
     public static  void goSelectPictures(Activity activity){
         overlay(activity, SelectActivity.class);
+    }
+
+    public static  void goFile(Activity activity){
+        overlay(activity, TestFileActivity.class);
     }
 
 

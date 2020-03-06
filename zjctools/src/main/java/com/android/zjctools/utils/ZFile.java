@@ -13,6 +13,12 @@ import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 
+import com.android.zjctools.interface_function.ZCallback;
+import com.android.zjctools.interface_function.ZFunctionManager;
+import com.android.zjctools.interface_function.ZFunctionOnlyParam;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,6 +26,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -204,6 +212,53 @@ public class ZFile {
         }
         return null;
     }
+
+
+    /**
+     * 从网络下载图片
+     * @param pdfUrl  文件的网络地址
+     * @param savePath 要保存到文件夹,会在根目录创建改文件夹
+     * @param fileType  文件后缀，如 img,pdf
+
+     */
+    public static  void downloadFileByNetWork(final  String pdfUrl, String savePath, String fileType, ZCallback <File>zCallback) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                URL url = null;
+                try {
+                    url = new URL(pdfUrl);
+                    HttpURLConnection urlConn = (HttpURLConnection) url
+                            .openConnection();
+                    BufferedInputStream bis = new BufferedInputStream(urlConn
+                            .getInputStream());
+                    File appCacheDir = new File(getSDCard() + savePath);
+                    if (!appCacheDir.exists()) {
+                        appCacheDir.mkdirs();
+                    }
+                    String path=getSDCard() + savePath+"/" + System.currentTimeMillis() + fileType;
+                    FileOutputStream fos = new FileOutputStream(path);
+                    BufferedOutputStream bos = new BufferedOutputStream(fos);
+                    byte[] buf = new byte[3 * 1024];
+                    int result = bis.read(buf);
+                    while (result != -1) {
+                        bos.write(buf, 0, result);
+                        result = bis.read(buf);
+                    }
+                    bos.flush();
+                    bis.close();
+                    fos.close();
+                    bos.close();
+                    zCallback.onSuccess(new File(path));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    zCallback.onError(-1,e.getMessage());
+                }
+            }
+        }).start();
+
+    }
+
 
     /**
      * 读取文件到 Bitmap

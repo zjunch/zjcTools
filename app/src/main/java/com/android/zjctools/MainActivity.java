@@ -34,6 +34,7 @@ public class MainActivity extends ZBActivity {
         items.add(new FunctionBean("九宫格",1));
         items.add(new FunctionBean("toast",2));
         items.add(new FunctionBean("选择图片",3));
+        items.add(new FunctionBean("测试file",4));
     }
 
     @Override
@@ -65,6 +66,8 @@ public class MainActivity extends ZBActivity {
                 Router.goToast(mActivity);
             }else if(item.type==3){
                 Router.goSelectPictures(mActivity);
+            }else if(item.type==4){
+                Router.goFile(mActivity);
             }
         });
     }
