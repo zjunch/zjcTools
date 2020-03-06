@@ -1,3 +1,4 @@
 # zjcTools
-常用工具
-我想看看这个添加会到哪里去
+常用工具库，
+包含常用toast,bitmap，file,date,图片选择，权限
+
