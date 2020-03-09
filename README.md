@@ -3,7 +3,7 @@
 toast,bitmap，file,date，router
 图片选择，权限申请
 
-简单view，设置类型view（ZSettingView），九宫格图片（ZNinePicturesView），点赞头像堆叠（ZPileLayout），recycleview分割线（CommItemDecoration）等
+简单view，设置类型view（ZSettingView），九宫格图片（ZNinePicturesView），点赞头像堆叠（ZPileLayout），recycleview分割线（ZItemDecoration）等
 
 
 引用方式：
