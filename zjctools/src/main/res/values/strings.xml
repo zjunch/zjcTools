@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">zjcUtils</string>
+    <string name="tool_name">zjcTools</string>
+
     <string name="zjc_loading">正在加载...</string>
     <string name="zjc_i_know">我知道了</string>
     <string name="zjc_btn_cancel">取消</string>

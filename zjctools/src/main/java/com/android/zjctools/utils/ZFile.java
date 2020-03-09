@@ -12,10 +12,12 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 
 import com.android.zjctools.interface_function.ZCallback;
 import com.android.zjctools.interface_function.ZFunctionManager;
 import com.android.zjctools.interface_function.ZFunctionOnlyParam;
+import com.android.zjcutils.R;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -219,7 +221,6 @@ public class ZFile {
      * @param pdfUrl  文件的网络地址
      * @param savePath 要保存到文件夹,会在根目录创建改文件夹
      * @param fileType  文件后缀，如 img,pdf
-
      */
     public static  void downloadFileByNetWork(final  String pdfUrl, String savePath, String fileType, ZCallback <File>zCallback) {
         new Thread(new Runnable() {
@@ -232,10 +233,21 @@ public class ZFile {
                             .openConnection();
                     BufferedInputStream bis = new BufferedInputStream(urlConn
                             .getInputStream());
-                    File appCacheDir = new File(getSDCard() + savePath);
+                    if(TextUtils.isEmpty(fileType)){//如 .jpg  .pdf
+                        zCallback.onError(-1,"未设置文件类型");
+                        return;
+                    }
+                    //创建文件目录
+                    File appCacheDir;
+                    if(!TextUtils.isEmpty(savePath)){
+                        appCacheDir = new File(getSDCard() + savePath);
+                    }else{
+                        appCacheDir = new File(getSDCard() + ZStr.byRes(R.string.tool_name));
+                    }
                     if (!appCacheDir.exists()) {
                         appCacheDir.mkdirs();
                     }
+                    //设置文件存放路径
                     String path=getSDCard() + savePath+"/" + System.currentTimeMillis() + fileType;
                     FileOutputStream fos = new FileOutputStream(path);
                     BufferedOutputStream bos = new BufferedOutputStream(fos);
