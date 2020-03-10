@@ -15,7 +15,7 @@ toast,bitmap，file,date，router
     }
 }
 
-二 、module: implementation 'com.zjun:zjcTools:0.0.7'
+二 、module: implementation 'com.zjun:zjcTools:0.0.6'
 
 
 三 、初始化工具  ZTools.init(this);
