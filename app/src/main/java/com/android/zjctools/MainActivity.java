@@ -73,7 +73,7 @@ public class MainActivity extends ZBActivity {
     }
 
     private void  getPermission(){
-        ZPermission.getInstance(this).requestCamera(new ZPermission.PCallback() {
+        ZPermission.getInstance(this).requestStorage(new ZPermission.PCallback() {
             @Override
             public void onReject() {
                 ZLog.e("onReject");

@@ -238,17 +238,15 @@ public class ZFile {
                         return;
                     }
                     //创建文件目录
-                    File appCacheDir;
+                    String pathDirectory;
                     if(!TextUtils.isEmpty(savePath)){
-                        appCacheDir = new File(getSDCard() + savePath);
+                        pathDirectory=getSDCard() + savePath;
                     }else{
-                        appCacheDir = new File(getSDCard() + ZStr.byRes(R.string.tool_name));
+                        pathDirectory=getSDCard() + ZStr.byRes(R.string.tool_name);
                     }
-                    if (!appCacheDir.exists()) {
-                        appCacheDir.mkdirs();
-                    }
+                    createDirectory(pathDirectory);
                     //设置文件存放路径
-                    String path=getSDCard() + savePath+"/" + System.currentTimeMillis() + fileType;
+                    String path=pathDirectory+"/" + System.currentTimeMillis() + fileType;
                     FileOutputStream fos = new FileOutputStream(path);
                     BufferedOutputStream bos = new BufferedOutputStream(fos);
                     byte[] buf = new byte[3 * 1024];
