@@ -5,39 +5,86 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <com.android.zjctools.widget.ZStatusBarHeightView
-        android:id="@+id/statusView"
+        android:id="@+id/zjc_bar_status_View"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <RelativeLayout
+        android:id="@+id/zjc_bar_rv_title"
         android:layout_width="match_parent"
         android:layout_height="48dp">
         <ImageView
-            android:id="@+id/ivBack"
+            android:id="@+id/zjc_bar_iv_back"
             android:layout_width="@dimen/zjc_dimen_40"
             android:layout_height="@dimen/zjc_dimen_40"
             android:layout_centerVertical="true"
-            android:padding="10dp"
+            android:padding="@dimen/zjc_dimen_10"
             android:src="@drawable/zjc_ic_back_color" />
 
         <TextView
-            android:id="@+id/tvTitle"
+            android:id="@+id/zjc_bar_tv_left_title"
+            android:layout_toRightOf="@id/zjc_bar_iv_back"
+            android:layout_width="wrap_content"
+            android:paddingLeft="12dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:textColor="@color/zjcGray3"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:text="left标题" />
+
+        <TextView
+            android:id="@+id/zjc_bar_tv_center_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:textColor="@color/zjcGray3"
-            android:textSize="18sp"
-            android:text="标题" />
-
-        <TextView
-            android:id="@+id/tvSave"
+            android:textSize="16sp"
+            android:text="center标题" />
+        <RelativeLayout
+            android:id="@+id/zjc_rv_end"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:gravity="center"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/zjc_bar_tv_end"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="15dp"
+                android:textColor="@color/app_theme_color"
+                android:text="保存"
+                android:visibility="gone"
+                android:textSize="14sp" />
+            <ImageView
+                android:id="@+id/zjc_bar_iv_end"
+                android:layout_width="@dimen/zjc_dimen_40"
+                android:layout_height="@dimen/zjc_dimen_40"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/zjc_dimen_10"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:src="@drawable/zjc_ic_back_color" />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/zjc_bar_iv_end_second"
+            android:layout_width="@dimen/zjc_dimen_40"
+            android:layout_height="@dimen/zjc_dimen_40"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/zjc_rv_end"
             android:padding="10dp"
-            android:textColor="@color/app_theme_color"
-            android:text="保存"
-            android:textSize="15sp" />
+            android:visibility="gone"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/zjc_ic_back_color" />
     </RelativeLayout>
+    <View
+        android:id="@+id/zjc_bar_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/app_divide"/>
+
 </LinearLayout>

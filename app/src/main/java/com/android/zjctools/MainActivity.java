@@ -82,13 +82,6 @@ public class MainActivity extends ZBActivity {
             @Override
             public void onComplete() {
                 ZLog.e("onComplete");
-
-            }
-        });
-        findViewById(R.id.tvSave).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Router.goMainBottomWindow(mActivity);
             }
         });
     }

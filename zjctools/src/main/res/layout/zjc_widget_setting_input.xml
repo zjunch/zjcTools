@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.android.zjctools.widget.ZSettingInputView">
+
+    <TextView
+        android:id="@+id/text_title"
+        style="@style/text_16_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/zjc_dimen_10"
+        android:text="title" />
+
+    <EditText
+        android:id="@+id/input"
+        style="@style/text_16_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_toRightOf="@id/text_title"
+        android:gravity="right"
+        android:hint=""
+        android:paddingLeft="30dp"
+        android:paddingTop="@dimen/zjc_dimen_10"
+        android:paddingBottom="@dimen/zjc_dimen_10"
+        android:textColorHint="@color/zjc_Gray54" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/app_divide"
+        android:layout_below="@id/input" />
+</RelativeLayout>

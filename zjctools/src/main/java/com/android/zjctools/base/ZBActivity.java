@@ -3,11 +3,21 @@ package com.android.zjctools.base;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.android.zjctools.toorbar.StatusBarUtil;
+import com.android.zjctools.widget.ZStatusBarHeightView;
 import com.android.zjcutils.R;
 
 public abstract class ZBActivity extends ZjcActivity {
+    ZStatusBarHeightView zjcStatusBarHeightView;
+    RelativeLayout zjcRvTitleBar,zjcRvEnd;
+    TextView zjcLeftTitle,zjcCenterTitle,zjcTvEnd;
+    ImageView zjcIvBack,zjcIvEnd,zjcIvEndSecond;
+    View zjcBottomLine;
 
     public FragmentActivity mActivity;
     private boolean isDarkTextStatusBar=true;  //状态栏字体颜色默认黑色
@@ -18,6 +28,8 @@ public abstract class ZBActivity extends ZjcActivity {
         //状态栏设置
         initStatusBar();
         setContentView(layoutId());
+        //初始化标题view
+        initTitleBar();
         //获取intent传参
         getValues();
         //初始话布局
@@ -27,9 +39,114 @@ public abstract class ZBActivity extends ZjcActivity {
         //数据处理
         initData();
         //返回键处理
-        initBackView(R.id.ivBack);
+        initBackView(R.id.zjc_bar_iv_back);
         initListener();
     }
+
+    private  void initTitleBar(){
+        if(findViewById(R.id.zjc_bar_rv_title)!=null){
+            zjcStatusBarHeightView=findViewById(R.id.zjc_bar_status_View);
+            zjcRvTitleBar=findViewById(R.id.zjc_bar_rv_title);
+            zjcLeftTitle=findViewById(R.id.zjc_bar_tv_left_title);
+            zjcCenterTitle=findViewById(R.id.zjc_bar_tv_center_title);
+            zjcRvEnd=findViewById(R.id.zjc_rv_end);
+            zjcTvEnd=findViewById(R.id.zjc_bar_tv_end);
+            zjcIvBack=findViewById(R.id.zjc_bar_iv_back);
+            zjcIvEnd=findViewById(R.id.zjc_bar_iv_end);
+            zjcIvEndSecond=findViewById(R.id.zjc_bar_iv_end_second);
+        }
+    }
+
+
+
+    /**
+     * 获取titlebar.注意使用时注意空的情况
+     * @return
+     */
+    public RelativeLayout getTitleBar(){
+        return zjcRvTitleBar;
+    }
+
+    /**
+     * 获取
+     * @return
+     */
+    public RelativeLayout getRvEnd(){
+        return zjcRvEnd;
+    }
+
+    /**
+     * 获取返回键view
+     * @return
+     */
+    public ImageView getImageBack(){
+        return zjcIvBack;
+    }
+
+
+    /**
+     * 获取状态栏等高view
+     * @return
+     */
+    public ZStatusBarHeightView getStatusView(){
+        return zjcStatusBarHeightView;
+    }
+
+
+    /**
+     * 获取左侧标题
+     * @return
+     */
+    public TextView getLeftTitleView(){
+        return zjcLeftTitle;
+    }
+
+
+    /**
+     * 获取中间标题
+     * @return
+     */
+    public TextView getCenterTitleView(){
+        return zjcCenterTitle;
+    }
+
+
+    /**
+     * 获取右侧保存
+     * @return
+     */
+    public TextView getEndTvView(){
+        return zjcTvEnd;
+    }
+
+
+
+    /**
+     * 获取右侧图片
+     * @return
+     */
+    public ImageView getEndIvView(){
+        return zjcIvEnd;
+    }
+
+    /**
+     * 获取倒数第二图片
+     * @return
+     */
+    public ImageView getEndIvSecondView(){
+        return zjcIvEndSecond;
+    }
+
+
+    /**
+     * 获取下划线
+     * @return
+     */
+    public View getBottomLine(){
+        return zjcBottomLine;
+    }
+
+
 
     /**
      * 返回键默认返回

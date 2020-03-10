@@ -15,6 +15,22 @@
         <attr name="zjc_nine_un_counts_textSzie" format="integer"/><!--未读图片个数的文字大小-->
     </declare-styleable>
 
+
+
+    <declare-styleable name="ZSettingInputView">
+        <!--是否显示底部分隔线-->
+        <attr name="zjc_siv_Line_enable" format="boolean" />
+        <!--标题-->
+        <attr name="zjc_siv_title_text" format="string" />
+        <!--底部分隔线颜色-->
+        <attr name="zjc_siv_line_color" format="color" />
+        <!--右侧输入框hint-->
+        <attr name="zjc_siv_hint_text" format="string" />
+        <!--右侧输入框最多字符-->
+        <attr name="zjc_siv_max_counts" format="integer" />
+
+    </declare-styleable>
+
     <declare-styleable name="ZSettingView">
         <!--是否显示底部分隔线-->
         <attr name="zjc_sv_Line_enable" format="boolean" />
@@ -114,4 +130,7 @@
         <!--装饰分割线-->
         <attr name="zjc_is_center" format="boolean" />
     </declare-styleable>
+
+
+
 </resources>
