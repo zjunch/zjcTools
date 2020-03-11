@@ -1,32 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.zjcutils" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.zjcutils">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
+
         <activity
             android:name="com.android.zjctools.permission.ZPermissionActivity"
-            android:theme="@style/ZJCTheme.Permission"
-            android:configChanges="orientation|keyboardHidden" />
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/ZJCTheme.Permission" /> <!-- 选择器界面 -->
 
-
-        <!--选择器界面-->
+        <activity android:name="com.android.zjctools.appupdate.ZAppUpdateActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/ZJCTheme.Translucent" ></activity>
         <activity
             android:name="com.android.zjctools.pick.ui.ZPickGridActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"/>
-        <!--剪切界面-->
+            android:screenOrientation="portrait" /> <!-- 剪切界面 -->
         <activity
             android:name="com.android.zjctools.pick.ui.ZPickCropActivity"
             android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="false"
-            android:screenOrientation="portrait"/>
-        <!--预览界面-->
+            android:screenOrientation="portrait" /> <!-- 预览界面 -->
         <activity
             android:name="com.android.zjctools.pick.ui.ZPickPreviewActivity"
             android:configChanges="orientation|screenSize"
@@ -39,7 +36,27 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/vm_provider_paths" />
+                android:resource="@xml/zjc_provider_paths" />
+        </provider>
+
+        <service android:name="com.android.zjctools.appupdate.ZUpdateService" />
+        <provider
+            android:name="com.android.zjctools.appupdate.ZAppInstallProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/zjc_app_update_provider_paths" />
         </provider>
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 </manifest>

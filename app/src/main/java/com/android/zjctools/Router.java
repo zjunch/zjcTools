@@ -2,7 +2,10 @@ package com.android.zjctools;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 
+import com.android.zjctools.appupdate.ZAppUpdateBean;
+import com.android.zjctools.appupdate.ZAppUpdateActivity;
 import com.android.zjctools.display.DisplayMultiActivity;
 import com.android.zjctools.file.TestFileActivity;
 import com.android.zjctools.ninepicture.NinePictureActivity;
@@ -30,6 +33,12 @@ public class Router extends ZRouter {
 
     public static  void goFile(Activity activity){
         overlay(activity, TestFileActivity.class);
+    }
+
+    public static  void goAppUpdate(Activity activity, ZAppUpdateBean appUpdateBean){
+        Intent intent=new Intent(activity,ZAppUpdateActivity.class);
+        putParams(intent,appUpdateBean);
+        overlay(activity,intent);
     }
 
 

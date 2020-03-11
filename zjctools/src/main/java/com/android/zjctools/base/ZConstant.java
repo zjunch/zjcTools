@@ -3,8 +3,25 @@ package com.android.zjctools.base;
 public class ZConstant {
 
     /**
-     * 借用牛逼哄哄的 lzan13 代码
+     * 申请app安装权限
      */
+    public static final int INSTALL_PERMISSION = 8001;
+    public static final int INSTALL_RESULT = 8002;
+
+
+
+    public static final String CACHE_IMAGES = "images";
+    public static final String CACHE_APK = "apks";
+
+    public static final String APK_DIRECTORY = "zjc_apk_directory";
+    public static final String APK_URL = "zjc_apk_url";
+    public static final String APP_LOGO = "zjc_app_logo";
+
+    public static final String App_UPDATE_PROGRESS = "zjc_update_progress";//app下载更新进度
+    public static final String APP_DOWNLOAD_FINISH = "zjc_app_download_finish";//app下载完成
+    public static final String App_INSTALL_APP = "zjc_app_start_install";//安装app
+
+
 
     /**
      * 权限传参的 key
@@ -40,7 +57,6 @@ public class ZConstant {
     public static final String KEY_PICK_CURRENT_SELECTED_POSITION = "key_pick_current_selected_position";
     // 是否预览全部
     public static final String KEY_PICK_PREVIEW_ALL = "key_pick_preview_all";
-
 
 
 }

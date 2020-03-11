@@ -10,6 +10,7 @@ import com.android.zjctools.R;
 import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.interface_function.ZCallback;
 import com.android.zjctools.utils.ZFile;
+import com.android.zjctools.utils.ZLog;
 import com.android.zjctools.utils.ZToast;
 
 import java.io.File;
@@ -36,6 +37,7 @@ public class TestFileActivity extends ZBActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            ZLog.e("下载成功");
                             ZToast.create().showSuccessBottom("下载成功："+file.getAbsolutePath());
                         }
                     });
@@ -54,7 +56,7 @@ public class TestFileActivity extends ZBActivity {
 
                 @Override
                 public void onProgress(int progress, String desc) {
-
+                    ZLog.e(desc+":"+progress);
                 }
             });
         });

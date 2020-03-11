@@ -250,10 +250,14 @@ public class ZFile {
                     FileOutputStream fos = new FileOutputStream(path);
                     BufferedOutputStream bos = new BufferedOutputStream(fos);
                     byte[] buf = new byte[3 * 1024];
-                    int result = bis.read(buf);
-                    while (result != -1) {
-                        bos.write(buf, 0, result);
-                        result = bis.read(buf);
+                    int len =0;
+                    long total = urlConn.getContentLength();
+                    long sum = 0;
+                    while ((len = bis.read(buf)) != -1) {
+                        fos.write(buf, 0, len);
+                        sum += len;
+                       int  progress = (int) (sum * 1.0f / total * 100);
+                        zCallback.onProgress(progress,"下载进度");
                     }
                     bos.flush();
                     bis.close();

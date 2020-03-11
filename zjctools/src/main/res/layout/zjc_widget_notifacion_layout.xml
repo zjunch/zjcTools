@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:background="@color/zjcWhite">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notify_download_iv"
+        android:layout_marginTop="12dp"
+       android:scaleType="centerCrop"
+        android:layout_centerVertical="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notify_tv"
+        android:textColor="@color/zjc_Gray54"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/notify_download_iv"
+        android:text="正在下载..."/>
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="7.5dp"
+        android:id="@+id/notify_progress_pb"
+        android:max="100"
+        android:progress="50"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="20dp"
+        android:progressDrawable="@drawable/zjc_update_notifunction_progress"
+        android:visibility="visible"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_below="@+id/notify_tv"
+        android:layout_toRightOf="@+id/notify_download_iv"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/zjc_Gray54"
+        android:id="@+id/notify_progress_instruction_tv"
+        android:layout_below="@+id/notify_progress_pb"
+        android:text="客户端已经下载了"
+        android:layout_toRightOf="@+id/notify_download_iv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:id="@+id/notify_progress_tv"
+        android:textColor="@color/zjc_Gray54"
+        android:layout_toRightOf="@+id/notify_progress_instruction_tv"
+        android:layout_below="@+id/notify_progress_pb"
+        android:text="50%"
+        />
+
+</RelativeLayout>

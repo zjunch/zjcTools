@@ -46,11 +46,9 @@ publish {
     userOrg = 'zjun'  //bintray注册的用户名
     groupId = 'com.zjun'  //compile引用时的第1部分groupId
     artifactId = 'zjcTools'       //compile引用时的第2部分项目名
-    publishVersion = '0.0.6'     //compile引用时的第3部分版本号
+    publishVersion = '0.0.7'     //compile引用时的第3部分版本号
     desc = '调整图片选择库'
     website = 'https://github.com/zjunch/zjcTools'
 
 //    gradlew clean build bintrayUpload -PbintrayUser=zjun -PbintrayKey=807f0b78a817710052bd66aa28cc736b36172fa3 -PdryRun=false
 }
-
-

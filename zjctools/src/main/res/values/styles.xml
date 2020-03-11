@@ -37,6 +37,11 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <!--透明主题-->
+    <style name="ZJCTheme.Translucent">
+        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 
     <style name="text_12_gray_99">
         <item name="android:textSize">12sp</item>

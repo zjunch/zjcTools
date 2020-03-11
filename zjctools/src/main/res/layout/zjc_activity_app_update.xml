@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lvAll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zjc_half5"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/zjc_dimen_40"
+        android:layout_width="wrap_content"
+        android:background="@color/zjcWhite"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/zjc_iv_bg"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/zjc_bg_app_update" />
+
+        <TextView
+            android:id="@+id/zjc_tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="43dp"
+            android:text="发现新版本"
+            android:textColor="#ffffffff"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/zjc_iv_bg"
+            android:layout_marginLeft="18dp"
+            android:text="更新的内容"
+            android:textColor="@color/zjc_Gray54"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/zjc_lv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_text"
+            android:layout_marginTop="3dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:id="@+id/zjc_pg_update"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/zjc_lv_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="13dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/zjc_progress_update_version"
+            android:visibility="gone" />
+
+
+        <RelativeLayout
+            android:id="@+id/zjc_rv_update"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_below="@+id/zjc_pg_update"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="26dp">
+
+            <TextView
+                android:id="@+id/zjv_tv_cancel"
+                android:layout_width="97dp"
+                android:layout_height="34dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/zjc_shape_conner20_gray_stoke"
+                android:gravity="center"
+                android:text="下次再说"
+                android:textColor="#ffb1b1b1"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/zjv_tv_load"
+                android:layout_width="97dp"
+                android:layout_height="34dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/zjc_shape_corner20_blue"
+                android:gravity="center"
+                android:text="去下载"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
