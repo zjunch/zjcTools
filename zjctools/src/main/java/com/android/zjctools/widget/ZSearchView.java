@@ -46,7 +46,7 @@ public class ZSearchView extends RelativeLayout {
     public ZSearchView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContentView = LayoutInflater.from(context).inflate(R.layout.zjc_widget_search_layout, this);
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZSettingView);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZSearchView);
         isShowClear = typedArray.getBoolean(R.styleable.ZSearchView_zjc_srv_clear_enable, false);
         isShowTvRightSearch = typedArray.getBoolean(R.styleable.ZSearchView_zjc_srv_right_tv_search_enable, false);
         isShowIvRightSearch = typedArray.getBoolean(R.styleable.ZSearchView_zjc_srv_right_iv_search_enable, false);

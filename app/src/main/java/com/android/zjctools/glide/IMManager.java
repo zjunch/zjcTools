@@ -50,12 +50,10 @@ public class IMManager {
      * 统一处理图片选择展示
      *
      * @param t              上下文对象
-     * @param
      * @param selectPictures 已选择图片
      * @param <T>
      */
     private static <T> void showPicker(T t,int maxCounts, List<ZPictureBean> selectPictures) {
-
         ZCropView.Style cropStyle = ZCropView.Style.RECTANGLE;
         boolean isSaveRectangle = true;
         boolean isShowCamera = true;

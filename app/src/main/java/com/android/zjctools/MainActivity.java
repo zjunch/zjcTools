@@ -109,15 +109,15 @@ public class MainActivity extends ZBActivity {
 //        list.add(new ZPermissionBean(Manifest.permission.READ_CONTACTS,"通讯录", "邀请通讯录好友，请允许我们获取访问通讯录权限，否则你将无法邀请通讯录好友"));
 //        list.add(new ZPermissionBean(Manifest.permission.ACCESS_FINE_LOCATION,"定位", "获取你的位置，和好友分享位置信息"));
 //        ZPermission.getInstance(mActivity)
-//                .setEnableDialog(false)
-//                .setPermissionList(list)
-//                .requestPermission(new ZPermission.PCallback() {
-//                    @Override
-//                    public void onReject() {}
-//
-//                    @Override
-//                    public void onComplete() {}
-//                });
+////                .setEnableDialog(false)
+////                .setPermissionList(list)
+////                .requestPermission(new ZPermission.PCallback() {
+////                    @Override
+////                    public void onReject() {}
+////
+////                    @Override
+////                    public void onComplete() {}
+////                });
 
 //        ZPermissionBean bean=    new ZPermissionBean(Manifest.permission.ACCESS_FINE_LOCATION,"定位", "获取你的位置，和好友分享位置信息");
 //        ZPermission.getInstance(mActivity)
