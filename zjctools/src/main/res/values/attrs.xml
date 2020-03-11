@@ -53,6 +53,27 @@
     </declare-styleable>
 
 
+    <declare-styleable name="ZSearchView">
+        <!--是否显示清除-->
+        <attr name="zjc_srv_clear_enable" format="boolean" />
+        <!--输入框search-->
+        <attr name="zjc_srv_search_hint" format="string" />
+        <!--是否有输入功能-->
+        <attr name="zjc_srv_search_input_enable" format="boolean" />
+
+        <!--是否显示右侧搜索文字-->
+        <attr name="zjc_srv_right_tv_search_enable" format="boolean" />
+
+        <!--右侧搜索icon-->
+        <attr name="zjc_srv_right_iv_search_icon" format="reference" />
+        <!--是否显示右侧搜索文字-->
+        <attr name="zjc_srv_right_iv_search_enable" format="boolean" />
+        <!--左侧侧搜索icon-->
+        <attr name="zjc_srv_left_iv_search_icon" format="reference" />
+
+    </declare-styleable>
+
+
     <!--自定义正方形布局-->
     <declare-styleable name="ZSquareLayout">
         <!--正方形布局大小取宽还是高度-->

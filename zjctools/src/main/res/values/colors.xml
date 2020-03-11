@@ -35,6 +35,10 @@
     <!--蓝色-->
     <color name="zjcBlue">#0000FF</color>
     <color name="zjc_blue_3a">#3a5d8e</color>
+    <color name="zjc_blue_63">#63B8FF</color>
+    <color name="zjc_blue_5c">#5CACEE</color>
+
+
 
     <!--透明-->
     <color name="zjcTransparent">#00ffffff</color>
