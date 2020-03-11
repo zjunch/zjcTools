@@ -11,7 +11,7 @@ import com.android.zjcutils.R;
 
 
 /**
- * Create by lzan13 on 2019/05/08
+ * Create by zjun
  *
  * 权限申请简单展示控件
  */

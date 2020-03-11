@@ -15,6 +15,9 @@ import com.android.zjctools.base.ZConstant;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjcutils.R;
 
+/**
+ * created zjun 2020-03-11
+ */
 
 public class ZSettingInputView extends RelativeLayout {
     private final  int zjcMaxInputCount=30;//默认最多输入个数

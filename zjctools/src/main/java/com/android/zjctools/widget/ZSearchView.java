@@ -19,6 +19,9 @@ import android.widget.TextView;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
 
+/**
+ * created zjun 2020-03-11
+ */
 public class ZSearchView extends RelativeLayout {
 
     View mContentView;

@@ -15,12 +15,9 @@ import java.util.List;
 import java.util.ListIterator;
 
 
-/**
- * 借用牛逼哄哄的 lzan13 代码
- */
 
 /**
- * Create by lzan13 on 2019/04/25
+ * Create by zjun
  *
  * 处理权限请求操作类
  */

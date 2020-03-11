@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Create by lzan13 on 2019/04/26
+ * Create by zjun
  *
  * 权限数据传递实体类
  */

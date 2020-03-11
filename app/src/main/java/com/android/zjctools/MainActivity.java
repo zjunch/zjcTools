@@ -1,4 +1,6 @@
 package com.android.zjctools;
+import android.Manifest;
+import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -6,6 +8,7 @@ import com.android.zjctools.appupdate.ZAppUpdateBean;
 import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.bean.FunctionBean;
 import com.android.zjctools.permission.ZPermission;
+import com.android.zjctools.permission.ZPermissionBean;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZLog;
@@ -98,6 +101,34 @@ public class MainActivity extends ZBActivity {
                 ZLog.e("onComplete");
             }
         });
+
+//        List<ZPermissionBean> list = new ArrayList<>();
+//        list.add(new ZPermissionBean(Manifest.permission.CAMERA,"访问相机", "拍摄照片需要访问相机，请允许我们获取访问相机权限，否则你将无法使用应用"));
+//        list.add(new ZPermissionBean(Manifest.permission.SEND_SMS, "短信", "邀请通讯录好友，请允许我们获取访发送短信权限，否则你将无法邀请通讯录好友"));
+//        list.add(new ZPermissionBean(Manifest.permission.WRITE_EXTERNAL_STORAGE, "读写手机存储", "发送和保存图片需要读写手机存储，请允许我们访问读写手机存储权限，否则你将无法使用应用"));
+//        list.add(new ZPermissionBean(Manifest.permission.READ_CONTACTS,"通讯录", "邀请通讯录好友，请允许我们获取访问通讯录权限，否则你将无法邀请通讯录好友"));
+//        list.add(new ZPermissionBean(Manifest.permission.ACCESS_FINE_LOCATION,"定位", "获取你的位置，和好友分享位置信息"));
+//        ZPermission.getInstance(mActivity)
+//                .setEnableDialog(false)
+//                .setPermissionList(list)
+//                .requestPermission(new ZPermission.PCallback() {
+//                    @Override
+//                    public void onReject() {}
+//
+//                    @Override
+//                    public void onComplete() {}
+//                });
+
+//        ZPermissionBean bean=    new ZPermissionBean(Manifest.permission.ACCESS_FINE_LOCATION,"定位", "获取你的位置，和好友分享位置信息");
+//        ZPermission.getInstance(mActivity)
+//                .setPermission(bean)
+//                .requestPermission(new ZPermission.PCallback() {
+//                    @Override
+//                    public void onReject() {}
+//
+//                    @Override
+//                    public void onComplete() {}
+//                });
     }
 
 }
