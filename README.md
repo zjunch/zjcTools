@@ -56,7 +56,7 @@ toast,bitmap，file,date，router
     ////                    public void onComplete() {}
     ////                });
     
-    3.图片选择
+   3.图片选择
 
     //选择图片   selecteds 为已选图片
      IMManager.showMultiPicker(mActivity, 9, selecteds);   
@@ -76,7 +76,7 @@ toast,bitmap，file,date，router
         }
     }
 
-    4.常用toast    
+   4.常用toast    
        ZToast.create().showNormal("正常的");
        ZToast.create().showCenter("中间的");
        ZToast.create().showSuccessBottom("底部成功");
@@ -85,7 +85,7 @@ toast,bitmap，file,date，router
        ZToast.create().showErrorBottom("底部失败");
        ZToast.create().showErrorCenter("中间失败");
        
-    5.九宫格图片ZNinePicturesView
+   5.九宫格图片ZNinePicturesView
      布局中使用实例
     <com.android.zjctools.widget.nineimages.ZNinePicturesView
             android:id="@+id/ninePics"
