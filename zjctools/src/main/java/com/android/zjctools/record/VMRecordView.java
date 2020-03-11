@@ -131,25 +131,25 @@ public class VMRecordView extends View {
             return;
         }
         TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.VMRecordView);
-        mCancelColor = array.getColor(R.styleable.VMRecordView_vm_cancel_color, mCancelColor);
+        mCancelColor = array.getColor(R.styleable.VMRecordView_zjc_cancel_color, mCancelColor);
 
-        mOuterColor = array.getColor(R.styleable.VMRecordView_vm_outer_color, mOuterColor);
-        mInnerColor = array.getColor(R.styleable.VMRecordView_vm_inner_color, mInnerColor);
-        mInnerSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_vm_inner_size, mInnerSize);
+        mOuterColor = array.getColor(R.styleable.VMRecordView_zjc_outer_color, mOuterColor);
+        mInnerColor = array.getColor(R.styleable.VMRecordView_zjc_inner_color, mInnerColor);
+        mInnerSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_zjc_inner_size, mInnerSize);
 
-        mDescNormal = array.getString(R.styleable.VMRecordView_vm_touch_normal_desc);
-        mDescCancel = array.getString(R.styleable.VMRecordView_vm_touch_cancel_desc);
+        mDescNormal = array.getString(R.styleable.VMRecordView_zjc_touch_normal_desc);
+        mDescCancel = array.getString(R.styleable.VMRecordView_zjc_touch_cancel_desc);
         if (ZStr.isEmpty(mDescNormal)) {
             mDescNormal = "触摸录音";
         }
         if (ZStr.isEmpty(mDescCancel)) {
             mDescCancel = "松开取消";
         }
-        mDescColor = array.getColor(R.styleable.VMRecordView_vm_desc_color, mDescColor);
-        mDescSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_vm_desc_size, mDescSize);
+        mDescColor = array.getColor(R.styleable.VMRecordView_zjc_desc_color, mDescColor);
+        mDescSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_zjc_desc_size, mDescSize);
 
-        mTimeColor = array.getColor(R.styleable.VMRecordView_vm_time_color, mTimeColor);
-        mTimeSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_vm_time_size, mTimeSize);
+        mTimeColor = array.getColor(R.styleable.VMRecordView_zjc_time_color, mTimeColor);
+        mTimeSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_zjc_time_size, mTimeSize);
 
         array.recycle();
     }

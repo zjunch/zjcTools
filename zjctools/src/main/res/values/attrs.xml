@@ -63,37 +63,37 @@
     <!--自定义音频录制控件-->
     <declare-styleable name="VMRecordView">
         <!--取消颜色-->
-        <attr name="vm_cancel_color" format="color|integer" />
+        <attr name="zjc_cancel_color" format="color|integer" />
         <!--触摸区域外圈颜色-->
-        <attr name="vm_outer_color" format="color|integer" />
+        <attr name="zjc_outer_color" format="color|integer" />
         <!--触摸区域内圈颜色-->
-        <attr name="vm_inner_color" format="color|integer" />
-        <attr name="vm_inner_size" format="dimension" />
+        <attr name="zjc_inner_color" format="color|integer" />
+        <attr name="zjc_inner_size" format="dimension" />
         <!--触摸区域提示文字-->
-        <attr name="vm_touch_normal_desc" format="string|reference" />
-        <attr name="vm_touch_cancel_desc" format="string|reference" />
+        <attr name="zjc_touch_normal_desc" format="string|reference" />
+        <attr name="zjc_touch_cancel_desc" format="string|reference" />
         <!--触摸提示文本颜色-->
-        <attr name="vm_desc_color" format="color|integer" />
+        <attr name="zjc_desc_color" format="color|integer" />
         <!--触摸提示文本大小-->
-        <attr name="vm_desc_size" format="dimension" />
+        <attr name="zjc_desc_size" format="dimension" />
         <!--时间文本颜色-->
-        <attr name="vm_time_color" format="color|integer" />
+        <attr name="zjc_time_color" format="color|integer" />
         <!--时间文本大小-->
-        <attr name="vm_time_size" format="dimension" />
+        <attr name="zjc_time_size" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="ZStatusBarHeightView">
-        <attr name="use_type" format="integer">
-            <enum name="use_height" value="0" />
-            <enum name="use_padding_top" value="1" />
+        <attr name="zjc_use_type" format="integer">
+            <enum name="zjc_use_height" value="0" />
+            <enum name="zjc_use_padding_top" value="1" />
         </attr>
     </declare-styleable>
 
 
     <!--自定义ViewGroup-堆叠头像的点赞Layout-->
     <declare-styleable name="ZPileLayout">
-        <attr name="PileLayout_vertivalSpace" format="dimension" />
-        <attr name="PileLayout_pileWidth" format="dimension" />
+        <attr name="zjc_pileLayout_verSpace" format="dimension" />
+        <attr name="zjc_pileLayout_pileWidth" format="dimension" />
     </declare-styleable>
 
 

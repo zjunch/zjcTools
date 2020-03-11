@@ -45,8 +45,8 @@ public class ZPileLayout extends ViewGroup {
         super(context, attrs, defStyleAttr);
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ZPileLayout);
-        vertivalSpace = ta.getDimension(R.styleable.ZPileLayout_PileLayout_vertivalSpace, dp2px(4));
-        pileWidth = ta.getDimension(R.styleable.ZPileLayout_PileLayout_pileWidth, dp2px(10));
+        vertivalSpace = ta.getDimension(R.styleable.ZPileLayout_zjc_pileLayout_verSpace, dp2px(4));
+        pileWidth = ta.getDimension(R.styleable.ZPileLayout_zjc_pileLayout_pileWidth, dp2px(10));
         ta.recycle();
     }
 
