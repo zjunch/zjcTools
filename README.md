@@ -125,7 +125,7 @@ toast,bitmap，file,date，router
             app:zjc_sv_title_text="单位名称" />
 
   8.ZSettingInputView(类似于ZsettingView,左侧是菜单名字，右侧是输入框)
-        布局时属性说明
+    
           <!--是否显示底部分隔线-->
         <attr name="zjc_siv_Line_enable" format="boolean" />
         <!--标题-->
