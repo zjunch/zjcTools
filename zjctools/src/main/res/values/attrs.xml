@@ -52,7 +52,6 @@
         <attr name="zjc_sv_desc_text" format="string" />
     </declare-styleable>
 
-
     <declare-styleable name="ZSearchView">
         <!--是否显示清除-->
         <attr name="zjc_srv_clear_enable" format="boolean" />
