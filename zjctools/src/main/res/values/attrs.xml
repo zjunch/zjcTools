@@ -36,8 +36,8 @@
         <attr name="zjc_sv_Line_enable" format="boolean" />
         <!--是否显示最左边点-->
         <attr name="zjc_sv_point_enable" format="boolean" />
-        <!--是否显示左侧title右右侧有个start-->
-        <attr name="zjc_sv_start_enable" format="boolean" />
+        <!--是否显示左侧title右侧有个star-->
+        <attr name="zjc_sv_star_enable" format="boolean" />
         <!--是否显示右侧箭头-->
         <attr name="zjc_sv_arrow_enable" format="boolean" />
         <!--左侧标题颜色-->
