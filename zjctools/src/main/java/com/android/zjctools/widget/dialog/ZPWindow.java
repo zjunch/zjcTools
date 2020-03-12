@@ -12,6 +12,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 
+import com.android.zjctools.utils.ZColor;
+import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
 
 import java.util.List;
@@ -117,6 +119,25 @@ public class ZPWindow {
         mItems.addAll(messages);
         mAdapter.notifyDataSetChanged();
     }
+
+
+    public void setCancelEnable(boolean enable) {
+        mCancelBtn.setVisibility(enable?View.VISIBLE:View.GONE);
+    }
+
+    public void setCancelColor(int  colorId) {
+        mCancelBtn.setTextColor(ZColor.byRes(colorId));
+    }
+
+    public void setCancelText(int  colorId,int size) {
+        mCancelBtn.setTextSize(ZDimen.sp2px(size));
+        mCancelBtn.setTextColor(ZColor.byRes(colorId));
+    }
+
+    public Button getTextCancel() {
+        return mCancelBtn;
+    }
+
 
     /**
      * 设置弹窗点击监听

@@ -1,9 +1,11 @@
 package com.android.zjctools;
 
+import android.view.View;
 import android.widget.TextView;
 
 import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.utils.ZDialogUtils;
+import com.android.zjctools.widget.dialog.ZPDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,9 +41,22 @@ public class BottomWindowActivity extends ZBActivity {
     protected void initListener() {
         super.initListener();
         tvShowBottomWindow.setOnClickListener(v -> {
-            ZDialogUtils.showBottomWindow(mActivity, strings, position -> {
+//            ZDialogUtils.showBottomWindow(mActivity, strings, position -> {
+//
+//            });
+//            ZPDialog dialog=ZDialogUtils.showAlertDialog(mActivity, "水水水水", new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                }
+//            });
 
-            });
+//            ZPDialog dialog=ZDialogUtils.showSelectDialog(mActivity, "水水水水","就看见看见" ,new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                }
+//            });
         });
     }
 }

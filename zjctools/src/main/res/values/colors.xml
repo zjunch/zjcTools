@@ -9,7 +9,7 @@
 
     <color name="zjcWhite">#FFF</color>
     <color name="zjc_white_54">#89ffffff</color>
-
+    <color name="zjc_bg_dark">#f6f8f9</color>
 
     <color name="zjcRed">#FF0000</color>
     <color name="zjc_red_87">#ddF44336</color>
@@ -28,6 +28,7 @@
     <color name="zjcGray8">#888</color>
     <color name="zjcGray9">#999</color>
     <color name="zjc_Gray54">#545454</color>
+
 
     <!--紫色-->
     <color name="zjcPurple">#990099</color>

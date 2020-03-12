@@ -29,4 +29,7 @@
     <string name="zjc_pick_select_limit">最多选择 %1$d 张图片</string>
     <string name="zjc_pick_crop_picture">图片裁剪</string>
     <string name="zjc_pick_picture">图片选择</string>
+
+    <string name="zjc_progress_wait">请稍等...</string>
+    <string name="zjc_input_default_toast">请输入内容</string>
 </resources>

@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     android:background="@color/zjcWhite"
     tools:context=".BottomWindowActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="介绍几款高科技"/>
 
     <TextView
         android:id="@+id/tvShowBottomWindow"

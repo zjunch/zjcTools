@@ -11,17 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/zjcWhite"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/window_title_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/zjc_dimen_16"
             android:textColor="@color/app_theme_color"
             android:textSize="@dimen/zjc_size_18"
             android:textStyle="bold"
+            android:background="@color/zjcWhite"
+            android:gravity="center"
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/window_recycler_view"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,18 +34,21 @@
             android:id="@+id/window_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/zjcWhite"
             app:layout_constraintBottom_toTopOf="@+id/window_cancel_btn"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/window_cancel_btn"
+            app:layout_constraintTop_toBottomOf="@id/window_recycler_view"
+            android:layout_marginTop="@dimen/zjc_dimen_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/zjcTransparent"
+            android:background="@color/zjcWhite"
             android:text="@string/zjc_btn_cancel"
+            android:visibility="gone"
             android:textColor="@color/zjc_Gray54"
             android:textSize="@dimen/zjc_size_16"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent" />
     </android.support.constraint.ConstraintLayout>
 </RelativeLayout>

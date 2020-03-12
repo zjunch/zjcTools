@@ -15,6 +15,6 @@ public class ZColor {
      * 通过资源 id 获取颜色值
      */
     public static int byRes(Context context, int resId) {
-        return ContextCompat.getColor(ZTools.getContext(), resId);
+        return ContextCompat.getColor(context, resId);
     }
 }
