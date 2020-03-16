@@ -51,12 +51,13 @@ public class BottomWindowActivity extends ZBActivity {
 //                }
 //            });
 
-//            ZPDialog dialog=ZDialogUtils.showSelectDialog(mActivity, "水水水水","就看见看见" ,new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                }
-//            });
+        ZDialogUtils.showSelectDialog(mActivity, "水水水水","就看见看见" ,new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
         });
     }
 }

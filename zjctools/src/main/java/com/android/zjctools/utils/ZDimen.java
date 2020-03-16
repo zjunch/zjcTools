@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Rect;
+import android.text.TextUtils;
 import android.view.Display;
 import android.view.WindowManager;
 
@@ -144,6 +146,22 @@ public class ZDimen {
     public static float getTextHeight(Paint paint) {
         Paint.FontMetrics fm = paint.getFontMetrics();
         return (float) Math.ceil(fm.descent - fm.ascent);
+    }
+
+
+    /**
+     * 获取绘画文字框
+     * @param paint
+     * @param str
+     * @return
+     */
+    public static Rect getTextBounds(Paint paint,String str){
+        Rect rect=new Rect();
+        if(TextUtils.isEmpty(str)){
+            return rect;
+        }
+        paint.getTextBounds(str,0,str.length(),rect);
+        return rect;
     }
 
     /**
