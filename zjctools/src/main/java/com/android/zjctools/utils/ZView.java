@@ -48,6 +48,17 @@ public class ZView {
 
     }
 
+    /**
+     * 显示键盘
+     */
+    public static  void showSoftKey( EditText targetView) {
+        Activity activity= (Activity) targetView.getContext();
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        if(imm!=null){
+            imm.showSoftInput(targetView, InputMethodManager.SHOW_IMPLICIT);
+        }
+
+    }
 
     /**
      * 向EditText指定光标位置插入字符串
@@ -62,17 +73,7 @@ public class ZView {
         targetView.getText().insert(targetView.getSelectionStart(), insertContent);
     }
 
-    /**
-     * 显示键盘
-     */
-    public static  void showInput( EditText targetView) {
-        Activity activity= (Activity) targetView.getContext();
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
-        if(imm!=null){
-            imm.showSoftInput(targetView, InputMethodManager.SHOW_IMPLICIT);
-        }
 
-    }
 
 
     /**
