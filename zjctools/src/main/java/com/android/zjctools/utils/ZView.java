@@ -54,7 +54,7 @@ public class ZView {
      * @param targetView
      * @param insertContent
      */
-    private static void insertInputText(EditText targetView, String  insertContent) {
+    public static void insertInputText(EditText targetView, String  insertContent) {
         if(targetView.getText()==null||targetView.getText().toString().equals("")){
             targetView.setText(insertContent);
             return;
