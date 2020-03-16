@@ -1,9 +1,8 @@
-package com.android.zjctools.widget;
+package com.android.zjctools.utils;
 
 import android.app.Activity;
 import android.content.Context;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
@@ -17,7 +16,7 @@ public class ZView {
      * @param targetView
      * @return
      */
-    public static  int[] getScreenLoaction(View targetView){
+    public static  int[] getScreenLocation(View targetView){
         int[] location = new int[2];
         targetView.getLocationOnScreen(location);
         return  location;
@@ -47,6 +46,20 @@ public class ZView {
             imm.hideSoftInputFromWindow(targetView.getWindowToken(), 0); //强制隐藏键盘
         }
 
+    }
+
+
+    /**
+     * 向EditText指定光标位置插入字符串
+     * @param targetView
+     * @param insertContent
+     */
+    private static void insertInputText(EditText targetView, String  insertContent) {
+        if(targetView.getText()==null||targetView.getText().toString().equals("")){
+            targetView.setText(insertContent);
+            return;
+        }
+        targetView.getText().insert(targetView.getSelectionStart(), insertContent);
     }
 
     /**
