@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.android.zjctools.base.ZConstant;
 import com.android.zjctools.utils.ZColor;
+import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
 
 /**
@@ -28,6 +29,7 @@ public class ZSettingInputView extends RelativeLayout {
     private  String title,hintText;
     private int  lineColor;
     private  int  maxInputCounts;
+    int titleSize,descSize;
     public ZSettingInputView(Context context) {
         this(context,null);
     }
@@ -41,6 +43,8 @@ public class ZSettingInputView extends RelativeLayout {
         title= typedArray.getString(R.styleable.ZSettingInputView_zjc_siv_title_text);
         hintText= typedArray.getString(R.styleable.ZSettingInputView_zjc_siv_hint_text);
         maxInputCounts= typedArray.getInt(R.styleable.ZSettingInputView_zjc_siv_max_counts, zjcMaxInputCount);
+        titleSize= (int) typedArray.getDimension(R.styleable.ZSettingInputView_zjc_siv_title_size, ZDimen.sp2px(14));
+        descSize= (int) typedArray.getDimension(R.styleable.ZSettingInputView_zjc_siv_input_size, ZDimen.sp2px(14));
         typedArray.recycle();
         initView();
         setViews();
@@ -97,6 +101,8 @@ public class ZSettingInputView extends RelativeLayout {
 
 
     private void setViews() {
+        textTitle.getPaint().setTextSize(titleSize);
+        input.getPaint().setTextSize(descSize);
         if(isShowLine){
             line.setVisibility(VISIBLE);
         }else{

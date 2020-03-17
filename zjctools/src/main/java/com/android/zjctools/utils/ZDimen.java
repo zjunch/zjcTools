@@ -110,7 +110,7 @@ public class ZDimen {
      *
      * @param sp 字体的尺寸大小
      */
-    public static float sp2px(int sp) {
+    public static int sp2px(int sp) {
         Resources res = ZTools.getContext().getResources();
         float density = res.getDisplayMetrics().scaledDensity;
         return (int) (sp * density + 0.5f);

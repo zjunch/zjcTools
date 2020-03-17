@@ -11,6 +11,7 @@ import com.android.zjctools.file.TestFileActivity;
 import com.android.zjctools.ninepicture.NinePictureActivity;
 import com.android.zjctools.router.ZParams;
 import com.android.zjctools.router.ZRouter;
+import com.android.zjctools.tab.TabviewActivity;
 
 import java.util.List;
 
@@ -33,6 +34,10 @@ public class Router extends ZRouter {
 
     public static  void goFile(Activity activity){
         overlay(activity, TestFileActivity.class);
+    }
+
+    public static  void goTabView(Activity activity){
+        overlay(activity, TabviewActivity.class);
     }
 
     public static  void goAppUpdate(Activity activity, ZAppUpdateBean appUpdateBean){

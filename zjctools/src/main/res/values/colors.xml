@@ -13,6 +13,7 @@
 
     <color name="zjcRed">#FF0000</color>
     <color name="zjc_red_87">#ddF44336</color>
+    <color name="zjc_red_f5">#F52323</color>
 
     <!--绿色-->
     <color name="zjcGreen">#00FF00</color>

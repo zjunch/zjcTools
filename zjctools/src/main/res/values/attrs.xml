@@ -28,7 +28,10 @@
         <attr name="zjc_siv_hint_text" format="string" />
         <!--右侧输入框最多字符-->
         <attr name="zjc_siv_max_counts" format="integer" />
+        <!--左侧标题文字大小-->
+        <attr name="zjc_siv_title_size" format="dimension" />
 
+        <attr name="zjc_siv_input_size" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="ZSettingView">
@@ -44,12 +47,16 @@
         <attr name="zjc_sv_title_Color" format="color" />
         <!--左侧标题-->
         <attr name="zjc_sv_title_text" format="string" />
+        <!--左侧标题文字大小-->
+        <attr name="zjc_sv_title_size" format="dimension" />
         <!--右侧描述的hint-->
         <attr name="zjc_sv_desc_Hint" format="string" />
         <!--右侧描述的字体颜色-->
         <attr name="zjc_sv_desc_color" format="color" />
         <!--右侧描述文字-->
         <attr name="zjc_sv_desc_text" format="string" />
+        <!--右侧描述文字大小-->
+        <attr name="zjc_sv_desc_size" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="ZSearchView">
@@ -152,5 +159,38 @@
     </declare-styleable>
 
 
+    <declare-styleable name="ZTabView">
+
+        <attr name="zjc_tab_icon_wrap" format="boolean" />
+        <!--菜单文字大小-->
+        <attr name="zjc_tab_text_size" format="dimension" />
+        <!--菜单icon margin top-->
+        <attr name="zjc_tab_image_top" format="dimension" />
+        <!--菜单文字 margin top-->
+        <attr name="zjc_tab_text_top" format="dimension" />
+        <attr name="zjc_tab_text_bottom" format="dimension" />
+
+        <!--icon 宽高-->
+        <attr name="zjc_tab_icon_width" format="dimension" />
+        <attr name="zjc_tab_icon_height" format="dimension" />
+
+        <!--选中颜色-->
+        <attr name="zjc_tab_select_color" format="color|integer" />
+
+        <!--未选中颜色-->
+        <attr name="zjc_tab_unSelect_color" format="color|integer" />
+
+        <!--菜单小红点 margin top-->
+        <attr name="zjc_tab_point_top" format="dimension" />
+
+        <!--菜单小红点 margin left-->
+        <attr name="zjc_tab_point_left" format="dimension" />
+        <!--菜单小红点 宽度-->
+        <attr name="zjc_tab_point_width" format="dimension" />
+        <!--菜单小红点 高度-->
+        <attr name="zjc_tab_point_height" format="dimension" />
+        <!--菜单字体大小 高度-->
+        <attr name="zjc_tab_point_text_size" format="dimension" />
+    </declare-styleable>
 
 </resources>

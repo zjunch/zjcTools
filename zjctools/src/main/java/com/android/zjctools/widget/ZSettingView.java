@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
 
 /**
@@ -25,6 +26,7 @@ public class ZSettingView extends LinearLayout {
     private  String title,desc,descHint;
     ImageView ivRightArrow;
     private  int descColorId,titleColorId;
+    int titleSize,descSize;
 
     public ZSettingView(Context context) {
         super(context);
@@ -43,6 +45,8 @@ public class ZSettingView extends LinearLayout {
         title= typedArray.getString(R.styleable.ZSettingView_zjc_sv_title_text);
         descHint= typedArray.getString(R.styleable.ZSettingView_zjc_sv_desc_Hint);
         desc= typedArray.getString(R.styleable.ZSettingView_zjc_sv_desc_text);
+        titleSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_title_size, ZDimen.sp2px(14));
+        descSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_desc_size, ZDimen.sp2px(14));
         typedArray.recycle();
         initView();
         setViews();
@@ -58,6 +62,8 @@ public class ZSettingView extends LinearLayout {
     }
 
     private void setViews() {
+        tvTitle.getPaint().setTextSize(titleSize);
+        tvDesc.getPaint().setTextSize(descSize);
         if(!TextUtils.isEmpty(title)){
             tvTitle.setText(title);
         }
