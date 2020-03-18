@@ -1,10 +1,13 @@
 # zjcTools常用工具库，
 包含用基类，activity,fragment,app
-toast,bitmap，file,date，router
+工具类：toast,bitmap，file,date，router color string.log..
 图片选择，权限申请
-
-简单view，设置类型view（ZSettingView），九宫格图片（ZNinePicturesView），点赞头像堆叠（ZPileLayout），recycleview分割线（ZItemDecoration）等
-
+简单view，设置类型view（ZSettingView）
+九宫格图片（ZNinePicturesView），
+点赞头像堆叠（ZPileLayout），
+recycleview分割线（ZItemDecoration）,
+自定义tablayou(ZTabview) 
+..........
 
 引用方式：
 
@@ -158,4 +161,67 @@ toast,bitmap，file,date，router
 
       </declare-styleable>
    
+  10.ZTabView (首页 tab切换) 
+     xml 布局： 可以设置的属性如下 declare-styleable
+     <com.android.zjctools.widget.tabview.ZTabView
+        android:id="@+id/main_tab_layout"
+        android:padding="@dimen/zjc_dimen_0"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/zjcWhite"
+        android:layout_alignParentBottom="true"
+        app:zjc_tab_icon_wrap="false"
+        app:zjc_tab_text_size="@dimen/zjc_size_12"
+        app:tabIndicatorHeight="0dp" />
+
+    <android.support.v4.view.ViewPager
+        android:background="@color/zjc_white_87"
+        android:id="@+id/main_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:layout_above="@id/main_tab_layout"
+        android:overScrollMode="never" />
+        
+        属性说明
+    <declare-styleable name="ZTabView">
+        <!--菜单icon 宽高自适应-->
+        <attr name="zjc_tab_icon_wrap" format="boolean" />
+        <!--菜单文字大小-->
+        <attr name="zjc_tab_text_size" format="dimension" />
+        <!--菜单icon margin top-->
+        <attr name="zjc_tab_image_top" format="dimension" />
+        <!--菜单文字 margin top-->
+        <attr name="zjc_tab_text_top" format="dimension" />
+        <attr name="zjc_tab_text_bottom" format="dimension" />
+        <!--icon 宽高-->
+        <attr name="zjc_tab_icon_width" format="dimension" />
+        <attr name="zjc_tab_icon_height" format="dimension" />
+        <!--选中颜色-->
+        <attr name="zjc_tab_select_color" format="color" />
+        <!--未选中颜色-->
+        <attr name="zjc_tab_unSelect_color" format="color" />
+        <!--菜单小红点 margin top-->
+        <attr name="zjc_tab_point_top" format="dimension" />
+        <!--菜单小红点 margin left-->
+        <attr name="zjc_tab_point_left" format="dimension" />
+        <!--菜单小红点 宽度-->
+        <attr name="zjc_tab_point_width" format="dimension" />
+        <!--菜单小红点 高度-->
+        <attr name="zjc_tab_point_height" format="dimension" />
+        <!--菜单字体大小 高度-->
+        <attr name="zjc_tab_point_text_size" format="dimension" />
+    </declare-styleable>
+
+    使用方式
+     mAdapter = new ZFragmentPagerAdapter(getSupportFragmentManager(), mFragmentList);
+        viewPager.setOffscreenPageLimit(3);
+        viewPager.setAdapter(mAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+        List<ZTabBean>tabBeans=new ArrayList<>();
+        tabBeans.add(new ZTabBean(R.drawable.ic_friend_select,R.drawable.ic_friend_normal,"朋友"));
+        tabBeans.add(new ZTabBean(R.drawable.ic_msg_select,R.drawable.ic_msg_normal,"消息"));
+        tabBeans.add(new ZTabBean(R.drawable.ic_menu_select,R.drawable.ic_menu_normal,"我的"));
+        tabLayout.setTabBeans(tabBeans);
+
+
 
