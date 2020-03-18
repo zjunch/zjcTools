@@ -57,6 +57,11 @@
         <attr name="zjc_sv_desc_text" format="string" />
         <!--右侧描述文字大小-->
         <attr name="zjc_sv_desc_size" format="dimension" />
+
+        <attr name="zjc_sv_center_size" format="dimension" />
+
+        <attr name="zjc_sv_center_color" format="color" />
+
     </declare-styleable>
 
     <declare-styleable name="ZSearchView">
@@ -160,7 +165,7 @@
 
 
     <declare-styleable name="ZTabView">
-
+        <!--菜单icon 宽高自适应-->
         <attr name="zjc_tab_icon_wrap" format="boolean" />
         <!--菜单文字大小-->
         <attr name="zjc_tab_text_size" format="dimension" />
@@ -169,20 +174,15 @@
         <!--菜单文字 margin top-->
         <attr name="zjc_tab_text_top" format="dimension" />
         <attr name="zjc_tab_text_bottom" format="dimension" />
-
         <!--icon 宽高-->
         <attr name="zjc_tab_icon_width" format="dimension" />
         <attr name="zjc_tab_icon_height" format="dimension" />
-
         <!--选中颜色-->
         <attr name="zjc_tab_select_color" format="color" />
-
         <!--未选中颜色-->
         <attr name="zjc_tab_unSelect_color" format="color" />
-
         <!--菜单小红点 margin top-->
         <attr name="zjc_tab_point_top" format="dimension" />
-
         <!--菜单小红点 margin left-->
         <attr name="zjc_tab_point_left" format="dimension" />
         <!--菜单小红点 宽度-->

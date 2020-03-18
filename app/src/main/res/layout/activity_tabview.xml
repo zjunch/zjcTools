@@ -13,6 +13,7 @@
         android:background="@color/zjcWhite"
         android:layout_alignParentBottom="true"
         app:zjc_tab_icon_wrap="false"
+        app:zjc_tab_text_size="@dimen/zjc_size_12"
         app:tabIndicatorHeight="0dp" />
 
     <android.support.v4.view.ViewPager

@@ -14,10 +14,10 @@ ext {
     publishedGroupId = 'com.zjun'
     artifact = 'zjcTools'
    // libraryVersion = rootProject.ext.configs.versionName
-    libraryVersion = '0.0.8'
+    libraryVersion = '0.1.1'
     //以下三项只是对开源库的描述（应该不是必配项吧，没尝试过）
     libraryName = 'zjun'
-    libraryDescription = '自己开发中积累的一些工具类封装'
+    libraryDescription = ''
     siteUrl = 'https://github.com/zjunch/zjcTools'
 
     //开源库对应的 github 地址，不知道可不可以不配，应该也是必配

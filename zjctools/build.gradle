@@ -42,6 +42,8 @@ dependencies {
 }
 
 //apply from: 'release.gradle'
+
+
 apply plugin: 'com.novoda.bintray-release'
 
 publish {
