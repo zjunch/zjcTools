@@ -31,7 +31,11 @@
         <!--左侧标题文字大小-->
         <attr name="zjc_siv_title_size" format="dimension" />
 
+        <attr name="zjc_siv_title_color" format="color" />
+
         <attr name="zjc_siv_input_size" format="dimension" />
+
+        <attr name="zjc_siv_input_color" format="color" />
     </declare-styleable>
 
     <declare-styleable name="ZSettingView">

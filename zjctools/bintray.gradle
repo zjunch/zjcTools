@@ -1,5 +1,5 @@
-apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
     //bintray 网站上你创建的仓库的名字（必配项）

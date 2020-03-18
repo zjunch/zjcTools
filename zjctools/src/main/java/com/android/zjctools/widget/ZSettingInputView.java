@@ -27,7 +27,7 @@ public class ZSettingInputView extends RelativeLayout {
     View mContentView,line;
     boolean isShowLine;
     private  String title,hintText;
-    private int  lineColor;
+    private int  lineColor,titleColor,inputColor;
     private  int  maxInputCounts;
     int titleSize,descSize;
     public ZSettingInputView(Context context) {
@@ -40,6 +40,8 @@ public class ZSettingInputView extends RelativeLayout {
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZSettingInputView);
         isShowLine = typedArray.getBoolean(R.styleable.ZSettingInputView_zjc_siv_Line_enable, false);
         lineColor = typedArray.getColor(R.styleable.ZSettingInputView_zjc_siv_line_color, ZColor.byRes(R.color.app_divide));
+        titleColor = typedArray.getColor(R.styleable.ZSettingInputView_zjc_siv_title_color, ZColor.byRes(R.color.zjcGray3));
+        inputColor = typedArray.getColor(R.styleable.ZSettingInputView_zjc_siv_input_color, ZColor.byRes(R.color.zjcGray3));
         title= typedArray.getString(R.styleable.ZSettingInputView_zjc_siv_title_text);
         hintText= typedArray.getString(R.styleable.ZSettingInputView_zjc_siv_hint_text);
         maxInputCounts= typedArray.getInt(R.styleable.ZSettingInputView_zjc_siv_max_counts, zjcMaxInputCount);
@@ -101,6 +103,8 @@ public class ZSettingInputView extends RelativeLayout {
 
 
     private void setViews() {
+        textTitle.setTextColor(titleColor);
+        input.setTextColor(inputColor);
         textTitle.getPaint().setTextSize(titleSize);
         input.getPaint().setTextSize(descSize);
         if(isShowLine){

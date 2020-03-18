@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
 
@@ -24,8 +25,8 @@ public class ZSettingView extends LinearLayout {
     View mContentView,line;
     boolean isShowLine,isShowPoint,isShowRightStar,isShowRightArrow;
     private  String title,desc,descHint;
-    ImageView ivRightArrow;
-    private  int descColorId,titleColorId,centerColorId;
+    TextView ivRightArrow;
+    private  int descColor,titleColor,centerColor;
     int titleSize,centerSize,descSize;
 
     public ZSettingView(Context context) {
@@ -40,9 +41,9 @@ public class ZSettingView extends LinearLayout {
         isShowPoint = typedArray.getBoolean(R.styleable.ZSettingView_zjc_sv_point_enable, false);
         isShowRightStar = typedArray.getBoolean(R.styleable.ZSettingView_zjc_sv_star_enable, false);
         isShowRightArrow = typedArray.getBoolean(R.styleable.ZSettingView_zjc_sv_arrow_enable, true);
-        descColorId = typedArray.getColor(R.styleable.ZSettingView_zjc_sv_desc_color, getResources().getColor(R.color.zjcGray3));
-        titleColorId=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_title_Color, getResources().getColor(R.color.zjcGray3));
-        centerColorId=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_center_color, getResources().getColor(R.color.zjcGray3));
+        descColor = typedArray.getColor(R.styleable.ZSettingView_zjc_sv_desc_color, ZColor.byRes(R.color.zjcGray3));
+        titleColor=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_title_Color, ZColor.byRes(R.color.zjcGray3));
+        centerColor=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_center_color, ZColor.byRes(R.color.zjcGray3));
         title= typedArray.getString(R.styleable.ZSettingView_zjc_sv_title_text);
         descHint= typedArray.getString(R.styleable.ZSettingView_zjc_sv_desc_Hint);
         desc= typedArray.getString(R.styleable.ZSettingView_zjc_sv_desc_text);
@@ -79,9 +80,9 @@ public class ZSettingView extends LinearLayout {
         }else{
             tvDesc.setHint("");
         }
-        tvTitle.setTextColor(titleColorId);
-        tvDesc.setTextColor(descColorId);
-        tvCenter.setTextColor(centerColorId);
+        tvTitle.setTextColor(titleColor);
+        tvDesc.setTextColor(descColor);
+        tvCenter.setTextColor(centerColor);
         tvPoint.setVisibility(isShowPoint?View.VISIBLE:View.GONE);
         line.setVisibility(isShowLine?View.VISIBLE:View.GONE);
         tvRightStar.setVisibility(isShowRightStar?View.VISIBLE:View.GONE);
@@ -168,7 +169,7 @@ public class ZSettingView extends LinearLayout {
     }
 
 
-    public  ImageView getRightArrow(){
+    public  TextView getRightArrow(){
         return  ivRightArrow;
     }
 }
