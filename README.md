@@ -114,18 +114,18 @@ recycleview分割线（ZItemDecoration）,
       zileLayout.addView(avtatView);
       
  7.ZsettingView(类似于设置菜单,左侧是菜单名字，有侧是描述或者选择箭头)
-        //布局使用方式
-      <com.android.zjctools.widget.ZSettingView
-            android:layout_marginTop="10dp"
-            android:background="@color/white"
-            android:id="@+id/svCompany"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            app:zjc_sv_desc_Hint="请输入"    
-            app:zjc_sv_Line_enable="true"
-            app:zjc_sv_title_text="单位名称" />
+     xml 布局如下
+       <com.android.zjctools.widget.ZSettingView
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:id="@+id/svCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                app:zjc_sv_desc_Hint="请输入"    
+                app:zjc_sv_Line_enable="true"
+                app:zjc_sv_title_text="单位名称" />   
 
   8.ZSettingInputView(类似于ZsettingView,左侧是菜单名字，右侧是输入框)
     
