@@ -20,7 +20,7 @@ import com.android.zjcutils.R;
 
 public class ZSettingView extends LinearLayout {
 
-    TextView tvTitle,tvDesc,tvRightStar,tvPoint;
+    TextView tvTitle,tvCenter,tvDesc,tvRightStar,tvPoint;
     View mContentView,line;
     boolean isShowLine,isShowPoint,isShowRightStar,isShowRightArrow;
     private  String title,desc,descHint;
@@ -55,6 +55,7 @@ public class ZSettingView extends LinearLayout {
     private void initView() {
         tvTitle=mContentView.findViewById(R.id.tvTitle);
         tvDesc=mContentView.findViewById(R.id.tvDesc);
+        tvCenter=mContentView.findViewById(R.id.tvCenter);
         line=mContentView.findViewById(R.id.line);
         tvPoint=mContentView.findViewById(R.id.tvPoint);
         tvRightStar=mContentView.findViewById(R.id.tvRightStar);
@@ -103,7 +104,15 @@ public class ZSettingView extends LinearLayout {
     }
 
 
-
+    /**
+     * 中间的textview
+     * @param desc
+     */
+    public void setCenterText(String desc){
+        if(tvCenter!=null){
+            tvCenter.setText(desc);
+        }
+    }
 
 
     /**

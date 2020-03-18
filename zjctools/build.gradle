@@ -48,8 +48,8 @@ publish {
     userOrg = 'zjun'  //bintray注册的用户名
     groupId = 'com.zjun'  //compile引用时的第1部分groupId
     artifactId = 'zjcTools'       //compile引用时的第2部分项目名
-    publishVersion = '0.1.0'     //compile引用时的第3部分版本号
-    desc = '调整图片选择库'
+    publishVersion = '0.1.1'     //compile引用时的第3部分版本号
+    desc = '添加tabview'
     website = 'https://github.com/zjunch/zjcTools'
 
     //gradle install

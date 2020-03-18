@@ -23,6 +23,8 @@
                 android:layout_toRightOf="@id/tvPoint"
                 android:layout_height="wrap_content"
                 android:text="标题"/>
+
+
         <TextView
                 android:id="@+id/tvRightStar"
                 android:layout_toRightOf="@id/tvTitle"
@@ -31,6 +33,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="*"/>
+
+        <TextView
+            android:id="@+id/tvCenter"
+            style="@style/text_14_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=""/>
 
         <ImageView
                 android:id="@+id/ivRightArrow"
