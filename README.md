@@ -1,7 +1,7 @@
 # zjcTools常用工具库，
 包含用基类，activity,fragment,app
 工具类：toast,bitmap，file,date，router color string.log..
-图片选择，权限申请
+app更新，图片选择，权限申请
 简单view，设置类型view（ZSettingView）
 九宫格图片（ZNinePicturesView），
 点赞头像堆叠（ZPileLayout），
@@ -18,7 +18,7 @@ recycleview分割线（ZItemDecoration）,
     }
 }
 
-二 、module: implementation 'com.zjun:zjcTools:0.0.7'
+二 、module: implementation 'com.zjun:zjcTools:0.1.1'
 
 
 三 、初始化工具  ZTools.init(this);
