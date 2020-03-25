@@ -16,8 +16,8 @@ ext {
    // libraryVersion = rootProject.ext.configs.versionName
     libraryVersion = '0.1.1'
     //以下三项只是对开源库的描述（应该不是必配项吧，没尝试过）
-    libraryName = 'zjun'
-    libraryDescription = ''
+    libraryName = 'zjcTools'
+    libraryDescription = 'Library of tools used in development'
     siteUrl = 'https://github.com/zjunch/zjcTools'
 
     //开源库对应的 github 地址，不知道可不可以不配，应该也是必配
@@ -25,7 +25,7 @@ ext {
 
     //开发者信息，也是必配的吧
     developerId = 'zjun'
-    developerName = 'junch'
+    developerName = 'zjun'
     developerEmail = 'zjun688@gmail.com'
 
     //这部分可以不用改，我也不大懂这些开源协议，但应该都一样

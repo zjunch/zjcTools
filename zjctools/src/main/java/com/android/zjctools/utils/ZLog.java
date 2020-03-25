@@ -3,6 +3,9 @@ package com.android.zjctools.utils;
 import android.util.Log;
 
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -138,6 +141,32 @@ public class ZLog {
         }
     }
 
+
+    /**
+     * 输出日志为 json 格式
+     * @param msg ，如请求参数，返回数据等
+     * @param logType
+     */
+    public static void json(String msg,String logType){
+        try {
+            String message="";
+            if (msg.startsWith("{")) {
+                JSONObject jsonObject = new JSONObject(msg);
+                message = jsonObject.toString(4);//最重要的方法，就一行，返回格式化的json字符串，其中的数字4是缩进字符数
+            } else if (msg.startsWith("[")) {
+                JSONArray jsonArray = new JSONArray(msg);
+                message = jsonArray.toString(4);
+            } else {
+                message = msg;
+            }
+            print(mLevel,logType+":"+message);
+        }catch (Exception e){
+            print(mLevel,logType+"json:error"+e.getMessage());
+        }
+
+
+
+    }
     /**
      * 输出 Debug 日志信息
      *
