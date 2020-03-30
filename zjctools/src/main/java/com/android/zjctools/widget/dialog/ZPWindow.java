@@ -64,7 +64,7 @@ public class ZPWindow {
         mItemBinder = new ZWindowItemBinder();
         mAdapter.register(String.class, mItemBinder);
         mAdapter.setItems(mItems);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity, RecyclerView.VERTICAL, false));
         mRecyclerView.setAdapter(mAdapter);
         mItemBinder.setOnItemClickListener((action, item) -> {
             if (mListener != null) {

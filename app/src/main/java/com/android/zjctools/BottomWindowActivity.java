@@ -41,9 +41,9 @@ public class BottomWindowActivity extends ZBActivity {
     protected void initListener() {
         super.initListener();
         tvShowBottomWindow.setOnClickListener(v -> {
-//            ZDialogUtils.showBottomWindow(mActivity, strings, position -> {
-//
-//            });
+            ZDialogUtils.showBottomWindow(mActivity, strings, position -> {
+
+            });
 //            ZPDialog dialog=ZDialogUtils.showAlertDialog(mActivity, "水水水水", new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
@@ -51,12 +51,12 @@ public class BottomWindowActivity extends ZBActivity {
 //                }
 //            });
 
-        ZDialogUtils.showSelectDialog(mActivity, "水水水水","就看见看见" ,new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
+//        ZDialogUtils.showSelectDialog(mActivity, "水水水水","就看见看见" ,new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                }
+//            });
 
         });
     }
