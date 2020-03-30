@@ -11,7 +11,7 @@ import java.io.Serializable;
  * 图片实体类，存储图片文件夹信息
  */
 public class ZPictureBean implements Serializable, Parcelable {
-
+    public String url;        //图片的网络地址
     public String name;       //图片的名字
     public String path;       //图片的路径
     public long size;         //图片的大小
@@ -19,7 +19,9 @@ public class ZPictureBean implements Serializable, Parcelable {
     public int height;        //图片的高度
     public String mimeType;   //图片的类型
     public long addTime;      //图片的创建时间
-    public String compressPath;   //图片的压缩路径，防止重复压缩
+    public String compressPath;   //图片的压缩路径，如果有值，则已经压缩，防止重复压缩
+
+    public String cropPath;   //剪切后的图片，如果不是空,则已经剪切过不需要重复剪切
 
     /**
      * 图片的路径和创建时间相同就认为是同一张图片

@@ -9,6 +9,8 @@ import com.android.zjctools.base.ZConstant;
 import com.android.zjctools.glide.IMManager;
 import com.android.zjctools.pick.ZPicker;
 import com.android.zjctools.pick.bean.ZPictureBean;
+import com.android.zjctools.utils.ZToast;
+import com.android.zjctools.utils.bitmap.ZCompressUtils;
 import com.android.zjctools.widget.nineimages.ZNinePicturesView;
 
 
@@ -67,6 +69,7 @@ public class SelectActivity extends ZBActivity {
                 GlideApp.with(mActivity)
                         .load(url)
                         .centerCrop()
+                        .error(R.drawable.zjc_ic_camera)
                         .into(imageView);
             }
         });
@@ -88,6 +91,18 @@ public class SelectActivity extends ZBActivity {
             List<ZPictureBean> result = ZPicker.getInstance().getResultData();
             selecteds.addAll(result);
             refreshPicture(result);
+            ZCompressUtils zCompressUtils=new ZCompressUtils();
+            zCompressUtils.compressPictures(selecteds, new ZCompressUtils.CompressImageListener() {
+                @Override
+                public void onComplete() {
+                    ZToast.create().showSuccessBottom("压缩完成");
+                }
+
+                @Override
+                public void onError(String errorMsg) {
+                    ZToast.create().showErrorBottom(errorMsg);
+                }
+            });
         }
     }
 

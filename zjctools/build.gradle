@@ -38,7 +38,8 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha03'
     // RecyclerView 复杂布局实现 https://github.com/drakeet/MultiType
     api 'me.drakeet.multitype:multitype:3.4.4'
-
+    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    api 'io.reactivex.rxjava2:rxjava:2.2.4'
 }
 
 //apply from: 'bintray.gradle'
@@ -50,8 +51,8 @@ publish {
     userOrg = 'zjun'  //bintray注册的用户名
     groupId = 'com.zjun'  //compile引用时的第1部分groupId
     artifactId = 'zjcTools'       //compile引用时的第2部分项目名
-    publishVersion = '0.1.1'     //compile引用时的第3部分版本号
-    desc = '添加tabview'
+    publishVersion = '0.1.2'     //compile引用时的第3部分版本号
+    desc = '适配android x'
     website = 'https://github.com/zjunch/zjcTools'
 
     //gradle install
