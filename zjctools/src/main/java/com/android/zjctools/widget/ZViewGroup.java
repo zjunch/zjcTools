@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by lzan13 on 2017/3/25
+ * Created by zjun on 2017/3/25
  *
  * 自定义ViewGroup类，会根据子控件的宽度自动换行，
  */

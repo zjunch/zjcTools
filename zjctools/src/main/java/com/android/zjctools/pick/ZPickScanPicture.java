@@ -3,10 +3,7 @@ package com.android.zjctools.pick;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
+
 
 
 import com.android.zjctools.pick.bean.ZFolderBean;
@@ -18,8 +15,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.fragment.app.FragmentActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
+
 /**
- * Create by lzan13 on 2019/05/15 09:20
+ * Create by zjun on 2019/05/15 09:20
  *
  * 扫描图片工具类
  */

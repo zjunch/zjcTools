@@ -12,8 +12,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Parcelable;
 import android.provider.MediaStore;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.FileProvider;
+
 
 
 import com.android.zjctools.base.ZConstant;
@@ -28,6 +27,9 @@ import com.android.zjctools.widget.ZCropView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
 
 /**
  * Create by lzan13 on 2019/05/16

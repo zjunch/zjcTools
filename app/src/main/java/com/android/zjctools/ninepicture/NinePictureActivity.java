@@ -1,23 +1,19 @@
 package com.android.zjctools.ninepicture;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
+
 
 import com.android.zjctools.R;
-import com.android.zjctools.app.GlideApp;
 import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.bean.NinePictureBean;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.widget.ZItemDecoration;
-import com.android.zjctools.widget.nineimages.ZNinePicturesView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
 

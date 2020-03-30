@@ -1,9 +1,11 @@
 package com.android.zjctools.base;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
 
 import com.android.zjctools.utils.ZLog;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ZjcActivity extends AppCompatActivity {
 

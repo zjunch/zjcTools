@@ -1,7 +1,8 @@
 package com.android.zjctools.appupdate;
 
 import android.content.Context;
-import android.support.v4.content.FileProvider;
+
+import androidx.core.content.FileProvider;
 
 public class ZAppInstallProvider extends FileProvider {
 

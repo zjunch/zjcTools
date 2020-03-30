@@ -2,7 +2,6 @@ package com.android.zjctools.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -14,6 +13,8 @@ import android.widget.TextView;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
+
+import androidx.annotation.Nullable;
 
 /**
  *  created zjun 2019-09-23

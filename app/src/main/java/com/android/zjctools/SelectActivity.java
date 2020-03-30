@@ -1,24 +1,16 @@
 package com.android.zjctools;
-
 import android.content.Intent;
-import android.provider.SyncStateContract;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.Html;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.zjctools.app.GlideApp;
-import com.android.zjctools.base.AppItemBinder;
 import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.base.ZConstant;
-import com.android.zjctools.bean.FunctionBean;
 import com.android.zjctools.glide.IMManager;
 import com.android.zjctools.pick.ZPicker;
 import com.android.zjctools.pick.bean.ZPictureBean;
-import com.android.zjctools.router.ZRouter;
 import com.android.zjctools.widget.nineimages.ZNinePicturesView;
+
 
 import java.util.ArrayList;
 import java.util.List;

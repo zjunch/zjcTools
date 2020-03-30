@@ -1,10 +1,6 @@
 package com.android.zjctools.file;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.zjctools.R;
 import com.android.zjctools.base.ZBActivity;

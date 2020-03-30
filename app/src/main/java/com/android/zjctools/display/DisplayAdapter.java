@@ -1,7 +1,6 @@
 package com.android.zjctools.display;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -11,6 +10,8 @@ import com.github.chrisbanes.photoview.PhotoView;
 
 
 import java.util.List;
+
+import androidx.viewpager.widget.PagerAdapter;
 
 /**
  * 展示图片集合的适配器

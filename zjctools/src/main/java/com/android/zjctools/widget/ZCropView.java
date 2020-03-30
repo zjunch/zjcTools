@@ -18,8 +18,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.AppCompatImageView;
+
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
@@ -33,6 +32,9 @@ import com.android.zjctools.utils.bitmap.ZBitmap;
 import com.android.zjcutils.R;
 
 import java.io.File;
+
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.view.ViewCompat;
 
 /**
  * Create by lzan13 on 2019/05/19 20:56

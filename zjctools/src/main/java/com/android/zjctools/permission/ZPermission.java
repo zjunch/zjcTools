@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Parcelable;
-import android.support.v4.content.ContextCompat;
 import com.android.zjctools.base.ZConstant;
 import com.android.zjctools.router.ZRouter;
 
@@ -14,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
+import androidx.core.content.ContextCompat;
 
 
 /**

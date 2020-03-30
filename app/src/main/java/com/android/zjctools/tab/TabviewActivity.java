@@ -1,10 +1,5 @@
 package com.android.zjctools.tab;
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.view.View;
-
 import com.android.zjctools.R;
 import com.android.zjctools.adapter.ZFragmentPagerAdapter;
 import com.android.zjctools.base.ZBActivity;
@@ -14,6 +9,9 @@ import com.android.zjctools.widget.tabview.ZTabView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 public class TabviewActivity extends ZBActivity {
 
@@ -29,8 +27,8 @@ public class TabviewActivity extends ZBActivity {
 
     @Override
     protected void initUI() {
-        tabLayout=findViewById(R.id.main_tab_layout);
         viewPager=findViewById(R.id.main_view_pager);
+//        tabLayout=findViewById(R.id.tabs);
     }
 
     @Override
@@ -42,12 +40,12 @@ public class TabviewActivity extends ZBActivity {
         mAdapter = new ZFragmentPagerAdapter(getSupportFragmentManager(), mFragmentList);
         viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(mAdapter);
-        tabLayout.setupWithViewPager(viewPager);
+//        tabLayout.setupWithViewPager(viewPager);
         List<ZTabBean>tabBeans=new ArrayList<>();
         tabBeans.add(new ZTabBean(R.drawable.ic_friend_select,R.drawable.ic_friend_normal,"朋友"));
         tabBeans.add(new ZTabBean(R.drawable.ic_msg_select,R.drawable.ic_msg_normal,"消息"));
         tabBeans.add(new ZTabBean(R.drawable.ic_menu_select,R.drawable.ic_menu_normal,"我的"));
-        tabLayout.setTabBeans(tabBeans);
+        //tabLayout.setTabBeans(tabBeans);
 //        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 //            @Override
 //            public void onTabSelected(TabLayout.Tab tab) {

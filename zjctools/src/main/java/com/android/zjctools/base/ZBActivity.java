@@ -1,16 +1,14 @@
 package com.android.zjctools.base;
-
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.android.zjctools.toorbar.StatusBarUtil;
 import com.android.zjctools.widget.ZStatusBarHeightView;
 import com.android.zjcutils.R;
+
+import androidx.fragment.app.FragmentActivity;
 
 public abstract class ZBActivity extends ZjcActivity {
     ZStatusBarHeightView zjcStatusBarHeightView;

@@ -1,6 +1,5 @@
 package com.android.zjctools.display;
 
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -10,6 +9,8 @@ import com.android.zjctools.router.ZParams;
 import com.android.zjctools.router.ZRouter;
 
 import java.util.List;
+
+import androidx.viewpager.widget.ViewPager;
 
 
 /**

@@ -1,10 +1,12 @@
 package com.android.zjctools.pick;
 
 import android.content.Context;
-import android.support.v4.content.FileProvider;
+
+import androidx.core.content.FileProvider;
+
 
 /**
- * Create by lzan13 on 2019/05/16/21:06
+ * Create by zjun on 2019/05/16/21:06
  *
  * 自定义一个 Provider，以免和引入的项目的provider冲突
  */

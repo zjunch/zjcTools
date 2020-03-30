@@ -1,7 +1,6 @@
 package com.android.zjctools.pick.adapter;
 
 import android.app.Activity;
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -13,8 +12,10 @@ import com.android.zjctools.pick.bean.ZPictureBean;
 
 import java.util.List;
 
+import androidx.viewpager.widget.PagerAdapter;
+
 /**
- * Create by lzan13 on 2019/05/16 21:51
+ * Create by zjun on 2019/05/16 21:51
  *
  * 图片预览适配器
  */

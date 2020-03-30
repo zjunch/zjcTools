@@ -5,22 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".tab.TabviewActivity">
-    <com.android.zjctools.widget.tabview.ZTabView
-        android:id="@+id/main_tab_layout"
-        android:padding="@dimen/zjc_dimen_0"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/zjcWhite"
-        android:layout_alignParentBottom="true"
-        app:zjc_tab_icon_wrap="false"
-        app:zjc_tab_text_size="@dimen/zjc_size_12"
-        app:tabIndicatorHeight="0dp" />
+<!--    <com.android.zjctools.widget.tabview.ZTabView-->
+<!--        android:id="@+id/tabs"-->
+<!--        android:padding="@dimen/zjc_dimen_0"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:background="@color/zjcWhite"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        app:zjc_tab_icon_wrap="false"-->
+<!--        app:zjc_tab_text_size="@dimen/zjc_size_12" />-->
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:background="@color/zjc_white_87"
         android:id="@+id/main_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       android:layout_above="@id/main_tab_layout"
         android:overScrollMode="never" />
 </RelativeLayout>

@@ -1,12 +1,13 @@
 package com.android.zjctools.widget;
 
 import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
+import androidx.viewpager.widget.ViewPager;
+
 /**
- * Create by lzan13 on 2019/05/16 21:57
+ * Create by zjun on 2019/05/16 21:57
  *
  * 解决可缩放控件在 ViewPager 冲突的问题
  */

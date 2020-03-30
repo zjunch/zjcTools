@@ -1,8 +1,5 @@
 package com.android.zjctools;
-import android.Manifest;
-import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
 
 import com.android.zjctools.appupdate.ZAppUpdateBean;
 import com.android.zjctools.base.ZBActivity;
@@ -17,6 +14,8 @@ import com.android.zjctools.widget.ZItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
 
@@ -43,7 +42,7 @@ public class MainActivity extends ZBActivity {
         items.add(new FunctionBean("选择图片",3));
         items.add(new FunctionBean("测试file",4));
         items.add(new FunctionBean("app更新",5));
-        items.add(new FunctionBean("tabView",6));
+//        items.add(new FunctionBean("tabView",6));
     }
 
     @Override
@@ -78,7 +77,7 @@ public class MainActivity extends ZBActivity {
             }else if(item.type==4){
                 Router.goFile(mActivity);
             }else if(item.type==5){
-                ZAppUpdateBean appUpdateBean=new ZAppUpdateBean("https://ali-fir-pro-binary.jappstore.com/a30905353834c6abf9ee5c84f69a644ba4261646.apk?auth_key=1583909254-0-0-5dd9c1e9a1ca8a629255db0b1281b162",null);
+                ZAppUpdateBean appUpdateBean=new ZAppUpdateBean("https://ali-fir-pro-binary.imfir.cn/7685e3ad591dd5402593180f4caf007acb5cffae.apk?auth_key=1585550085-0-0-1d7aadef3968018e4d25dc3d758a9abf",null);
                 appUpdateBean.appLogoIcon=R.drawable.zjc_ic_eye_on;
                 List<String> contents=new ArrayList<>();
                 contents.add("系统完善，优化用户体验");
@@ -86,8 +85,6 @@ public class MainActivity extends ZBActivity {
                 contents.add("系统完善，优化用户体验11");
                 appUpdateBean.updateContents=contents;
                 Router.goAppUpdate(mActivity,appUpdateBean);
-            }else if(item.type==6){
-                Router.goTabView(mActivity);
             }
         });
     }

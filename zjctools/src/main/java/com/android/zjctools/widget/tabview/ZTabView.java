@@ -2,19 +2,22 @@ package com.android.zjctools.widget.tabview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.design.widget.TabLayout;
+
 import android.util.AttributeSet;
 import android.view.View;
-
-import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
+import com.google.android.material.tabs.TabLayout;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ZTabView extends TabLayout {
 
+    /**
+     * 此类android x 暂未适配 ，有bug暂未处理,
+     */
 
     private List<ZTabBean>mTabBeans=new ArrayList<>();
     private List<ZTabItemView> mCustomTab = new ArrayList<>();
@@ -27,7 +30,7 @@ public class ZTabView extends TabLayout {
 
 
     public ZTabView(Context context) {
-        super(context);
+        this(context,null);
     }
 
     public ZTabView(Context context, AttributeSet attrs) {

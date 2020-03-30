@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.io.Serializable;
 
 /**
- * Create by lzan13 on 2019/05/16 21:51
+ * Create by zjun on 2019/05/16 21:51
  *
  * 图片实体类，存储图片文件夹信息
  */

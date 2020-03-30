@@ -6,14 +6,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Parcelable;
 import android.provider.Settings;
-import android.support.v4.app.Fragment;
 
 import com.android.zjctools.permission.ZPermissionActivity;
 
 import java.io.Serializable;
 
+import androidx.fragment.app.Fragment;
+
 /**
- * Created by lzan13 on 2018/4/24.
+ * Created by zjun on 2020/3/24.
  *
  * 项目跳转导航路由器
  */

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Create by lzan13 on 2019/05/16 21:51
+ * Create by zjun on 2019/05/16 21:51
  *
  * 文件夹实体类，存储图片文件夹信息
  */

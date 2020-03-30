@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.android.zjctools.R;
+
 import com.android.zjctools.app.GlideApp;
 import com.android.zjctools.base.AppItemBinder;
 import com.android.zjctools.bean.NinePictureBean;

@@ -6,12 +6,13 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
+
+import androidx.annotation.Nullable;
 
 /**
  * created zjun 2019-12-23

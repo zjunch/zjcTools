@@ -1,7 +1,6 @@
 package com.android.zjctools;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +8,8 @@ import android.view.ViewGroup;
 import com.android.zjctools.base.AppItemBinder;
 import com.android.zjctools.bean.FunctionBean;
 import com.android.zjctools.widget.ZSettingView;
+
+import androidx.annotation.NonNull;
 
 public class FunctionBinder extends AppItemBinder<FunctionBean> {
 

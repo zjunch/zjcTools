@@ -8,13 +8,15 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
+
 import android.view.View;
 import android.widget.RemoteViews;
 
 import com.android.zjcutils.BuildConfig;
 import com.android.zjcutils.R;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
 
 
 public class ZNotificationUtils extends ContextWrapper {

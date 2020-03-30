@@ -1,7 +1,6 @@
 package com.android.zjctools.pick.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -21,8 +20,10 @@ import com.android.zjcutils.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+
 /**
- * Create by lzan13 on 2019/05/16 21:51
+ * Create by zjun on 2019/05/16 21:51
  *
  * 加载相册图片的 RecyclerView 适配器，使用局部刷新解决选中照片出现闪动问题
  */

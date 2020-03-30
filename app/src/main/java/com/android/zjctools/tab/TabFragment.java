@@ -1,8 +1,5 @@
 package com.android.zjctools.tab;
 
-
-import android.support.v4.app.Fragment;
-
 import com.android.zjctools.R;
 import com.android.zjctools.base.ZLazyFragment;
 

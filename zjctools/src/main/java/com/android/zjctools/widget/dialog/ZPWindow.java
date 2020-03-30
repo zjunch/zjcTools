@@ -1,8 +1,5 @@
 package com.android.zjctools.widget.dialog;
-
 import android.app.Activity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,16 +7,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-
-
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
-
 import java.util.List;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
+
 
 /**
  * created zjun 2019-12-23
