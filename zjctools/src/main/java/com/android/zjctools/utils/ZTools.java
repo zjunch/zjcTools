@@ -42,7 +42,7 @@ public class ZTools {
             mContext = ZjcApp.getContext();
         }
         if (mContext == null) {
-            throw new NullPointerException("请初始化 zjcTools 或者继承自 VMApp 类");
+            throw new NullPointerException("请初始化 zjcTools 或者继承自 ZjcApp 类");
         }
         return mContext;
     }
