@@ -75,6 +75,7 @@ recycleview分割线（ZItemDecoration）,
            ZToast.create().showErrorCenter("中间失败");
        
    5.九宫格图片ZNinePicturesView
+   
         布局中使用实例
         <com.android.zjctools.widget.nineimages.ZNinePicturesView
                 android:id="@+id/ninePics"
@@ -115,6 +116,7 @@ recycleview分割线（ZItemDecoration）,
       zileLayout.addView(avtatView);
       
  7.ZsettingView(类似于设置菜单,左侧是菜单名字，有侧是描述或者选择箭头)
+ 
      xml 布局如下
        <com.android.zjctools.widget.ZSettingView
                 android:layout_marginTop="10dp"
@@ -142,6 +144,7 @@ recycleview分割线（ZItemDecoration）,
         <attr name="zjc_siv_max_counts" format="integer" />
         
    9.ZSearchView（搜索框）
+   
          <declare-styleable name="ZSearchView">
         <!--是否显示清除-->
         <attr name="zjc_srv_clear_enable" format="boolean" />
