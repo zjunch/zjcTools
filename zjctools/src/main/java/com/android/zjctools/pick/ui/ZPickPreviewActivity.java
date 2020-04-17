@@ -74,6 +74,16 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
         mSelectCB = findViewById(R.id.zjc_preview_select_cb);
         mOriginCB = findViewById(R.id.zjc_preview_origin_cb);
         mSpaceView = findViewById(R.id.zjc_preview_bottom_space);
+        setDarkTextStatusBar(false); //不需要把状态栏字体变成黑色
+    }
+
+    @Override
+    protected void setupTopBar() {//重新 状态栏，不需要marginTop 状态栏高度
+        mTopBar = findViewById(R.id.zjc_common_top_bar);
+        if (mTopBar != null) {
+            // 设置状态栏透明主题时，布局整体会上移，所以给头部加上状态栏的 margin 值，保证头部不会被覆盖
+            mTopBar.setIconListener(v -> onBackPressed());
+        }
     }
 
     @Override

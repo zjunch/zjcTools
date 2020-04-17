@@ -12,6 +12,15 @@
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/ZJCTheme.Permission" /> <!-- 选择器界面 -->
 
+        <activity
+            android:name="com.android.zjctools.display.ZDisplayMultiActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" /> <!-- 剪切界面 -->
+        <activity
+            android:name="com.android.zjctools.display.ZDisplaySingleActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" /> <!-- 剪切界面 -->
+
         <activity android:name="com.android.zjctools.appupdate.ZAppUpdateActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/ZJCTheme.Translucent" ></activity>

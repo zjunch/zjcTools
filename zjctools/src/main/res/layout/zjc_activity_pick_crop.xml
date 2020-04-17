@@ -11,11 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.android.zjctools.widget.ZTopBar
-        android:id="@+id/zjc_common_top_bar"
+    <com.android.zjctools.widget.ZStatusBarHeightView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/zjcGray3"
+        android:id="@+id/status_bar"
+        android:background="@color/zjc_black_12"/>
+    <com.android.zjctools.widget.ZTopBar
+        android:id="@+id/zjc_common_top_bar"
+        android:layout_below="@id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/zjc_black_12"
         app:zjc_end_btn="@string/zjc_pick_complete"
         app:zjc_icon="@drawable/zjc_ic_back_color"
         app:zjc_title="@string/zjc_pick_crop_picture"
