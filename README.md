@@ -62,10 +62,50 @@ recycleview分割线（ZItemDecoration）,
     
    3.图片选择
     
-    参照 app里面  SelectActivity,涵盖phptoview 预览缩放，点击返回
+     多选：
+     List<ZPictureBean> selecteds = new ArrayList<>();  //selecteds 已经选择过的图片
+     ZIMManager.showMultiPicker(mActivity, 9, selecteds);
+     
+     单选：
+     ZIMManager.showSinglePicker(mActivity);
+     
+     
+      @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode != RESULT_OK || data == null) {
+            return;
+        }
+        if (requestCode == ZConstant.ZJC_PICK_REQUEST_CODE) {//返回图片 集合
+            List<ZPictureBean> result = ZPicker.getInstance().getResultData();
+        }
+    }
     
+    //此处为图片压缩，已经做了避免重复压缩
+     ZCompressUtils zCompressUtils=new ZCompressUtils();
+            zCompressUtils.compressPictures(selecteds, new ZCompressUtils.CompressImageListener() {
+                @Override
+                public void onComplete() {
+                    ZToast.create().showSuccessBottom("压缩完成");
+                }
+
+                @Override
+                public void onError(String errorMsg) {
+                    ZToast.create().showErrorBottom(errorMsg);
+                }
+            });
+    
+    //图片预览 photoView 缩放
+       ZParams params = new ZParams();
+        params.what = position;   //第一个展示得位置
+        params.strList = pictureList; //图片的地址集合
+        Intent intent = new Intent(context, ZDisplayMultiActivity.class);
+        putParams(intent, params);
+        context.startActivity(intent);
+
 
    4.常用toast    
+          
            ZToast.create().showNormal("正常的");
            ZToast.create().showCenter("中间的");
            ZToast.create().showSuccessBottom("底部成功");
