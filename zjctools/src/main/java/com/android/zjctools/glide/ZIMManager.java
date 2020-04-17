@@ -2,10 +2,10 @@ package com.android.zjctools.glide;
 
 import android.app.Activity;
 import android.content.Context;
+
 import com.android.zjctools.pick.ZPicker;
 import com.android.zjctools.pick.bean.ZPictureBean;
 import com.android.zjctools.widget.ZCropView;
-
 
 import java.util.List;
 
@@ -15,14 +15,14 @@ import androidx.fragment.app.Fragment;
  * Create by lzan13 on 2020-01-01 10:14
  * 图片选择管理类
  */
-public class IMManager {
+public class ZIMManager {
 
     /**
      * 图片管理相关初始化
      */
     public static void init(Context context) {
         // 如果使用 VMTools 内部封装的图片选择器，需要实现图片加载接口
-        ZPicker.getInstance().setPictureLoader(new IMGPickerLoader());
+        ZPicker.getInstance().setPictureLoader(new ZIMGPickerLoader());
     }
 
     /**
