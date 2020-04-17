@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zjcBlack"
+    tools:ignore="MissingDefaultResource">
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/display_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <com.android.zjctools.widget.ZStatusBarHeightView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/status_bar"
+        android:background="@color/zjc_black_12"/>
+    <RelativeLayout
+        android:layout_below="@id/status_bar"
+        android:layout_width="match_parent"
+        android:background="@color/zjc_black_12"
+        android:layout_height="?android:attr/actionBarSize">
+        <ImageButton
+            android:id="@+id/zjc_bar_iv_back"
+            style="@style/text_14_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:minWidth="0dp"
+            android:padding="15dp"
+            android:tint="@color/zjcWhite"
+            android:src="@drawable/zjc_ic_back_color" />
+
+        <TextView
+            android:id="@+id/zjc_current_text"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:textColor="@color/zjcWhite"
+            android:layout_width="wrap_content"
+            android:textStyle="italic"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/display_dot_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/zjc_dimen_32"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" />
+
+</RelativeLayout>

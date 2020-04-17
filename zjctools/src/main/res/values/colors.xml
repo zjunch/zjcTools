@@ -3,6 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#0000FF</color>
+    <color name="picture_in">#3a5d8e</color>
+
     <!--亮色主题，app 主题色-->
     <color name="zjc_theme_primary_dark">@color/app_theme_color</color>
 

@@ -10,7 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
+    <com.android.zjctools.widget.ZStatusBarHeightView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/status_bar"
+        android:background="@color/zjc_black_12"/>
     <com.android.zjctools.widget.ZTopBar
+        android:layout_below="@id/status_bar"
         android:id="@+id/zjc_common_top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

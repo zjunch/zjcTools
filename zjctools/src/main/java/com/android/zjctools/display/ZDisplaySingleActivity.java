@@ -1,21 +1,20 @@
 package com.android.zjctools.display;
 
 import android.text.TextUtils;
-import android.view.View;
 
-import com.android.zjctools.R;
 import com.android.zjctools.base.ZBActivity;
-import com.android.zjctools.glide.IMGLoader;
+import com.android.zjctools.glide.ZIMGLoader;
 import com.android.zjctools.pick.ILoaderListener;
 import com.android.zjctools.router.ZParams;
 import com.android.zjctools.router.ZRouter;
+import com.android.zjcutils.R;
 import com.github.chrisbanes.photoview.PhotoView;
 
 
 /**
  * 展示单图头像大图界面
  */
-public class DisplaySingleActivity extends ZBActivity {
+public class ZDisplaySingleActivity extends ZBActivity {
 
 
     PhotoView avatarView;
@@ -25,7 +24,7 @@ public class DisplaySingleActivity extends ZBActivity {
 
     @Override
     protected int layoutId() {
-        return R.layout.activity_display_single_image;
+        return R.layout.zjc_activity_display_single_image;
     }
 
     @Override
@@ -41,7 +40,7 @@ public class DisplaySingleActivity extends ZBActivity {
         if (!TextUtils.isEmpty(avatarUrl)) {
             ILoaderListener.Options options = new ILoaderListener.Options(avatarUrl);
             options.isCircle = true;
-            IMGLoader.load(mActivity, options, avatarView);
+            ZIMGLoader.load(mActivity, options, avatarView);
         }
     }
 

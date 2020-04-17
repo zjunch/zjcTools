@@ -45,7 +45,7 @@ public interface ILoaderListener extends Serializable {
         public int radiusLBSize; // 左下角
         public int radiusRTSize; // 右上角
         public int radiusRBSize; // 右下角
-
+        public boolean isFitCenter;
         // 是否模糊
         public boolean isBlur;
     }

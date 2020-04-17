@@ -3,11 +3,12 @@ package com.android.zjctools.display;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.android.zjctools.R;
 import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.router.ZParams;
 import com.android.zjctools.router.ZRouter;
+import com.android.zjcutils.R;
 
 import java.util.List;
 
@@ -15,11 +16,11 @@ import java.util.List;
 /**
  * 展示图片集合类
  */
-public class DisplayMultiActivity extends ZBActivity {
+public class ZDisplayMultiActivity extends ZBActivity {
     ViewPager viewPager;
      LinearLayout dotLayout;
-
-    private DisplayAdapter adapter;
+    TextView  currentTv;
+    private ZDisplayAdapter adapter;
     private List<String> imagePaths;
     private int selected;
     private View dotView;
@@ -27,13 +28,16 @@ public class DisplayMultiActivity extends ZBActivity {
 
     @Override
     protected int layoutId() {
-        return R.layout.activity_display_images;
+        return R.layout.zjc_activity_display_images;
     }
+
 
     @Override
     protected void initUI() {
         viewPager=findViewById(R.id.display_view_pager);
         dotLayout=findViewById(R.id.display_dot_layout);
+        currentTv=findViewById(R.id.zjc_current_text);
+        setDarkTextStatusBar(false);
     }
 
     @Override
@@ -57,9 +61,10 @@ public class DisplayMultiActivity extends ZBActivity {
             lp.rightMargin = 5;
             dotLayout.addView(dotView, lp);
         }
-        adapter = new DisplayAdapter(mActivity, imagePaths);
+        adapter = new ZDisplayAdapter(mActivity, imagePaths);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(selected);
+        currentTv.setText(selected+1+"/"+imagePaths.size());
         adapter.setListener(() -> {onFinish();});
 
         setPageListener();
@@ -75,6 +80,7 @@ public class DisplayMultiActivity extends ZBActivity {
                 for (int i = 0; i < dotViews.length; i++) {
                     dotViews[i].setBackgroundResource(R.color.zjc_white_87);
                     if (i == position) {
+                        currentTv.setText(position+1+"/"+imagePaths.size());
                         dotViews[position].setBackgroundResource(R.color.picture_in);
                     }
                 }

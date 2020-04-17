@@ -14,7 +14,7 @@ import java.security.MessageDigest;
  *
  * 使用 RenderScript 模糊图片
  */
-public class BlurTransformation extends BitmapTransformation {
+public class ZBlurTransformation extends BitmapTransformation {
 
     private static final String ID = "com.vmloft.develop.app.match.glide.BlurTransformation";
     private static final byte[] ID_BYTES = ID.getBytes(CHARSET);

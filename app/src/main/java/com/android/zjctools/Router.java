@@ -6,7 +6,7 @@ import android.content.Intent;
 
 import com.android.zjctools.appupdate.ZAppUpdateBean;
 import com.android.zjctools.appupdate.ZAppUpdateActivity;
-import com.android.zjctools.display.DisplayMultiActivity;
+import com.android.zjctools.display.ZDisplayMultiActivity;
 import com.android.zjctools.file.TestFileActivity;
 import com.android.zjctools.ninepicture.NinePictureActivity;
 import com.android.zjctools.router.ZParams;
@@ -54,6 +54,6 @@ public class Router extends ZRouter {
        ZParams params = new ZParams();
         params.what = position;
         params.strList = pictureList;
-        overlay(context, DisplayMultiActivity.class, params);
+        overlay(context, ZDisplayMultiActivity.class, params);
     }
 }

@@ -4,10 +4,11 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
-import com.android.zjctools.R;
-import com.android.zjctools.app.GlideApp;
+
 import com.android.zjctools.pick.ILoaderListener;
 import com.android.zjctools.utils.ZDimen;
+import com.android.zjcutils.R;
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.MultiTransformation;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
@@ -20,10 +21,9 @@ import com.bumptech.glide.request.RequestOptions;
  *
  * 图片加载简单封装
  */
-public class IMGLoader {
+public class ZIMGLoader {
 
     /**
-     * 加载封面
      *
      * @param context   上下文
      * @param cover     图片地址
@@ -35,7 +35,7 @@ public class IMGLoader {
     }
 
     /**
-     * 加载相册封面
+     *
      *
      * @param context   上下文
      * @param cover     图片地址
@@ -84,15 +84,20 @@ public class IMGLoader {
      */
     public static void load(Context context, ILoaderListener.Options options, ImageView imageView) {
         RequestOptions requestOptions = new RequestOptions();
+//        if(options.isFitCenter){
+//            requestOptions.fitCenter();
+//        }else{
+//            requestOptions.centerCrop();
+//        }
         if (options.isCircle) {
             requestOptions.circleCrop();
         } else if (options.isRadius) {
             requestOptions.transform(new MultiTransformation<>(new CenterCrop(), new RoundedCorners(options.radiusSize)));
         }
         if (options.isBlur) {
-            requestOptions.transform(new BlurTransformation());
+            requestOptions.transform(new ZBlurTransformation());
         }
-        GlideApp.with(context).load(options.url).apply(requestOptions).thumbnail(placeholder(context, options)).into(imageView);
+        Glide.with(context).load(options.url).apply(requestOptions).thumbnail(placeholder(context, options)).into(imageView);
     }
 
     /**
@@ -110,9 +115,9 @@ public class IMGLoader {
             requestOptions.transform(new MultiTransformation<>(new CenterCrop(), new RoundedCorners(options.radiusSize)));
         }
         if (options.isBlur) {
-            requestOptions.transform(new BlurTransformation());
+            requestOptions.transform(new ZBlurTransformation());
         }
-        GlideApp.with(context).load(options.url).apply(requestOptions).thumbnail(placeholder(context, options, resId)).into(imageView);
+        Glide.with(context).load(options.url).apply(requestOptions).thumbnail(placeholder(context, options, resId)).into(imageView);
     }
 
     /**
@@ -143,10 +148,10 @@ public class IMGLoader {
             requestOptions.transform(new MultiTransformation<>(new CenterCrop(), new RoundedCorners(options.radiusSize)));
         }
         if (options.isBlur) {
-            requestOptions.transform(new BlurTransformation());
+            requestOptions.transform(new ZBlurTransformation());
         }
 
-        return GlideApp.with(context).load(resId).apply(requestOptions);
+        return Glide.with(context).load(resId).apply(requestOptions);
     }
 
 }

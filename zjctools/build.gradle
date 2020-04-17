@@ -37,7 +37,17 @@ dependencies {
     // 引用recycleview
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     // RecyclerView 复杂布局实现 https://github.com/drakeet/MultiType
+
+    // 一个比较强大的图片浏览控件 https://github.com/chrisbanes/PhotoView
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
     api 'me.drakeet.multitype:multitype:3.4.4'
+
+
+    // Glide 图片加载库 https://github.com/bumptech/glide
+    implementation ('com.github.bumptech.glide:glide:4.9.0') {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
 }
 

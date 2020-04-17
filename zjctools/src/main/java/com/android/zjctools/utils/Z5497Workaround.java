@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
  * android:windowSoftInputMode="adjustResize|stateHidden"
  *
  * 在该activity代码界面，在setContentView语句下添加
- * AndroidBug5497Workaround.assistActivity(MainActivity.this);
+ * Z5497Workaround.assistActivity(MainActivity.this);
  *
  */
 

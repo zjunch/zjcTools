@@ -5,23 +5,22 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.zjctools.glide.IMGLoader;
+import com.android.zjctools.glide.ZIMGLoader;
 import com.android.zjctools.pick.ILoaderListener;
 import com.github.chrisbanes.photoview.PhotoView;
-
 
 import java.util.List;
 
 /**
  * 展示图片集合的适配器
  */
-public class DisplayAdapter extends PagerAdapter {
+public class ZDisplayAdapter extends PagerAdapter {
 
     private Context context;
     private List<String> imagePaths;
     private IClickListener listener;
 
-    public DisplayAdapter(Context context, List<String> list) {
+    public ZDisplayAdapter(Context context, List<String> list) {
         this.context = context;
         imagePaths = list;
     }
@@ -46,7 +45,8 @@ public class DisplayAdapter extends PagerAdapter {
             }
         });
         ILoaderListener.Options options = new ILoaderListener.Options(imagePaths.get(position));
-        IMGLoader.load(context, options, photoView);
+        options.isFitCenter=true;
+        ZIMGLoader.load(context, options, photoView);
 
         container.addView(photoView, 0);
         return photoView;
