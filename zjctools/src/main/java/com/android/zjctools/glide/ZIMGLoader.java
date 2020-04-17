@@ -23,30 +23,31 @@ import com.bumptech.glide.request.RequestOptions;
  */
 public class ZIMGLoader {
 
+
     /**
      *
      * @param context   上下文
      * @param cover     图片地址
      * @param imageView 目标 view
      */
-    public static void loadCover(Context context, String cover, ImageView imageView) {
+    public static void load(Context context, String cover, ImageView imageView) {
         ILoaderListener.Options options = new ILoaderListener.Options(cover);
         load(context, options, imageView);
     }
 
+
     /**
-     *
      *
      * @param context   上下文
      * @param cover     图片地址
      * @param imageView 目标 view
      */
-    public static void loadAlbumCover(Context context, String cover, ImageView imageView) {
+    public static void load(Context context, String cover, ImageView imageView,int placeId) {
         ILoaderListener.Options options = new ILoaderListener.Options(cover);
-        options.isRadius = true;
-        options.radiusSize = ZDimen.dp2px(8);
-        load(context, options, imageView, R.drawable.zjc_picture_default);
+        load(context, options, imageView,placeId);
     }
+
+
 
     /**
      * 加载圆形图，一般是头像
@@ -84,11 +85,6 @@ public class ZIMGLoader {
      */
     public static void load(Context context, ILoaderListener.Options options, ImageView imageView) {
         RequestOptions requestOptions = new RequestOptions();
-//        if(options.isFitCenter){
-//            requestOptions.fitCenter();
-//        }else{
-//            requestOptions.centerCrop();
-//        }
         if (options.isCircle) {
             requestOptions.circleCrop();
         } else if (options.isRadius) {
@@ -97,7 +93,7 @@ public class ZIMGLoader {
         if (options.isBlur) {
             requestOptions.transform(new ZBlurTransformation());
         }
-        Glide.with(context).load(options.url).apply(requestOptions).thumbnail(placeholder(context, options)).into(imageView);
+        GlideApp.with(context).load(options.url).apply(requestOptions).thumbnail(placeholder(context, options)).into(imageView);
     }
 
     /**
@@ -117,7 +113,7 @@ public class ZIMGLoader {
         if (options.isBlur) {
             requestOptions.transform(new ZBlurTransformation());
         }
-        Glide.with(context).load(options.url).apply(requestOptions).thumbnail(placeholder(context, options, resId)).into(imageView);
+        GlideApp.with(context).load(options.url).apply(requestOptions).thumbnail(placeholder(context, options, resId)).into(imageView);
     }
 
     /**
@@ -151,7 +147,7 @@ public class ZIMGLoader {
             requestOptions.transform(new ZBlurTransformation());
         }
 
-        return Glide.with(context).load(resId).apply(requestOptions);
+        return GlideApp.with(context).load(resId).apply(requestOptions);
     }
 
 }
