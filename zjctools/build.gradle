@@ -39,7 +39,6 @@ dependencies {
     // RecyclerView 复杂布局实现 https://github.com/drakeet/MultiType
 
     // 一个比较强大的图片浏览控件 https://github.com/chrisbanes/PhotoView
-
     api 'me.drakeet.multitype:multitype:3.4.4'
 
 
