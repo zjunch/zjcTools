@@ -2,9 +2,9 @@
 
 最新  com.zjun:zjcTools:0.1.4 
 
-0.1.2   、  0.1.4 已适配androidX
+0.1.2   、  0.1.4 已适配androidX   分支developx
 
-0.1.1   、  0.1.3 未适配androidX
+0.1.1   、  0.1.3 未适配androidX   分支develop
 
 
 
