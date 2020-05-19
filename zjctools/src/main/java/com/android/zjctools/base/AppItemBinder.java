@@ -23,6 +23,10 @@ public abstract class AppItemBinder<T> extends ItemViewBinder<T, AppItemBinder.A
     public static final int ACTION_NORMAL = 0;
     // 带删除的按钮的点击动作
     public static final int ACTION_DELETE = 1;
+    // 带修改的点击动作
+    public static final int ACTION_EDIT =2;
+    // 其他的点击动作
+    public static final int ACTION_OTHER =3;
 
     protected Context mContext;
 

@@ -3,6 +3,7 @@ package com.android.zjctools.utils;
 import android.content.Context;
 
 import com.android.zjctools.base.ZjcApp;
+import com.android.zjctools.glide.ZIMManager;
 
 public class ZTools {
 
@@ -18,6 +19,7 @@ public class ZTools {
      */
     public static void init(Context context) {
         mContext = context;
+        ZIMManager.init(mContext);
     }
 
     /**
@@ -28,6 +30,7 @@ public class ZTools {
      */
     public static void init(Context context, int logLevel) {
         mContext = context;
+        ZIMManager.init(mContext);
         ZLog.setDebug(logLevel);
     }
 

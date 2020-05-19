@@ -22,6 +22,11 @@ import com.bumptech.glide.request.RequestOptions;
  */
 public class ZIMGLoader {
 
+    public  static int placeId=0;
+
+    public  static  void  setImagePlaceId(int drawableId){
+        placeId=drawableId;
+    }
 
     /**
      * 加载封面
@@ -72,7 +77,7 @@ public class ZIMGLoader {
         ILoaderListener.Options options = new ILoaderListener.Options(avatar);
         options.isRadius = true;
         options.radiusSize =ZDimen.dp2px(6);
-        load(context, options, imageView, R.drawable.zjc_picture_default);
+        load(context, options, imageView,  placeId==0?R.drawable.zjc_picture_default:placeId);
     }
 
     /**
@@ -123,7 +128,7 @@ public class ZIMGLoader {
      * @return
      */
     private static RequestBuilder<Drawable> placeholder(Context context, ILoaderListener.Options options) {
-        int resId = R.drawable.zjc_picture_default;
+        int resId = placeId==0?R.drawable.zjc_picture_default:placeId;
         return placeholder(context, options, resId);
     }
 
