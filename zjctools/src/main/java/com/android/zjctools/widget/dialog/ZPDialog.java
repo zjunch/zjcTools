@@ -294,13 +294,13 @@ public class ZPDialog {
 
     public  void setCancelTVBg(int resId){
         if(cancelTV!=null){
-            confirmTV.setBackgroundResource(resId);
+            cancelTV.setBackgroundResource(resId);
         }
     }
 
     public  void setCancelTVColor(int colorId){
         if(cancelTV!=null){
-            confirmTV.setTextColor(ZColor.byRes(colorId));
+            cancelTV.setTextColor(ZColor.byRes(colorId));
         }
     }
 
