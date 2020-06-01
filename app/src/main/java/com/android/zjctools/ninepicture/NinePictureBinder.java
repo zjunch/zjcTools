@@ -8,7 +8,7 @@ import com.android.zjctools.R;
 import com.android.zjctools.base.AppItemBinder;
 import com.android.zjctools.bean.NinePictureBean;
 import com.android.zjctools.glide.ZIMGLoader;
-import com.android.zjctools.pick.ILoaderListener;
+import com.android.zjctools.pick.ZImgLoaderListener;
 import com.android.zjctools.widget.nineimages.ZNinePicturesView;
 
 public class NinePictureBinder extends AppItemBinder<NinePictureBean> {
@@ -29,7 +29,7 @@ public class NinePictureBinder extends AppItemBinder<NinePictureBean> {
         NineView.setImgLoadUrlListenr(new ZNinePicturesView.ImgLoadUrlListener() {
             @Override
             public void onImgLoad(ImageView imageView, String url, int index, int viewWidth, int viewHeight) {
-                ILoaderListener.Options options = new ILoaderListener.Options(url);
+                ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(url);
                 ZIMGLoader.load(mContext, options, imageView);
             }
         });

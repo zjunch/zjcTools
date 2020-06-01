@@ -17,9 +17,6 @@ import java.util.concurrent.Executors;
 
 public class ZSystem {
 
-    /**
-     * 借用牛逼哄哄的 lzan13 代码
-     */
 
 
     /**

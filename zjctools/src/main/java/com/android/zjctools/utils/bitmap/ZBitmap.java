@@ -16,14 +16,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 
-/**
- * 借用牛逼哄哄的 lzan13 代码
- */
 
-/**
- * Created by lzan13 on 2016/1/11.
- * 图片处理类，压缩，转换
- */
 public class ZBitmap {
 
     // 图片最大大小 默认500Kb

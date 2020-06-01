@@ -4,12 +4,10 @@ import android.graphics.Bitmap;
 import android.util.LruCache;
 
 
-/**
- * 借用牛逼哄哄的 lzan13 代码
- */
+
 
 /**
- * Created by lzan13 on 2016/3/28.
+ * Created by zjun on 2016/3/28.
  * 图片资源缓存类，实现加载图片到内存的缓存
  */
 public class ZBitmapCache {

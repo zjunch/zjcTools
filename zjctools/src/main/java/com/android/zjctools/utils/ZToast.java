@@ -10,10 +10,11 @@ import android.widget.Toast;
 
 import com.android.zjcutils.R;
 
+/**
+ * created  zjun 2019 12 21
+ */
 public class ZToast {
-    /**
-     * created  zjun 2019 12 21
-     */
+
 
     //正常资源背景
     private int normalBg = R.drawable.zjc_shape_toast_normal;

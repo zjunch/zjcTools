@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 
-import com.android.zjctools.pick.ILoaderListener;
+import com.android.zjctools.pick.ZImgLoaderListener;
 import com.android.zjctools.pick.ZPicker;
 import com.android.zjctools.pick.bean.ZPictureBean;
 
@@ -35,7 +35,7 @@ public class ZPreviewPageAdapter extends PagerAdapter {
         ImageView imageView = ZPicker.getInstance().getPictureLoader().createView(mActivity);
 
         ZPictureBean bean = mDataList.get(position);
-        ILoaderListener.Options options = new ILoaderListener.Options(bean.path);
+        ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(bean.path);
         ZPicker.getInstance().getPictureLoader().load(mActivity, options, imageView);
 
         //photoView.setOnPhotoTapListener((view, x, y) -> {

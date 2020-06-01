@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.zjctools.glide.ZIMGLoader;
-import com.android.zjctools.pick.ILoaderListener;
+import com.android.zjctools.pick.ZImgLoaderListener;
 import com.github.chrisbanes.photoview.PhotoView;
 
 import java.util.List;
@@ -45,7 +45,7 @@ public class ZDisplayAdapter extends PagerAdapter {
                 listener.onClick();
             }
         });
-        ILoaderListener.Options options = new ILoaderListener.Options(imagePaths.get(position));
+        ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(imagePaths.get(position));
         ZIMGLoader.load(context, options, photoView);
 
         container.addView(photoView, 0);

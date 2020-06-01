@@ -7,7 +7,7 @@ import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.base.ZConstant;
 import com.android.zjctools.glide.ZIMGLoader;
 import com.android.zjctools.glide.ZIMManager;
-import com.android.zjctools.pick.ILoaderListener;
+import com.android.zjctools.pick.ZImgLoaderListener;
 import com.android.zjctools.pick.ZPicker;
 import com.android.zjctools.pick.bean.ZPictureBean;
 import com.android.zjctools.utils.ZToast;
@@ -67,7 +67,7 @@ public class SelectActivity extends ZBActivity {
         ninePics.setImgLoadUrlListenr(new ZNinePicturesView.ImgLoadUrlListener() {
             @Override
             public void onImgLoad(ImageView imageView, String url, int index, int viewWidth, int viewHeight) {
-                ILoaderListener.Options options = new ILoaderListener.Options(url);
+                ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(url);
                 ZIMGLoader.load(mActivity, options, imageView);
             }
         });

@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.glide.ZIMGLoader;
-import com.android.zjctools.pick.ILoaderListener;
+import com.android.zjctools.pick.ZImgLoaderListener;
 import com.android.zjctools.router.ZParams;
 import com.android.zjctools.router.ZRouter;
 import com.android.zjcutils.R;
@@ -38,7 +38,7 @@ public class ZDisplaySingleActivity extends ZBActivity {
         sex = params.what;
         avatarUrl = params.str0;
         if (!TextUtils.isEmpty(avatarUrl)) {
-            ILoaderListener.Options options = new ILoaderListener.Options(avatarUrl);
+            ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(avatarUrl);
             options.isCircle = true;
             ZIMGLoader.load(mActivity, options, avatarView);
         }

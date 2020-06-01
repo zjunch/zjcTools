@@ -13,8 +13,6 @@ import android.view.WindowManager;
 import java.lang.reflect.Method;
 
 /**
- * 借用牛逼哄哄的 lzan13 代码
- * Created by lzan13 on 2015/4/15.
  * 尺寸转化工具类
  */
 public class ZDimen {

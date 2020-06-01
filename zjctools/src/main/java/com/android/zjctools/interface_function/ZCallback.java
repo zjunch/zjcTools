@@ -1,7 +1,7 @@
 package com.android.zjctools.interface_function;
 
 /**
- * Created by lzan13 on 2017/6/13.
+ * Created by zjun on 2017/6/13.
  * 自定义请求回调
  */
 public interface ZCallback<T> {

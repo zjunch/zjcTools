@@ -11,7 +11,7 @@ import java.security.MessageDigest;
 import androidx.annotation.NonNull;
 
 /**
- * Create by lzan13 on 2019/5/23 17:56
+ * Create by zjun on 2019/5/23 17:56
  *
  * 使用 RenderScript 模糊图片
  */

@@ -7,9 +7,6 @@ import com.android.zjctools.glide.ZIMManager;
 
 public class ZTools {
 
-    /**
-     * 借用牛逼哄哄的 lzan13 代码
-     */
 
 
     static Context mContext;

@@ -40,7 +40,7 @@ public class ZPicker {
     // 图片选择模式 是否多选 默认为 true
     private boolean mMultiMode = true;
     // 图片加载器接口，需要外部实现，减少三方库依赖
-    private ILoaderListener mLoaderListener;
+    private ZImgLoaderListener mLoaderListener;
     // 是否开启裁剪，单选模式有效
     private boolean mCrop = false;
     // 裁剪焦点框的宽度
@@ -196,7 +196,7 @@ public class ZPicker {
      *
      * @param pictureLoader 外部实现的图片加载类
      */
-    public ZPicker setPictureLoader(ILoaderListener pictureLoader) {
+    public ZPicker setPictureLoader(ZImgLoaderListener pictureLoader) {
         this.mLoaderListener = pictureLoader;
         return this;
     }
@@ -362,7 +362,7 @@ public class ZPicker {
     /**
      * 获取图片加载实例
      */
-    public ILoaderListener getPictureLoader() {
+    public ZImgLoaderListener getPictureLoader() {
         return mLoaderListener;
     }
 
@@ -547,7 +547,7 @@ public class ZPicker {
         mCropFocusHeight = savedInstanceState.getInt("focusHeight");
         mCropStyle = (ZCropView.Style) savedInstanceState.getSerializable("style");
         mCropCacheFolder = savedInstanceState.getString("cropCacheFolder");
-        mLoaderListener = (ILoaderListener) savedInstanceState.getSerializable("mLoaderListener");
+        mLoaderListener = (ZImgLoaderListener) savedInstanceState.getSerializable("mLoaderListener");
         mTakePicture = (File) savedInstanceState.getSerializable("takeImageFile");
     }
 

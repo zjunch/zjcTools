@@ -4,10 +4,9 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
-import com.android.zjctools.pick.ILoaderListener;
+import com.android.zjctools.pick.ZImgLoaderListener;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.MultiTransformation;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
@@ -16,7 +15,7 @@ import com.bumptech.glide.request.RequestOptions;
 
 
 /**
- * Create by lzan13 on 2019/5/22 13:24
+ * Create by zjun on 2019/5/22 13:24
  *
  * 图片加载简单封装
  */
@@ -36,7 +35,7 @@ public class ZIMGLoader {
      * @param imageView 目标 view
      */
     public static void load(Context context, String cover, ImageView imageView) {
-        ILoaderListener.Options options = new ILoaderListener.Options(cover);
+        ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(cover);
         load(context, options, imageView);
     }
 
@@ -48,7 +47,7 @@ public class ZIMGLoader {
      * @param imageView 目标 view
      */
     public static void load(Context context, String cover, ImageView imageView,int placeId) {
-        ILoaderListener.Options options = new ILoaderListener.Options(cover);
+        ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(cover);
         load(context, options, imageView);
     }
 
@@ -61,7 +60,7 @@ public class ZIMGLoader {
      * @param imageView 目标 view
      */
     public static void loadCircleAvatar(Context context, String avatar, ImageView imageView,int placeId) {
-        ILoaderListener.Options options = new ILoaderListener.Options(avatar);
+        ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(avatar);
         options.isCircle = true;
         load(context, options, imageView, placeId);
     }
@@ -74,7 +73,7 @@ public class ZIMGLoader {
      * @param imageView 目标 view
      */
     public static void loadRadiusAvatar(Context context, String avatar, ImageView imageView) {
-        ILoaderListener.Options options = new ILoaderListener.Options(avatar);
+        ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(avatar);
         options.isRadius = true;
         options.radiusSize =ZDimen.dp2px(6);
         load(context, options, imageView,  placeId==0?R.drawable.zjc_picture_default:placeId);
@@ -87,7 +86,7 @@ public class ZIMGLoader {
      * @param options   加载图片配置
      * @param imageView 目标 view
      */
-    public static void load(Context context, ILoaderListener.Options options, ImageView imageView) {
+    public static void load(Context context, ZImgLoaderListener.Options options, ImageView imageView) {
         RequestOptions requestOptions = new RequestOptions();
         if (options.isCircle) {
             requestOptions.circleCrop();
@@ -107,7 +106,7 @@ public class ZIMGLoader {
      * @param options   加载图片配置
      * @param imageView 目标 view
      */
-    public static void load(Context context, ILoaderListener.Options options, ImageView imageView, int resId) {
+    public static void load(Context context, ZImgLoaderListener.Options options, ImageView imageView, int resId) {
         RequestOptions requestOptions = new RequestOptions();
         if (options.isCircle) {
             requestOptions.circleCrop();
@@ -127,7 +126,7 @@ public class ZIMGLoader {
      * @param options 加载配置
      * @return
      */
-    private static RequestBuilder<Drawable> placeholder(Context context, ILoaderListener.Options options) {
+    private static RequestBuilder<Drawable> placeholder(Context context, ZImgLoaderListener.Options options) {
         int resId = placeId==0?R.drawable.zjc_picture_default:placeId;
         return placeholder(context, options, resId);
     }
@@ -140,7 +139,7 @@ public class ZIMGLoader {
      * @param resId   默认资源图
      * @return
      */
-    private static RequestBuilder<Drawable> placeholder(Context context, ILoaderListener.Options options, int resId) {
+    private static RequestBuilder<Drawable> placeholder(Context context, ZImgLoaderListener.Options options, int resId) {
         RequestOptions requestOptions = new RequestOptions();
         if (options.isCircle) {
             requestOptions.circleCrop();

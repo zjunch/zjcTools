@@ -9,10 +9,7 @@ import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 
-/**
- * Created by lzan13 on 2017/12/18.
- * 图片模糊工具
- */
+
 public class ZBlur {
 
     /**

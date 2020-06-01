@@ -12,7 +12,7 @@ import java.util.List;
 import androidx.fragment.app.Fragment;
 
 /**
- * Create by lzan13 on 2020-01-01 10:14
+ * Create by zjun on 2020-01-01 10:14
  * 图片选择管理类
  */
 public class ZIMManager {

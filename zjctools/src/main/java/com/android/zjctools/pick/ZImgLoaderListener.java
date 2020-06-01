@@ -6,11 +6,11 @@ import android.widget.ImageView;
 import java.io.Serializable;
 
 /**
- * Create by lzan13 on 2019/05/16 21:51
+ * Create by Zjun on 2019/05/16 21:51
  *
  * 定义图片加载接口，外部需要实现这个接口去加载图片，为的是减少对第三方库的依赖
  */
-public interface ILoaderListener extends Serializable {
+public interface ZImgLoaderListener extends Serializable {
     /**
      * 通过上下文对象加载图片
      *

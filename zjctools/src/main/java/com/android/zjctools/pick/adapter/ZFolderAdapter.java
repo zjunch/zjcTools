@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.zjctools.pick.ILoaderListener;
+import com.android.zjctools.pick.ZImgLoaderListener;
 import com.android.zjctools.pick.ZPicker;
 import com.android.zjctools.pick.bean.ZFolderBean;
 import com.android.zjctools.utils.ZDimen;
@@ -79,7 +79,7 @@ public class ZFolderAdapter extends BaseAdapter {
         holder.folderName.setText(folder.name);
         holder.imageCount.setText(mActivity.getString(R.string.zjc_pick_folder_picture_count, folder.pictures.size()));
 
-        ILoaderListener.Options options = new ILoaderListener.Options(folder.cover.path);
+        ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(folder.cover.path);
         options.isRadius = true;
         options.radiusSize = ZDimen.dp2px(4);
         ZPicker.getInstance().getPictureLoader().load(mActivity, options, holder.cover); //显示图片

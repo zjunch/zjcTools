@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 
 /**
- * Create by lzan13 on 2019/05/18 11:22
  * 导航栏的工具类，主要用于适配华为 EMUI 系统上虚拟导航栏可随时收起和展开的情况
  */
 public class ZNavBarUtil implements ViewTreeObserver.OnGlobalLayoutListener {

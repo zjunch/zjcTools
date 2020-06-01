@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import com.android.zjctools.base.ZAdapter;
 import com.android.zjctools.base.ZHolder;
-import com.android.zjctools.pick.ILoaderListener;
+import com.android.zjctools.pick.ZImgLoaderListener;
 import com.android.zjctools.pick.ZPicker;
 import com.android.zjctools.pick.bean.ZPictureBean;
 import com.android.zjctools.utils.ZDimen;
@@ -152,7 +152,7 @@ public class ZPictureAdapter extends ZAdapter<ZPictureBean, ZHolder> {
                     ZPicker.getInstance().addSelectedPicture(position, bean, mItemCB.isChecked());
                 }
             });
-            ILoaderListener.Options options = new ILoaderListener.Options(bean.path);
+            ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(bean.path);
 //            options.isRadius = true;
 //            options.radiusSize = ZDimen.dp2px(4);
             ZPicker.getInstance().getPictureLoader().load(mContext, options, mThumbView); //显示图片

@@ -7,10 +7,6 @@ import java.util.List;
 
 public class ZStr {
 
-    /**
-     * 借用牛逼哄哄的 lzan13 代码
-     */
-
 
     /**
      * 字符串格式化代码
