@@ -71,7 +71,7 @@ public class ZPDialog {
             if (type == Type.PROGRESS) {
                 dialog = new Dialog(context);
             } else {
-                dialog = new Dialog(context, R.style.zDialogStyle);
+                dialog = new Dialog(context, R.style.ZDialogStyle);
             }
             dialog.setContentView(view);
             dialog.setCanceledOnTouchOutside(true);

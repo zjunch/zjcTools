@@ -2,21 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/zjcWhite"
+    android:background="@drawable/zjc_shape_loading"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="@dimen/zjc_dimen_36">
+    android:paddingLeft="@dimen/zjc_dimen_20"
+    android:paddingRight="@dimen/zjc_dimen_20">
+
+
 
     <ProgressBar
-        android:layout_width="@dimen/zjc_dimen_56"
-        android:layout_height="@dimen/zjc_dimen_56"
+        android:layout_width="@dimen/zjc_dimen_40"
+        android:layout_height="@dimen/zjc_dimen_40"
+        android:theme="@style/ZLoadingCircleProgress"
         android:layout_margin="@dimen/zjc_dimen_16" />
 
     <TextView
-        android:id="@+id/zjc_dialog_message_tv"
+        android:id="@+id/dialog_message_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/zjc_progress_wait"
-        android:textColor="@color/zjc_Gray54"
-        android:textSize="@dimen/zjc_size_16" />
+        android:textColor="@color/zjcWhite"
+        android:layout_marginBottom="16dp"
+        android:textSize="@dimen/zjc_size_14" />
+
 </LinearLayout>

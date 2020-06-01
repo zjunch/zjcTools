@@ -2,23 +2,32 @@ package com.android.zjctools.base;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.android.zjctools.toorbar.StatusBarUtil;
+import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.widget.ZStatusBarHeightView;
 import com.android.zjcutils.R;
 
 import androidx.fragment.app.FragmentActivity;
 
 public abstract class ZBActivity extends ZjcActivity {
-    ZStatusBarHeightView zjcStatusBarHeightView;
-    RelativeLayout zjcRvTitleBar,zjcRvEnd;
-    TextView zjcLeftTitle,zjcCenterTitle,zjcTvEnd;
-    ImageView zjcIvBack,zjcIvEnd,zjcIvEndSecond;
+    LinearLayout zjcLvTitle;   //整个标题的头部
+    ZStatusBarHeightView zjcStatusBarHeightView;//模拟状态栏
+    RelativeLayout zjcRvTitleBar,zjcRvEnd; //除去状态栏高度的部分，、  最后面的保存按钮或者收藏等icon
+    TextView zjcLeftTitle,zjcCenterTitle,zjcTvEnd;//左侧标题， 中间标题， 右侧保存
+    ImageView zjcIvBack,zjcIvEnd,zjcIvEndSecond; //左侧的返回键，右侧的icon， 右侧第二个icon（从右往左）
     View zjcBottomLine;
 
     public FragmentActivity mActivity;
-    private boolean isDarkTextStatusBar=true;  //状态栏字体颜色默认黑色
+
+    /**
+     * 状态栏字体颜色默认黑色 (如整个标题栏和状态栏为白色,则设置true黑色，反之为false)
+     * initUI  方法中调用setDarkTextStatusBar（false） 。
+     */
+    private boolean isDarkTextStatusBar=true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +51,8 @@ public abstract class ZBActivity extends ZjcActivity {
     }
 
     private  void initTitleBar(){
-        if(findViewById(R.id.zjc_bar_rv_title)!=null){
+        if(findViewById(R.id.zjc_lv_title)!=null){
+            zjcLvTitle=findViewById(R.id.zjc_lv_title);
             zjcStatusBarHeightView=findViewById(R.id.zjc_bar_status_View);
             zjcRvTitleBar=findViewById(R.id.zjc_bar_rv_title);
             zjcLeftTitle=findViewById(R.id.zjc_bar_tv_left_title);
@@ -56,6 +66,15 @@ public abstract class ZBActivity extends ZjcActivity {
     }
 
 
+    /**
+     * 设置表栏颜色
+     * @param color
+     */
+    public  void setHeaderBackColor(int color){//R.color.white
+        if(zjcLvTitle!=null){
+            zjcLvTitle.setBackgroundColor(ZColor.byRes(color));
+        }
+    }
 
     /**
      * 获取titlebar.注意使用时注意空的情况
@@ -178,7 +197,6 @@ public abstract class ZBActivity extends ZjcActivity {
         //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
         StatusBarUtil.setRootViewFitsSystemWindows(this, false);
         StatusBarUtil.setTranslucentStatus(this);
-        StatusBarUtil.setStatusBarDarkTheme(this, true);
     }
 
 

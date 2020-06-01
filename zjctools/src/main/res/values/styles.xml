@@ -177,8 +177,12 @@
         <item name="android:button">@drawable/zjc_ic_check_box_selector</item>
     </style>
 
-    <style name="zDialogStyle" parent="Theme.AppCompat.Dialog">
+    <style name="ZDialogStyle" parent="Theme.AppCompat.Dialog">
         <item name="android:windowBackground">@color/zjcTransparent</item>
     </style>
 
+
+    <style name="ZLoadingCircleProgress" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
 </resources>
