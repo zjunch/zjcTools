@@ -92,6 +92,18 @@ public class ZDimen {
         return result;
     }
 
+
+    /**
+     * 将控件尺寸大小转为当前设备下的像素大小
+     *
+     */
+    public static int dp2px(Context context,int dp) {
+        Resources res = context.getResources();
+        float density = res.getDisplayMetrics().density;
+        return (int) (dp * density + 0.5f);
+    }
+
+
     /**
      * 将控件尺寸大小转为当前设备下的像素大小
      *
@@ -101,6 +113,18 @@ public class ZDimen {
         Resources res = ZTools.getContext().getResources();
         float density = res.getDisplayMetrics().density;
         return (int) (dp * density + 0.5f);
+    }
+
+
+    /**
+     * 将字体尺寸大小转为当前设备下的像素尺寸大小
+     *
+     * @param sp 字体的尺寸大小
+     */
+    public static int sp2px(Context context,int sp) {
+        Resources res = context.getResources();
+        float density = res.getDisplayMetrics().scaledDensity;
+        return (int) (sp * density + 0.5f);
     }
 
     /**

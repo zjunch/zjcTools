@@ -6,8 +6,9 @@ import androidx.core.content.ContextCompat;
 
 public class ZColor {
     /**
-     * 通过资源 id 获取颜色值
+     * 通过资源 id 获取颜色值  ,如果预览
      */
+
     public static int byRes(int resId) {
         return byRes(ZTools.getContext(), resId);
     }

@@ -38,20 +38,20 @@ public class ZSettingView extends LinearLayout {
     public ZSettingView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         mContentView= LayoutInflater.from(context).inflate(R.layout.zjc_layout_setting_view,this);
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZSettingView);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ZSettingView);
         isShowLine = typedArray.getBoolean(R.styleable.ZSettingView_zjc_sv_Line_enable, true);
         isShowPoint = typedArray.getBoolean(R.styleable.ZSettingView_zjc_sv_point_enable, false);
         isShowRightStar = typedArray.getBoolean(R.styleable.ZSettingView_zjc_sv_star_enable, false);
         isShowRightArrow = typedArray.getBoolean(R.styleable.ZSettingView_zjc_sv_arrow_enable, true);
-        descColor = typedArray.getColor(R.styleable.ZSettingView_zjc_sv_desc_color, ZColor.byRes(R.color.zjcGray3));
-        titleColor=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_title_color, ZColor.byRes(R.color.zjcGray3));
-        centerColor=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_center_color, ZColor.byRes(R.color.zjcGray3));
+        descColor = typedArray.getColor(R.styleable.ZSettingView_zjc_sv_desc_color, ZColor.byRes(context,R.color.zjcGray3));
+        titleColor=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_title_color, ZColor.byRes(context,R.color.zjcGray3));
+        centerColor=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_center_color, ZColor.byRes(context,R.color.zjcGray3));
         title= typedArray.getString(R.styleable.ZSettingView_zjc_sv_title_text);
         descHint= typedArray.getString(R.styleable.ZSettingView_zjc_sv_desc_Hint);
         desc= typedArray.getString(R.styleable.ZSettingView_zjc_sv_desc_text);
-        titleSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_title_size, ZDimen.sp2px(14));
-        centerSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_center_size, ZDimen.sp2px(14));
-        descSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_desc_size, ZDimen.sp2px(14));
+        titleSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_title_size, ZDimen.sp2px(context,14));
+        centerSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_center_size, ZDimen.sp2px(context,14));
+        descSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_desc_size, ZDimen.sp2px(context,14));
         arrowResId=typedArray.getResourceId(R.styleable.ZSettingView_zjc_sv_arrow_resId,R.drawable.arrow);
         typedArray.recycle();
         initView();
