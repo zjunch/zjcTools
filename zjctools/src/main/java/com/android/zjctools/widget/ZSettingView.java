@@ -172,7 +172,6 @@ public class ZSettingView extends LinearLayout {
         return  tvDesc;
     }
 
-
     public  ImageView getRightArrow(){
         return  ivRightArrow;
     }
