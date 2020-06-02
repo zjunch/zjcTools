@@ -28,11 +28,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
-            android:textColor="@color/zjcBlue"
+            android:textColor="@color/zjcPurple8"
             android:layout_alignTop="@id/tvTitle"
             android:layout_alignBottom="@id/tvTitle"
             android:gravity="center"
-            android:textSize="@dimen/zjc_size_8"
+            android:textSize="@dimen/zjc_size_4"
             android:text="●" />
 
         <TextView
@@ -58,15 +58,15 @@
             android:gravity="center"
             android:text="" />
 
-        <TextView
+        <ImageView
             android:id="@+id/ivRightArrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/tvTitle"
             android:layout_alignBottom="@id/tvTitle"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="2dp"
-            android:drawableRight="@drawable/zjc_ic_arrow_right_gray" />
+            android:src="@drawable/zjc_ic_arrow_right_gray"
+            android:layout_marginTop="2dp" />
 
         <TextView
             android:id="@+id/tvDesc"

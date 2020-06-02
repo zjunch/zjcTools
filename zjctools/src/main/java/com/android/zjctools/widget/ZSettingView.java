@@ -26,9 +26,10 @@ public class ZSettingView extends LinearLayout {
     View mContentView,line;
     boolean isShowLine,isShowPoint,isShowRightStar,isShowRightArrow;
     private  String title,desc,descHint;
-    TextView ivRightArrow;
+    ImageView ivRightArrow;
     private  int descColor,titleColor,centerColor;
     int titleSize,centerSize,descSize;
+    int arrowResId;
 
     public ZSettingView(Context context) {
         super(context);
@@ -51,6 +52,7 @@ public class ZSettingView extends LinearLayout {
         titleSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_title_size, ZDimen.sp2px(14));
         centerSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_center_size, ZDimen.sp2px(14));
         descSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_desc_size, ZDimen.sp2px(14));
+        arrowResId=typedArray.getResourceId(R.styleable.ZSettingView_zjc_sv_arrow_resId,R.drawable.arrow);
         typedArray.recycle();
         initView();
         setViews();
@@ -88,6 +90,7 @@ public class ZSettingView extends LinearLayout {
         line.setVisibility(isShowLine?View.VISIBLE:View.GONE);
         tvRightStar.setVisibility(isShowRightStar?View.VISIBLE:View.GONE);
         ivRightArrow.setVisibility(isShowRightArrow?View.VISIBLE:View.GONE);
+        ivRightArrow.setImageResource(arrowResId);
     }
 
 
@@ -170,7 +173,17 @@ public class ZSettingView extends LinearLayout {
     }
 
 
-    public  TextView getRightArrow(){
+    public  ImageView getRightArrow(){
         return  ivRightArrow;
     }
+
+    public  TextView getTvPoint(){
+        return  tvPoint;
+    }
+
+    public  TextView getTvRightStar(){
+        return  tvRightStar;
+    }
+
+
 }

@@ -66,6 +66,8 @@
 
         <attr name="zjc_sv_center_color" format="color" />
 
+        <attr name="zjc_sv_arrow_resId" format="reference" />
+
     </declare-styleable>
 
     <declare-styleable name="ZSearchView">

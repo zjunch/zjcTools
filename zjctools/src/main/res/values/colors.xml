@@ -36,6 +36,10 @@
 
     <!--紫色-->
     <color name="zjcPurple">#990099</color>
+    <color name="zjcPurple8">#8F9EEF</color>
+
+
+
 
     <!--蓝色-->
     <color name="zjcBlue">#0000FF</color>
@@ -73,4 +77,7 @@
     <color name="zjc_subtitle">@color/zjc_Gray54</color>
     <color name="zjc_title">@color/zjc_black_87</color>
     <color name="zjc_caption">@color/zjc_black_87</color>
+
+
+
 </resources>

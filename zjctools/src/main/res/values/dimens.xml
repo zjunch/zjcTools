@@ -13,7 +13,7 @@
     <dimen name="zjc_size_btn_normal">16sp</dimen>
     <dimen name="zjc_size_btn_small">12sp</dimen>
     <dimen name="zjc_size_caption">12sp</dimen>
-
+    <dimen name="zjc_size_4">4sp</dimen>
     <dimen name="zjc_size_8">8sp</dimen>
     <dimen name="zjc_size_9">9sp</dimen>
     <dimen name="zjc_size_10">10sp</dimen>
