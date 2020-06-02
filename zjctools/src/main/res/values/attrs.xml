@@ -48,7 +48,7 @@
         <!--是否显示右侧箭头-->
         <attr name="zjc_sv_arrow_enable" format="boolean" />
         <!--左侧标题颜色-->
-        <attr name="zjc_sv_title_Color" format="color" />
+        <attr name="zjc_sv_title_color" format="color" />
         <!--左侧标题-->
         <attr name="zjc_sv_title_text" format="string" />
         <!--左侧标题文字大小-->

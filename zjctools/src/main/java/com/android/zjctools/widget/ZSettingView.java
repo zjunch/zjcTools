@@ -44,7 +44,7 @@ public class ZSettingView extends LinearLayout {
         isShowRightStar = typedArray.getBoolean(R.styleable.ZSettingView_zjc_sv_star_enable, false);
         isShowRightArrow = typedArray.getBoolean(R.styleable.ZSettingView_zjc_sv_arrow_enable, true);
         descColor = typedArray.getColor(R.styleable.ZSettingView_zjc_sv_desc_color, ZColor.byRes(R.color.zjcGray3));
-        titleColor=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_title_Color, ZColor.byRes(R.color.zjcGray3));
+        titleColor=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_title_color, ZColor.byRes(R.color.zjcGray3));
         centerColor=typedArray.getColor(R.styleable.ZSettingView_zjc_sv_center_color, ZColor.byRes(R.color.zjcGray3));
         title= typedArray.getString(R.styleable.ZSettingView_zjc_sv_title_text);
         descHint= typedArray.getString(R.styleable.ZSettingView_zjc_sv_desc_Hint);

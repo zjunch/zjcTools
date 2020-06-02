@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:zjc_sv_desc_Hint=""
-        app:zjc_sv_title_Color="@color/zjc_red_87"
+        app:zjc_sv_title_color="@color/zjc_red_87"
         app:zjc_sv_title_size="@dimen/zjc_size_14"
         app:zjc_sv_star_enable="true"
         app:zjc_sv_point_enable="true"
