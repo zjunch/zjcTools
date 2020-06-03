@@ -15,5 +15,7 @@
         app:zjc_sv_star_enable="true"
         app:zjc_sv_point_enable="true"
         app:zjc_sv_Line_enable="false"
+        app:zjc_sv_title_drawLeft_resId="@drawable/zjc_ic_back_color"
+        app:zjc_sv_title_drawPadding="5dp"
         app:zjc_sv_title_text=""/>
 </LinearLayout>

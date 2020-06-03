@@ -68,6 +68,10 @@
 
         <attr name="zjc_sv_arrow_resId" format="reference" />
 
+        <attr name="zjc_sv_title_drawPadding" format="dimension" />
+
+        <attr name="zjc_sv_title_drawLeft_resId" format="reference" />
+
     </declare-styleable>
 
     <declare-styleable name="ZSearchView">

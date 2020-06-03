@@ -2,6 +2,7 @@ package com.android.zjctools.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -22,15 +23,16 @@ import androidx.annotation.Nullable;
 
 public class ZSettingView extends LinearLayout {
 
-    TextView tvTitle,tvCenter,tvDesc,tvRightStar,tvPoint;
+    TextView tvTitle,tvCenter,tvDesc,tvRightStar,tvPoint;//左侧标题 中间标题 有侧描述 左侧文字右侧的星  左侧的点
     View mContentView,line;
-    boolean isShowLine,isShowPoint,isShowRightStar,isShowRightArrow;
+    boolean isShowLine,isShowPoint,isShowRightStar,isShowRightArrow; //是否显示分隔线、左侧的点，左侧文字右侧的星、右侧的进入箭头
     private  String title,desc,descHint;
-    ImageView ivRightArrow;
-    private  int descColor,titleColor,centerColor;
-    int titleSize,centerSize,descSize;
-    int arrowResId;
-
+    ImageView ivRightArrow; //右侧的箭头
+    private  int titleColor,centerColor,descColor;//左侧的标题，中间的标题，右侧的描述内容 文字颜色
+    int titleSize,centerSize,descSize; //左侧的标题，中间的标题，右侧的描述内容 文字大小
+    int arrowResId;   //右侧箭头图标resId
+    int titleDrawPadding ;//左侧标题左侧的drawpadding
+    int drawLeftResId;   //左侧图标id
     public ZSettingView(Context context) {
         super(context);
     }
@@ -53,6 +55,8 @@ public class ZSettingView extends LinearLayout {
         centerSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_center_size, ZDimen.sp2px(context,14));
         descSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_desc_size, ZDimen.sp2px(context,14));
         arrowResId=typedArray.getResourceId(R.styleable.ZSettingView_zjc_sv_arrow_resId,R.drawable.arrow);
+        titleDrawPadding= (int) typedArray.getDimension(R.styleable.ZSettingView_zjc_sv_title_drawPadding, ZDimen.dp2px(context,10));
+        drawLeftResId=typedArray.getResourceId(R.styleable.ZSettingView_zjc_sv_title_drawLeft_resId,-1);
         typedArray.recycle();
         initView();
         setViews();
@@ -91,6 +95,15 @@ public class ZSettingView extends LinearLayout {
         tvRightStar.setVisibility(isShowRightStar?View.VISIBLE:View.GONE);
         ivRightArrow.setVisibility(isShowRightArrow?View.VISIBLE:View.GONE);
         ivRightArrow.setImageResource(arrowResId);
+        if(drawLeftResId!=-1){
+            Drawable drawable=getResources().getDrawable(drawLeftResId);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+            tvTitle.setCompoundDrawablePadding(titleDrawPadding);
+            tvTitle.setCompoundDrawables(drawable,null,null,null);
+        }else{
+            tvTitle.setCompoundDrawables(null,null,null,null);
+        }
+
     }
 
 

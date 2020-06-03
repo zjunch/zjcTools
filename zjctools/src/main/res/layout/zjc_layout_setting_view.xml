@@ -20,6 +20,7 @@
             android:layout_toRightOf="@+id/tvPoint"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
+            android:gravity="center"
             android:text="标题" />
 
 
