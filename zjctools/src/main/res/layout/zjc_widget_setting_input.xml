@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/text_title"
-        style="@style/text_16_black"
+        style="@style/text_14_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/zjc_dimen_10"
@@ -15,7 +15,7 @@
 
     <EditText
         android:id="@+id/input"
-        style="@style/text_16_black"
+        style="@style/text_14_black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null"
