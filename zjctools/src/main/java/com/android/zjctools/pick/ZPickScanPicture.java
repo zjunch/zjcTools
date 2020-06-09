@@ -74,8 +74,21 @@ public class ZPickScanPicture implements LoaderManager.LoaderCallbacks<Cursor> {
         }
     }
 
+
+    public  void  removeListener(){
+        this.mPictureListener = null;
+    }
+
+
+
+
+
+
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        if(mPictureListener==null){
+            return null;
+        }
         CursorLoader cursorLoader = null;
         //扫描所有图片
         if (id == LOADER_ALL) {
@@ -94,6 +107,9 @@ public class ZPickScanPicture implements LoaderManager.LoaderCallbacks<Cursor> {
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        if(mPictureListener==null){
+            return;
+        }
         mFolderBeans.clear();
         if (data != null) {
             ArrayList<ZPictureBean> allPictures = new ArrayList<>();   //所有图片的集合,不分文件夹

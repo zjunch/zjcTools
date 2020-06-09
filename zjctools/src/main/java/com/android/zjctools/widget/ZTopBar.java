@@ -365,4 +365,13 @@ public class ZTopBar extends RelativeLayout {
         setEndBtn(str);
         mEndBtn.setOnClickListener(listener);
     }
+
+
+    /**
+     * 右侧的保存textView
+     * @return
+     */
+    public TextView getEndBtn(){
+        return  mEndBtn;
+    }
 }

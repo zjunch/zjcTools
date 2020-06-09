@@ -3,6 +3,8 @@ package com.android.zjctools.pick.ui;
 import android.content.Intent;
 import android.os.Parcelable;
 
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,8 @@ import com.android.zjctools.utils.ZToast;
 import com.android.zjctools.widget.ZItemDecoration;
 import com.android.zjcutils.R;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +39,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Crete by zjun on 2019/12/14
- *
+ * <p>
  * 图片选择界面
  */
 public class ZPickGridActivity extends ZPickBaseActivity {
@@ -67,7 +71,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     // 使用 RecyclerView 展示图片
     private RecyclerView mRecyclerView;
     private ZPictureAdapter mPictureAdapter;
-
+    ZPickScanPicture mZPickScanPicture;
     // 图片扫描回调接口
     private ZPickScanPicture.OnScanPictureListener mScanPictureListener;
     private ZPicker.OnSelectedPictureListener mSelectedPictureListener;
@@ -117,7 +121,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     @Override
     protected void initData() {
         // 每次打开都重置选择器
-        //VMPicker.getInstance().reset();
+        //ZPicker.getInstance().reset();
 
         isShowCamera = ZPicker.getInstance().isShowCamera();
         List<ZPictureBean> pictures = (List<ZPictureBean>) getIntent().getSerializableExtra(ZConstant.ZJC_KEY_PICK_PICTURES);
@@ -185,14 +189,21 @@ public class ZPickGridActivity extends ZPickBaseActivity {
      * 扫描图片
      */
     private void initScanPicture() {
-        mScanPictureListener = folderBeans -> {
-            mFolderBeans = folderBeans;
-            if (mFolderBeans.size() == 0) {
-                mPictureAdapter.refresh(null);
-            } else {
-                mPictureAdapter.refresh(mFolderBeans.get(0).pictures);
+        mScanPictureListener = new ZPickScanPicture.OnScanPictureListener() {
+            @Override
+            public void onLoadComplete(List<ZFolderBean> VMFolderBeans) {
+                mFolderBeans = new ArrayList<ZFolderBean>();
+                mFolderBeans.clear();
+                if (VMFolderBeans != null) {
+                    mFolderBeans.addAll(VMFolderBeans);
+                }
+                if (mFolderBeans.size() == 0) {
+                    mPictureAdapter.refresh(null);
+                } else {
+                    mPictureAdapter.refresh(mFolderBeans.get(0).pictures);
+                }
+                mFolderAdapter.refreshData(mFolderBeans);
             }
-            mFolderAdapter.refreshData(mFolderBeans);
         };
         // 检查权限
         if (!ZPermission.getInstance(mActivity).checkStorage()) {
@@ -205,11 +216,11 @@ public class ZPickGridActivity extends ZPickBaseActivity {
 
                 @Override
                 public void onComplete() {
-                    new ZPickScanPicture(mActivity, null, mScanPictureListener);
+                    mZPickScanPicture=  new ZPickScanPicture(mActivity, null, mScanPictureListener);
                 }
             });
         } else {
-            new ZPickScanPicture(mActivity, null, mScanPictureListener);
+            mZPickScanPicture= new ZPickScanPicture(mActivity, null, mScanPictureListener);
         }
     }
 
@@ -219,7 +230,8 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     private void initSelectPictureListener() {
         mSelectedPictureListener = (position, bean, isAdd) -> {
             refreshBtnStatus();
-            mPictureAdapter.notifyItemChanged(position, 1);
+            //这里默认是有相机的默认图片，所以位置要加1
+            mPictureAdapter.notifyItemChanged(position+1, 1);
         };
         ZPicker.getInstance().addOnSelectedPictureListener(mSelectedPictureListener);
     }
@@ -233,12 +245,13 @@ public class ZPickGridActivity extends ZPickBaseActivity {
         if (ZPicker.getInstance().isMultiMode()) {
             if (selectCount > 0) {
                 getTopBar().setEndBtn(ZStr.byResArgs(R.string.zjc_pick_complete_select, selectCount, selectLimit));
-                getTopBar().setEndBtnEnable(true);
-                mPreviewBtn.setEnabled(true);
+                getTopBar().getEndBtn().setVisibility(View.VISIBLE);
+                getTopBar().setEndBtnTextColor(ZColor.byRes(R.color.app_theme_color));
                 mPreviewBtn.setText(ZStr.byResArgs(R.string.zjc_pick_preview_count, selectCount));
+                mPreviewBtn.setEnabled(true);
             } else {
                 getTopBar().setEndBtn(ZStr.byRes(R.string.zjc_pick_complete));
-                getTopBar().setEndBtnEnable(false);
+                getTopBar().getEndBtn().setVisibility(View.GONE);
                 mPreviewBtn.setEnabled(false);
                 mPreviewBtn.setText(getResources().getString(R.string.zjc_pick_preview));
             }
@@ -251,7 +264,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     private void onPictureClick(int position) {
         // 判断第一个是不是相机，如果是，特殊处理
         if (ZPicker.getInstance().isShowCamera() && position == 0) {
-            if(ZPicker.getInstance().getSelectPictureCount()>=ZPicker.getInstance().getSelectLimit()){//图片个数超限
+            if (ZPicker.getInstance().getSelectPictureCount() >= ZPicker.getInstance().getSelectLimit()) {//图片个数超限
                 String toastMsg = ZStr.byResArgs(R.string.zjc_pick_select_limit, ZPicker.getInstance().getSelectLimit());
                 ZToast.create().showErrorBottom(toastMsg);
                 return;
@@ -311,7 +324,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     private void showFolderList() {
         if (mFolderBeans == null) {
             ZToast.create().showErrorBottom("没有更多图片可供选择");
-           // VMToast.make(mActivity, "没有更多图片可供选择").error();
+            // VMToast.make(mActivity, "没有更多图片可供选择").error();
             return;
         }
         mFolderPopupWindow = new FolderPopupWindow(mActivity, mFolderAdapter);
@@ -378,13 +391,51 @@ public class ZPickGridActivity extends ZPickBaseActivity {
                 /**
                  * 2017-03-21 对机型做旋转处理
                  */
+
                 String path = ZPicker.getInstance().getTakeImageFile().getAbsolutePath();
 
-                ZPictureBean VMPictureBean = new ZPictureBean();
-                VMPictureBean.path = path;
-//                ZPicker.getInstance().clearSelectedPictures();
-                ZPicker.getInstance().addSelectedPicture(0, VMPictureBean, true);
-                //发送广播通知图片增加了
+                ZPictureBean zPictureBean = new ZPictureBean();
+                zPictureBean.path = path;
+
+//              ZPicker.getInstance().clearSelectedPictures();
+                //添加到已经选择的图片集合
+                ZPicker.getInstance().addSelectedPicture(0, zPictureBean, true);
+                mZPickScanPicture.removeListener();  //不需要通过扫描文件获取了
+
+                File parentFile = ZPicker.getInstance().getTakeImageFile().getParentFile();
+                // 将图片塞进对应的文件夹
+                if(mFolderBeans!=null&&mFolderBeans.size()>0){
+                    boolean isHave=false;
+                    mFolderBeans.get(0).pictures.add(0,zPictureBean);  //塞进所有图片文件夹
+                    mFolderBeans.get(0).cover=zPictureBean;    //更换所有图片封面图
+                    for (int i = 0; i <mFolderBeans.size() ; i++) {
+                        //找到对应的文件夹
+                         if(parentFile!=null&&mFolderBeans.get(i).name!=null&&mFolderBeans.get(i).name.equals(parentFile.getName())){
+                            //塞进对应的文件夹
+                             mFolderBeans.get(i).pictures.add(0,zPictureBean);
+                             //更换对应文件夹的封面
+                             mFolderBeans.get(i).cover=zPictureBean;
+                            isHave=true;
+                            break;
+                        }
+                    }
+                    //没有该文件夹则创建该文件夹
+                    if(!isHave&&parentFile!=null){
+                        ZFolderBean  folderBean=new ZFolderBean();
+                        folderBean.path=parentFile.getAbsolutePath();
+                        folderBean.name=parentFile.getName();
+                        folderBean.pictures=new ArrayList<>();
+                        folderBean.pictures.add(zPictureBean);
+                        folderBean.cover=zPictureBean;
+                        mFolderBeans.add(folderBean);
+                    }
+
+                }
+                ArrayList<ZPictureBean> pictures= mFolderBeans.get(ZPicker.getInstance().getCurrentFolderPosition()).pictures;
+                mPictureAdapter.refresh(pictures);
+
+
+               // 发送广播通知图片增加了
                 ZPicker.notifyGalleryChange(mActivity, ZPicker.getInstance().getTakeImageFile());
                 if (ZPicker.getInstance().isCrop()) {
                     Intent intent = new Intent(mActivity, ZPickCropActivity.class);
@@ -404,6 +455,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
 
     @Override
     protected void onDestroy() {
+
         if (mSelectedPictureListener != null) {
             ZPicker.getInstance().removeOnSelectedPictureListener(mSelectedPictureListener);
             mSelectedPictureListener = null;
