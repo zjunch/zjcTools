@@ -53,10 +53,10 @@ public class ZIMManager {
      * @param t              打开图片选择器的界面
      * @param selectPictures 已经选择的图片
      * @param <T>
-     * @param colorId        图片区域的背景色
+     * @param spanCounts        一行展示几张图片
      */
-    public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures, int colorId) {
-        showPicker(t, maxCounts, selectPictures, colorId, 4);
+    public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures, int spanCounts) {
+        showPicker(t, maxCounts, selectPictures, 0, spanCounts);
     }
 
 
