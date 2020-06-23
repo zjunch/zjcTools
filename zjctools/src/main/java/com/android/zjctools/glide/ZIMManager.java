@@ -32,7 +32,7 @@ public class ZIMManager {
      * @param <T>
      */
     public static <T> void showSinglePicker(T t) {
-        showPicker(t, 1,null);
+        showPicker(t, 1, null, 0, 4);
     }
 
     /**
@@ -42,8 +42,35 @@ public class ZIMManager {
      * @param selectPictures 已经选择的图片
      * @param <T>
      */
-    public static <T> void showMultiPicker(T t, int maxCounts,List<ZPictureBean> selectPictures) {
-        showPicker(t,  maxCounts,selectPictures);
+    public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures) {
+        showPicker(t, maxCounts, selectPictures, 0, 4);
+    }
+
+
+    /**
+     * 选择多张图
+     *
+     * @param t              打开图片选择器的界面
+     * @param selectPictures 已经选择的图片
+     * @param <T>
+     * @param colorId        图片区域的背景色
+     */
+    public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures, int colorId) {
+        showPicker(t, maxCounts, selectPictures, colorId, 4);
+    }
+
+
+    /**
+     * 选择多张图
+     *
+     * @param t              打开图片选择器的界面
+     * @param selectPictures 已经选择的图片
+     * @param <T>
+     * @param colorId        图片区域的背景色
+     * @param spanCounts     一行展示几张图片
+     */
+    public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures, int colorId, int spanCounts) {
+        showPicker(t, maxCounts, selectPictures, colorId, spanCounts);
     }
 
     /**
@@ -53,30 +80,32 @@ public class ZIMManager {
      * @param selectPictures 已选择图片
      * @param <T>
      */
-    private static <T> void showPicker(T t,int maxCounts, List<ZPictureBean> selectPictures) {
+    private static <T> void showPicker(T t, int maxCounts, List<ZPictureBean> selectPictures, int colorId, int spanCounts) {
         ZCropView.Style cropStyle = ZCropView.Style.RECTANGLE;
         boolean isSaveRectangle = true;
         boolean isShowCamera = true;
-        boolean isNeedCrop=false;
-        boolean isMultiMode=true;//是否多选
-        if(maxCounts==1){
-            isNeedCrop=true;
-            isMultiMode=false;
+        boolean isNeedCrop = false;
+        boolean isMultiMode = true;//是否多选
+        if (maxCounts == 1) {
+            isNeedCrop = true;
+            isMultiMode = false;
         }
 
         ZPicker.getInstance()
-            .setMultiMode(isMultiMode)
-            //.setPictureLoader(new PickerLoader())
-            .setCrop(isNeedCrop)
-            //                    .setCropFocusWidth(mCropFocusWidth)
-            //                    .setCropFocusHeight(mCropFocusHeight)
-            //                    .setCropOutWidth(mCropOutWidth)
-            //                    .setCropOutHeight(mCropOutHeight)
-            .setCropStyle(cropStyle)
-            .setSaveRectangle(isSaveRectangle)
-            .setSelectLimit(maxCounts)
-            .setShowCamera(isShowCamera)
-            .setSelectedPictures(selectPictures);
+                .setMultiMode(isMultiMode)
+                //.setPictureLoader(new PickerLoader())
+                .setCrop(isNeedCrop)
+                .setColorResIg(colorId)
+                //                    .setCropFocusWidth(mCropFocusWidth)
+                //                    .setCropFocusHeight(mCropFocusHeight)
+                //                    .setCropOutWidth(mCropOutWidth)
+                //                    .setCropOutHeight(mCropOutHeight)
+                .setCropStyle(cropStyle)
+                .setSpanSiZe(spanCounts)
+                .setSaveRectangle(isSaveRectangle)
+                .setSelectLimit(maxCounts)
+                .setShowCamera(isShowCamera)
+                .setSelectedPictures(selectPictures);
 
         if (t instanceof Activity) {
             Activity activity = (Activity) t;

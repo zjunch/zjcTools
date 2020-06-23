@@ -88,7 +88,9 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     protected void initUI() {
         super.initUI();
         mRecyclerView = findViewById(R.id.zjc_pick_grid_recycler_view);
-
+        if(ZPicker.getInstance().getColorResIg()!=0){
+            mRecyclerView.setBackgroundColor(ZColor.byRes(ZPicker.getInstance().getColorResIg()));
+        }
         mBottomBar = findViewById(R.id.zjc_pick_grid_bottom_bar_rl);
         mBottomSpaceView = findViewById(R.id.zjc_pick_grid_bottom_space);
         mChangeDirView = findViewById(R.id.zjc_pick_grid_choose_folder_rl);
@@ -140,10 +142,16 @@ public class ZPickGridActivity extends ZPickBaseActivity {
      * 初始化图片列表
      */
     private void initPictureRecyclerView() {
+        int spanSize =ZPicker.getInstance().getSpanSiZe();
+        int spaceDp=5;//上下左右距离,默认5dp
+        if(spanSize!=4){
+            spaceDp=10;
+        }
         mPictureAdapter = new ZPictureAdapter(mActivity, null);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(mActivity, 4));
-        mRecyclerView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.zjcTransparent), ZDimen.dp2px(4)));
-        mRecyclerView.addItemDecoration(ZItemDecoration.createHorizontal(mActivity, ZColor.byRes(R.color.zjcTransparent), ZDimen.dp2px(4)));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(mActivity, spanSize));
+        mRecyclerView.setPadding(ZDimen.dp2px(spaceDp),0,0,0);
+        mRecyclerView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.zjcTransparent), ZDimen.dp2px(spaceDp)));
+        mRecyclerView.addItemDecoration(ZItemDecoration.createHorizontal(mActivity, ZColor.byRes(R.color.zjcTransparent), ZDimen.dp2px(spaceDp)));
         mRecyclerView.setAdapter(mPictureAdapter);
         mPictureAdapter.setClickListener((int position, Object object) -> {
             onPictureClick(position);

@@ -23,6 +23,7 @@ import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.utils.ZFile;
 import com.android.zjctools.utils.ZStr;
 import com.android.zjctools.widget.ZCropView;
+import com.android.zjcutils.R;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -72,6 +73,12 @@ public class ZPicker {
     // 图片选中的监听回调
     private List<OnSelectedPictureListener> mSelectedPictureListeners;
 
+    // 图片区域的背景色
+    private int mColorResIg= 0;
+
+    // 一行展示几张图图片
+    private int mSpanSiZe=4;
+
     private ZPicker() {
         mCropFocusWidth = ZDimen.dp2px(256);
         mCropFocusHeight = ZDimen.dp2px(256);
@@ -89,6 +96,28 @@ public class ZPicker {
      */
     public static ZPicker getInstance() {
         return InnerHolder.INSTANCE;
+    }
+
+
+    //设置图片区域的bei背景色
+    public ZPicker setColorResIg(int colorResIg){
+        this.mColorResIg=colorResIg;
+        return  this;
+    }
+
+
+    public int  getColorResIg(){
+       return mColorResIg;
+    }
+
+
+    public int getSpanSiZe() {
+        return mSpanSiZe;
+    }
+
+    public ZPicker setSpanSiZe(int mSpanSiZe) {
+        this.mSpanSiZe = mSpanSiZe;
+        return this;
     }
 
     /**
