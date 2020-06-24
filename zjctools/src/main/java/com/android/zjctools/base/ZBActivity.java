@@ -62,6 +62,7 @@ public abstract class ZBActivity extends ZjcActivity {
             zjcIvBack=findViewById(R.id.zjc_bar_iv_back);
             zjcIvEnd=findViewById(R.id.zjc_bar_iv_end);
             zjcIvEndSecond=findViewById(R.id.zjc_bar_iv_end_second);
+            zjcBottomLine=findViewById(R.id.zjc_bar_bottom_line);
         }
     }
 
@@ -74,6 +75,10 @@ public abstract class ZBActivity extends ZjcActivity {
         if(zjcLvTitle!=null){
             zjcLvTitle.setBackgroundColor(ZColor.byRes(color));
         }
+    }
+
+    public  LinearLayout getHeader(){
+        return  zjcLvTitle;
     }
 
     /**
