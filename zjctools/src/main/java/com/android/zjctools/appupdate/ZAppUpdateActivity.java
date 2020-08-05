@@ -39,6 +39,7 @@ public class ZAppUpdateActivity extends ZBActivity {
     LinearLayout lv_content;
     ProgressBar pg_update;
     private RelativeLayout rvUpdate;
+    private  boolean isForce;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,12 +78,24 @@ public class ZAppUpdateActivity extends ZBActivity {
             }
         }
         tv_load = findViewById(R.id.zjv_tv_load);
+        isForce=appUpdateBean.isForce;
         if (appUpdateBean.isForce) {
             tv_cancel.setVisibility(View.GONE);
         }
         if(appUpdateBean.bgIcon!=-1){
             iv_bg.setImageResource(appUpdateBean.bgIcon);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(isForce){
+            return;
+        }else{
+            setResult(RESULT_OK);
+            finish();
+        }
+
     }
 
     @Override
