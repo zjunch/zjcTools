@@ -6,11 +6,10 @@
     android:paddingLeft="10dp"
     android:background="@color/zjcWhite">
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/zjc_dimen_35"
+        android:layout_height="@dimen/zjc_dimen_35"
         android:id="@+id/notify_download_iv"
-        android:layout_marginTop="12dp"
-       android:scaleType="centerCrop"
+        android:scaleType="centerCrop"
         android:layout_centerVertical="true" />
     <TextView
         android:layout_width="wrap_content"

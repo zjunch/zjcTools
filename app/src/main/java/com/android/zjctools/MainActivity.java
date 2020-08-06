@@ -78,7 +78,7 @@ public class MainActivity extends ZBActivity {
                 Router.goFile(mActivity);
             }else if(item.type==5){
                 ZAppUpdateBean appUpdateBean=new ZAppUpdateBean("https://ali-fir-pro-binary.imfir.cn/7685e3ad591dd5402593180f4caf007acb5cffae.apk?auth_key=1585550085-0-0-1d7aadef3968018e4d25dc3d758a9abf",null);
-                appUpdateBean.appLogoIcon=R.drawable.zjc_ic_eye_on;
+                appUpdateBean.appLogoIcon=R.drawable.ic_logo;
                 appUpdateBean.isForce=true;
                 List<String> contents=new ArrayList<>();
                 contents.add("系统完善，优化用户体验");

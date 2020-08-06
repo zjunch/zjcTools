@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/zjc_iv_bg"
             android:layout_marginLeft="18dp"
-            android:text="更新的内容"
+            android:text="更新内容"
             android:textColor="@color/zjc_Gray54"
             android:textSize="12sp" />
 
