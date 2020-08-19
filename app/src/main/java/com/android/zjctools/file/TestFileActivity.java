@@ -25,7 +25,7 @@ public class TestFileActivity extends ZBActivity {
 
     @Override
     protected void initData() {
-        String fileUrl="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1208538952,1443328523&fm=26&gp=0.jpg";
+        String fileUrl="http://cc.cocimg.com/api/uploads/image/20200603/1591174646688470.jpg";
         tvDownLoad.setOnClickListener(v -> {
             ZFile.downloadFileByNetWork(fileUrl, "zjcTools", ".jpg", new ZCallback<File>() {
                 @Override

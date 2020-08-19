@@ -37,13 +37,21 @@ public class ZPWindow {
     private OnWindowListener mListener;
 
     private Button mCancelBtn;
+    private int mItemLayoutId;
+
 
     public ZPWindow(Activity activity, List<String> list) {
+        this(activity,list,R.layout.zjc_widget_window_item);
+    }
+
+
+    public ZPWindow(Activity activity, List<String> list,int itemLayoutId){
+
         if(activity==null||activity.isFinishing()){
             return;
         }
         mActivity = activity;
-
+        mItemLayoutId=itemLayoutId;
         mItems.addAll(list);
 
         mView = LayoutInflater.from(mActivity).inflate(R.layout.zjc_widget_window_layout, null);
@@ -61,7 +69,7 @@ public class ZPWindow {
      */
     private void initView() {
         mAdapter = new MultiTypeAdapter();
-        mItemBinder = new ZWindowItemBinder();
+        mItemBinder = new ZWindowItemBinder(mItemLayoutId);
         mAdapter.register(String.class, mItemBinder);
         mAdapter.setItems(mItems);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity, RecyclerView.VERTICAL, false));

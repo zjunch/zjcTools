@@ -12,9 +12,14 @@ import com.android.zjcutils.R;
  */
 public class ZWindowItemBinder extends AppItemBinder<String> {
 
+    int mLayoutId;
+    public ZWindowItemBinder(int layoutId) {
+        this.mLayoutId=layoutId;
+    }
+
     @Override
     protected int loadItemLayoutId() {
-        return R.layout.zjc_widget_window_item;
+        return mLayoutId;
     }
 
     @Override
