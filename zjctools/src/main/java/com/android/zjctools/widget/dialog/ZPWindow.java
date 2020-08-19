@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import com.android.zjctools.base.AppItemBinder;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
@@ -32,12 +34,10 @@ public class ZPWindow {
     private MultiTypeAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private Items mItems = new Items();
-    private ZWindowItemBinder mItemBinder;
-
     private OnWindowListener mListener;
 
     private Button mCancelBtn;
-    private int mItemLayoutId;
+    AppItemBinder mAppItemBinder;
 
 
     public ZPWindow(Activity activity, List<String> list) {
@@ -45,17 +45,19 @@ public class ZPWindow {
     }
 
 
-    public ZPWindow(Activity activity, List<String> list,int itemLayoutId){
 
+    public ZPWindow(Activity activity, List<String> list,int itemLayoutId){
+        this(activity,list,new ZWindowItemBinder(itemLayoutId));
+    }
+
+    public ZPWindow(Activity activity, List<String> list,AppItemBinder appItemBinder) {
         if(activity==null||activity.isFinishing()){
             return;
         }
         mActivity = activity;
-        mItemLayoutId=itemLayoutId;
         mItems.addAll(list);
-
+        mAppItemBinder=appItemBinder;
         mView = LayoutInflater.from(mActivity).inflate(R.layout.zjc_widget_window_layout, null);
-
         mTitleTV = mView.findViewById(R.id.window_title_tv);
         mRecyclerView = mView.findViewById(R.id.window_recycler_view);
         mCancelBtn = mView.findViewById(R.id.window_cancel_btn);
@@ -64,17 +66,18 @@ public class ZPWindow {
         initWindow();
     }
 
+
+
     /**
      * 初始化 View 内容
      */
     private void initView() {
         mAdapter = new MultiTypeAdapter();
-        mItemBinder = new ZWindowItemBinder(mItemLayoutId);
-        mAdapter.register(String.class, mItemBinder);
+        mAdapter.register(String.class, mAppItemBinder);
         mAdapter.setItems(mItems);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity, RecyclerView.VERTICAL, false));
         mRecyclerView.setAdapter(mAdapter);
-        mItemBinder.setOnItemClickListener((action, item) -> {
+        mAppItemBinder.setOnItemClickListener((action, item) -> {
             if (mListener != null) {
                 mListener.onItemClick(mItems.indexOf(item));
             }
