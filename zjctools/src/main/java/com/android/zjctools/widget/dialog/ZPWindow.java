@@ -61,7 +61,6 @@ public class ZPWindow {
         mTitleTV = mView.findViewById(R.id.window_title_tv);
         mRecyclerView = mView.findViewById(R.id.window_recycler_view);
         mCancelBtn = mView.findViewById(R.id.window_cancel_btn);
-
         initView();
         initWindow();
     }
