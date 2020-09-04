@@ -40,12 +40,14 @@ public abstract class AppItemBinder<T> extends ItemViewBinder<T, AppItemBinder.A
         mContext = context;
     }
 
+
     @NonNull
     @Override
     protected AppHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
         View view = inflater.inflate(loadItemLayoutId(), parent, false);
         return new AppHolder(view);
     }
+
 
     @Override
     protected void onBindViewHolder(@NonNull AppHolder holder, @NonNull T item) {

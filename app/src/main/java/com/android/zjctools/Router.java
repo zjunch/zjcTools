@@ -46,6 +46,11 @@ public class Router extends ZRouter {
         overlay(activity,intent);
     }
 
+    public static  void goColorView(Activity activity){
+        Intent intent=new Intent(activity,ColorViewActivity.class);
+        overlay(activity,intent);
+    }
+
 
     /**
      * 展示图片
