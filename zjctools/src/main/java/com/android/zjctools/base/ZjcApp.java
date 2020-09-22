@@ -16,7 +16,7 @@ public class ZjcApp extends Application {
      */
 
     protected static Context mContext;
-    private static List<ZjcActivity> activityList = new ArrayList<>();
+    public static List<ZjcActivity> activityList = new ArrayList<>();
 
     @Override
     public void onCreate() {
@@ -43,6 +43,20 @@ public class ZjcApp extends Application {
             activityList.add(0, activity);
         }
     }
+
+    /**
+     * finish 所有的activity
+     */
+    public static void finishAllActivity(ZjcActivity activity) {
+        if (activityList.size()>0) {
+            for (int i = 0; i <activityList.size() ; i++) {
+                activityList.get(i).finish();
+            }
+        }
+        activityList.clear();
+    }
+
+
 
     /**
      * 移除一个 mActivity
