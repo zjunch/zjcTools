@@ -29,15 +29,23 @@ public class ZPictureUtils {
     /**
      * 选择图片
      */
-    public static  void  gotoImageSelect(Activity mActivity, ArrayList<ZPictureBean> pictureBeans, int maxCounts) {
-        gotoImageSelect(mActivity,pictureBeans,maxCounts,4);
+    public static  void  gotoImageSelect(Activity mActivity, ArrayList<ZPictureBean> pictureBeans, int maxCounts,boolean isCrop) {
+        gotoImageSelect(mActivity,pictureBeans,maxCounts,4,isCrop);
     }
 
 
     /**
      * 选择图片
      */
-    public static  void  gotoImageSelect(Activity mActivity, ArrayList<ZPictureBean> pictureBeans, int maxCounts,int spanCounts) {
+    public static  void  gotoImageSelect(Activity mActivity, ArrayList<ZPictureBean> pictureBeans, int maxCounts) {
+        gotoImageSelect(mActivity,pictureBeans,maxCounts,4,false);
+    }
+
+
+    /**
+     * 选择图片
+     */
+    public static  void  gotoImageSelect(Activity mActivity, ArrayList<ZPictureBean> pictureBeans, int maxCounts,int spanCounts,boolean isCrop) {
         ArrayList listImage = new ArrayList<ZPictureBean>();
         int  urlCounts=0 ; //含有网络图片的个数
         for (int i = 0; i <pictureBeans.size() ; i++) {
@@ -48,7 +56,7 @@ public class ZPictureUtils {
                 urlCounts+=1;
             }
         }
-        ZIMManager.showMultiPicker(mActivity, maxCounts-urlCounts, listImage,spanCounts);//总数减去已经含有的网络图片的个数
+        ZIMManager.showMultiPicker(mActivity, maxCounts-urlCounts, listImage,spanCounts,isCrop);//总数减去已经含有的网络图片的个数
     }
 
 }

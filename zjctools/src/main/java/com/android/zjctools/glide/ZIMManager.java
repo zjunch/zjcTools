@@ -35,6 +35,31 @@ public class ZIMManager {
         showPicker(t, 1, null, 0, 4,true);
     }
 
+
+
+
+    /**
+     * 选择多张图
+     *
+     * @param t              打开图片选择器的界面
+     * @param selectPictures 已经选择的图片
+     * @param <T>
+     */
+    public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures,boolean isCrop) {
+        showPicker(t, maxCounts, selectPictures, 0, 4,false);
+    }
+
+    /**
+     * 选择多张图
+     *
+     * @param t              打开图片选择器的界面
+     * @param selectPictures 已经选择的图片
+     * @param <T>
+     */
+    public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures,int spanCount,boolean isCrop) {
+        showPicker(t, maxCounts, selectPictures, 0, spanCount,false);
+    }
+
     /**
      * 选择多张图
      *
