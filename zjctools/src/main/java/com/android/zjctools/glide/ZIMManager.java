@@ -32,7 +32,7 @@ public class ZIMManager {
      * @param <T>
      */
     public static <T> void showSinglePicker(T t) {
-        showPicker(t, 1, null, 0, 4);
+        showPicker(t, 1, null, 0, 4,true);
     }
 
     /**
@@ -43,7 +43,7 @@ public class ZIMManager {
      * @param <T>
      */
     public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures) {
-        showPicker(t, maxCounts, selectPictures, 0, 4);
+        showPicker(t, maxCounts, selectPictures, 0, 4,false);
     }
 
 
@@ -56,7 +56,7 @@ public class ZIMManager {
      * @param spanCounts        一行展示几张图片
      */
     public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures, int spanCounts) {
-        showPicker(t, maxCounts, selectPictures, 0, spanCounts);
+        showPicker(t, maxCounts, selectPictures, 0, spanCounts,false);
     }
 
 
@@ -69,8 +69,8 @@ public class ZIMManager {
      * @param colorId        图片区域的背景色
      * @param spanCounts     一行展示几张图片
      */
-    public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures, int colorId, int spanCounts) {
-        showPicker(t, maxCounts, selectPictures, colorId, spanCounts);
+    public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures, int colorId, int spanCounts,boolean isCrop) {
+        showPicker(t, maxCounts, selectPictures, colorId, spanCounts,isCrop);
     }
 
     /**
@@ -80,17 +80,16 @@ public class ZIMManager {
      * @param selectPictures 已选择图片
      * @param <T>
      */
-    private static <T> void showPicker(T t, int maxCounts, List<ZPictureBean> selectPictures, int colorId, int spanCounts) {
+    private static <T> void showPicker(T t, int maxCounts, List<ZPictureBean> selectPictures, int colorId, int spanCounts,boolean isCrop) {
         ZCropView.Style cropStyle = ZCropView.Style.RECTANGLE;
         boolean isSaveRectangle = true;
         boolean isShowCamera = true;
         boolean isNeedCrop = false;
         boolean isMultiMode = true;//是否多选
-        if (maxCounts == 1) {
-            isNeedCrop = true;
-            isMultiMode = false;
+        isNeedCrop=isCrop;
+        if(maxCounts==1){
+            isMultiMode=false;
         }
-
         ZPicker.getInstance()
                 .setMultiMode(isMultiMode)
                 //.setPictureLoader(new PickerLoader())
