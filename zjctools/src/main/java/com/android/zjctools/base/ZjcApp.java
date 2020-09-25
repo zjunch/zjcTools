@@ -10,7 +10,6 @@ import java.util.List;
 
 public class ZjcApp extends Application {
 
-
     /**
      * 借用牛逼哄哄的 lzan13 代码
      */
@@ -47,7 +46,7 @@ public class ZjcApp extends Application {
     /**
      * finish 所有的activity
      */
-    public static void finishAllActivity(ZjcActivity activity) {
+    public static void finishAllActivity() {
         if (activityList.size()>0) {
             for (int i = 0; i <activityList.size() ; i++) {
                 activityList.get(i).finish();
