@@ -203,4 +203,18 @@
         <attr name="zjc_tab_point_text_size" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="ZCircleProgressView">
+        <attr name="zjc_backWidth" format="dimension" />    <!--背景圆环宽度-->
+        <attr name="zjc_progWidth" format="dimension" />    <!--进度圆环宽度-->
+        <attr name="zjc_backColor" format="color" />        <!--背景圆环颜色-->
+        <attr name="zjc_progColor" format="color" />        <!--进度圆环颜色-->
+        <attr name="zjc_progStartColor" format="color" />   <!--进度圆环开始颜色-->
+        <attr name="zjc_progFirstColor" format="color" />   <!--进度圆环结束颜色-->
+        <attr name="zjc_progress" format="integer" />       <!--圆环进度-->
+        <attr name="zjc_startAngle" format="integer" />      <!--底部开始角度-->
+        <attr name="zjc_sweepAngle" format="integer" />       <!--底部跨度-->
+        <attr name="zjc_progressStartAngle" format="integer" />  <!--进度条起始角度-->
+
+    </declare-styleable>
+
 </resources>
