@@ -1,5 +1,6 @@
 package com.android.zjctools.utils;
 
+
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
@@ -105,7 +106,7 @@ public class ZCalendarReminderUtils {
      * 添加日历事件
      */
 //    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static boolean addCalendarEvent(Context context, String id,String title, String description, long reminderTime, int beforeMinutes) {
+    public static boolean addCalendarEvent(Context context, String id,String title, String description, long startTime,long endTime ,int beforeMinutes) {
         if (context == null) {
             return false;
         }
@@ -115,20 +116,15 @@ public class ZCalendarReminderUtils {
         }
 
         //添加日历事件
-        Calendar mCalendar = Calendar.getInstance();
-        mCalendar.setTimeInMillis(reminderTime);//设置开始时间
-        long start = mCalendar.getTime().getTime();
-        mCalendar.setTimeInMillis(start + 10 * 60 * 1000);//设置终止时间，开始时间加10分钟
-        long end = mCalendar.getTime().getTime();
         ContentValues event = new ContentValues();
         event.put(CalendarContract.Events.TITLE, title);
         event.put(CalendarContract.Events.DESCRIPTION, description);
         event.put(CalendarContract.Events.CALENDAR_ID, calId); //插入账户的id
         event.put(CalendarContract.Events._ID, id); //id
-        event.put(CalendarContract.Events.DTSTART, start);
-        event.put(CalendarContract.Events.DTEND, end);
+        event.put(CalendarContract.Events.DTSTART, startTime);
+        event.put(CalendarContract.Events.DTEND, endTime);
         event.put(CalendarContract.Events.HAS_ALARM, 1);//设置有闹钟提醒
-        event.put(CalendarContract.Events.EVENT_TIMEZONE, "Asia/Shanghai");//这个是时区，必须有
+        event.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().getID());//这个是时区，必须有
         Uri newEvent = context.getContentResolver().insert(Uri.parse(CALENDER_EVENT_URL), event); //添加事件
         if (newEvent == null) { //添加日历事件失败直接返回
             return false;
