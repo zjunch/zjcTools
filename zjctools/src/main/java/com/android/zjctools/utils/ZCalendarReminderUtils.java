@@ -6,16 +6,18 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.CalendarContract;
+
 import android.text.TextUtils;
+
+import androidx.annotation.RequiresApi;
 
 import java.util.Calendar;
 import java.util.TimeZone;
 
 
-/**
- * 添加事情到日历提醒，
- */
+
 public class ZCalendarReminderUtils {
     private static String CALENDER_URL = "content://com.android.calendar/calendars";
     private static String CALENDER_EVENT_URL = "content://com.android.calendar/events";
@@ -119,10 +121,10 @@ public class ZCalendarReminderUtils {
         mCalendar.setTimeInMillis(start + 10 * 60 * 1000);//设置终止时间，开始时间加10分钟
         long end = mCalendar.getTime().getTime();
         ContentValues event = new ContentValues();
-        event.put("title", title);
-        event.put("description", description);
-        event.put("calendar_id", calId); //插入账户的id
-        event.put(CalendarContract.Events._ID, id); //id 添加唯一的
+        event.put(CalendarContract.Events.TITLE, title);
+        event.put(CalendarContract.Events.DESCRIPTION, description);
+        event.put(CalendarContract.Events.CALENDAR_ID, calId); //插入账户的id
+        event.put(CalendarContract.Events._ID, id); //id
         event.put(CalendarContract.Events.DTSTART, start);
         event.put(CalendarContract.Events.DTEND, end);
         event.put(CalendarContract.Events.HAS_ALARM, 1);//设置有闹钟提醒
@@ -146,8 +148,9 @@ public class ZCalendarReminderUtils {
 
     /**
      * 删除日历事件
+     * targetId 对应添加时的CalendarContract.Events._ID
      */
-    public static void deleteCalendarEvent(Context context, String title) {
+    public static void deleteCalendarEvent(Context context, String targetId) {
         if (context == null) {
             return;
         }
@@ -159,8 +162,8 @@ public class ZCalendarReminderUtils {
             if (eventCursor.getCount() > 0) {
                 //遍历所有事件，找到title跟需要查询的title一样的项
                 for (eventCursor.moveToFirst(); !eventCursor.isAfterLast(); eventCursor.moveToNext()) {
-                    String eventTitle = eventCursor.getString(eventCursor.getColumnIndex("title"));
-                    if (!TextUtils.isEmpty(title) && title.equals(eventTitle)) {
+                    String eventId = eventCursor.getString(eventCursor.getColumnIndex(CalendarContract.Events._ID));
+                    if (!TextUtils.isEmpty(targetId) && targetId.equals(eventId)) {
                         int id = eventCursor.getInt(eventCursor.getColumnIndex(CalendarContract.Calendars._ID));//取得id
                         Uri deleteUri = ContentUris.withAppendedId(Uri.parse(CALENDER_EVENT_URL), id);
                         int rows = context.getContentResolver().delete(deleteUri, null, null);
