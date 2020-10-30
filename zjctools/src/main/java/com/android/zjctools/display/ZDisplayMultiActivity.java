@@ -32,6 +32,7 @@ public class ZDisplayMultiActivity extends ZBActivity {
         return R.layout.zjc_activity_display_images;
     }
 
+
     @Override
     protected void initUI() {
         viewPager=findViewById(R.id.display_view_pager);
