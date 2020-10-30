@@ -6,7 +6,7 @@
     android:background="@color/zjcBlack"
     tools:ignore="MissingDefaultResource">
 
-    <androidx.viewpager.widget.ViewPager
+    <com.android.zjctools.display.ZFixedViewPager
         android:id="@+id/display_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

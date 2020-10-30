@@ -18,10 +18,9 @@ import androidx.viewpager.widget.ViewPager;
  * 展示图片集合类
  */
 public class ZDisplayMultiActivity extends ZBActivity {
-    ViewPager viewPager;
+    ZFixedViewPager viewPager;
     TextView currentTv;
-     LinearLayout dotLayout;
-
+    LinearLayout dotLayout;
     private ZDisplayAdapter adapter;
     private List<String> imagePaths;
     private int selected;
