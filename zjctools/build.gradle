@@ -54,7 +54,7 @@ publish {
     userOrg = 'zjun'  //bintray注册的用户名
     groupId = 'com.zjun'  //compile引用时的第1部分groupId
     artifactId = 'zjcTools'       //compile引用时的第2部分项目名
-    publishVersion = '0.2.3'     //compile引用时的第3部分版本号
+    publishVersion = '0.2.4'     //compile引用时的第3部分版本号
     desc = '间隔的色块'
     website = 'https://github.com/zjunch/zjcTools'
 
