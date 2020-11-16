@@ -17,7 +17,7 @@
         android:layout_margin="@dimen/zjc_dimen_16" />
 
     <TextView
-        android:id="@+id/dialog_message_tv"
+        android:id="@+id/zjc_dialog_message_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/zjc_progress_wait"
