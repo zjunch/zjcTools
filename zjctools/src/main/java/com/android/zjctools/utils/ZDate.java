@@ -1,7 +1,9 @@
 package com.android.zjctools.utils;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class ZDate {
@@ -244,4 +246,23 @@ public class ZDate {
         long day2 = time2 / DAY;
         return day1 == day2;
     }
+
+
+    //2019-11-05T00:00:00转换标准日期
+    public static String covertToDate(String dateTime) {
+        DateFormat df2 = null;
+        Date date1 = null;
+        try {
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+            Date date = df.parse(dateTime);
+            SimpleDateFormat df1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss Z yyyy", Locale.UK);
+            date1 = df1.parse(date.toString());
+            df2 = new SimpleDateFormat("yyyy-MM-dd");
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return df2.format(date1);
+    }
+
 }
