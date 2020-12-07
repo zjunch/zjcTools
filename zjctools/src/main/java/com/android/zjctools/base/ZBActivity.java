@@ -27,11 +27,13 @@ public abstract class ZBActivity extends ZjcActivity {
      * initUI  方法中调用setDarkTextStatusBar（false） 。
      */
     private boolean isDarkTextStatusBar=true;
+    private boolean handleTitleBar=true;  //侵入式 状态栏设置
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity=this;
+
         //状态栏设置
         initStatusBar();
         setContentView(layoutId());
@@ -49,6 +51,11 @@ public abstract class ZBActivity extends ZjcActivity {
         initBackView(R.id.zjc_bar_iv_back);
         initListener();
     }
+
+    public boolean getHandleTitleBar(){
+        return handleTitleBar;
+    }
+
 
     private  void initTitleBar(){
         if(findViewById(R.id.zjc_lv_title)!=null){
@@ -191,6 +198,9 @@ public abstract class ZBActivity extends ZjcActivity {
 
 
     private void setStatusBar(){
+        if(!getHandleTitleBar()){//不处理状态栏等
+            return;
+        }
         StatusBarUtil.setStatusBarDarkTheme(this, isDarkTextStatusBar);
     }
 
@@ -199,6 +209,9 @@ public abstract class ZBActivity extends ZjcActivity {
      * 状态栏等设置
      */
     protected void initStatusBar() {
+        if(!getHandleTitleBar()){//不处理状态栏等
+            return;
+        }
         //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
         StatusBarUtil.setRootViewFitsSystemWindows(this, false);
         StatusBarUtil.setTranslucentStatus(this);
