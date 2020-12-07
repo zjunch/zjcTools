@@ -31,6 +31,11 @@ public class ToastActivity extends ZBActivity {
     }
 
     @Override
+    public boolean getHandleTitleBar() {
+        return false;
+    }
+
+    @Override
     protected void initListener() {
         super.initListener();
         tvNormal.setOnClickListener(v -> {
