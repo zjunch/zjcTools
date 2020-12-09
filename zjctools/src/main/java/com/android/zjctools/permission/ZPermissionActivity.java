@@ -47,6 +47,9 @@ public class ZPermissionActivity extends ZjcActivity {
     private int mAgainIndex;
     // 是否显示申请权限弹窗
     private Boolean mEnableDialog;
+    private boolean mEnableAgain=true; //第一次拒绝是否需要请求两次
+    private boolean mEnableRejectDialog=true; //拒绝时是否显示拒绝的弹窗
+    private boolean mEnableSettingDialog=true; //拒绝时是否显示拒绝的弹窗
     // 申请权限弹窗标题
     private String mTitle;
     // 申请权限弹窗描述
@@ -59,6 +62,7 @@ public class ZPermissionActivity extends ZjcActivity {
     private AlertDialog mDialog;
     private String mAppName;
     private ZPermission.PCallback mCallback;
+    private boolean isInSetting;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,6 +78,9 @@ public class ZPermissionActivity extends ZjcActivity {
         mAppName = ZSystem.getAppName(mActivity);
         mCallback = ZPermission.getInstance(mActivity).getPermissionCallback();
         mEnableDialog = getIntent().getBooleanExtra(ZConstant.ZJC_KEY_PERMISSION_ENABLE_DIALOG, false);
+        mEnableAgain = getIntent().getBooleanExtra(ZConstant.ZJC_KEY_PERMISSION_AGAIN, true);
+        mEnableRejectDialog = getIntent().getBooleanExtra(ZConstant.ZJC_KEY_PERMISSION_REJECT_DIALOG, true);
+        mEnableSettingDialog = getIntent().getBooleanExtra(ZConstant.ZJC_KEY_PERMISSION_SETTING_DIALOG, true);
         mTitle = getIntent().getStringExtra(ZConstant.ZJC_KEY_PERMISSION_TITLE);
         mMessage = getIntent().getStringExtra(ZConstant.ZJC_KEY_PERMISSION_MSG);
         mPermissions = getIntent().getParcelableArrayListExtra(ZConstant.ZJC_KEY_PERMISSION_LIST);
@@ -196,6 +203,10 @@ public class ZPermissionActivity extends ZjcActivity {
     private void requestPermissionAgain(final ZPermissionBean item) {
         String alertTitle = String.format(getString(R.string.zjc_permission_again_title), item.name);
         String msg = String.format(getString(R.string.zjc_permission_again_reason), item.name, item.reason);
+        if(!mEnableRejectDialog){//需要显示已经拒绝再次提示的弹窗,直接去请求
+            requestPermission(new String[] { item.permission }, REQUEST_PERMISSION_AGAIN);
+            return;
+        }
         showAlertDialog(alertTitle, msg, getString(R.string.zjc_btn_cancel), getString(R.string.zjc_btn_ok), (dialog, which) -> {
             dialog.dismiss();
             requestPermission(new String[] { item.permission }, REQUEST_PERMISSION_AGAIN);
@@ -222,7 +233,12 @@ public class ZPermissionActivity extends ZjcActivity {
                 }
                 if (mPermissions.size() > 0) {
                     //用户拒绝了某个或多个权限，重新申请
-                    requestPermissionAgain(mPermissions.get(mAgainIndex));
+                    if(mEnableAgain){
+                        requestPermissionAgain(mPermissions.get(mAgainIndex));
+                    }else{
+                        onPermissionReject();
+                        finish();
+                    }
                 } else {
                     onPermissionComplete();
                     finish();
@@ -237,6 +253,10 @@ public class ZPermissionActivity extends ZjcActivity {
                 if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
                     // 重新申请后再次拒绝，弹框警告
                     // permissions 可能返回空数组，所以try-catch
+                    if(!mEnableSettingDialog){
+                        ZRouter.goSettingDetail(mActivity, REQUEST_SETTING);
+                        return;
+                    }
                     ZPermissionBean item = mPermissions.get(0);
                     String title = String.format(getString(R.string.zjc_permission_again_title), item.name);
                     String msg = String.format(getString(R.string.zjc_permission_denied_setting), mAppName, item.name, mAppName);
@@ -262,11 +282,17 @@ public class ZPermissionActivity extends ZjcActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_SETTING) {
+            isInSetting=true;
             if (mDialog != null && mDialog.isShowing()) {
                 mDialog.dismiss();
             }
             checkPermission();
             if (mPermissions.size() > 0) {
+                if(isInSetting&&!mEnableSettingDialog){ //已经进入过了
+                    onPermissionReject();
+                    onFinish();
+                    return;
+                }
                 mAgainIndex = 0;
                 requestPermissionAgain(mPermissions.get(mAgainIndex));
             } else {

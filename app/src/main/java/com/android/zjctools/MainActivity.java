@@ -1,6 +1,8 @@
 package com.android.zjctools;
 
 
+import android.Manifest;
+
 import com.android.zjctools.appupdate.ZAppUpdateBean;
 import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.bean.FunctionBean;
@@ -9,10 +11,12 @@ import com.android.zjctools.permission.ZPermissionBean;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZLog;
+import com.android.zjctools.utils.ZToast;
 import com.android.zjctools.widget.ZItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -60,7 +64,7 @@ public class MainActivity extends ZBActivity {
 
     @Override
     protected void initData() {
-        getPermission();
+//        getPermission();
     }
 
     @Override
@@ -74,7 +78,8 @@ public class MainActivity extends ZBActivity {
             }else if(item.type==2){
                 Router.goToast(mActivity);
             }else if(item.type==3){
-                Router.goSelectPictures(mActivity);
+                getPermission();
+//                Router.goSelectPictures(mActivity);
             }else if(item.type==4){
                 Router.goFile(mActivity);
             }else if(item.type==5){
@@ -94,15 +99,22 @@ public class MainActivity extends ZBActivity {
     }
 
     private void  getPermission(){
-        ZPermission.getInstance(this).requestStorage(new ZPermission.PCallback() {
+        List<ZPermissionBean> listPermission=new ArrayList();
+        listPermission.add(new ZPermissionBean(Manifest.permission.CAMERA));
+        listPermission.add(new ZPermissionBean(Manifest.permission.WRITE_EXTERNAL_STORAGE));
+
+        ZPermission.getInstance(this).
+                setEnableAgain(true).
+                setEnableRejectDialog(false).setEnableSettingDialog(true)
+                .setPermissionList(listPermission).requestPermission(new ZPermission.PCallback() {
             @Override
             public void onReject() {
-                ZLog.e("onReject");
+                ZToast.create().showNormal("onReject");
             }
 
             @Override
             public void onComplete() {
-                ZLog.e("onComplete");
+                ZToast.create().showNormal("onComplete");
             }
         });
 
