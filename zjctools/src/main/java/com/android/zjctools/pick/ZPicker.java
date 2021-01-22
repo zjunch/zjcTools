@@ -32,7 +32,6 @@ import java.util.List;
 
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
-import io.reactivex.android.plugins.RxAndroidPlugins;
 
 /**
  * Create by zjun on 2019/05/16
