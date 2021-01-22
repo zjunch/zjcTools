@@ -30,7 +30,9 @@ public class ZConstant {
     public static final String ZJC_KEY_PERMISSION_TITLE = "zjc_key_permission_title";
     public static final String ZJC_KEY_PERMISSION_MSG = "zjc_key_permission_msg";
     public static final String ZJC_KEY_PERMISSION_LIST = "zjc_key_permission_list";
-
+    public static final String ZJC_KEY_PERMISSION_AGAIN = "zjc_key_permission_again";
+    public static final String ZJC_KEY_PERMISSION_REJECT_DIALOG= "zjc_key_permission_reject_dialog";
+    public static final String ZJC_KEY_PERMISSION_SETTING_DIALOG= "zjc_key_permission_setting_dialog";
     /**
      * 图片选择器相关静态变量
      */

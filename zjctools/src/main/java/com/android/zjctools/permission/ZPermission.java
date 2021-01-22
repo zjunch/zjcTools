@@ -1,6 +1,7 @@
 package com.android.zjctools.permission;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -31,7 +32,9 @@ public class ZPermission {
     private String mTitle;
     private String mMessage;
     private List<ZPermissionBean> mPermissions = new ArrayList<>();
-
+    private boolean isNeedAgain=true; //第一次拒绝是否需要请求两次
+    private boolean isShowRejectDialog=true; //拒绝时是否显示拒绝的弹窗
+   private boolean isShowSettingDialog=true; //拒绝时是否显示拒绝的弹窗
     /**
      * 私有构造方法
      */
@@ -69,6 +72,32 @@ public class ZPermission {
         mEnableDialog = enable;
         return this;
     }
+
+    /**
+     * 是否开启第二次请求
+     */
+    public ZPermission setEnableAgain(boolean enable) {
+        isNeedAgain = enable;
+        return this;
+    }
+
+    /**
+     * 是否显示拒绝弹窗
+     */
+    public ZPermission setEnableRejectDialog(boolean enable) {
+        isShowRejectDialog = enable;
+        return this;
+    }
+
+
+    /**
+     * 如果用户禁止了提示，是否弹出去设置打开的弹窗
+     */
+    public ZPermission setEnableSettingDialog(boolean enable) {
+        isShowSettingDialog = enable;
+        return this;
+    }
+
 
     /**
      * 设置授权弹窗标题
@@ -245,6 +274,9 @@ public class ZPermission {
     private void startActivity() {
         Intent intent = new Intent();
         intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_ENABLE_DIALOG, mEnableDialog);
+        intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_SETTING_DIALOG, isShowSettingDialog);
+        intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_AGAIN, isNeedAgain);
+        intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_REJECT_DIALOG, isShowRejectDialog);
         intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_TITLE, mTitle);
         intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_MSG, mMessage);
         intent.putParcelableArrayListExtra(ZConstant.ZJC_KEY_PERMISSION_LIST, (ArrayList<? extends Parcelable>) mPermissions);
