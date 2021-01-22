@@ -10,6 +10,7 @@
         <attr name="zjc_nine_12_Enable" format="boolean"/><!--三张图 左边一个右边两个-->
         <attr name="zjc_nine_max_counts" format="integer"/><!--最多显示多少张-->
         <attr name="zjc_nine_full_One" format="boolean"/><!--一张图的时候，一行一张-->
+        <attr name="zjc_nine_half_One" format="boolean"/><!--一张图的时候，和两张平分的时候一样大-->
         <attr name="zjc_nine_show_un_counts" format="boolean"/><!--是否有未展示的图片个数的文字显示-->
         <attr name="zjc_nine_un_counts_textColor" format="color" /><!--未读图片个数的文字颜色-->
         <attr name="zjc_nine_un_counts_textSzie" format="integer"/><!--未读图片个数的文字大小-->

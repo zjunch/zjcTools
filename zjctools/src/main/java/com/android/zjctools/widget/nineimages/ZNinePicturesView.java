@@ -39,6 +39,7 @@ public class ZNinePicturesView extends RelativeLayout {
     private boolean isShowText = false;
     private boolean viewShowText = false;//是否显示未展示个数
     private boolean viewFullOne = false;
+    private boolean viewFullHalf = false;  //1张图和两张平分的的时候 一样大
     int viewXSpaceSize = 5, viewYSpaceSize = 5;   //图片间横向/垂直间隔距离   默认5dp
     private double scale = 1.0 / 1.0;   //高宽比
     private double fullOneScale = 16.0 / 9.0;   //单个图片宽高比
@@ -68,6 +69,7 @@ public class ZNinePicturesView extends RelativeLayout {
         average4Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_average4_enable, false);
         viewShowText = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_show_un_counts, false);
         viewFullOne = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_full_One, false);
+        viewFullHalf = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_half_One, false);
         view12Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_12_Enable, false);
         viewMaxCounts = typedArray.getInt(R.styleable.ZNinePicturesView_zjc_nine_max_counts, 9);
         int viewCountSizeSP = typedArray.getInt(R.styleable.ZNinePicturesView_zjc_nine_un_counts_textSzie, 12);
@@ -147,7 +149,10 @@ public class ZNinePicturesView extends RelativeLayout {
         if (viewFullOne == true && imageUrls.size() == 1) {//只有一个的时候宽度满屏宽
             picWidth = mWidth;
             picHeight = (int) (picWidth / fullOneScale);  //一行两个，沾满屏宽
-        } else if ((average2Enable && imageUrls.size() == 2) || (average4Enable && imageUrls.size() == 4)) { //2/4张图直接平分屏幕宽度
+        } else if(viewFullHalf == true && imageUrls.size() == 1){
+            picWidth = (mWidth - viewXSpaceSize) / 2;
+            picHeight = (int) (picWidth / scale);
+        }else if ((average2Enable && imageUrls.size() == 2) || (average4Enable && imageUrls.size() == 4)) { //2/4张图直接平分屏幕宽度
             picWidth = (mWidth - viewXSpaceSize) / 2;
             picHeight = (int) (picWidth / scale);
         } else if (imageUrls.size() == 3 && view12Enable) {

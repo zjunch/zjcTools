@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.view.View;
 import com.android.zjctools.utils.ZFile;
@@ -273,24 +274,50 @@ public class ZBitmap {
      * @param dimension 最大尺寸
      */
     public static String compressTempImageByDimension(String path, int dimension) {
-        maxDimension = dimension;
-        return compressTempImage(path);
+
+        return compressTempImageByDimension(path,dimension,null);
     }
 
+    /**
+     * 临时压缩图片到指定尺寸
+     *
+     * @param path      原始路径
+     * @param dimension 最大尺寸
+     */
+    public static String compressTempImageByDimension(String path, int dimension,String catalogueName) {
+        maxDimension = dimension;
+        return compressTempImage(path,catalogueName);
+    }
+
+
+    /**
+     * 临时压缩图片
+     *
+     * @param path 图片路径
+     * @return 压缩后的图片临时路径  .默认temp 目录
+     */
+    public static String compressTempImage(String path) {
+        return compressTempImage(path,null);
+    }
     /**
      * 临时压缩图片
      *
      * @param path 图片路径
      * @return 压缩后的图片临时路径
      */
-    public static String compressTempImage(String path) {
+    public static String compressTempImage(String path,String catalogueName) {
         ZLog.d("compressTempImage start");
         Bitmap bitmap = compressByQuality(compressByDimension(path));
         ZLog.d("compressTempImage end");
         //得到文件名
         String tempName = generateTempName(path);
         // 临时存放路径
-        String tempPath = ZFile.getCacheFromSDCard() + "temp";
+        String tempPath;
+        if(TextUtils.isEmpty(catalogueName)){
+            tempPath = ZFile.getSDCard() + "temp";
+        }else{
+            tempPath = ZFile.getSDCard() + catalogueName;
+        }
         ZFile.createDirectory(tempPath);
         saveBitmapToSDCard(bitmap, tempPath + "/" + tempName);
         return tempPath + "/" + tempName;

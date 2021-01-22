@@ -48,7 +48,7 @@ public class SelectActivity extends ZBActivity {
                 selecteds.clear();
             }
             selectType=0;
-            ZIMManager.showMultiPicker(mActivity, 9, selecteds);
+            ZIMManager.showMultiPicker(mActivity, 9, selecteds,false);
         });
         tvSelectSingle.setOnClickListener(v -> {
             if(selectType==0){
@@ -104,5 +104,9 @@ public class SelectActivity extends ZBActivity {
         }
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ZPicker.getInstance().deleteCameraImgFile();
+    }
 }

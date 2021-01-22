@@ -20,8 +20,34 @@ public class ZPictureBean implements Serializable, Parcelable {
     public String mimeType;   //图片的类型
     public long addTime;      //图片的创建时间
     public String compressPath;   //图片的压缩路径，如果有值，则已经压缩，防止重复压缩
-
+    public  boolean isCamera;//是否是拍照的图片
     public String cropPath;   //剪切后的图片，如果不是空,则已经剪切过不需要重复剪切
+
+    protected ZPictureBean(Parcel in) {
+        url = in.readString();
+        name = in.readString();
+        path = in.readString();
+        size = in.readLong();
+        width = in.readInt();
+        height = in.readInt();
+        mimeType = in.readString();
+        addTime = in.readLong();
+        compressPath = in.readString();
+        isCamera = in.readByte() != 0;
+        cropPath = in.readString();
+    }
+
+    public static final Creator<ZPictureBean> CREATOR = new Creator<ZPictureBean>() {
+        @Override
+        public ZPictureBean createFromParcel(Parcel in) {
+            return new ZPictureBean(in);
+        }
+
+        @Override
+        public ZPictureBean[] newArray(int size) {
+            return new ZPictureBean[size];
+        }
+    };
 
     /**
      * 图片的路径和创建时间相同就认为是同一张图片
@@ -43,37 +69,24 @@ public class ZPictureBean implements Serializable, Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.name);
-        dest.writeString(this.path);
-        dest.writeLong(this.size);
-        dest.writeInt(this.width);
-        dest.writeInt(this.height);
-        dest.writeString(this.mimeType);
-        dest.writeLong(this.addTime);
+
+        dest.writeString(url);
+        dest.writeString(name);
+        dest.writeString(path);
+        dest.writeLong(size);
+        dest.writeInt(width);
+        dest.writeInt(height);
+        dest.writeString(mimeType);
+        dest.writeLong(addTime);
+        dest.writeString(compressPath);
+        dest.writeByte((byte) (isCamera ? 1 : 0));
+        dest.writeString(cropPath);
     }
+
 
     public ZPictureBean() {
     }
 
-    protected ZPictureBean(Parcel in) {
-        this.name = in.readString();
-        this.path = in.readString();
-        this.size = in.readLong();
-        this.width = in.readInt();
-        this.height = in.readInt();
-        this.mimeType = in.readString();
-        this.addTime = in.readLong();
-    }
 
-    public static final Creator<ZPictureBean> CREATOR = new Creator<ZPictureBean>() {
-        @Override
-        public ZPictureBean createFromParcel(Parcel source) {
-            return new ZPictureBean(source);
-        }
 
-        @Override
-        public ZPictureBean[] newArray(int size) {
-            return new ZPictureBean[size];
-        }
-    };
 }

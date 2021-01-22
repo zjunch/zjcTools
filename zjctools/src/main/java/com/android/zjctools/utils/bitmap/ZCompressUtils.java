@@ -39,7 +39,17 @@ public class ZCompressUtils {
      * @param compressImageListener
      */
     public void compressSinglePicture(ZPictureBean pictureBean, CompressImageListener compressImageListener){
-        compressSinglePicture(pictureBean,compressImageListener,false);
+        compressSinglePicture(pictureBean,false,null,compressImageListener);
+    }
+
+
+    /**
+     * 压缩单张图片，裁剪之后的图片不压缩
+     * @param pictureBean
+     * @param compressImageListener
+     */
+    public void compressSinglePicture(ZPictureBean pictureBean,String catalogueName, CompressImageListener compressImageListener){
+        compressSinglePicture(pictureBean,false,catalogueName,compressImageListener);
     }
 
 
@@ -48,12 +58,14 @@ public class ZCompressUtils {
      * @param pictureBean
      * @param compressImageListener
      * @param corpIsCompress    经过裁剪之后的图片是否继续压缩
+     * @param  catalogueName     目录
      */
-    public void compressSinglePicture(ZPictureBean pictureBean, CompressImageListener compressImageListener,boolean corpIsCompress){
+    public void compressSinglePicture(ZPictureBean pictureBean,boolean corpIsCompress,String catalogueName, CompressImageListener compressImageListener){
         List<ZPictureBean> pictureBeans=new ArrayList<>();
         pictureBeans.add(pictureBean);
-        compressPictures(pictureBeans,compressImageListener,corpIsCompress);
+        compressPictures(pictureBeans,corpIsCompress,catalogueName,compressImageListener);
     }
+
 
     /**
      * 压缩图片，裁剪之后的图片不压缩
@@ -61,7 +73,17 @@ public class ZCompressUtils {
      * @param compressImageListener
      */
     public void compressPictures(List<ZPictureBean> pictureBeans, CompressImageListener compressImageListener){
-        compressPictures(pictureBeans,compressImageListener,false);
+        compressPictures(pictureBeans,false,null,compressImageListener);
+    }
+
+
+    /**
+     * 压缩图片，裁剪之后的图片不压缩
+     * @param pictureBeans
+     * @param compressImageListener
+     */
+    public void compressPictures(List<ZPictureBean> pictureBeans,String catalogueName, CompressImageListener compressImageListener){
+        compressPictures(pictureBeans,false,catalogueName,compressImageListener);
     }
 
 
@@ -71,9 +93,9 @@ public class ZCompressUtils {
      * @param compressImageListener
      * @param corpIsCompress    经过裁剪之后的图片是否继续压缩
      */
-    public void compressPictures(List<ZPictureBean> pictureBeans, CompressImageListener compressImageListener,boolean corpIsCompress){
+    public void compressPictures(List<ZPictureBean> pictureBeans ,boolean corpIsCompress,String catalogueName,CompressImageListener compressImageListener){
         this.compressImageListener = compressImageListener;
-        compressPictures(pictureBeans,corpIsCompress);
+        compressPictures(pictureBeans,corpIsCompress,catalogueName);
     }
 
 
@@ -82,7 +104,7 @@ public class ZCompressUtils {
      * @param pictureBeans
      * @param corpIsCompress    裁剪的图片是否压缩
      */
-    private void compressPictures(List<ZPictureBean> pictureBeans ,boolean corpIsCompress) {
+    private void compressPictures(List<ZPictureBean> pictureBeans ,boolean corpIsCompress,String catalogueName) {
         boolean isNeedCompress = false;
 
         for (int i = 0; i < pictureBeans.size(); i++) {
@@ -111,14 +133,14 @@ public class ZCompressUtils {
                 continue;
             }
             if (TextUtils.isEmpty(pictureBeans.get(i).compressPath) && !TextUtils.isEmpty(pictureBeans.get(i).path)) {
-                compressPicture(pictureBeans.get(i));
+                compressPicture(pictureBeans.get(i),catalogueName);
             }
         }
     }
-    private void compressPicture(final ZPictureBean pictureBean) {
+    private void compressPicture(final ZPictureBean pictureBean,String catalogueName) {
         try {
             Observable.create((ObservableOnSubscribe<String>) emitter -> {
-                String compressPath = ZBitmap.compressTempImage(pictureBean.path);
+                String compressPath = ZBitmap.compressTempImage(pictureBean.path,catalogueName);
                 emitter.onNext(compressPath);
             }).subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())

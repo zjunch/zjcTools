@@ -58,5 +58,8 @@ public class ZConstant {
     // 是否预览全部
     public static final String KEY_PICK_PREVIEW_ALL = "key_pick_preview_all";
 
+    // 通过拍照获取的图片路径集合
+    public static final String KEY_PICK_CAMERA_PATHS= "key_pick_camera_paths";
+
 
 }

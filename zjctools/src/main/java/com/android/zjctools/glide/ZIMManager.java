@@ -46,7 +46,7 @@ public class ZIMManager {
      * @param <T>
      */
     public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures,boolean isCrop) {
-        showPicker(t, maxCounts, selectPictures, 0, 4,false);
+        showPicker(t, maxCounts, selectPictures, 0, 4,isCrop);
     }
 
     /**
@@ -57,7 +57,7 @@ public class ZIMManager {
      * @param <T>
      */
     public static <T> void showMultiPicker(T t, int maxCounts, List<ZPictureBean> selectPictures,int spanCount,boolean isCrop) {
-        showPicker(t, maxCounts, selectPictures, 0, spanCount,false);
+        showPicker(t, maxCounts, selectPictures, 0, spanCount,isCrop);
     }
 
     /**

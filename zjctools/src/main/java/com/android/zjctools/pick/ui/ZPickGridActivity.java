@@ -76,6 +76,8 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     private ZPickScanPicture.OnScanPictureListener mScanPictureListener;
     private ZPicker.OnSelectedPictureListener mSelectedPictureListener;
 
+    private boolean isNeedClearCamera;//是否删除拍照后的图片
+
     @Override
     protected int layoutId() {
         return R.layout.zjc_activity_pick_grid;
@@ -401,10 +403,10 @@ public class ZPickGridActivity extends ZPickBaseActivity {
                  */
 
                 String path = ZPicker.getInstance().getTakeImageFile().getAbsolutePath();
-
                 ZPictureBean zPictureBean = new ZPictureBean();
                 zPictureBean.path = path;
-
+                zPictureBean.isCamera=true;
+                ZPicker.getInstance().addCameraImgPath(path);
 //              ZPicker.getInstance().clearSelectedPictures();
                 //添加到已经选择的图片集合
                 ZPicker.getInstance().addSelectedPicture(0, zPictureBean, true);

@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Parcelable;
 import android.provider.MediaStore;
-
+import android.util.Log;
 
 
 import com.android.zjctools.base.ZConstant;
@@ -21,6 +21,7 @@ import com.android.zjctools.pick.bean.ZPictureBean;
 import com.android.zjctools.pick.ui.ZPickGridActivity;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.utils.ZFile;
+import com.android.zjctools.utils.ZSPUtil;
 import com.android.zjctools.utils.ZStr;
 import com.android.zjctools.widget.ZCropView;
 import com.android.zjcutils.R;
@@ -31,9 +32,10 @@ import java.util.List;
 
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
+import io.reactivex.android.plugins.RxAndroidPlugins;
 
 /**
- * Create by lzan13 on 2019/05/16
+ * Create by zjun on 2019/05/16
  *
  * 图片选择的入口类，采用单例和弱引用解决Intent传值限制导致的异常
  */
@@ -72,6 +74,38 @@ public class ZPicker {
     private int mCurrentFolderPosition = 0;
     // 图片选中的监听回调
     private List<OnSelectedPictureListener> mSelectedPictureListeners;
+    private List<String> cameraImgPaths; //通过拍照获取的图片路径，如果需要删除，则会使用到
+
+    public List<String> getCameraImgPath() {
+        return cameraImgPaths;
+    }
+
+    public void addCameraImgPath(String cameraImgPath) {
+        if(cameraImgPaths==null){
+            cameraImgPaths=new ArrayList<>();
+        }
+        cameraImgPaths.add(cameraImgPath);
+        String paths="";
+        for (int i = 0; i <cameraImgPaths.size() ; i++) {
+            paths+=cameraImgPaths.get(i)+",";
+        }
+        ZSPUtil.put(ZConstant.KEY_PICK_CAMERA_PATHS,paths.substring(0,paths.length()-1));
+    }
+
+
+    /**
+     * 删除通过拍照获取的图片
+     */
+    public void deleteCameraImgFile(){
+        if(cameraImgPaths==null||cameraImgPaths.size()==0)return;
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                ZFile.deleteFiles(cameraImgPaths);
+            }
+        }.start();
+    }
 
     // 图片区域的背景色
     private int mColorResIg= 0;
@@ -353,6 +387,7 @@ public class ZPicker {
 
     /**
      * 启动选择器，通过 Fragment 打开
+     * isNeedClearCamera 如果是拍照则需要删除拍照的图片
      */
     public void startPicker(Fragment fragment) {
         Intent intent = new Intent(fragment.getContext(), ZPickGridActivity.class);
