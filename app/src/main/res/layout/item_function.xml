@@ -11,11 +11,11 @@
         android:layout_height="wrap_content"
         app:zv_sv_desc_Hint=""
         app:zv_sv_title_color="@color/z_red_87"
-        app:zv_sv_title_size="@dimen/zjc_size_14"
+        app:zv_sv_title_size="@dimen/z_size_14"
         app:zv_sv_star_enable="true"
         app:zv_sv_point_enable="true"
         app:zv_sv_Line_enable="false"
-        app:zv_sv_title_drawLeft_resId="@drawable/zjc_ic_back_color"
+        app:zv_sv_title_drawLeft_resId="@drawable/z_ic_back_color"
         app:zv_sv_title_drawPadding="5dp"
         app:zv_sv_title_text=""/>
 </LinearLayout>

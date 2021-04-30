@@ -9,6 +9,6 @@
         <!-- splash screen 展示的图片 居中 不缩放 -->
         <bitmap
             android:gravity="center"
-            android:src="@drawable/zjc_picture_default" />
+            android:src="@drawable/z_picture_default" />
     </item>
 </layer-list>

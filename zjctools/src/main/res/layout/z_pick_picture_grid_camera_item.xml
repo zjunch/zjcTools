@@ -14,9 +14,9 @@
         >
 
         <ImageView
-            android:layout_width="@dimen/zjc_dimen_36"
-            android:layout_height="@dimen/zjc_dimen_36"
-            android:src="@drawable/zjc_ic_camera"
+            android:layout_width="@dimen/z_dimen_36"
+            android:layout_height="@dimen/z_dimen_36"
+            android:src="@drawable/z_ic_camera"
             android:tint="@color/z_white_54"
             />
         <TextView

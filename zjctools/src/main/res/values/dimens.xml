@@ -3,108 +3,108 @@
 
 
     <!--定义文字大小-->
-    <dimen name="zjc_size_display_1">34sp</dimen>
-    <dimen name="zjc_size_headline">24sp</dimen>
-    <dimen name="zjc_size_title">20sp</dimen>
-    <dimen name="zjc_size_subhead">16sp</dimen>
-    <dimen name="zjc_size_body">14sp</dimen>
-    <dimen name="zjc_size_menu">14sp</dimen>
-    <dimen name="zjc_size_btn_large">18sp</dimen>
-    <dimen name="zjc_size_btn_normal">16sp</dimen>
-    <dimen name="zjc_size_btn_small">12sp</dimen>
-    <dimen name="zjc_size_caption">12sp</dimen>
-    <dimen name="zjc_size_4">4sp</dimen>
-    <dimen name="zjc_size_8">8sp</dimen>
-    <dimen name="zjc_size_9">9sp</dimen>
-    <dimen name="zjc_size_10">10sp</dimen>
-    <dimen name="zjc_size_11">11sp</dimen>
-    <dimen name="zjc_size_12">12sp</dimen>
-    <dimen name="zjc_size_13">13sp</dimen>
-    <dimen name="zjc_size_14">14sp</dimen>
-    <dimen name="zjc_size_15">15sp</dimen>
-    <dimen name="zjc_size_16">16sp</dimen>
-    <dimen name="zjc_size_18">18sp</dimen>
-    <dimen name="zjc_size_20">20sp</dimen>
-    <dimen name="zjc_size_22">22sp</dimen>
-    <dimen name="zjc_size_24">24sp</dimen>
-    <dimen name="zjc_size_26">26sp</dimen>
-    <dimen name="zjc_size_28">28sp</dimen>
-    <dimen name="zjc_size_30">30sp</dimen>
-    <dimen name="zjc_size_32">32sp</dimen>
-    <dimen name="zjc_size_36">36sp</dimen>
+    <dimen name="z_size_display_1">34sp</dimen>
+    <dimen name="z_size_headline">24sp</dimen>
+    <dimen name="z_size_title">20sp</dimen>
+    <dimen name="z_size_subhead">16sp</dimen>
+    <dimen name="z_size_body">14sp</dimen>
+    <dimen name="z_size_menu">14sp</dimen>
+    <dimen name="z_size_btn_large">18sp</dimen>
+    <dimen name="z_size_btn_normal">16sp</dimen>
+    <dimen name="z_size_btn_small">12sp</dimen>
+    <dimen name="z_size_caption">12sp</dimen>
+    <dimen name="z_size_4">4sp</dimen>
+    <dimen name="z_size_8">8sp</dimen>
+    <dimen name="z_size_9">9sp</dimen>
+    <dimen name="z_size_10">10sp</dimen>
+    <dimen name="z_size_11">11sp</dimen>
+    <dimen name="z_size_12">12sp</dimen>
+    <dimen name="z_size_13">13sp</dimen>
+    <dimen name="z_size_14">14sp</dimen>
+    <dimen name="z_size_15">15sp</dimen>
+    <dimen name="z_size_16">16sp</dimen>
+    <dimen name="z_size_18">18sp</dimen>
+    <dimen name="z_size_20">20sp</dimen>
+    <dimen name="z_size_22">22sp</dimen>
+    <dimen name="z_size_24">24sp</dimen>
+    <dimen name="z_size_26">26sp</dimen>
+    <dimen name="z_size_28">28sp</dimen>
+    <dimen name="z_size_30">30sp</dimen>
+    <dimen name="z_size_32">32sp</dimen>
+    <dimen name="z_size_36">36sp</dimen>
 
 
     <!--定义头像尺寸-->
-    <dimen name="zjc_avatar_very_small">20dp</dimen>
-    <dimen name="zjc_avatar_small">36dp</dimen>
-    <dimen name="zjc_avatar_normal">56dp</dimen>
-    <dimen name="zjc_avatar_large">72dp</dimen>
+    <dimen name="z_avatar_very_small">20dp</dimen>
+    <dimen name="z_avatar_small">36dp</dimen>
+    <dimen name="z_avatar_normal">56dp</dimen>
+    <dimen name="z_avatar_large">72dp</dimen>
 
     <!--圆形背景半径定义-->
-    <dimen name="zjc_round_radius_small">36dp</dimen>
-    <dimen name="zjc_round_radius_normal">56dp</dimen>
-    <dimen name="zjc_round_radius_large">72dp</dimen>
+    <dimen name="z_round_radius_small">36dp</dimen>
+    <dimen name="z_round_radius_normal">56dp</dimen>
+    <dimen name="z_round_radius_large">72dp</dimen>
 
-    <!--控件 Z 轴高度-->
-    <dimen name="zjc_elevation_no">0dp</dimen>
-    <dimen name="zjc_elevation_very_low">2dp</dimen>
-    <dimen name="zjc_elevation_low">4dp</dimen>
-    <dimen name="zjc_elevation_normal">8dp</dimen>
-    <dimen name="zjc_elevation_high">16dp</dimen>
+    <!--控件 z 轴高度-->
+    <dimen name="z_elevation_no">0dp</dimen>
+    <dimen name="z_elevation_very_low">2dp</dimen>
+    <dimen name="z_elevation_low">4dp</dimen>
+    <dimen name="z_elevation_normal">8dp</dimen>
+    <dimen name="z_elevation_high">16dp</dimen>
 
 
     <!--margin-->
-    <dimen name="zjc_margin_small">4dp</dimen>
-    <dimen name="zjc_margin_normal">8dp</dimen>
-    <dimen name="zjc_margin_large">16dp</dimen>
+    <dimen name="z_margin_small">4dp</dimen>
+    <dimen name="z_margin_normal">8dp</dimen>
+    <dimen name="z_margin_large">16dp</dimen>
 
     <!--padding-->
-    <dimen name="zjc_padding_small">4dp</dimen>
-    <dimen name="zjc_padding_normal">8dp</dimen>
-    <dimen name="zjc_padding_large">16dp</dimen>
+    <dimen name="z_padding_small">4dp</dimen>
+    <dimen name="z_padding_normal">8dp</dimen>
+    <dimen name="z_padding_large">16dp</dimen>
 
-    <!--定义 Button 常用尺寸-->
-    <dimen name="zjc_btn_height_small">36dp</dimen>
-    <dimen name="zjc_btn_height_normal">48dp</dimen>
-    <dimen name="zjc_btn_height_large">56dp</dimen>
-    <dimen name="zjc_btn_fillet_radius">36dp</dimen>
-    <dimen name="zjc_btn_rectangle_radius">2dp</dimen>
+    <!--定义 button 常用尺寸-->
+    <dimen name="z_btn_height_small">36dp</dimen>
+    <dimen name="z_btn_height_normal">48dp</dimen>
+    <dimen name="z_btn_height_large">56dp</dimen>
+    <dimen name="z_btn_fillet_radius">36dp</dimen>
+    <dimen name="z_btn_rectangle_radius">2dp</dimen>
 
 
     <!--定义一些通用尺寸-->
-    <dimen name="zjc_dimen_0">0dp</dimen>
-    <dimen name="zjc_dimen_0_5">0.5dp</dimen>
-    <dimen name="zjc_dimen_1">1dp</dimen>
-    <dimen name="zjc_dimen_2">2dp</dimen>
-    <dimen name="zjc_dimen_3">3dp</dimen>
-    <dimen name="zjc_dimen_4">4dp</dimen>
-    <dimen name="zjc_dimen_5">5dp</dimen>
-    <dimen name="zjc_dimen_6">6dp</dimen>
-    <dimen name="zjc_dimen_8">8dp</dimen>
-    <dimen name="zjc_dimen_10">10dp</dimen>
-    <dimen name="zjc_dimen_12">12dp</dimen>
-    <dimen name="zjc_dimen_16">16dp</dimen>
-    <dimen name="zjc_dimen_20">20dp</dimen>
-    <dimen name="zjc_dimen_24">24dp</dimen>
-    <dimen name="zjc_dimen_28">28dp</dimen>
-    <dimen name="zjc_dimen_30">30dp</dimen>
-    <dimen name="zjc_dimen_32">32dp</dimen>
-    <dimen name="zjc_dimen_35">35dp</dimen>
-    <dimen name="zjc_dimen_36">36dp</dimen>
-    <dimen name="zjc_dimen_40">40dp</dimen>
-    <dimen name="zjc_dimen_42">42dp</dimen>
-    <dimen name="zjc_dimen_48">48dp</dimen>
-    <dimen name="zjc_dimen_56">56dp</dimen>
-    <dimen name="zjc_dimen_64">64dp</dimen>
-    <dimen name="zjc_dimen_72">72dp</dimen>
-    <dimen name="zjc_dimen_80">80dp</dimen>
-    <dimen name="zjc_dimen_96">96dp</dimen>
-    <dimen name="zjc_dimen_128">128dp</dimen>
-    <dimen name="zjc_dimen_144">144dp</dimen>
-    <dimen name="zjc_dimen_192">192dp</dimen>
-    <dimen name="zjc_dimen_220">220dp</dimen>
-    <dimen name="zjc_dimen_256">256dp</dimen>
-    <dimen name="zjc_dimen_320">320dp</dimen>
-    <dimen name="zjc_dimen_512">512dp</dimen>
+    <dimen name="z_dimen_0">0dp</dimen>
+    <dimen name="z_dimen_0_5">0.5dp</dimen>
+    <dimen name="z_dimen_1">1dp</dimen>
+    <dimen name="z_dimen_2">2dp</dimen>
+    <dimen name="z_dimen_3">3dp</dimen>
+    <dimen name="z_dimen_4">4dp</dimen>
+    <dimen name="z_dimen_5">5dp</dimen>
+    <dimen name="z_dimen_6">6dp</dimen>
+    <dimen name="z_dimen_8">8dp</dimen>
+    <dimen name="z_dimen_10">10dp</dimen>
+    <dimen name="z_dimen_12">12dp</dimen>
+    <dimen name="z_dimen_16">16dp</dimen>
+    <dimen name="z_dimen_20">20dp</dimen>
+    <dimen name="z_dimen_24">24dp</dimen>
+    <dimen name="z_dimen_28">28dp</dimen>
+    <dimen name="z_dimen_30">30dp</dimen>
+    <dimen name="z_dimen_32">32dp</dimen>
+    <dimen name="z_dimen_35">35dp</dimen>
+    <dimen name="z_dimen_36">36dp</dimen>
+    <dimen name="z_dimen_40">40dp</dimen>
+    <dimen name="z_dimen_42">42dp</dimen>
+    <dimen name="z_dimen_48">48dp</dimen>
+    <dimen name="z_dimen_56">56dp</dimen>
+    <dimen name="z_dimen_64">64dp</dimen>
+    <dimen name="z_dimen_72">72dp</dimen>
+    <dimen name="z_dimen_80">80dp</dimen>
+    <dimen name="z_dimen_96">96dp</dimen>
+    <dimen name="z_dimen_128">128dp</dimen>
+    <dimen name="z_dimen_144">144dp</dimen>
+    <dimen name="z_dimen_192">192dp</dimen>
+    <dimen name="z_dimen_220">220dp</dimen>
+    <dimen name="z_dimen_256">256dp</dimen>
+    <dimen name="z_dimen_320">320dp</dimen>
+    <dimen name="z_dimen_512">512dp</dimen>
     
 </resources>

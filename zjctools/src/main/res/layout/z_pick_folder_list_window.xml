@@ -13,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/zWhite"
-        android:dividerHeight="@dimen/zjc_dimen_0_5"
+        android:dividerHeight="@dimen/z_dimen_0_5"
         tools:listitem="@layout/z_pick_folder_list_item" />
 
     <View
         android:id="@+id/margin"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/zjc_dimen_0" />
+        android:layout_height="@dimen/z_dimen_0" />
 </LinearLayout>

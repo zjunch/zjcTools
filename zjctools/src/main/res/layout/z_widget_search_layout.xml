@@ -2,20 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/zjc_rv_all_search"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/zjc_dimen_40">
+    android:layout_height="@dimen/z_dimen_40">
 
     <RelativeLayout
         android:id="@+id/zjc_rv_left_search"
-        android:background="@drawable/zjc_shape_corner4_greyf6"
+        android:background="@drawable/z_shape_corner4_greyf6"
         android:layout_toLeftOf="@+id/zjc_rv_search_right"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/zjc_dimen_40">
+        android:layout_height="@dimen/z_dimen_40">
         <ImageView
             android:id="@+id/zjc_iv_search_icon"
-            android:layout_width="@dimen/zjc_dimen_40"
-            android:layout_height="@dimen/zjc_dimen_40"
+            android:layout_width="@dimen/z_dimen_40"
+            android:layout_height="@dimen/z_dimen_40"
             android:layout_centerVertical="true"
-            android:src="@drawable/zjc_ic_search" />
+            android:src="@drawable/z_ic_search" />
 
         <EditText
             android:id="@+id/zjc_ev_Input"
@@ -26,11 +26,11 @@
             android:background="@null"
             android:hint="搜索姓名…"
             android:imeOptions="actionSearch"
-            android:paddingLeft="@dimen/zjc_dimen_6"
+            android:paddingLeft="@dimen/z_dimen_6"
             android:singleLine="true"
             android:textColor="@color/zGray3"
             android:textColorHint="#ff9aacbe"
-            android:textSize="@dimen/zjc_size_11" />
+            android:textSize="@dimen/z_size_11" />
 
         <TextView
             android:id="@+id/zjc_tv_input"
@@ -40,21 +40,21 @@
             android:layout_toRightOf="@id/zjc_iv_search_icon"
             android:gravity="center_vertical"
             android:hint="搜索姓名…"
-            android:paddingLeft="@dimen/zjc_dimen_6"
+            android:paddingLeft="@dimen/z_dimen_6"
             android:textColor="@color/zGray3"
             android:textColorHint="#ff9aacbe"
-            android:textSize="@dimen/zjc_size_11"
+            android:textSize="@dimen/z_size_11"
             android:visibility="gone" />
 
         <ImageView
             android:id="@+id/zjc_iv_clear"
-            android:layout_width="@dimen/zjc_dimen_40"
-            android:layout_height="@dimen/zjc_dimen_40"
-            android:padding="@dimen/zjc_dimen_10"
+            android:layout_width="@dimen/z_dimen_40"
+            android:layout_height="@dimen/z_dimen_40"
+            android:padding="@dimen/z_dimen_10"
             android:layout_alignParentRight="true"
             android:visibility="gone"
             android:layout_centerVertical="true"
-            android:src="@drawable/zjc_ic_close" />
+            android:src="@drawable/z_ic_close" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -67,21 +67,21 @@
             android:layout_width="wrap_content"
             android:visibility="gone"
             style="@style/text_14_black33"
-            android:paddingLeft="@dimen/zjc_dimen_10"
-            android:paddingRight="@dimen/zjc_dimen_10"
+            android:paddingLeft="@dimen/z_dimen_10"
+            android:paddingRight="@dimen/z_dimen_10"
             android:text="搜索"
             android:textColor="@color/z_blue_3a"
             android:gravity="center"
             android:layout_centerInParent="true"
-            android:layout_height="@dimen/zjc_dimen_40"/>
+            android:layout_height="@dimen/z_dimen_40"/>
 
         <ImageView
             android:id="@+id/zjc_iv_search"
-            android:layout_width="@dimen/zjc_dimen_40"
-            android:layout_height="@dimen/zjc_dimen_40"
+            android:layout_width="@dimen/z_dimen_40"
+            android:layout_height="@dimen/z_dimen_40"
             android:visibility="gone"
             android:layout_centerInParent="true"
-            android:src="@drawable/zjc_ic_search" />
+            android:src="@drawable/z_ic_search" />
 
     </RelativeLayout>
 

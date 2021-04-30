@@ -268,13 +268,13 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
      */
     public void onPictureClick() {
         if (mTopBar.getVisibility() == View.VISIBLE) {
-            mTopBar.setAnimation(AnimationUtils.loadAnimation(this, R.anim.zjc_fade_out));
-            mBottomBar.setAnimation(AnimationUtils.loadAnimation(this, R.anim.zjc_fade_out));
+            mTopBar.setAnimation(AnimationUtils.loadAnimation(this, R.anim.z_fade_out));
+            mBottomBar.setAnimation(AnimationUtils.loadAnimation(this, R.anim.z_fade_out));
             mTopBar.setVisibility(View.GONE);
             mBottomBar.setVisibility(View.GONE);
         } else {
-            mTopBar.setAnimation(AnimationUtils.loadAnimation(this, R.anim.zjc_fade_in));
-            mBottomBar.setAnimation(AnimationUtils.loadAnimation(this, R.anim.zjc_fade_in));
+            mTopBar.setAnimation(AnimationUtils.loadAnimation(this, R.anim.z_fade_in));
+            mBottomBar.setAnimation(AnimationUtils.loadAnimation(this, R.anim.z_fade_in));
             mTopBar.setVisibility(View.VISIBLE);
             mBottomBar.setVisibility(View.VISIBLE);
         }

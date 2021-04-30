@@ -10,7 +10,7 @@
         style="@style/text_14_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/zjc_dimen_10"
+        android:paddingTop="@dimen/z_dimen_10"
         android:text="title" />
 
     <EditText
@@ -23,8 +23,8 @@
         android:gravity="right"
         android:hint=""
         android:paddingLeft="30dp"
-        android:paddingTop="@dimen/zjc_dimen_10"
-        android:paddingBottom="@dimen/zjc_dimen_10"
+        android:paddingTop="@dimen/z_dimen_10"
+        android:paddingBottom="@dimen/z_dimen_10"
         android:textColorHint="@color/zGray54" />
 
     <View

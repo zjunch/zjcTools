@@ -14,11 +14,11 @@
         android:layout_height="48dp">
         <ImageView
             android:id="@+id/zjc_bar_iv_back"
-            android:layout_width="@dimen/zjc_dimen_40"
-            android:layout_height="@dimen/zjc_dimen_40"
+            android:layout_width="@dimen/z_dimen_40"
+            android:layout_height="@dimen/z_dimen_40"
             android:layout_centerVertical="true"
-            android:padding="@dimen/zjc_dimen_10"
-            android:src="@drawable/zjc_ic_back_color" />
+            android:padding="@dimen/z_dimen_10"
+            android:src="@drawable/z_ic_back_color" />
 
         <TextView
             android:id="@+id/zjc_bar_tv_left_title"
@@ -59,27 +59,27 @@
                 android:textSize="14sp" />
             <ImageView
                 android:id="@+id/zjc_bar_iv_end"
-                android:layout_width="@dimen/zjc_dimen_40"
-                android:layout_height="@dimen/zjc_dimen_40"
+                android:layout_width="@dimen/z_dimen_40"
+                android:layout_height="@dimen/z_dimen_40"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/zjc_dimen_10"
+                android:layout_marginRight="@dimen/z_dimen_10"
                 android:padding="10dp"
                 android:visibility="gone"
-                android:src="@drawable/zjc_ic_back_color" />
+                android:src="@drawable/z_ic_back_color" />
         </RelativeLayout>
 
 
         <ImageView
             android:id="@+id/zjc_bar_iv_end_second"
-            android:layout_width="@dimen/zjc_dimen_40"
-            android:layout_height="@dimen/zjc_dimen_40"
+            android:layout_width="@dimen/z_dimen_40"
+            android:layout_height="@dimen/z_dimen_40"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/zjc_rv_end"
             android:padding="10dp"
             android:visibility="gone"
             android:layout_marginRight="10dp"
-            android:src="@drawable/zjc_ic_back_color" />
+            android:src="@drawable/z_ic_back_color" />
     </RelativeLayout>
     <View
         android:id="@+id/zjc_bar_bottom_line"

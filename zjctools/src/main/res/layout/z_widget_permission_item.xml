@@ -4,13 +4,13 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="@dimen/zjc_dimen_8">
+    android:padding="@dimen/z_dimen_8">
 
     <ImageView
         android:id="@+id/zjc_permission_item_icon_iv"
-        android:layout_width="@dimen/zjc_dimen_48"
-        android:layout_height="@dimen/zjc_dimen_48"
-        android:layout_margin="@dimen/zjc_dimen_4" />
+        android:layout_width="@dimen/z_dimen_48"
+        android:layout_height="@dimen/z_dimen_48"
+        android:layout_margin="@dimen/z_dimen_4" />
 
     <TextView
         android:id="@+id/zjc_permission_item_name_iv"

@@ -6,8 +6,8 @@
     android:paddingLeft="10dp"
     android:background="@color/zWhite">
     <ImageView
-        android:layout_width="@dimen/zjc_dimen_35"
-        android:layout_height="@dimen/zjc_dimen_35"
+        android:layout_width="@dimen/z_dimen_35"
+        android:layout_height="@dimen/z_dimen_35"
         android:id="@+id/notify_download_iv"
         android:scaleType="centerCrop"
         android:layout_centerVertical="true" />
@@ -28,7 +28,7 @@
         android:progress="50"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="20dp"
-        android:progressDrawable="@drawable/zjc_update_notifunction_progress"
+        android:progressDrawable="@drawable/z_update_notifunction_progress"
         android:visibility="visible"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_below="@+id/notify_tv"

@@ -76,7 +76,7 @@ public class ZIMGLoader {
         ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(avatar);
         options.isRadius = true;
         options.radiusSize =ZDimen.dp2px(6);
-        load(context, options, imageView,  placeId==0?R.drawable.zjc_picture_default:placeId);
+        load(context, options, imageView,  placeId==0?R.drawable.z_picture_default :placeId);
     }
 
     /**
@@ -127,7 +127,7 @@ public class ZIMGLoader {
      * @return
      */
     private static RequestBuilder<Drawable> placeholder(Context context, ZImgLoaderListener.Options options) {
-        int resId = placeId==0?R.drawable.zjc_picture_default:placeId;
+        int resId = placeId==0?R.drawable.z_picture_default :placeId;
         return placeholder(context, options, resId);
     }
 

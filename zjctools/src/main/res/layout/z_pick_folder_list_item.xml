@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/zjc_pick_folder_cover_iv"
-        android:layout_width="@dimen/zjc_dimen_56"
-        android:layout_height="@dimen/zjc_dimen_56"
-        android:layout_margin="@dimen/zjc_margin_normal"
+        android:layout_width="@dimen/z_dimen_56"
+        android:layout_height="@dimen/z_dimen_56"
+        android:layout_margin="@dimen/z_margin_normal"
         android:scaleType="centerCrop"
         />
 
@@ -31,7 +31,7 @@
 
         <TextView
             android:id="@+id/zjc_pick_folder_count_tv"
-            android:layout_marginTop="@dimen/zjc_margin_small"
+            android:layout_marginTop="@dimen/z_margin_small"
             tools:text="56 张"
             style="@style/ZjcText.Caption"
             />
@@ -39,9 +39,9 @@
 
     <ImageView
         android:id="@+id/zjc_pick_folder_select_iv"
-        android:layout_width="@dimen/zjc_dimen_24"
-        android:layout_height="@dimen/zjc_dimen_24"
-        android:layout_marginEnd="@dimen/zjc_margin_large"
-        android:layout_marginStart="@dimen/zjc_margin_normal"
+        android:layout_width="@dimen/z_dimen_24"
+        android:layout_height="@dimen/z_dimen_24"
+        android:layout_marginEnd="@dimen/z_margin_large"
+        android:layout_marginStart="@dimen/z_margin_normal"
         android:src="@drawable/zjc_ic_radio_button_selector" />
 </LinearLayout>

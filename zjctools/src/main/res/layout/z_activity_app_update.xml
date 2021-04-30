@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_centerInParent="true"
-        android:layout_margin="@dimen/zjc_dimen_40"
+        android:layout_margin="@dimen/z_dimen_40"
         android:layout_width="wrap_content"
         android:background="@color/zWhite"
         android:layout_height="wrap_content">
@@ -19,7 +19,7 @@
             android:adjustViewBounds="true"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@drawable/zjc_bg_app_update" />
+            android:src="@drawable/z_bg_app_update" />
 
         <TextView
             android:id="@+id/zjc_tv_version"
@@ -65,7 +65,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginBottom="13dp"
             android:progress="0"
-            android:progressDrawable="@drawable/zjc_progress_update_version"
+            android:progressDrawable="@drawable/z_progress_update_version"
             android:visibility="gone" />
 
 
@@ -82,7 +82,7 @@
                 android:layout_width="97dp"
                 android:layout_height="34dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/zjc_shape_conner20_gray_stoke"
+                android:background="@drawable/z_shape_conner20_gray_stoke"
                 android:gravity="center"
                 android:text="下次再说"
                 android:textColor="#ffb1b1b1"
@@ -94,7 +94,7 @@
                 android:layout_height="34dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/zjc_shape_corner20_blue"
+                android:background="@drawable/z_shape_corner20_blue"
                 android:gravity="center"
                 android:text="去下载"
                 android:textColor="#fff"

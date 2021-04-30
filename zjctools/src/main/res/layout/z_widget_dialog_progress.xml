@@ -2,19 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/zjc_shape_loading"
+    android:background="@drawable/z_shape_loading"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/zjc_dimen_20"
-    android:paddingRight="@dimen/zjc_dimen_20">
+    android:paddingLeft="@dimen/z_dimen_20"
+    android:paddingRight="@dimen/z_dimen_20">
 
 
 
     <ProgressBar
-        android:layout_width="@dimen/zjc_dimen_40"
-        android:layout_height="@dimen/zjc_dimen_40"
+        android:layout_width="@dimen/z_dimen_40"
+        android:layout_height="@dimen/z_dimen_40"
         android:theme="@style/ZLoadingCircleProgress"
-        android:layout_margin="@dimen/zjc_dimen_16" />
+        android:layout_margin="@dimen/z_dimen_16" />
 
     <TextView
         android:id="@+id/zjc_dialog_message_tv"
@@ -23,6 +23,6 @@
         android:text="@string/zjc_progress_wait"
         android:textColor="@color/zWhite"
         android:layout_marginBottom="16dp"
-        android:textSize="@dimen/zjc_size_14" />
+        android:textSize="@dimen/z_size_14" />
 
 </LinearLayout>

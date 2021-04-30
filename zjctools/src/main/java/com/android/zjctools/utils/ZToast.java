@@ -17,19 +17,19 @@ public class ZToast {
 
 
     //正常资源背景
-    private int normalBg = R.drawable.zjc_shape_toast_normal;
+    private int normalBg = R.drawable.z_shape_toast_normal;
 
     //成功资源背景
-    private int successBg = R.drawable.zjc_shape_toast_success;
+    private int successBg = R.drawable.z_shape_toast_success;
 
     //失败资源背景
-    private int failBg = R.drawable.zjc_shape_toast_fail;
+    private int failBg = R.drawable.z_shape_toast_fail;
 
     //成功资源图片id
-    private int successResId = R.drawable.zjc_ic_success;
+    private int successResId = R.drawable.z_ic_success;
 
     //失败资源图片id
-    private int failResId = R.drawable.zjc_ic_error;
+    private int failResId = R.drawable.z_ic_error;
 
 
     private static Toast mToast = null;
@@ -47,11 +47,11 @@ public class ZToast {
      * 重置资源
      */
     public void resetRes() {
-        successResId = R.drawable.zjc_ic_success;
-        failResId = R.drawable.zjc_ic_error;
-        successBg = R.drawable.zjc_shape_toast_success;
-        failBg = R.drawable.zjc_shape_toast_success;
-        normalBg = R.drawable.zjc_shape_toast_normal;
+        successResId = R.drawable.z_ic_success;
+        failResId = R.drawable.z_ic_error;
+        successBg = R.drawable.z_shape_toast_success;
+        failBg = R.drawable.z_shape_toast_success;
+        normalBg = R.drawable.z_shape_toast_normal;
     }
 
     /**

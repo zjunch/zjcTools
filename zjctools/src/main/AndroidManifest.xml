@@ -45,7 +45,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/zjc_provider_paths" />
+                android:resource="@xml/z_provider_paths" />
         </provider>
 
         <service android:name="com.android.zjctools.appupdate.ZUpdateService" />
@@ -56,7 +56,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/zjc_app_update_provider_paths" />
+                android:resource="@xml/z_app_update_provider_paths" />
         </provider>
     </application>
 

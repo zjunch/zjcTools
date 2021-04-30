@@ -52,8 +52,8 @@ public class ZSearchView extends RelativeLayout {
         isShowIvRightSearch = typedArray.getBoolean(R.styleable.ZSearchView_zv_srv_right_iv_search_enable, false);
         isCanInput = typedArray.getBoolean(R.styleable.ZSearchView_zv_srv_search_input_enable, true);
         searchHint = typedArray.getString(R.styleable.ZSearchView_zv_srv_search_hint);
-        leftSearchIcon= typedArray.getResourceId(R.styleable.ZSearchView_zv_srv_left_iv_search_icon, R.drawable.zjc_ic_search);
-        rightSearchIcon= typedArray.getResourceId(R.styleable.ZSearchView_zv_srv_right_iv_search_icon, R.drawable.zjc_ic_search);
+        leftSearchIcon= typedArray.getResourceId(R.styleable.ZSearchView_zv_srv_left_iv_search_icon, R.drawable.z_ic_search);
+        rightSearchIcon= typedArray.getResourceId(R.styleable.ZSearchView_zv_srv_right_iv_search_icon, R.drawable.z_ic_search);
         initViews();
         setViews();
         setLinsenter();

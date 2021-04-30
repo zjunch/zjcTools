@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="@dimen/zjc_dimen_16"
+        android:padding="@dimen/z_dimen_16"
         android:textColor="@color/zGray3"
-        android:textSize="@dimen/zjc_size_16"
+        android:textSize="@dimen/z_size_16"
         tools:text="@string/app_name" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/zjc_dimen_1"
+        android:layout_height="@dimen/z_dimen_1"
         android:background="@color/app_divide" />
 </LinearLayout>

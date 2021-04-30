@@ -33,7 +33,7 @@
             android:layout_alignTop="@id/tvTitle"
             android:layout_alignBottom="@id/tvTitle"
             android:gravity="center"
-            android:textSize="@dimen/zjc_size_4"
+            android:textSize="@dimen/z_size_4"
             android:text="●" />
 
         <TextView
@@ -66,7 +66,7 @@
             android:layout_alignTop="@id/tvTitle"
             android:layout_alignBottom="@id/tvTitle"
             android:layout_alignParentRight="true"
-            android:src="@drawable/zjc_ic_arrow_right_gray"
+            android:src="@drawable/z_ic_arrow_right_gray"
             android:layout_marginTop="2dp" />
 
         <TextView
@@ -80,8 +80,8 @@
             android:hint=""
             android:layout_alignTop="@id/tvTitle"
             android:paddingTop="10dp"
-            android:paddingBottom="@dimen/zjc_dimen_10"
-            android:paddingRight="@dimen/zjc_dimen_5"
+            android:paddingBottom="@dimen/z_dimen_10"
+            android:paddingRight="@dimen/z_dimen_5"
             android:paddingLeft="10dp" />
     </RelativeLayout>
 

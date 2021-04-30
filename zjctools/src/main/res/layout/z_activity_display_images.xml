@@ -30,7 +30,7 @@
             android:minWidth="0dp"
             android:padding="15dp"
             android:tint="@color/zWhite"
-            android:src="@drawable/zjc_ic_back_color" />
+            android:src="@drawable/z_ic_back_color" />
 
         <TextView
             android:id="@+id/zjc_current_text"
@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/zjc_dimen_32"
+        android:layout_margin="@dimen/z_dimen_32"
         android:gravity="center_horizontal"
         android:orientation="horizontal" />
 

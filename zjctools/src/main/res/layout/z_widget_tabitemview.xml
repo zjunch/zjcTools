@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:src="@drawable/zjc_ic_back_color"/>
+        android:src="@drawable/z_ic_back_color"/>
 
     <TextView
         android:id="@+id/zjc_tab_title"
@@ -23,12 +23,12 @@
     <TextView
         android:id="@+id/zjc_tab_point"
         android:layout_toRightOf="@id/zjc_tab_icon"
-        android:layout_width="@dimen/zjc_dimen_12"
+        android:layout_width="@dimen/z_dimen_12"
         android:text=""
-        android:textSize="@dimen/zjc_size_8"
+        android:textSize="@dimen/z_size_8"
         android:textColor="@color/zWhite"
         android:textStyle="bold"
         android:gravity="center"
-        android:background="@drawable/zjc_point_red"
-        android:layout_height="@dimen/zjc_dimen_12"/>
+        android:background="@drawable/z_point_red"
+        android:layout_height="@dimen/z_dimen_12"/>
 </RelativeLayout>

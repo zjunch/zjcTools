@@ -24,9 +24,9 @@
         >
 
         <ProgressBar
-            android:layout_width="@dimen/zjc_dimen_16"
-            android:layout_height="@dimen/zjc_dimen_16"
-            android:layout_margin="@dimen/zjc_dimen_8"
+            android:layout_width="@dimen/z_dimen_16"
+            android:layout_height="@dimen/z_dimen_16"
+            android:layout_margin="@dimen/z_dimen_8"
             />
 
         <TextView

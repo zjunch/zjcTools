@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:background="@color/z_black_12"
         app:zv_end_btn="@string/zjc_pick_complete"
-        app:zv_icon="@drawable/zjc_ic_back_color"
+        app:zv_icon="@drawable/z_ic_back_color"
         app:zv_title="@string/zjc_pick_preview"
         app:zv_title_color="@color/z_white_87" />
 
@@ -47,11 +47,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
-                android:layout_marginEnd="@dimen/zjc_dimen_12"
-                android:paddingStart="@dimen/zjc_padding_normal"
+                android:layout_marginEnd="@dimen/z_dimen_12"
+                android:paddingStart="@dimen/z_padding_normal"
                 android:text="原图(3.07M)"
                 android:textColor="@color/zWhite"
-                android:textSize="@dimen/zjc_size_16"
+                android:textSize="@dimen/z_size_16"
                 android:visibility="gone" />
 
             <CheckBox
@@ -61,13 +61,13 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/zjc_margin_large"
-                android:drawablePadding="@dimen/zjc_padding_small"
+                android:layout_marginEnd="@dimen/z_margin_large"
+                android:drawablePadding="@dimen/z_padding_small"
                 android:includeFontPadding="true"
-                android:paddingStart="@dimen/zjc_padding_normal"
+                android:paddingStart="@dimen/z_padding_normal"
                 android:text="选择"
                 android:textColor="@color/zWhite"
-                android:textSize="@dimen/zjc_size_16" />
+                android:textSize="@dimen/z_size_16" />
         </RelativeLayout>
 
         <View

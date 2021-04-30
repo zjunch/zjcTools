@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:zv_end_btn="@string/zjc_pick_complete"
-        app:zv_icon="@drawable/zjc_ic_back_color"
+        app:zv_icon="@drawable/z_ic_back_color"
         app:zv_title_color="@color/z_title"
         app:zv_title="@string/zjc_pick_picture" />
 
@@ -23,13 +23,13 @@
         <View
             android:id="@+id/zjc_pick_grid_bottom_space"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/zjc_dimen_0"
+            android:layout_height="@dimen/z_dimen_0"
             android:layout_alignParentBottom="true" />
 
         <RelativeLayout
             android:id="@+id/zjc_pick_grid_bottom_bar_rl"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/zjc_dimen_48"
+            android:layout_height="@dimen/z_dimen_48"
             android:layout_above="@+id/zjc_pick_grid_bottom_space">
 
             <RelativeLayout
@@ -37,8 +37,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
-                android:paddingLeft="@dimen/zjc_padding_large"
-                android:paddingRight="@dimen/zjc_padding_large">
+                android:paddingLeft="@dimen/z_padding_large"
+                android:paddingRight="@dimen/z_padding_large">
 
                 <TextView
                     android:id="@+id/zjc_pick_grid_choose_folder_tv"
@@ -47,15 +47,15 @@
                     android:ellipsize="end"
                     android:includeFontPadding="false"
                     android:maxLines="1"
-                    android:minWidth="@dimen/zjc_dimen_96"
+                    android:minWidth="@dimen/z_dimen_96"
                     android:text="@string/zjc_pick_all_picture" />
 
                 <ImageView
-                    android:layout_width="@dimen/zjc_dimen_12"
-                    android:layout_height="@dimen/zjc_dimen_12"
+                    android:layout_width="@dimen/z_dimen_12"
+                    android:layout_height="@dimen/z_dimen_12"
                     android:layout_alignBottom="@id/zjc_pick_grid_choose_folder_tv"
                     android:layout_toRightOf="@id/zjc_pick_grid_choose_folder_tv"
-                    android:src="@drawable/zjc_ic_triangle_indicator"
+                    android:src="@drawable/z_ic_triangle_indicator"
                     android:tint="@color/zGray54" />
             </RelativeLayout>
 
@@ -65,8 +65,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:paddingLeft="@dimen/zjc_padding_large"
-                android:paddingRight="@dimen/zjc_padding_large"
+                android:paddingLeft="@dimen/z_padding_large"
+                android:paddingRight="@dimen/z_padding_large"
                 android:text="@string/zjc_pick_preview"
                 android:textAllCaps="false"
                 android:textStyle="normal" />

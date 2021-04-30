@@ -17,9 +17,9 @@
             android:id="@+id/window_title_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/zjc_dimen_16"
+            android:padding="@dimen/z_dimen_16"
             android:textColor="@color/app_theme_color"
-            android:textSize="@dimen/zjc_size_18"
+            android:textSize="@dimen/z_size_18"
             android:textStyle="bold"
             android:background="@color/zWhite"
             android:gravity="center"
@@ -41,14 +41,14 @@
         <Button
             android:id="@+id/window_cancel_btn"
             app:layout_constraintTop_toBottomOf="@id/window_recycler_view"
-            android:layout_marginTop="@dimen/zjc_dimen_10"
+            android:layout_marginTop="@dimen/z_dimen_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/zWhite"
             android:text="@string/zjc_btn_cancel"
             android:visibility="gone"
             android:textColor="@color/zGray54"
-            android:textSize="@dimen/zjc_size_16"
+            android:textSize="@dimen/z_size_16"
             app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>
