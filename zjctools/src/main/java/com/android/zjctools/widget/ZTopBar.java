@@ -1,9 +1,7 @@
 package com.android.zjctools.widget;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.util.AttributeSet;
@@ -70,7 +68,7 @@ public class ZTopBar extends RelativeLayout {
      * @param attrs
      */
     private void init(Context context, AttributeSet attrs) {
-        LayoutInflater.from(context).inflate(R.layout.zjc_widget_top_bar, this);
+        LayoutInflater.from(context).inflate(R.layout.z_widget_top_bar, this);
 
         mIconBackBtn = findViewById(R.id.zjc_top_bar_back_icon);
         mTitleView = findViewById(R.id.zjc_top_bar_title_tv);
@@ -79,8 +77,8 @@ public class ZTopBar extends RelativeLayout {
         mEndBtn = findViewById(R.id.zjc_top_bar_end_btn);
         mEndIconBtn = findViewById(R.id.zjc_top_bar_end_icon);
 
-        mTitleColor = ZColor.byRes(R.color.zjc_title);
-        mSubtitleColor = ZColor.byRes(R.color.zjc_subtitle);
+        mTitleColor = ZColor.byRes(R.color.z_title);
+        mSubtitleColor = ZColor.byRes(R.color.z_subtitle);
 
         // 获取控件的属性值
         handleAttrs(context, attrs);
@@ -132,14 +130,14 @@ public class ZTopBar extends RelativeLayout {
         }
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ZTopBar);
         // 获取自定义属性值，如果没有设置就是默认值
-        mIcon = array.getResourceId(R.styleable.ZTopBar_zjc_icon, mIcon);
-        mTitle = array.getString(R.styleable.ZTopBar_zjc_title);
-        mSubtitle = array.getString(R.styleable.ZTopBar_zjc_subtitle);
-        mEndText = array.getString(R.styleable.ZTopBar_zjc_end_btn);
-        mEndIcon = array.getResourceId(R.styleable.ZTopBar_zjc_end_icon, mEndIcon);
-        mTitleColor = array.getColor(R.styleable.ZTopBar_zjc_title_color, mTitleColor);
-        mSubtitleColor = array.getColor(R.styleable.ZTopBar_zjc_subtitle_color, mSubtitleColor);
-        isCenter = array.getBoolean(R.styleable.ZTopBar_zjc_is_center, isCenter);
+        mIcon = array.getResourceId(R.styleable.ZTopBar_zv_icon, mIcon);
+        mTitle = array.getString(R.styleable.ZTopBar_zv_title);
+        mSubtitle = array.getString(R.styleable.ZTopBar_zv_subtitle);
+        mEndText = array.getString(R.styleable.ZTopBar_zv_end_btn);
+        mEndIcon = array.getResourceId(R.styleable.ZTopBar_zv_end_icon, mEndIcon);
+        mTitleColor = array.getColor(R.styleable.ZTopBar_zv_title_color, mTitleColor);
+        mSubtitleColor = array.getColor(R.styleable.ZTopBar_zv_subtitle_color, mSubtitleColor);
+        isCenter = array.getBoolean(R.styleable.ZTopBar_zv_is_center, isCenter);
 
         // 回收资源
         array.recycle();

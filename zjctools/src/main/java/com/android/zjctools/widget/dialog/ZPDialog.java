@@ -42,16 +42,16 @@ public class ZPDialog {
         this.type = type;
         switch (type) {
         case ALERT:
-            view = LayoutInflater.from(context).inflate(R.layout.zjc_widget_dialog_alert, null);
+            view = LayoutInflater.from(context).inflate(R.layout.z_widget_dialog_alert, null);
             break;
         case PROGRESS:
-            view = LayoutInflater.from(context).inflate(R.layout.zjc_widget_dialog_progress, null);
+            view = LayoutInflater.from(context).inflate(R.layout.z_widget_dialog_progress, null);
             break;
         case SELECT:
-            view = LayoutInflater.from(context).inflate(R.layout.zjc_widget_dialog_select, null);
+            view = LayoutInflater.from(context).inflate(R.layout.z_widget_dialog_select, null);
             break;
         case EDIT:
-            view = LayoutInflater.from(context).inflate(R.layout.zjc_widget_dialog_edit, null);
+            view = LayoutInflater.from(context).inflate(R.layout.z_widget_dialog_edit, null);
             break;
         }
         initDialog();
@@ -111,7 +111,7 @@ public class ZPDialog {
     }
 
     public void setTitle(String title) {
-        setTitle(title,ZColor.byRes(R.color.zjc_black_87));
+        setTitle(title,ZColor.byRes(R.color.z_black_87));
     }
     public void setTitle(String title, int colorId) {
         if (ZStr.isEmpty(title)) {
@@ -164,7 +164,7 @@ public class ZPDialog {
         messageTV.setText(ZStr.byRes(resId));
     }
     public void setMessage(String  msg) {
-        setMessage(msg,ZColor.byRes(R.color.zjc_black_87));
+        setMessage(msg,ZColor.byRes(R.color.z_black_87));
     }
 
     public void setMessage(String message,int colorId) {

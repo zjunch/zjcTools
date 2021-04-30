@@ -3,14 +3,14 @@
     android:id="@+id/lvAll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/zjc_half5"
+    android:background="@color/z_half5"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/zjc_dimen_40"
         android:layout_width="wrap_content"
-        android:background="@color/zjcWhite"
+        android:background="@color/zWhite"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/zjc_iv_bg"
@@ -39,7 +39,7 @@
             android:layout_below="@+id/zjc_iv_bg"
             android:layout_marginLeft="18dp"
             android:text="更新内容"
-            android:textColor="@color/zjc_Gray54"
+            android:textColor="@color/zGray54"
             android:textSize="12sp" />
 
         <LinearLayout

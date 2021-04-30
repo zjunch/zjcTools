@@ -60,7 +60,7 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
 
     @Override
     protected int layoutId() {
-        return R.layout.zjc_activity_pick_preview;
+        return R.layout.z_activity_pick_preview;
     }
 
     /**
@@ -69,7 +69,7 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
     @Override
     protected void initUI() {
         super.initUI();
-        getTopBar().setEndBtnTextColor(ZColor.byRes(R.color.zjcWhite));
+        getTopBar().setEndBtnTextColor(ZColor.byRes(R.color.zWhite));
         mBottomBar = findViewById(R.id.zjc_preview_bottom_bar);
         mSelectCB = findViewById(R.id.zjc_preview_select_cb);
         mOriginCB = findViewById(R.id.zjc_preview_origin_cb);

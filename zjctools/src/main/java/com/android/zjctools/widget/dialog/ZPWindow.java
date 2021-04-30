@@ -41,7 +41,7 @@ public class ZPWindow {
 
 
     public ZPWindow(Activity activity, List<String> list) {
-        this(activity,list,R.layout.zjc_widget_window_item);
+        this(activity,list,R.layout.z_widget_window_item);
     }
 
 
@@ -57,7 +57,7 @@ public class ZPWindow {
         mActivity = activity;
         mItems.addAll(list);
         mAppItemBinder=appItemBinder;
-        mView = LayoutInflater.from(mActivity).inflate(R.layout.zjc_widget_window_layout, null);
+        mView = LayoutInflater.from(mActivity).inflate(R.layout.z_widget_window_layout, null);
         mTitleTV = mView.findViewById(R.id.window_title_tv);
         mRecyclerView = mView.findViewById(R.id.window_recycler_view);
         mCancelBtn = mView.findViewById(R.id.window_cancel_btn);

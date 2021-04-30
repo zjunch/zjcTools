@@ -34,7 +34,7 @@ public class ZColorViews extends View {
          mPaint=new Paint();
          mPaint.setAntiAlias(true);
          mPaint.setStyle(Paint.Style.FILL);
-         mPaint.setColor(ZColor.byRes(R.color.zjcBlue));
+         mPaint.setColor(ZColor.byRes(R.color.zBlue));
     }
 
     public ZColorViews setStartAndEnd(int start,int end) {

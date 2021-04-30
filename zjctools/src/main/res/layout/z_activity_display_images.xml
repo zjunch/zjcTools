@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/zjcBlack"
+    android:background="@color/zBlack"
     tools:ignore="MissingDefaultResource">
 
     <com.android.zjctools.display.ZFixedViewPager
@@ -15,11 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/status_bar"
-        android:background="@color/zjc_black_12"/>
+        android:background="@color/z_black_12"/>
     <RelativeLayout
         android:layout_below="@id/status_bar"
         android:layout_width="match_parent"
-        android:background="@color/zjc_black_12"
+        android:background="@color/z_black_12"
         android:layout_height="?android:attr/actionBarSize">
         <ImageButton
             android:id="@+id/zjc_bar_iv_back"
@@ -29,14 +29,14 @@
             android:background="@null"
             android:minWidth="0dp"
             android:padding="15dp"
-            android:tint="@color/zjcWhite"
+            android:tint="@color/zWhite"
             android:src="@drawable/zjc_ic_back_color" />
 
         <TextView
             android:id="@+id/zjc_current_text"
             android:layout_centerInParent="true"
             android:textSize="20sp"
-            android:textColor="@color/zjcWhite"
+            android:textColor="@color/zWhite"
             android:layout_width="wrap_content"
             android:textStyle="italic"
             android:layout_height="wrap_content"

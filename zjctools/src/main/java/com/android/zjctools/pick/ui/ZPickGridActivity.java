@@ -3,8 +3,6 @@ package com.android.zjctools.pick.ui;
 import android.content.Intent;
 import android.os.Parcelable;
 
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +28,6 @@ import com.android.zjctools.widget.ZItemDecoration;
 import com.android.zjcutils.R;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,7 +77,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
 
     @Override
     protected int layoutId() {
-        return R.layout.zjc_activity_pick_grid;
+        return R.layout.z_activity_pick_grid;
     }
 
     /**
@@ -102,7 +99,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
         mPreviewBtn.setOnClickListener(viewListener);
         mChangeDirView.setOnClickListener(viewListener);
         getTopBar().setIconListener(v -> onFinish());
-        getTopBar().setBackIconColor(ZColor.byRes(R.color.zjcBlack));
+        getTopBar().setBackIconColor(ZColor.byRes(R.color.zBlack));
         if (ZPicker.getInstance().isMultiMode()) {
             getTopBar().setEndBtnListener(v -> {
                 Intent intent = new Intent();
@@ -152,8 +149,8 @@ public class ZPickGridActivity extends ZPickBaseActivity {
         mPictureAdapter = new ZPictureAdapter(mActivity, null);
         mRecyclerView.setLayoutManager(new GridLayoutManager(mActivity, spanSize));
         mRecyclerView.setPadding(ZDimen.dp2px(spaceDp),0,0,0);
-        mRecyclerView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.zjcTransparent), ZDimen.dp2px(spaceDp)));
-        mRecyclerView.addItemDecoration(ZItemDecoration.createHorizontal(mActivity, ZColor.byRes(R.color.zjcTransparent), ZDimen.dp2px(spaceDp)));
+        mRecyclerView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.zTransparent), ZDimen.dp2px(spaceDp)));
+        mRecyclerView.addItemDecoration(ZItemDecoration.createHorizontal(mActivity, ZColor.byRes(R.color.zTransparent), ZDimen.dp2px(spaceDp)));
         mRecyclerView.setAdapter(mPictureAdapter);
         mPictureAdapter.setClickListener((int position, Object object) -> {
             onPictureClick(position);

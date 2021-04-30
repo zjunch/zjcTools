@@ -199,7 +199,7 @@ public class ZToast {
      * @param zGravity
      */
     private void setToastView(ZToastType zToastType, String content, ZGravity zGravity) {
-        View myToastView = LayoutInflater.from(ZTools.getContext()).inflate(R.layout.zjc_layout_toast, null);
+        View myToastView = LayoutInflater.from(ZTools.getContext()).inflate(R.layout.z_layout_toast, null);
         TextView myToastMessage = (TextView) myToastView.findViewById(R.id.zjc_toast_content);
         ImageView myToastImage = (ImageView) myToastView.findViewById(R.id.zjv_toast_icon);
         RelativeLayout myToastBg = myToastView.findViewById(R.id.zjc_toast_bg);

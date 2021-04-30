@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:tint="@color/zjcWhite"
+        android:tint="@color/zWhite"
         tools:src="@drawable/zjc_ic_back_color" />
     <!--标题-->
     <TextView
@@ -43,7 +43,7 @@
         android:layout_alignParentBottom="true"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textColor="@color/zjc_subtitle"
+        android:textColor="@color/z_subtitle"
         android:textSize="@dimen/zjc_size_12"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,7 +71,7 @@
         android:gravity="center"
         android:paddingStart="@dimen/zjc_dimen_16"
         android:paddingEnd="@dimen/zjc_dimen_16"
-        android:textColor="@color/zjcBlack"
+        android:textColor="@color/zBlack"
         android:textSize="@dimen/zjc_size_16"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"

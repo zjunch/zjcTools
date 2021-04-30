@@ -5,9 +5,9 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/zjcBlue</item>
+        <item name="colorAccent">@color/zBlue</item>
         <!--界面背景色，为了优化 UI，这里设置为透明-->
-        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <item name="android:windowBackground">@color/zTransparent</item>
         <!--设置主题不需要ActionBar-->
         <item name="windowActionBar">false</item>
         <!--设置主题不需要Title-->
@@ -29,7 +29,7 @@
 
     <!--授权弹窗主题-->
     <style name="ZJCTheme.Permission">
-        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <item name="android:windowBackground">@color/zTransparent</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowIsTranslucent">false</item>
@@ -39,103 +39,103 @@
 
     <!--透明主题-->
     <style name="ZJCTheme.Translucent">
-        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <item name="android:windowBackground">@color/zTransparent</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
     <style name="text_12_gray_99">
         <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/zjcGray9</item>
+        <item name="android:textColor">@color/zGray9</item>
     </style>
 
     <style name="text_12_black">
         <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/zjcBlack</item>
+        <item name="android:textColor">@color/zBlack</item>
     </style>
 
 
     <style name="text_12_white">
         <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/zjcWhite</item>
+        <item name="android:textColor">@color/zWhite</item>
     </style>
 
     <style name="text_11_white">
         <item name="android:textSize">11sp</item>
-        <item name="android:textColor">@color/zjcWhite</item>
+        <item name="android:textColor">@color/zWhite</item>
     </style>
 
     <style name="text_11_black">
         <item name="android:textSize">11sp</item>
-        <item name="android:textColor">@color/zjcGray3</item>
+        <item name="android:textColor">@color/zGray3</item>
     </style>
 
     <style name="text_10_white">
         <item name="android:textSize">10sp</item>
-        <item name="android:textColor">@color/zjcWhite</item>
+        <item name="android:textColor">@color/zWhite</item>
     </style>
 
     <style name="text_16_white">
         <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/zjcWhite</item>
+        <item name="android:textColor">@color/zWhite</item>
     </style>
 
     <style name="text_16_black">
         <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/zjcBlack</item>
+        <item name="android:textColor">@color/zBlack</item>
     </style>
 
     <style name="text_15_black_66">
         <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/zjcGray6</item>
+        <item name="android:textColor">@color/zGray6</item>
     </style>
 
     <style name="text_14_black">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/zjcBlack</item>
+        <item name="android:textColor">@color/zBlack</item>
     </style>
 
     <style name="text_14_red">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/zjcRed</item>
+        <item name="android:textColor">@color/zRed</item>
     </style>
 
     <style name="text_14_black33">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/zjcGray3</item>
+        <item name="android:textColor">@color/zGray3</item>
     </style>
 
     <style name="text_14_gray_99">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/zjcGray9</item>
+        <item name="android:textColor">@color/zGray9</item>
     </style>
 
     <style name="text_14_purple">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/zjcPurple</item>
+        <item name="android:textColor">@color/zPurple</item>
     </style>
 
     <style name="text_14_white">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/zjcWhite</item>
+        <item name="android:textColor">@color/zWhite</item>
     </style>
 
     <style name="text_18_black">
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/zjcBlack</item>
+        <item name="android:textColor">@color/zBlack</item>
     </style>
 
     <!--文字样式 Body1-->
     <style name="ZjcText.Body1" parent="Base.TextAppearance.AppCompat.Body1">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/zjc_Gray54</item>
+        <item name="android:textColor">@color/zGray54</item>
     </style>
 
     <!--文字样式 Body2 有加粗效果-->
     <style name="ZjcText.Body2" parent="Base.TextAppearance.AppCompat.Body2">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/zjc_Gray54</item>
+        <item name="android:textColor">@color/zGray54</item>
     </style>
 
 
@@ -143,28 +143,28 @@
     <style name="ZjcText.Subhead" parent="Base.TextAppearance.AppCompat.Subhead">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/zjc_subhead</item>
+        <item name="android:textColor">@color/z_subhead</item>
     </style>
 
     <!--文字样式 Menu-->
     <style name="ZjcText.Menu" parent="Base.TextAppearance.AppCompat.Menu">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/zjc_menu</item>
+        <item name="android:textColor">@color/z_menu</item>
     </style>
 
     <!--文字样式 Title-->
     <style name="ZjcText.Title" parent="Base.TextAppearance.AppCompat.Title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/zjcWhite</item>
+        <item name="android:textColor">@color/zWhite</item>
     </style>
 
     <!--文字样式 Caption-->
     <style name="ZjcText.Caption" parent="Base.TextAppearance.AppCompat.Caption">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/zjc_caption</item>
+        <item name="android:textColor">@color/z_caption</item>
     </style>
 
     <!--自定义 Radio Button 样式-->
@@ -178,7 +178,7 @@
     </style>
 
     <style name="ZDialogStyle" parent="Theme.AppCompat.Dialog">
-        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <item name="android:windowBackground">@color/zTransparent</item>
     </style>
 
 

@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:textColor="@color/zjcGray3"
+            android:textColor="@color/zGray3"
             android:textSize="16sp"
             android:visibility="gone"
             android:text="left标题" />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:textColor="@color/zjcGray3"
+            android:textColor="@color/zGray3"
             android:textSize="16sp"
             android:text="center标题" />
         <RelativeLayout

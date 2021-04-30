@@ -54,9 +54,9 @@ public class ZPictureAdapter extends ZAdapter<ZPictureBean, ZHolder> {
     @Override
     public ZHolder createHolder(@NonNull ViewGroup root, int viewType) {
         if (viewType == ITEM_TYPE_CAMERA) {
-            return new CameraViewHolder(mInflater.inflate(R.layout.zjc_pick_picture_grid_camera_item, root, false));
+            return new CameraViewHolder(mInflater.inflate(R.layout.z_pick_picture_grid_camera_item, root, false));
         }
-        return new PictureViewHolder(mInflater.inflate(R.layout.zjc_pick_picture_grid_item, root, false));
+        return new PictureViewHolder(mInflater.inflate(R.layout.z_pick_picture_grid_item, root, false));
     }
 
     @Override

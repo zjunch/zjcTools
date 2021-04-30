@@ -21,12 +21,12 @@ import java.util.List;
  * created zjun 2019-12-23
  *
  * 九宫格图片
- * app:zjc_nine_full_One="true"
- * app:zjc_nine_max_counts="9"
- * app:zjc_nine_average2_enable="true"
- * app:zjc_nine_show_un_counts="true"
- * app:zjc_nine_spacex="4"
- * app:zjc_nine_spacey="4"
+ * app:zv_nine_full_One="true"
+ * app:zv_nine_max_counts="9"
+ * app:zv_nine_average2_enable="true"
+ * app:zv_nine_show_un_counts="true"
+ * app:zv_nine_spacex="4"
+ * app:zv_nine_spacey="4"
  * .........
  */
 public class ZNinePicturesView extends RelativeLayout {
@@ -63,18 +63,18 @@ public class ZNinePicturesView extends RelativeLayout {
     private void intValues(AttributeSet attrs) {
         imageUrls = new ArrayList<>();
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZNinePicturesView);
-        viewXSpaceSize = ZDimen.dp2px(typedArray.getInt(R.styleable.ZNinePicturesView_zjc_nine_spacex, viewXSpaceSize));
-        viewYSpaceSize = ZDimen.dp2px(typedArray.getInt(R.styleable.ZNinePicturesView_zjc_nine_spacey, viewYSpaceSize));
-        average2Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_average2_enable, false);
-        average4Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_average4_enable, false);
-        viewShowText = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_show_un_counts, false);
-        viewFullOne = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_full_One, false);
-        viewFullHalf = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_half_One, false);
-        view12Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zjc_nine_12_Enable, false);
-        viewMaxCounts = typedArray.getInt(R.styleable.ZNinePicturesView_zjc_nine_max_counts, 9);
-        int viewCountSizeSP = typedArray.getInt(R.styleable.ZNinePicturesView_zjc_nine_un_counts_textSzie, 12);
+        viewXSpaceSize = ZDimen.dp2px(typedArray.getInt(R.styleable.ZNinePicturesView_zv_nine_spacex, viewXSpaceSize));
+        viewYSpaceSize = ZDimen.dp2px(typedArray.getInt(R.styleable.ZNinePicturesView_zv_nine_spacey, viewYSpaceSize));
+        average2Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zv_nine_average2_enable, false);
+        average4Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zv_nine_average4_enable, false);
+        viewShowText = typedArray.getBoolean(R.styleable.ZNinePicturesView_zv_nine_show_un_counts, false);
+        viewFullOne = typedArray.getBoolean(R.styleable.ZNinePicturesView_zv_nine_full_One, false);
+        viewFullHalf = typedArray.getBoolean(R.styleable.ZNinePicturesView_zv_nine_half_One, false);
+        view12Enable = typedArray.getBoolean(R.styleable.ZNinePicturesView_zv_nine_12_Enable, false);
+        viewMaxCounts = typedArray.getInt(R.styleable.ZNinePicturesView_zv_nine_max_counts, 9);
+        int viewCountSizeSP = typedArray.getInt(R.styleable.ZNinePicturesView_zv_nine_un_counts_textSzie, 12);
         viewCountTextSize = ZDimen.dp2px(viewCountSizeSP);
-        viewCountTextColor = typedArray.getColor(R.styleable.ZNinePicturesView_zjc_nine_un_counts_textColor, Color.BLACK);
+        viewCountTextColor = typedArray.getColor(R.styleable.ZNinePicturesView_zv_nine_un_counts_textColor, Color.BLACK);
         typedArray.recycle();
     }
 

@@ -34,7 +34,7 @@ public class ZColorTextView extends View {
         mPaint=new Paint();
         mPaint.setTextSize(ZDimen.dp2px(12));
         mPaint.setAntiAlias(true);
-        mPaint.setColor(ZColor.byRes(R.color.zjcBlack));
+        mPaint.setColor(ZColor.byRes(R.color.zBlack));
     }
 
     @Override

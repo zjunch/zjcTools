@@ -69,7 +69,7 @@ public class ZFolderAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.zjc_pick_folder_list_item, parent, false);
+            convertView = mInflater.inflate(R.layout.z_pick_folder_list_item, parent, false);
             holder = new ViewHolder(convertView);
         } else {
             holder = (ViewHolder) convertView.getTag();

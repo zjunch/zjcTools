@@ -28,7 +28,7 @@
             android:imeOptions="actionSearch"
             android:paddingLeft="@dimen/zjc_dimen_6"
             android:singleLine="true"
-            android:textColor="@color/zjcGray3"
+            android:textColor="@color/zGray3"
             android:textColorHint="#ff9aacbe"
             android:textSize="@dimen/zjc_size_11" />
 
@@ -41,7 +41,7 @@
             android:gravity="center_vertical"
             android:hint="搜索姓名…"
             android:paddingLeft="@dimen/zjc_dimen_6"
-            android:textColor="@color/zjcGray3"
+            android:textColor="@color/zGray3"
             android:textColorHint="#ff9aacbe"
             android:textSize="@dimen/zjc_size_11"
             android:visibility="gone" />
@@ -70,7 +70,7 @@
             android:paddingLeft="@dimen/zjc_dimen_10"
             android:paddingRight="@dimen/zjc_dimen_10"
             android:text="搜索"
-            android:textColor="@color/zjc_blue_3a"
+            android:textColor="@color/z_blue_3a"
             android:gravity="center"
             android:layout_centerInParent="true"
             android:layout_height="@dimen/zjc_dimen_40"/>

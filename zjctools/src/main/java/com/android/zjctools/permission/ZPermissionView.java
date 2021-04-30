@@ -37,7 +37,7 @@ public class ZPermissionView extends LinearLayout {
      * 初始化方法
      */
     public void init(Context context) {
-        LayoutInflater.from(context).inflate(R.layout.zjc_widget_permission_item, this);
+        LayoutInflater.from(context).inflate(R.layout.z_widget_permission_item, this);
         iconView = findViewById(R.id.zjc_permission_item_icon_iv);
         titleView = findViewById(R.id.zjc_permission_item_name_iv);
     }

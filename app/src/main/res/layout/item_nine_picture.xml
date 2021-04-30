@@ -8,10 +8,10 @@
         android:id="@+id/ninePics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:zjc_nine_full_One="true"
-        app:zjc_nine_max_counts="9"
-        app:zjc_nine_average2_enable="true"
-        app:zjc_nine_show_un_counts="true"
-        app:zjc_nine_spacex="4"
-        app:zjc_nine_spacey="4"/>
+        app:zv_nine_full_One="true"
+        app:zv_nine_max_counts="9"
+        app:zv_nine_average2_enable="true"
+        app:zv_nine_show_un_counts="true"
+        app:zv_nine_spacex="4"
+        app:zv_nine_spacey="4"/>
 </LinearLayout>

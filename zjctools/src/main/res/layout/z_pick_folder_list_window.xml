@@ -4,7 +4,7 @@
     android:id="@+id/zjc_pick_folder_mask_ll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/zjc_half5"
+    android:background="@color/z_half5"
     android:gravity="bottom"
     android:orientation="vertical">
 
@@ -12,9 +12,9 @@
         android:id="@+id/zjc_pick_folder_lv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/zjcWhite"
+        android:background="@color/zWhite"
         android:dividerHeight="@dimen/zjc_dimen_0_5"
-        tools:listitem="@layout/zjc_pick_folder_list_item" />
+        tools:listitem="@layout/z_pick_folder_list_item" />
 
     <View
         android:id="@+id/margin"

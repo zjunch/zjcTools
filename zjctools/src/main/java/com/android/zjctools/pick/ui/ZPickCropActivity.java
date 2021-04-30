@@ -34,7 +34,7 @@ public class ZPickCropActivity extends ZPickBaseActivity implements ZCropView.On
 
     @Override
     protected int layoutId() {
-        return R.layout.zjc_activity_pick_crop;
+        return R.layout.z_activity_pick_crop;
     }
 
     @Override
@@ -46,8 +46,8 @@ public class ZPickCropActivity extends ZPickBaseActivity implements ZCropView.On
             setResult(RESULT_CANCELED);
             onFinish();
         });
-        getTopBar().setTitleColor(R.color.zjcWhite);
-        getTopBar().setEndBtnTextColor(ZColor.byRes(R.color.zjcWhite));
+        getTopBar().setTitleColor(R.color.zWhite);
+        getTopBar().setEndBtnTextColor(ZColor.byRes(R.color.zWhite));
         getTopBar().setEndBtnListener(v -> mCropView.saveBitmapToFile(ZPicker.getInstance()
             .getCropCacheFolder(), mCropOutWidth, mCropOutHeight, mIsSaveRectangle));
         setDarkTextStatusBar(false);

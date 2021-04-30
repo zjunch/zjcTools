@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/zjcBlack">
+    android:background="@color/zBlack">
 
     <com.android.zjctools.widget.ZViewPager
         android:id="@+id/zjc_pick_preview_viewpager"
@@ -15,24 +15,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/status_bar"
-        android:background="@color/zjc_black_12"/>
+        android:background="@color/z_black_12"/>
     <com.android.zjctools.widget.ZTopBar
         android:layout_below="@id/status_bar"
         android:id="@+id/zjc_common_top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/zjc_black_12"
-        app:zjc_end_btn="@string/zjc_pick_complete"
-        app:zjc_icon="@drawable/zjc_ic_back_color"
-        app:zjc_title="@string/zjc_pick_preview"
-        app:zjc_title_color="@color/zjc_white_87" />
+        android:background="@color/z_black_12"
+        app:zv_end_btn="@string/zjc_pick_complete"
+        app:zv_icon="@drawable/zjc_ic_back_color"
+        app:zv_title="@string/zjc_pick_preview"
+        app:zv_title_color="@color/z_white_87" />
 
     <LinearLayout
         android:id="@+id/zjc_preview_bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/zjc_Gray54"
+        android:background="@color/zGray54"
         android:orientation="vertical"
         android:visibility="visible"
         tools:visibility="visible">
@@ -50,7 +50,7 @@
                 android:layout_marginEnd="@dimen/zjc_dimen_12"
                 android:paddingStart="@dimen/zjc_padding_normal"
                 android:text="原图(3.07M)"
-                android:textColor="@color/zjcWhite"
+                android:textColor="@color/zWhite"
                 android:textSize="@dimen/zjc_size_16"
                 android:visibility="gone" />
 
@@ -66,7 +66,7 @@
                 android:includeFontPadding="true"
                 android:paddingStart="@dimen/zjc_padding_normal"
                 android:text="选择"
-                android:textColor="@color/zjcWhite"
+                android:textColor="@color/zWhite"
                 android:textSize="@dimen/zjc_size_16" />
         </RelativeLayout>
 

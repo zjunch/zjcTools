@@ -143,12 +143,12 @@ public class ZCropView extends AppCompatImageView {
         }
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ZCropView);
         // 获取自定义属性值，如果没有设置就是默认值
-        mMaskColor = array.getColor(R.styleable.ZCropView_zjc_crop_mask_color, mMaskColor);
-        mBorderColor = array.getColor(R.styleable.ZCropView_zjc_crop_border_color, mBorderColor);
-        mBorderWidth = array.getDimensionPixelSize(R.styleable.ZCropView_zjc_crop_border_width, mBorderWidth);
-        mFocusWidth = array.getDimensionPixelSize(R.styleable.ZCropView_zjc_crop_focus_width, mFocusWidth);
-        mFocusHeight = array.getDimensionPixelSize(R.styleable.ZCropView_zjc_crop_focus_height, mFocusHeight);
-        mDefaultStyleIndex = array.getInteger(R.styleable.ZCropView_zjc_crop_style, mDefaultStyleIndex);
+        mMaskColor = array.getColor(R.styleable.ZCropView_zv_crop_mask_color, mMaskColor);
+        mBorderColor = array.getColor(R.styleable.ZCropView_zv_crop_border_color, mBorderColor);
+        mBorderWidth = array.getDimensionPixelSize(R.styleable.ZCropView_zv_crop_border_width, mBorderWidth);
+        mFocusWidth = array.getDimensionPixelSize(R.styleable.ZCropView_zv_crop_focus_width, mFocusWidth);
+        mFocusHeight = array.getDimensionPixelSize(R.styleable.ZCropView_zv_crop_focus_height, mFocusHeight);
+        mDefaultStyleIndex = array.getInteger(R.styleable.ZCropView_zv_crop_style, mDefaultStyleIndex);
         mFocusStyle = styles[mDefaultStyleIndex];
         // 回收资源
         array.recycle();

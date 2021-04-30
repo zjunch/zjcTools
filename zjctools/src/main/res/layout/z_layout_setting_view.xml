@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
-            android:textColor="@color/zjcPurple8"
+            android:textColor="@color/zPurple8"
             android:layout_alignTop="@id/tvTitle"
             android:layout_alignBottom="@id/tvTitle"
             android:gravity="center"

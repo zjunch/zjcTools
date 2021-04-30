@@ -46,7 +46,7 @@ public class ZSquareLayout extends RelativeLayout {
             return;
         }
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ZSquareLayout);
-        isUnifyWidth = array.getBoolean(R.styleable.ZSquareLayout_zjc_unify_width, true);
+        isUnifyWidth = array.getBoolean(R.styleable.ZSquareLayout_zv_unify_width, true);
         array.recycle();
     }
 

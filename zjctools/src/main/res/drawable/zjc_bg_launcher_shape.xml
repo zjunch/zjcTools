@@ -3,7 +3,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:opacity="opaque">
     <!-- 背景颜色 -->
-    <item android:drawable="@color/zjcWhite" />
+    <item android:drawable="@color/zWhite" />
 
     <item>
         <!-- splash screen 展示的图片 居中 不缩放 -->

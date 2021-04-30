@@ -45,15 +45,15 @@ public class ZSearchView extends RelativeLayout {
 
     public ZSearchView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mContentView = LayoutInflater.from(context).inflate(R.layout.zjc_widget_search_layout, this);
+        mContentView = LayoutInflater.from(context).inflate(R.layout.z_widget_search_layout, this);
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZSearchView);
-        isShowClear = typedArray.getBoolean(R.styleable.ZSearchView_zjc_srv_clear_enable, false);
-        isShowTvRightSearch = typedArray.getBoolean(R.styleable.ZSearchView_zjc_srv_right_tv_search_enable, false);
-        isShowIvRightSearch = typedArray.getBoolean(R.styleable.ZSearchView_zjc_srv_right_iv_search_enable, false);
-        isCanInput = typedArray.getBoolean(R.styleable.ZSearchView_zjc_srv_search_input_enable, true);
-        searchHint = typedArray.getString(R.styleable.ZSearchView_zjc_srv_search_hint);
-        leftSearchIcon= typedArray.getResourceId(R.styleable.ZSearchView_zjc_srv_left_iv_search_icon, R.drawable.zjc_ic_search);
-        rightSearchIcon= typedArray.getResourceId(R.styleable.ZSearchView_zjc_srv_right_iv_search_icon, R.drawable.zjc_ic_search);
+        isShowClear = typedArray.getBoolean(R.styleable.ZSearchView_zv_srv_clear_enable, false);
+        isShowTvRightSearch = typedArray.getBoolean(R.styleable.ZSearchView_zv_srv_right_tv_search_enable, false);
+        isShowIvRightSearch = typedArray.getBoolean(R.styleable.ZSearchView_zv_srv_right_iv_search_enable, false);
+        isCanInput = typedArray.getBoolean(R.styleable.ZSearchView_zv_srv_search_input_enable, true);
+        searchHint = typedArray.getString(R.styleable.ZSearchView_zv_srv_search_hint);
+        leftSearchIcon= typedArray.getResourceId(R.styleable.ZSearchView_zv_srv_left_iv_search_icon, R.drawable.zjc_ic_search);
+        rightSearchIcon= typedArray.getResourceId(R.styleable.ZSearchView_zv_srv_right_iv_search_icon, R.drawable.zjc_ic_search);
         initViews();
         setViews();
         setLinsenter();

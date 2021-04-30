@@ -1,12 +1,9 @@
 package com.android.zjctools.appupdate;
 
 import android.app.IntentService;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
@@ -15,7 +12,6 @@ import com.android.zjctools.interface_function.ZCallback;
 import com.android.zjctools.interface_function.ZFunctionManager;
 import com.android.zjctools.utils.ZFile;
 import com.android.zjctools.utils.ZLog;
-import com.android.zjctools.utils.ZToast;
 import com.android.zjcutils.R;
 
 import java.io.File;
@@ -53,7 +49,7 @@ public class ZUpdateService extends IntentService  {
     }
 
     private void createNotification() {
-        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.zjc_widget_notifacion_layout);
+        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.z_widget_notifacion_layout);
         if(appLogoIconRes!=-1){
             remoteViews.setImageViewResource(R.id.notify_download_iv,appLogoIconRes);
         }

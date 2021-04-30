@@ -32,17 +32,17 @@ public class ColorViewActivity extends ZBActivity {
     private List<ZColorBean> getColorBeans(int pos){
         List<ZColorBean> ZColorBeans =new ArrayList<>();
         if(pos%2==0){
-            ZColorBeans.add(new ZColorBean(10,12,R.color.zjc_red_87));
-            ZColorBeans.add(new ZColorBean(13,14,R.color.zjc_red_87));
-            ZColorBeans.add(new ZColorBean(17,21,R.color.zjc_red_87));
+            ZColorBeans.add(new ZColorBean(10,12,R.color.z_red_87));
+            ZColorBeans.add(new ZColorBean(13,14,R.color.z_red_87));
+            ZColorBeans.add(new ZColorBean(17,21,R.color.z_red_87));
         }else  if(pos%3==0){
-            ZColorBeans.add(new ZColorBean(9,10,R.color.zjc_green_38));
-            ZColorBeans.add(new ZColorBean(12,14,R.color.zjc_green_38));
-            ZColorBeans.add(new ZColorBean(18,20,R.color.zjc_green_38));
+            ZColorBeans.add(new ZColorBean(9,10,R.color.z_green_38));
+            ZColorBeans.add(new ZColorBean(12,14,R.color.z_green_38));
+            ZColorBeans.add(new ZColorBean(18,20,R.color.z_green_38));
         }else{
-            ZColorBeans.add(new ZColorBean(9,10,R.color.zjc_blue_3a));
-            ZColorBeans.add(new ZColorBean(12,14,R.color.zjc_blue_3a));
-            ZColorBeans.add(new ZColorBean(18,20,R.color.zjc_blue_3a));
+            ZColorBeans.add(new ZColorBean(9,10,R.color.z_blue_3a));
+            ZColorBeans.add(new ZColorBean(12,14,R.color.z_blue_3a));
+            ZColorBeans.add(new ZColorBean(18,20,R.color.z_blue_3a));
         }
         return ZColorBeans;
     }

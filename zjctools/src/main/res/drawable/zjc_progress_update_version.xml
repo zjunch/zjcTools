@@ -5,15 +5,15 @@
             <corners android:radius="20dp" />
             <stroke
                 android:width="1px"
-                android:color="@color/zjcGreen" />
-            <solid android:color="@color/zjcWhite" />
+                android:color="@color/zGreen" />
+            <solid android:color="@color/zWhite" />
         </shape>
     </item>
     <item android:id="@android:id/progress">
         <clip>
             <shape android:shape="rectangle">
                 <corners android:radius="20dp" />
-                <solid android:color="@color/zjcGreen" />
+                <solid android:color="@color/zGreen" />
             </shape>
         </clip>
     </item>

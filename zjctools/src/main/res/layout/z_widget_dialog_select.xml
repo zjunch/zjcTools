@@ -4,44 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/zjcWhite"
+    android:background="@color/zWhite"
     tools:context="com.android.zjctools.widget.dialog.ZPDialog">
 
     <TextView
         android:id="@+id/zjc_dialog_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/zjc_dimen_16"
+        android:layout_margin="@dimen/zjc_dimen_16"
         android:text="@string/app_name"
-        android:textColor="@color/zjc_black_87"
+        android:textColor="@color/z_black_87"
         android:textSize="@dimen/zjc_size_18"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/zjc_dialog_content_et"
-        android:layout_width="@dimen/zjc_dimen_0"
+    <View
+        android:id="@+id/zjc_dialog_title_divide"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zjc_dimen_1"
+        android:layout_marginTop="@dimen/zjc_dimen_16"
+        android:background="@color/app_divide"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/zjc_dialog_title_tv" />
+
+    <TextView
+        android:id="@+id/zjc_dialog_message_tv"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/zjc_dimen_24"
-        android:layout_marginRight="@dimen/zjc_dimen_24"
-        android:background="@drawable/zjc_shape_input_dark_bg_shape"
-        android:gravity="start"
-        android:hint="请输入"
-        android:lines="4"
-        android:padding="@dimen/zjc_dimen_10"
-        android:textColor="@color/zjc_black_87"
-        android:textSize="@dimen/zjc_size_14"
+        android:layout_margin="@dimen/zjc_dimen_36"
+        android:paddingStart="@dimen/zjc_dimen_20"
+        android:paddingEnd="@dimen/zjc_dimen_20"
+        android:text="content"
+        android:textColor="@color/z_black_87"
+        android:textSize="@dimen/zjc_size_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/zjc_dialog_title_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/zjc_dialog_title_divide" />
 
     <TextView
         android:id="@+id/zjc_dialog_cancel_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/zjc_dimen_24"
-        android:layout_marginTop="@dimen/zjc_dimen_36"
+        android:layout_marginTop="@dimen/zjc_dimen_56"
         android:layout_marginEnd="@dimen/zjc_dimen_8"
         android:layout_marginBottom="@dimen/zjc_dimen_20"
         android:background="@drawable/zjc_shape_conner4_app_theme"
@@ -50,19 +57,19 @@
         android:paddingEnd="@dimen/zjc_dimen_24"
         android:paddingBottom="@dimen/zjc_dimen_8"
         android:text="@string/zjc_btn_cancel"
-        android:textColor="@color/zjcWhite"
+        android:textColor="@color/zWhite"
         android:textSize="@dimen/zjc_size_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/zjc_dialog_confirm_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/zjc_dialog_content_et" />
+        app:layout_constraintTop_toBottomOf="@+id/zjc_dialog_message_tv" />
 
     <TextView
         android:id="@+id/zjc_dialog_confirm_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/zjc_dimen_8"
-        android:layout_marginTop="@dimen/zjc_dimen_36"
+        android:layout_marginTop="@dimen/zjc_dimen_56"
         android:layout_marginEnd="@dimen/zjc_dimen_24"
         android:layout_marginBottom="@dimen/zjc_dimen_20"
         android:background="@drawable/zjc_shape_conner4_app_theme"
@@ -71,10 +78,10 @@
         android:paddingEnd="@dimen/zjc_dimen_24"
         android:paddingBottom="@dimen/zjc_dimen_8"
         android:text="@string/zjc_btn_ok"
-        android:textColor="@color/zjcWhite"
+        android:textColor="@color/zWhite"
         android:textSize="@dimen/zjc_size_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/zjc_dialog_cancel_btn"
-        app:layout_constraintTop_toBottomOf="@+id/zjc_dialog_content_et" />
+        app:layout_constraintTop_toBottomOf="@+id/zjc_dialog_message_tv" />
 </androidx.constraintlayout.widget.ConstraintLayout>

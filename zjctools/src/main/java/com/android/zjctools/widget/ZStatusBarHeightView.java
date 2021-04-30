@@ -46,7 +46,7 @@ public class ZStatusBarHeightView extends LinearLayout {
         }
         if (attrs != null) {
             TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZStatusBarHeightView);
-            type = typedArray.getInt(R.styleable.ZStatusBarHeightView_zjc_use_type, 0);
+            type = typedArray.getInt(R.styleable.ZStatusBarHeightView_zv_use_type, 0);
             typedArray.recycle();
         }
         if (type == 1) {

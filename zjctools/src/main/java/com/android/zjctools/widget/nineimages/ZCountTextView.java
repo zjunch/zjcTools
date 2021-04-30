@@ -78,7 +78,7 @@ public class ZCountTextView extends View {
         Rect rect=  getTextBounds("+"+mCount,coverPaint);
         int textWidth= rect.width();//字体的宽度
         int textHeight= rect.height();//字体的高度
-        coverPaint.setColor(getResources().getColor(R.color.zjc_half9));  //矩形背景色
+        coverPaint.setColor(getResources().getColor(R.color.z_half9));  //矩形背景色
         int countTextStartX=mWidth-mMarginRight-textWidth-2*xPadding;     //矩形x起点，
         int countTextStartY=mHeight-mMarginBottom-textHeight-2*yPadding;//矩形Y起点，
 
@@ -90,7 +90,7 @@ public class ZCountTextView extends View {
         canvas.drawRoundRect(rectF,(textHeight+2*yPadding)/2,(textHeight+2*yPadding)/2,coverPaint);
 
         //绘制个数
-        coverPaint.setColor(getResources().getColor(R.color.zjcWhite));
+        coverPaint.setColor(getResources().getColor(R.color.zWhite));
         if(isExactWidth){// 小矩形宽度为统一值
             canvas.drawText("+"+mCount,countTextStartX+mExactHalfRectfWidth/2-textWidth/2,mHeight-mMarginBottom-yPadding,coverPaint);
         }else{

@@ -9,7 +9,6 @@ import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
 import com.google.android.material.tabs.TabLayout;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,20 +35,20 @@ public class ZTabView extends TabLayout {
     public ZTabView(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZTabView);
-        textSize= (int) typedArray.getDimension(R.styleable.ZTabView_zjc_tab_text_size, ZDimen.sp2px(12));
-        pointSize=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zjc_tab_point_text_size, ZDimen.sp2px(8));
-        iconMarginTop=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zjc_tab_image_top, 5);
-        textMarginTop=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zjc_tab_text_top, 3);
-        textMarginBottom=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zjc_tab_text_bottom,3);
-        pointMarginLeft=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zjc_tab_point_left,5);
-        pointMarginTop=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zjc_tab_point_top,2);
-        selectColorId=typedArray.getResourceId(R.styleable.ZTabView_zjc_tab_select_color, R.color.zjcBlue);
-        unSelectColorId=typedArray.getResourceId(R.styleable.ZTabView_zjc_tab_unSelect_color, R.color.zjc_Gray54);
-        isWrapSize=typedArray.getBoolean(R.styleable.ZTabView_zjc_tab_icon_wrap,true);
-        iconWidth=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zjc_tab_icon_width, ZDimen.dp2px(25));
-        iconHeight=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zjc_tab_icon_height, ZDimen.dp2px(25));
-        pointWidth=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zjc_tab_point_width, ZDimen.dp2px(10));
-        pointHeight=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zjc_tab_point_height, ZDimen.dp2px(10));
+        textSize= (int) typedArray.getDimension(R.styleable.ZTabView_zv_tab_text_size, ZDimen.sp2px(12));
+        pointSize=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zv_tab_point_text_size, ZDimen.sp2px(8));
+        iconMarginTop=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zv_tab_image_top, 5);
+        textMarginTop=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zv_tab_text_top, 3);
+        textMarginBottom=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zv_tab_text_bottom,3);
+        pointMarginLeft=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zv_tab_point_left,5);
+        pointMarginTop=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zv_tab_point_top,2);
+        selectColorId=typedArray.getResourceId(R.styleable.ZTabView_zv_tab_select_color, R.color.zBlue);
+        unSelectColorId=typedArray.getResourceId(R.styleable.ZTabView_zv_tab_unSelect_color, R.color.zGray54);
+        isWrapSize=typedArray.getBoolean(R.styleable.ZTabView_zv_tab_icon_wrap,true);
+        iconWidth=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zv_tab_icon_width, ZDimen.dp2px(25));
+        iconHeight=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zv_tab_icon_height, ZDimen.dp2px(25));
+        pointWidth=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zv_tab_point_width, ZDimen.dp2px(10));
+        pointHeight=typedArray.getDimensionPixelSize(R.styleable.ZTabView_zv_tab_point_height, ZDimen.dp2px(10));
         typedArray.recycle();
     }
 

@@ -55,8 +55,8 @@ public class ZCircleProgressView extends View {
         mBackPaint.setStrokeCap(Paint.Cap.ROUND);   // 设置圆角
         mBackPaint.setAntiAlias(true);              // 设置抗锯齿
         mBackPaint.setDither(true);                 // 设置抖动
-        mBackPaint.setStrokeWidth(typedArray.getDimension(R.styleable.ZCircleProgressView_zjc_backWidth, 5));
-        mBackPaint.setColor(typedArray.getColor(R.styleable.ZCircleProgressView_zjc_backColor, Color.LTGRAY));
+        mBackPaint.setStrokeWidth(typedArray.getDimension(R.styleable.ZCircleProgressView_zv_backWidth, 5));
+        mBackPaint.setColor(typedArray.getColor(R.styleable.ZCircleProgressView_zv_backColor, Color.LTGRAY));
 
         // 初始化进度圆环画笔
         mProgPaint = new Paint();
@@ -64,21 +64,21 @@ public class ZCircleProgressView extends View {
         mProgPaint.setStrokeCap(Paint.Cap.ROUND);   // 设置圆角
         mProgPaint.setAntiAlias(true);              // 设置抗锯齿
         mProgPaint.setDither(true);                 // 设置抖动
-        mProgPaint.setStrokeWidth(typedArray.getDimension(R.styleable.ZCircleProgressView_zjc_progWidth, 10));
-        mProgPaint.setColor(typedArray.getColor(R.styleable.ZCircleProgressView_zjc_progColor, Color.BLUE));
+        mProgPaint.setStrokeWidth(typedArray.getDimension(R.styleable.ZCircleProgressView_zv_progWidth, 10));
+        mProgPaint.setColor(typedArray.getColor(R.styleable.ZCircleProgressView_zv_progColor, Color.BLUE));
 
         // 初始化进度圆环渐变色
-        int startColor = typedArray.getColor(R.styleable.ZCircleProgressView_zjc_progStartColor, -1);
-        int firstColor = typedArray.getColor(R.styleable.ZCircleProgressView_zjc_progFirstColor, -1);
+        int startColor = typedArray.getColor(R.styleable.ZCircleProgressView_zv_progStartColor, -1);
+        int firstColor = typedArray.getColor(R.styleable.ZCircleProgressView_zv_progFirstColor, -1);
         if (startColor != -1 && firstColor != -1) mColorArray = new int[]{startColor, firstColor};
         else mColorArray = null;
 
         // 初始化进度
-        mProgress = typedArray.getInteger(R.styleable.ZCircleProgressView_zjc_progress, 0);
+        mProgress = typedArray.getInteger(R.styleable.ZCircleProgressView_zv_progress, 0);
 
-        mStartAngle = typedArray.getInteger(R.styleable.ZCircleProgressView_zjc_startAngle, 0);
-        mSweepAngle = typedArray.getInteger(R.styleable.ZCircleProgressView_zjc_sweepAngle, 360);
-        mProgressStartAngle = typedArray.getInteger(R.styleable.ZCircleProgressView_zjc_progressStartAngle, 275);
+        mStartAngle = typedArray.getInteger(R.styleable.ZCircleProgressView_zv_startAngle, 0);
+        mSweepAngle = typedArray.getInteger(R.styleable.ZCircleProgressView_zv_sweepAngle, 360);
+        mProgressStartAngle = typedArray.getInteger(R.styleable.ZCircleProgressView_zv_progressStartAngle, 275);
         typedArray.recycle();
     }
 

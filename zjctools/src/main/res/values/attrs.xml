@@ -3,95 +3,95 @@
 
 
     <declare-styleable name="ZNinePicturesView">
-        <attr name="zjc_nine_spacex" format="integer"/><!--x 间距-->
-        <attr name="zjc_nine_spacey" format="integer"/><!--y 间距-->
-        <attr name="zjc_nine_average2_enable" format="boolean"/><!--两张图张图一行两个-->
-        <attr name="zjc_nine_average4_enable" format="boolean"/><!--四张图一行两个-->
-        <attr name="zjc_nine_12_Enable" format="boolean"/><!--三张图 左边一个右边两个-->
-        <attr name="zjc_nine_max_counts" format="integer"/><!--最多显示多少张-->
-        <attr name="zjc_nine_full_One" format="boolean"/><!--一张图的时候，一行一张-->
-        <attr name="zjc_nine_half_One" format="boolean"/><!--一张图的时候，和两张平分的时候一样大-->
-        <attr name="zjc_nine_show_un_counts" format="boolean"/><!--是否有未展示的图片个数的文字显示-->
-        <attr name="zjc_nine_un_counts_textColor" format="color" /><!--未读图片个数的文字颜色-->
-        <attr name="zjc_nine_un_counts_textSzie" format="integer"/><!--未读图片个数的文字大小-->
+        <attr name="zv_nine_spacex" format="integer"/><!--x 间距-->
+        <attr name="zv_nine_spacey" format="integer"/><!--y 间距-->
+        <attr name="zv_nine_average2_enable" format="boolean"/><!--两张图张图一行两个-->
+        <attr name="zv_nine_average4_enable" format="boolean"/><!--四张图一行两个-->
+        <attr name="zv_nine_12_Enable" format="boolean"/><!--三张图 左边一个右边两个-->
+        <attr name="zv_nine_max_counts" format="integer"/><!--最多显示多少张-->
+        <attr name="zv_nine_full_One" format="boolean"/><!--一张图的时候，一行一张-->
+        <attr name="zv_nine_half_One" format="boolean"/><!--一张图的时候，和两张平分的时候一样大-->
+        <attr name="zv_nine_show_un_counts" format="boolean"/><!--是否有未展示的图片个数的文字显示-->
+        <attr name="zv_nine_un_counts_textColor" format="color" /><!--未读图片个数的文字颜色-->
+        <attr name="zv_nine_un_counts_textSzie" format="integer"/><!--未读图片个数的文字大小-->
     </declare-styleable>
 
 
 
     <declare-styleable name="ZSettingInputView">
         <!--是否显示底部分隔线-->
-        <attr name="zjc_siv_Line_enable" format="boolean" />
+        <attr name="zv_siv_Line_enable" format="boolean" />
         <!--标题-->
-        <attr name="zjc_siv_title_text" format="string" />
+        <attr name="zv_siv_title_text" format="string" />
         <!--底部分隔线颜色-->
-        <attr name="zjc_siv_line_color" format="color" />
+        <attr name="zv_siv_line_color" format="color" />
         <!--右侧输入框hint-->
-        <attr name="zjc_siv_hint_text" format="string" />
+        <attr name="zv_siv_hint_text" format="string" />
         <!--右侧输入框最多字符-->
-        <attr name="zjc_siv_max_counts" format="integer" />
+        <attr name="zv_siv_max_counts" format="integer" />
         <!--左侧标题文字大小-->
-        <attr name="zjc_siv_title_size" format="dimension" />
+        <attr name="zv_siv_title_size" format="dimension" />
 
-        <attr name="zjc_siv_title_color" format="color" />
+        <attr name="zv_siv_title_color" format="color" />
 
-        <attr name="zjc_siv_input_size" format="dimension" />
+        <attr name="zv_siv_input_size" format="dimension" />
 
-        <attr name="zjc_siv_input_color" format="color" />
+        <attr name="zv_siv_input_color" format="color" />
     </declare-styleable>
 
     <declare-styleable name="ZSettingView">
         <!--是否显示底部分隔线-->
-        <attr name="zjc_sv_Line_enable" format="boolean" />
+        <attr name="zv_sv_Line_enable" format="boolean" />
         <!--是否显示最左边点-->
-        <attr name="zjc_sv_point_enable" format="boolean" />
+        <attr name="zv_sv_point_enable" format="boolean" />
         <!--是否显示左侧title右侧有个star-->
-        <attr name="zjc_sv_star_enable" format="boolean" />
+        <attr name="zv_sv_star_enable" format="boolean" />
         <!--是否显示右侧箭头-->
-        <attr name="zjc_sv_arrow_enable" format="boolean" />
+        <attr name="zv_sv_arrow_enable" format="boolean" />
         <!--左侧标题颜色-->
-        <attr name="zjc_sv_title_color" format="color" />
+        <attr name="zv_sv_title_color" format="color" />
         <!--左侧标题-->
-        <attr name="zjc_sv_title_text" format="string" />
+        <attr name="zv_sv_title_text" format="string" />
         <!--左侧标题文字大小-->
-        <attr name="zjc_sv_title_size" format="dimension" />
+        <attr name="zv_sv_title_size" format="dimension" />
         <!--右侧描述的hint-->
-        <attr name="zjc_sv_desc_Hint" format="string" />
+        <attr name="zv_sv_desc_Hint" format="string" />
         <!--右侧描述的字体颜色-->
-        <attr name="zjc_sv_desc_color" format="color" />
+        <attr name="zv_sv_desc_color" format="color" />
         <!--右侧描述文字-->
-        <attr name="zjc_sv_desc_text" format="string" />
+        <attr name="zv_sv_desc_text" format="string" />
         <!--右侧描述文字大小-->
-        <attr name="zjc_sv_desc_size" format="dimension" />
+        <attr name="zv_sv_desc_size" format="dimension" />
 
-        <attr name="zjc_sv_center_size" format="dimension" />
+        <attr name="zv_sv_center_size" format="dimension" />
 
-        <attr name="zjc_sv_center_color" format="color" />
+        <attr name="zv_sv_center_color" format="color" />
 
-        <attr name="zjc_sv_arrow_resId" format="reference" />
+        <attr name="zv_sv_arrow_resId" format="reference" />
 
-        <attr name="zjc_sv_title_drawPadding" format="dimension" />
+        <attr name="zv_sv_title_drawPadding" format="dimension" />
 
-        <attr name="zjc_sv_title_drawLeft_resId" format="reference" />
+        <attr name="zv_sv_title_drawLeft_resId" format="reference" />
 
     </declare-styleable>
 
     <declare-styleable name="ZSearchView">
         <!--是否显示清除-->
-        <attr name="zjc_srv_clear_enable" format="boolean" />
+        <attr name="zv_srv_clear_enable" format="boolean" />
         <!--输入框search-->
-        <attr name="zjc_srv_search_hint" format="string" />
+        <attr name="zv_srv_search_hint" format="string" />
         <!--是否有输入功能-->
-        <attr name="zjc_srv_search_input_enable" format="boolean" />
+        <attr name="zv_srv_search_input_enable" format="boolean" />
 
         <!--是否显示右侧搜索文字-->
-        <attr name="zjc_srv_right_tv_search_enable" format="boolean" />
+        <attr name="zv_srv_right_tv_search_enable" format="boolean" />
 
         <!--右侧搜索icon-->
-        <attr name="zjc_srv_right_iv_search_icon" format="reference" />
+        <attr name="zv_srv_right_iv_search_icon" format="reference" />
         <!--是否显示右侧搜索文字-->
-        <attr name="zjc_srv_right_iv_search_enable" format="boolean" />
+        <attr name="zv_srv_right_iv_search_enable" format="boolean" />
         <!--左侧侧搜索icon-->
-        <attr name="zjc_srv_left_iv_search_icon" format="reference" />
+        <attr name="zv_srv_left_iv_search_icon" format="reference" />
 
     </declare-styleable>
 
@@ -99,55 +99,55 @@
     <!--自定义正方形布局-->
     <declare-styleable name="ZSquareLayout">
         <!--正方形布局大小取宽还是高度-->
-        <attr name="zjc_unify_width" format="boolean" />
+        <attr name="zv_unify_width" format="boolean" />
     </declare-styleable>
 
 
     <!--自定义音频录制控件-->
     <declare-styleable name="VMRecordView">
         <!--取消颜色-->
-        <attr name="zjc_cancel_color" format="color|integer" />
+        <attr name="zv_cancel_color" format="color|integer" />
         <!--触摸区域外圈颜色-->
-        <attr name="zjc_outer_color" format="color|integer" />
+        <attr name="zv_outer_color" format="color|integer" />
         <!--触摸区域内圈颜色-->
-        <attr name="zjc_inner_color" format="color|integer" />
-        <attr name="zjc_inner_size" format="dimension" />
+        <attr name="zv_inner_color" format="color|integer" />
+        <attr name="zv_inner_size" format="dimension" />
         <!--触摸区域提示文字-->
-        <attr name="zjc_touch_normal_desc" format="string|reference" />
-        <attr name="zjc_touch_cancel_desc" format="string|reference" />
+        <attr name="zv_touch_normal_desc" format="string|reference" />
+        <attr name="zv_touch_cancel_desc" format="string|reference" />
         <!--触摸提示文本颜色-->
-        <attr name="zjc_desc_color" format="color|integer" />
+        <attr name="zv_desc_color" format="color|integer" />
         <!--触摸提示文本大小-->
-        <attr name="zjc_desc_size" format="dimension" />
+        <attr name="zv_desc_size" format="dimension" />
         <!--时间文本颜色-->
-        <attr name="zjc_time_color" format="color|integer" />
+        <attr name="zv_time_color" format="color|integer" />
         <!--时间文本大小-->
-        <attr name="zjc_time_size" format="dimension" />
+        <attr name="zv_time_size" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="ZStatusBarHeightView">
-        <attr name="zjc_use_type" format="integer">
-            <enum name="zjc_use_height" value="0" />
-            <enum name="zjc_use_padding_top" value="1" />
+        <attr name="zv_use_type" format="integer">
+            <enum name="zv_use_height" value="0" />
+            <enum name="zv_use_padding_top" value="1" />
         </attr>
     </declare-styleable>
 
 
     <!--自定义ViewGroup-堆叠头像的点赞Layout-->
     <declare-styleable name="ZPileLayout">
-        <attr name="zjc_pileLayout_verSpace" format="dimension" />
-        <attr name="zjc_pileLayout_pileWidth" format="dimension" />
+        <attr name="zv_pileLayout_verSpace" format="dimension" />
+        <attr name="zv_pileLayout_pileWidth" format="dimension" />
     </declare-styleable>
 
 
     <!--自定义剪切控件-->
     <declare-styleable name="ZCropView">
-        <attr name="zjc_crop_mask_color" format="color|integer" />
-        <attr name="zjc_crop_border_color" format="color|integer" />
-        <attr name="zjc_crop_border_width" format="dimension" />
-        <attr name="zjc_crop_focus_width" format="dimension" />
-        <attr name="zjc_crop_focus_height" format="dimension" />
-        <attr name="zjc_crop_style" format="enum">
+        <attr name="zv_crop_mask_color" format="color|integer" />
+        <attr name="zv_crop_border_color" format="color|integer" />
+        <attr name="zv_crop_border_width" format="dimension" />
+        <attr name="zv_crop_focus_width" format="dimension" />
+        <attr name="zv_crop_focus_height" format="dimension" />
+        <attr name="zv_crop_style" format="enum">
             <enum name="rectangle" value="0" />
             <enum name="circle" value="1" />
         </attr>
@@ -157,64 +157,64 @@
     <!--自定义 VMTopBar 控件-->
     <declare-styleable name="ZTopBar">
         <!--返回图标-->
-        <attr name="zjc_icon" format="reference" />
+        <attr name="zv_icon" format="reference" />
         <!--标题-->
-        <attr name="zjc_title" format="string|reference" />
+        <attr name="zv_title" format="string|reference" />
         <!--子标题-->
-        <attr name="zjc_subtitle" format="string|reference" />
+        <attr name="zv_subtitle" format="string|reference" />
         <!--右侧按钮-->
-        <attr name="zjc_end_btn" format="string|reference" />
+        <attr name="zv_end_btn" format="string|reference" />
         <!--右侧图标-->
-        <attr name="zjc_end_icon" format="reference" />
+        <attr name="zv_end_icon" format="reference" />
         <!--标题颜色-->
-        <attr name="zjc_title_color" format="color|integer" />
+        <attr name="zv_title_color" format="color|integer" />
         <!--子标题颜色-->
-        <attr name="zjc_subtitle_color" format="color|integer" />
+        <attr name="zv_subtitle_color" format="color|integer" />
         <!--装饰分割线-->
-        <attr name="zjc_is_center" format="boolean" />
+        <attr name="zv_is_center" format="boolean" />
     </declare-styleable>
 
 
     <declare-styleable name="ZTabView">
         <!--菜单icon 宽高自适应-->
-        <attr name="zjc_tab_icon_wrap" format="boolean" />
+        <attr name="zv_tab_icon_wrap" format="boolean" />
         <!--菜单文字大小-->
-        <attr name="zjc_tab_text_size" format="dimension" />
+        <attr name="zv_tab_text_size" format="dimension" />
         <!--菜单icon margin top-->
-        <attr name="zjc_tab_image_top" format="dimension" />
+        <attr name="zv_tab_image_top" format="dimension" />
         <!--菜单文字 margin top-->
-        <attr name="zjc_tab_text_top" format="dimension" />
-        <attr name="zjc_tab_text_bottom" format="dimension" />
+        <attr name="zv_tab_text_top" format="dimension" />
+        <attr name="zv_tab_text_bottom" format="dimension" />
         <!--icon 宽高-->
-        <attr name="zjc_tab_icon_width" format="dimension" />
-        <attr name="zjc_tab_icon_height" format="dimension" />
+        <attr name="zv_tab_icon_width" format="dimension" />
+        <attr name="zv_tab_icon_height" format="dimension" />
         <!--选中颜色-->
-        <attr name="zjc_tab_select_color" format="color" />
+        <attr name="zv_tab_select_color" format="color" />
         <!--未选中颜色-->
-        <attr name="zjc_tab_unSelect_color" format="color" />
+        <attr name="zv_tab_unSelect_color" format="color" />
         <!--菜单小红点 margin top-->
-        <attr name="zjc_tab_point_top" format="dimension" />
+        <attr name="zv_tab_point_top" format="dimension" />
         <!--菜单小红点 margin left-->
-        <attr name="zjc_tab_point_left" format="dimension" />
+        <attr name="zv_tab_point_left" format="dimension" />
         <!--菜单小红点 宽度-->
-        <attr name="zjc_tab_point_width" format="dimension" />
+        <attr name="zv_tab_point_width" format="dimension" />
         <!--菜单小红点 高度-->
-        <attr name="zjc_tab_point_height" format="dimension" />
+        <attr name="zv_tab_point_height" format="dimension" />
         <!--菜单字体大小 高度-->
-        <attr name="zjc_tab_point_text_size" format="dimension" />
+        <attr name="zv_tab_point_text_size" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="ZCircleProgressView">
-        <attr name="zjc_backWidth" format="dimension" />    <!--背景圆环宽度-->
-        <attr name="zjc_progWidth" format="dimension" />    <!--进度圆环宽度-->
-        <attr name="zjc_backColor" format="color" />        <!--背景圆环颜色-->
-        <attr name="zjc_progColor" format="color" />        <!--进度圆环颜色-->
-        <attr name="zjc_progStartColor" format="color" />   <!--进度圆环开始颜色-->
-        <attr name="zjc_progFirstColor" format="color" />   <!--进度圆环结束颜色-->
-        <attr name="zjc_progress" format="integer" />       <!--圆环进度-->
-        <attr name="zjc_startAngle" format="integer" />      <!--底部开始角度-->
-        <attr name="zjc_sweepAngle" format="integer" />       <!--底部跨度-->
-        <attr name="zjc_progressStartAngle" format="integer" />  <!--进度条起始角度-->
+        <attr name="zv_backWidth" format="dimension" />    <!--背景圆环宽度-->
+        <attr name="zv_progWidth" format="dimension" />    <!--进度圆环宽度-->
+        <attr name="zv_backColor" format="color" />        <!--背景圆环颜色-->
+        <attr name="zv_progColor" format="color" />        <!--进度圆环颜色-->
+        <attr name="zv_progStartColor" format="color" />   <!--进度圆环开始颜色-->
+        <attr name="zv_progFirstColor" format="color" />   <!--进度圆环结束颜色-->
+        <attr name="zv_progress" format="integer" />       <!--圆环进度-->
+        <attr name="zv_startAngle" format="integer" />      <!--底部开始角度-->
+        <attr name="zv_sweepAngle" format="integer" />       <!--底部跨度-->
+        <attr name="zv_progressStartAngle" format="integer" />  <!--进度条起始角度-->
 
     </declare-styleable>
 

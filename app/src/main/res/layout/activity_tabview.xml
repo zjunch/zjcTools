@@ -10,13 +10,13 @@
 <!--        android:padding="@dimen/zjc_dimen_0"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="55dp"-->
-<!--        android:background="@color/zjcWhite"-->
+<!--        android:background="@color/zWhite"-->
 <!--        android:layout_alignParentBottom="true"-->
 <!--        app:zjc_tab_icon_wrap="false"-->
 <!--        app:zjc_tab_text_size="@dimen/zjc_size_12" />-->
 
     <androidx.viewpager.widget.ViewPager
-        android:background="@color/zjc_white_87"
+        android:background="@color/z_white_87"
         android:id="@+id/main_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

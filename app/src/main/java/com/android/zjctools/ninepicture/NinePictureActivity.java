@@ -50,7 +50,7 @@ public class NinePictureActivity extends ZBActivity {
         items.addAll(nineBeans);
         adapter.setItems(items);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.zjc_black_12), ZDimen.dp2px(10)));
+        recyclerView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.z_black_12), ZDimen.dp2px(10)));
         recyclerView.setAdapter(adapter);
     }
 }

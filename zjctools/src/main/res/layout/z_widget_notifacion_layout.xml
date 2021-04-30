@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="10dp"
-    android:background="@color/zjcWhite">
+    android:background="@color/zWhite">
     <ImageView
         android:layout_width="@dimen/zjc_dimen_35"
         android:layout_height="@dimen/zjc_dimen_35"
@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/notify_tv"
-        android:textColor="@color/zjc_Gray54"
+        android:textColor="@color/zGray54"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/notify_download_iv"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:textSize="12sp"
         android:layout_marginLeft="20dp"
-        android:textColor="@color/zjc_Gray54"
+        android:textColor="@color/zGray54"
         android:id="@+id/notify_progress_instruction_tv"
         android:layout_below="@+id/notify_progress_pb"
         android:text="客户端已经下载了"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:textSize="12sp"
         android:id="@+id/notify_progress_tv"
-        android:textColor="@color/zjc_Gray54"
+        android:textColor="@color/zGray54"
         android:layout_toRightOf="@+id/notify_progress_instruction_tv"
         android:layout_below="@+id/notify_progress_pb"
         android:text="50%"

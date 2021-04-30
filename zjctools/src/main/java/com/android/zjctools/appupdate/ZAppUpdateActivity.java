@@ -49,7 +49,7 @@ public class ZAppUpdateActivity extends ZBActivity {
 
     @Override
     protected int layoutId() {
-        return R.layout.zjc_activity_app_update;
+        return R.layout.z_activity_app_update;
     }
 
     @Override
@@ -144,7 +144,7 @@ public class ZAppUpdateActivity extends ZBActivity {
     private void addView(LinearLayout linearLayout, String updateContent) {
         TextView textView = new TextView(mActivity);
         textView.setPadding(ZDimen.dp2px(18), ZDimen.dp2px(3), ZDimen.dp2px(18), ZDimen.dp2px(3));
-        textView.setTextColor(ZColor.byRes(R.color.zjcGray3));
+        textView.setTextColor(ZColor.byRes(R.color.zGray3));
         textView.setTextSize(11);
         textView.setText(updateContent);
         linearLayout.addView(textView);

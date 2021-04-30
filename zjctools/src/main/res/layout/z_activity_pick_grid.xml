@@ -4,16 +4,16 @@
     android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/zjc_theme_background">
+    android:background="@color/z_theme_background">
 
     <com.android.zjctools.widget.ZTopBar
         android:id="@+id/zjc_common_top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:zjc_end_btn="@string/zjc_pick_complete"
-        app:zjc_icon="@drawable/zjc_ic_back_color"
-        app:zjc_title_color="@color/zjc_title"
-        app:zjc_title="@string/zjc_pick_picture" />
+        app:zv_end_btn="@string/zjc_pick_complete"
+        app:zv_icon="@drawable/zjc_ic_back_color"
+        app:zv_title_color="@color/z_title"
+        app:zv_title="@string/zjc_pick_picture" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                     android:layout_alignBottom="@id/zjc_pick_grid_choose_folder_tv"
                     android:layout_toRightOf="@id/zjc_pick_grid_choose_folder_tv"
                     android:src="@drawable/zjc_ic_triangle_indicator"
-                    android:tint="@color/zjc_Gray54" />
+                    android:tint="@color/zGray54" />
             </RelativeLayout>
 
             <TextView

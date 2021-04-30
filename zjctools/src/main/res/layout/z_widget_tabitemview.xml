@@ -26,7 +26,7 @@
         android:layout_width="@dimen/zjc_dimen_12"
         android:text=""
         android:textSize="@dimen/zjc_size_8"
-        android:textColor="@color/zjcWhite"
+        android:textColor="@color/zWhite"
         android:textStyle="bold"
         android:gravity="center"
         android:background="@drawable/zjc_point_red"

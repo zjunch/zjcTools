@@ -24,7 +24,7 @@ public class ZDisplaySingleActivity extends ZBActivity {
 
     @Override
     protected int layoutId() {
-        return R.layout.zjc_activity_display_single_image;
+        return R.layout.z_activity_display_single_image;
     }
 
     @Override

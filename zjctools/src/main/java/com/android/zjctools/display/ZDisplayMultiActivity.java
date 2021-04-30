@@ -29,7 +29,7 @@ public class ZDisplayMultiActivity extends ZBActivity {
 
     @Override
     protected int layoutId() {
-        return R.layout.zjc_activity_display_images;
+        return R.layout.z_activity_display_images;
     }
 
 
@@ -51,7 +51,7 @@ public class ZDisplayMultiActivity extends ZBActivity {
         for (int i = 0; i < imagePaths.size(); i++) {
             dotView = new View(mActivity);
             dotViews[i] = dotView;
-            dotView.setBackgroundResource(R.color.zjcWhite);
+            dotView.setBackgroundResource(R.color.zWhite);
             if (i == selected) {
                 dotView.setBackgroundResource(R.color.picture_in);
             }
@@ -79,7 +79,7 @@ public class ZDisplayMultiActivity extends ZBActivity {
             @Override
             public void onPageSelected(int position) {
                 for (int i = 0; i < dotViews.length; i++) {
-                    dotViews[i].setBackgroundResource(R.color.zjc_white_87);
+                    dotViews[i].setBackgroundResource(R.color.z_white_87);
                     if (i == position) {
                         currentTv.setText(position+1+"/"+imagePaths.size());
                         dotViews[position].setBackgroundResource(R.color.picture_in);

@@ -151,7 +151,7 @@ public class ZPermissionActivity extends ZjcActivity {
      */
     private void showPermissionDialog() {
         View view = LayoutInflater.from(mActivity)
-                .inflate(R.layout.zjc_widget_permission_dialog, null);
+                .inflate(R.layout.z_widget_permission_dialog, null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
         if (ZStr.isEmpty(mTitle)) {

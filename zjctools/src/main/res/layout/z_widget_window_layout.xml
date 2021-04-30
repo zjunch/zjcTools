@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/zjc_half6"
+    android:background="@color/z_half6"
     tools:context="com.android.zjctools.widget.dialog.ZPWindow">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,7 @@
             android:textColor="@color/app_theme_color"
             android:textSize="@dimen/zjc_size_18"
             android:textStyle="bold"
-            android:background="@color/zjcWhite"
+            android:background="@color/zWhite"
             android:gravity="center"
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/window_recycler_view"
@@ -34,7 +34,7 @@
             android:id="@+id/window_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/zjcWhite"
+            android:background="@color/zWhite"
             app:layout_constraintBottom_toTopOf="@+id/window_cancel_btn"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,10 +44,10 @@
             android:layout_marginTop="@dimen/zjc_dimen_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/zjcWhite"
+            android:background="@color/zWhite"
             android:text="@string/zjc_btn_cancel"
             android:visibility="gone"
-            android:textColor="@color/zjc_Gray54"
+            android:textColor="@color/zGray54"
             android:textSize="@dimen/zjc_size_16"
             app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

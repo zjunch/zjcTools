@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/zjcWhite"
+    android:background="@color/zWhite"
     tools:context=".MainActivity">
 
     <include
         android:id="@+id/title_bar"
-        layout="@layout/zjc_bar_title"></include>
+        layout="@layout/z_bar_title"></include>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/title_bar"

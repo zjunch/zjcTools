@@ -115,6 +115,7 @@ public class MainActivity extends ZBActivity {
             @Override
             public void onComplete() {
                 ZToast.create().showNormal("onComplete");
+                Router.goSelectPictures(mActivity);
             }
         });
 

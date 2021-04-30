@@ -5,9 +5,9 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/zjcBlue</item>
+        <item name="colorAccent">@color/zBlue</item>
         <!--界面背景色，为了优化 UI，这里设置为透明-->
-        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <item name="android:windowBackground">@color/zTransparent</item>
 
         <!--设置主题不需要ActionBar-->
         <item name="windowActionBar">false</item>
@@ -22,12 +22,12 @@
         <!--设置导航栏半透明效果，TODO 设置导航栏半透明会导致布局下移，需注意-->
         <item name="android:windowTranslucentNavigation">false</item>
         <!--设置状态栏颜色-->
-        <item name="android:statusBarColor">@color/zjc_theme_primary_dark</item>
+        <item name="android:statusBarColor">@color/z_theme_primary_dark</item>
 
         <!-- 设置允许修改系统栏的背景色 比如导航栏 状态栏等-->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <!--设置导航栏背景色-->
-        <item name="android:navigationBarColor">@color/zjcGray3</item>
+        <item name="android:navigationBarColor">@color/zGray3</item>
 
         <!--设置是否允许使用转场动画-->
         <item name="android:windowContentTransitions">false</item>
@@ -45,8 +45,8 @@
 
     <!--透明主题-->
     <style name="ZJCTheme.Transparent">
-        <item name="colorPrimary">@color/zjcTransparent</item>
-        <item name="colorPrimaryDark">@color/zjcTransparent</item>
+        <item name="colorPrimary">@color/zTransparent</item>
+        <item name="colorPrimaryDark">@color/zTransparent</item>
         <!-- 设置允许修改系统栏的背景色 比如导航栏 状态栏等-->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <!--半透明状态栏-->
@@ -58,7 +58,7 @@
 
     <!--授权弹窗主题-->
     <style name="ZJCTheme.Permission">
-        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <item name="android:windowBackground">@color/zTransparent</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowIsTranslucent">false</item>

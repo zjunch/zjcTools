@@ -8,7 +8,7 @@
         android:id="@+id/zjc_pick_grid_camera_rl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/zjc_Gray54"
+        android:background="@color/zGray54"
         android:gravity="center"
         android:orientation="vertical"
         >
@@ -17,11 +17,11 @@
             android:layout_width="@dimen/zjc_dimen_36"
             android:layout_height="@dimen/zjc_dimen_36"
             android:src="@drawable/zjc_ic_camera"
-            android:tint="@color/zjc_white_54"
+            android:tint="@color/z_white_54"
             />
         <TextView
             android:text="@string/zjc_camera"
-            android:textColor="@color/zjc_white_54"
+            android:textColor="@color/z_white_54"
             style="@style/ZjcText.Subhead"
             />
     </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SelectActivity"
-    android:background="@color/zjcWhite"
+    android:background="@color/zWhite"
     tools:ignore="MissingDefaultResource">
 <TextView
     android:id="@+id/tvSelect"
@@ -29,8 +29,8 @@
       android:id="@+id/ninePics"
       android:layout_width="match_parent"
       android:layout_height="300dp"
-      app:zjc_nine_full_One="true"
-      app:zjc_nine_max_counts="9"
+      app:zv_nine_full_One="true"
+      app:zv_nine_max_counts="9"
       android:layout_marginTop="150dp"
-      app:zjc_nine_average2_enable="true"/>
+      app:zv_nine_average2_enable="true"/>
 </RelativeLayout>

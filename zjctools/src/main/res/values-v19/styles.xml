@@ -5,9 +5,9 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/zjcBlue</item>
+        <item name="colorAccent">@color/zBlue</item>
         <!--界面背景色，为了优化 UI，这里设置为透明-->
-        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <item name="android:windowBackground">@color/zTransparent</item>
 
         <!--设置主题不需要ActionBar-->
         <item name="windowActionBar">false</item>
@@ -26,8 +26,8 @@
 
     <!--透明主题-->
     <style name="ZJCTheme.Transparent">
-        <item name="colorPrimary">@color/zjcTransparent</item>
-        <item name="colorPrimaryDark">@color/zjcTransparent</item>
+        <item name="colorPrimary">@color/zTransparent</item>
+        <item name="colorPrimaryDark">@color/zTransparent</item>
         <!-- 设置允许修改系统栏的背景色 比如导航栏 状态栏等-->
         <!--半透明状态栏-->
         <item name="android:windowTranslucentStatus">true</item>
@@ -38,7 +38,7 @@
 
     <!--授权弹窗主题-->
     <style name="ZJCTheme.Permission">
-        <item name="android:windowBackground">@color/zjcTransparent</item>
+        <item name="android:windowBackground">@color/zTransparent</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowIsTranslucent">false</item>

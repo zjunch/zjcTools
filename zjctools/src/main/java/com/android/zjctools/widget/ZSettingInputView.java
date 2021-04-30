@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.android.zjctools.base.ZConstant;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
@@ -36,17 +35,17 @@ public class ZSettingInputView extends RelativeLayout {
 
     public ZSettingInputView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mContentView= LayoutInflater.from(context).inflate(R.layout.zjc_widget_setting_input,this);
+        mContentView= LayoutInflater.from(context).inflate(R.layout.z_widget_setting_input,this);
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ZSettingInputView);
-        isShowLine = typedArray.getBoolean(R.styleable.ZSettingInputView_zjc_siv_Line_enable, false);
-        lineColor = typedArray.getColor(R.styleable.ZSettingInputView_zjc_siv_line_color, ZColor.byRes(context,R.color.app_divide));
-        titleColor = typedArray.getColor(R.styleable.ZSettingInputView_zjc_siv_title_color, ZColor.byRes(context,R.color.zjcGray3));
-        inputColor = typedArray.getColor(R.styleable.ZSettingInputView_zjc_siv_input_color, ZColor.byRes(context,R.color.zjcGray3));
-        title= typedArray.getString(R.styleable.ZSettingInputView_zjc_siv_title_text);
-        hintText= typedArray.getString(R.styleable.ZSettingInputView_zjc_siv_hint_text);
-        maxInputCounts= typedArray.getInt(R.styleable.ZSettingInputView_zjc_siv_max_counts, zjcMaxInputCount);
-        titleSize= (int) typedArray.getDimension(R.styleable.ZSettingInputView_zjc_siv_title_size, ZDimen.sp2px(context,14));
-        descSize= (int) typedArray.getDimension(R.styleable.ZSettingInputView_zjc_siv_input_size, ZDimen.sp2px(context,14));
+        isShowLine = typedArray.getBoolean(R.styleable.ZSettingInputView_zv_siv_Line_enable, false);
+        lineColor = typedArray.getColor(R.styleable.ZSettingInputView_zv_siv_line_color, ZColor.byRes(context,R.color.app_divide));
+        titleColor = typedArray.getColor(R.styleable.ZSettingInputView_zv_siv_title_color, ZColor.byRes(context,R.color.zGray3));
+        inputColor = typedArray.getColor(R.styleable.ZSettingInputView_zv_siv_input_color, ZColor.byRes(context,R.color.zGray3));
+        title= typedArray.getString(R.styleable.ZSettingInputView_zv_siv_title_text);
+        hintText= typedArray.getString(R.styleable.ZSettingInputView_zv_siv_hint_text);
+        maxInputCounts= typedArray.getInt(R.styleable.ZSettingInputView_zv_siv_max_counts, zjcMaxInputCount);
+        titleSize= (int) typedArray.getDimension(R.styleable.ZSettingInputView_zv_siv_title_size, ZDimen.sp2px(context,14));
+        descSize= (int) typedArray.getDimension(R.styleable.ZSettingInputView_zv_siv_input_size, ZDimen.sp2px(context,14));
         typedArray.recycle();
         initView();
         setViews();

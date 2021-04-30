@@ -25,7 +25,7 @@
         android:paddingLeft="30dp"
         android:paddingTop="@dimen/zjc_dimen_10"
         android:paddingBottom="@dimen/zjc_dimen_10"
-        android:textColorHint="@color/zjc_Gray54" />
+        android:textColorHint="@color/zGray54" />
 
     <View
         android:id="@+id/line"

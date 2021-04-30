@@ -36,23 +36,23 @@ public class VMRecordView extends View {
     // 画笔
     private Paint mPaint;
     // 控件背景颜色
-    private int mCancelColor = ZColor.byRes(R.color.zjc_red_87);
+    private int mCancelColor = ZColor.byRes(R.color.z_red_87);
 
     // 外圈的颜色、大小
-    private int mOuterColor = ZColor.byRes(R.color.zjc_green_38);
+    private int mOuterColor = ZColor.byRes(R.color.z_green_38);
     private int mOuterSize = ZDimen.dp2px(128);
     // 内圈录音按钮的颜色、大小
-    private int mInnerColor = ZColor.byRes(R.color.zjcGreen);
+    private int mInnerColor = ZColor.byRes(R.color.zGreen);
     private int mInnerSize = ZDimen.dp2px(96);
 
     // 触摸区域提示文本
     private String mDescNormal = "触摸录音";
     private String mDescCancel = "松开取消";
-    private int mDescColor = ZColor.byRes(R.color.zjcWhite);
+    private int mDescColor = ZColor.byRes(R.color.zWhite);
     private int mDescSize = ZDimen.dp2px(16);
 
     // 时间字体的大小、颜色
-    private int mTimeColor = ZColor.byRes(R.color.zjcGreen);
+    private int mTimeColor = ZColor.byRes(R.color.zGreen);
     private int mTimeSize = ZDimen.dp2px(14);
 
     //是否开始录制
@@ -131,25 +131,25 @@ public class VMRecordView extends View {
             return;
         }
         TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.VMRecordView);
-        mCancelColor = array.getColor(R.styleable.VMRecordView_zjc_cancel_color, mCancelColor);
+        mCancelColor = array.getColor(R.styleable.VMRecordView_zv_cancel_color, mCancelColor);
 
-        mOuterColor = array.getColor(R.styleable.VMRecordView_zjc_outer_color, mOuterColor);
-        mInnerColor = array.getColor(R.styleable.VMRecordView_zjc_inner_color, mInnerColor);
-        mInnerSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_zjc_inner_size, mInnerSize);
+        mOuterColor = array.getColor(R.styleable.VMRecordView_zv_outer_color, mOuterColor);
+        mInnerColor = array.getColor(R.styleable.VMRecordView_zv_inner_color, mInnerColor);
+        mInnerSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_zv_inner_size, mInnerSize);
 
-        mDescNormal = array.getString(R.styleable.VMRecordView_zjc_touch_normal_desc);
-        mDescCancel = array.getString(R.styleable.VMRecordView_zjc_touch_cancel_desc);
+        mDescNormal = array.getString(R.styleable.VMRecordView_zv_touch_normal_desc);
+        mDescCancel = array.getString(R.styleable.VMRecordView_zv_touch_cancel_desc);
         if (ZStr.isEmpty(mDescNormal)) {
             mDescNormal = "触摸录音";
         }
         if (ZStr.isEmpty(mDescCancel)) {
             mDescCancel = "松开取消";
         }
-        mDescColor = array.getColor(R.styleable.VMRecordView_zjc_desc_color, mDescColor);
-        mDescSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_zjc_desc_size, mDescSize);
+        mDescColor = array.getColor(R.styleable.VMRecordView_zv_desc_color, mDescColor);
+        mDescSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_zv_desc_size, mDescSize);
 
-        mTimeColor = array.getColor(R.styleable.VMRecordView_zjc_time_color, mTimeColor);
-        mTimeSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_zjc_time_size, mTimeSize);
+        mTimeColor = array.getColor(R.styleable.VMRecordView_zv_time_color, mTimeColor);
+        mTimeSize = array.getDimensionPixelOffset(R.styleable.VMRecordView_zv_time_size, mTimeSize);
 
         array.recycle();
     }
@@ -194,7 +194,7 @@ public class VMRecordView extends View {
         if (isCancelRecord) {
             mPaint.setColor(mCancelColor);
         } else {
-            mPaint.setColor(ZColor.byRes(R.color.zjcTransparent));
+            mPaint.setColor(ZColor.byRes(R.color.zTransparent));
         }
         // 绘制背景
         canvas.drawRect(0, 0, mWidth, mHeight, mPaint);
@@ -226,7 +226,7 @@ public class VMRecordView extends View {
         int descColor;
         String desc;
         if (isCancelRecord) {
-            innerColor = ZColor.byRes(R.color.zjcWhite);
+            innerColor = ZColor.byRes(R.color.zWhite);
             descColor = mCancelColor;
             desc = mDescCancel;
         } else {
@@ -252,7 +252,7 @@ public class VMRecordView extends View {
     protected void drawTime(Canvas canvas) {
         int timeColor;
         if (isCancelRecord) {
-            timeColor = ZColor.byRes(R.color.zjcWhite);
+            timeColor = ZColor.byRes(R.color.zWhite);
         } else {
             timeColor = mTimeColor;
         }
