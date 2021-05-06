@@ -10,7 +10,6 @@ import java.util.List;
 import androidx.recyclerview.widget.RecyclerView;
 
 public abstract  class ZBaseRecycleAdapter<T>extends RecyclerView.Adapter<ZRecycleViewHolder>  {
-
     private List<T> datas;
     public OnItemClickListenr onItemClickListenr;
     public   long clickCurrentTime;
