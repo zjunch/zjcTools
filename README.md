@@ -1,12 +1,6 @@
 # zjcTools常用工具库，
 
-最新  com.zjun:zjcTools:0.1.6 
-
-  0.1.4 已适配androidX   分支developx
-
-  0.1.3 未适配androidX   分支develop
-
-
+最新  com.github.zjunch:zjcTools:1.0.0
 
 包含用基类，activity,fragment,app
 工具类：toast,bitmap，file,date，router color string.log..
@@ -17,15 +11,15 @@ app更新，图片选择，权限申请
 recycleview分割线（ZItemDecoration）,
 
 引用方式：
+一  、项目
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 
-
-一  、项目gradle ：allprojects {
-    repositories {
-        maven { url 'https://dl.bintray.com/zjun/maven' }
-    }
-}
-
-二 、module: implementation 'com.zjun:zjcTools:0.1.2'
+二 、module:   implementation 'com.github.zjunch:zjcTools:1.0.0'
 
 
 三 、初始化工具  ZTools.init(this);
