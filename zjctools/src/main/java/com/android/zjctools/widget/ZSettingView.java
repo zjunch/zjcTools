@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.zjctools.utils.ZColor;
@@ -33,6 +34,9 @@ public class ZSettingView extends LinearLayout {
     int arrowResId;   //右侧箭头图标resId
     int titleDrawPadding ;//左侧标题左侧的drawpadding
     int drawLeftResId;   //左侧图标id
+
+    int leftTitleWidth;   //左侧宽度
+    int pointMarginRightSpace;
     public ZSettingView(Context context) {
         super(context);
     }
@@ -43,6 +47,7 @@ public class ZSettingView extends LinearLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ZSettingView);
         isShowLine = typedArray.getBoolean(R.styleable.ZSettingView_zv_sv_Line_enable, true);
         isShowPoint = typedArray.getBoolean(R.styleable.ZSettingView_zv_sv_point_enable, false);
+        pointMarginRightSpace= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_left_point_right_space, ZDimen.dp2px(context,8));
         isShowRightStar = typedArray.getBoolean(R.styleable.ZSettingView_zv_sv_star_enable, false);
         isShowRightArrow = typedArray.getBoolean(R.styleable.ZSettingView_zv_sv_arrow_enable, true);
         descColor = typedArray.getColor(R.styleable.ZSettingView_zv_sv_desc_color, ZColor.byRes(context,R.color.zGray3));
@@ -57,6 +62,7 @@ public class ZSettingView extends LinearLayout {
         arrowResId=typedArray.getResourceId(R.styleable.ZSettingView_zv_sv_arrow_resId,R.drawable.arrow);
         titleDrawPadding= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_title_drawPadding, ZDimen.dp2px(context,10));
         drawLeftResId=typedArray.getResourceId(R.styleable.ZSettingView_zv_sv_title_drawLeft_resId,-1);
+        leftTitleWidth= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_left_title_width, ZDimen.dp2px(context,100));
         typedArray.recycle();
         initView();
         setViews();
@@ -73,6 +79,16 @@ public class ZSettingView extends LinearLayout {
     }
 
     private void setViews() {
+        //左侧标题宽度
+        RelativeLayout.LayoutParams lp= (RelativeLayout.LayoutParams) tvTitle.getLayoutParams();
+        lp.width=leftTitleWidth;
+        tvTitle.setLayoutParams(lp);
+        //左侧点距离左侧标题的margin
+        RelativeLayout.LayoutParams pointLp= (RelativeLayout.LayoutParams) tvPoint.getLayoutParams();
+        pointLp.rightMargin=pointMarginRightSpace;
+        tvPoint.setLayoutParams(pointLp);
+
+
         tvTitle.getPaint().setTextSize(titleSize);
         tvDesc.getPaint().setTextSize(descSize);
         tvCenter.getPaint().setTextSize(centerSize);

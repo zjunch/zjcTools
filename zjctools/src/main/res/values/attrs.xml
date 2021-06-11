@@ -44,6 +44,8 @@
         <attr name="zv_sv_Line_enable" format="boolean" />
         <!--是否显示最左边点-->
         <attr name="zv_sv_point_enable" format="boolean" />
+        <!--最左边点距离右侧标题-->
+        <attr name="zv_sv_left_point_right_space" format="dimension" />
         <!--是否显示左侧title右侧有个star-->
         <attr name="zv_sv_star_enable" format="boolean" />
         <!--是否显示右侧箭头-->
@@ -52,6 +54,8 @@
         <attr name="zv_sv_title_color" format="color" />
         <!--左侧标题-->
         <attr name="zv_sv_title_text" format="string" />
+        <!--左侧宽度标题-->
+        <attr name="zv_left_title_width" format="dimension" />
         <!--左侧标题文字大小-->
         <attr name="zv_sv_title_size" format="dimension" />
         <!--右侧描述的hint-->
