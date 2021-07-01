@@ -273,13 +273,13 @@ public class ZPermission {
      */
     private void startActivity() {
         Intent intent = new Intent();
-        intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_ENABLE_DIALOG, mEnableDialog);
-        intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_SETTING_DIALOG, isShowSettingDialog);
-        intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_AGAIN, isNeedAgain);
-        intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_REJECT_DIALOG, isShowRejectDialog);
-        intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_TITLE, mTitle);
-        intent.putExtra(ZConstant.ZJC_KEY_PERMISSION_MSG, mMessage);
-        intent.putParcelableArrayListExtra(ZConstant.ZJC_KEY_PERMISSION_LIST, (ArrayList<? extends Parcelable>) mPermissions);
+        intent.putExtra(ZConstant.Z_KEY_PERMISSION_ENABLE_DIALOG, mEnableDialog);
+        intent.putExtra(ZConstant.Z_KEY_PERMISSION_SETTING_DIALOG, isShowSettingDialog);
+        intent.putExtra(ZConstant.Z_KEY_PERMISSION_AGAIN, isNeedAgain);
+        intent.putExtra(ZConstant.Z_KEY_PERMISSION_REJECT_DIALOG, isShowRejectDialog);
+        intent.putExtra(ZConstant.Z_KEY_PERMISSION_TITLE, mTitle);
+        intent.putExtra(ZConstant.Z_KEY_PERMISSION_MSG, mMessage);
+        intent.putParcelableArrayListExtra(ZConstant.Z_KEY_PERMISSION_LIST, (ArrayList<? extends Parcelable>) mPermissions);
         ZRouter.goPermission(mContext, intent);
     }
 

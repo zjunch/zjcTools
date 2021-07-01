@@ -120,9 +120,9 @@ public class ZPictureAdapter extends ZAdapter<ZPictureBean, ZHolder> {
 
         public PictureViewHolder(View itemView) {
             super(itemView);
-            mThumbView = itemView.findViewById(R.id.zjc_pick_grid_item_thumb_iv);
-            mHotRegionCB = itemView.findViewById(R.id.zjc_pick_grid_item_check_layout);
-            mItemCB = itemView.findViewById(R.id.zjc_pick_grid_item_cb);
+            mThumbView = itemView.findViewById(R.id.z_pick_grid_item_thumb_iv);
+            mHotRegionCB = itemView.findViewById(R.id.z_pick_grid_item_check_layout);
+            mItemCB = itemView.findViewById(R.id.z_pick_grid_item_cb);
         }
 
         /**
@@ -145,7 +145,7 @@ public class ZPictureAdapter extends ZAdapter<ZPictureBean, ZHolder> {
                 List<ZPictureBean> selectedList = ZPicker.getInstance().getSelectedPictures();
                 int selectLimit = ZPicker.getInstance().getSelectLimit();
                 if (mItemCB.isChecked() && selectedList.size() >= selectLimit) {
-                    String toastMsg = ZStr.byResArgs(R.string.zjc_pick_select_limit, selectLimit);
+                    String toastMsg = ZStr.byResArgs(R.string.z_pick_select_limit, selectLimit);
                     ZToast.create().showErrorBottom(toastMsg);
                     mItemCB.setChecked(false);
                 } else {

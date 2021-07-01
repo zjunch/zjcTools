@@ -8,7 +8,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/zjc_pick_folder_cover_iv"
+        android:id="@+id/z_pick_folder_cover_iv"
         android:layout_width="@dimen/z_dimen_56"
         android:layout_height="@dimen/z_dimen_56"
         android:layout_margin="@dimen/z_margin_normal"
@@ -24,13 +24,13 @@
         >
 
         <TextView
-            android:id="@+id/zjc_pick_folder_name_tv"
-            tools:text="@string/zjc_pick_all_picture"
+            android:id="@+id/z_pick_folder_name_tv"
+            tools:text="@string/z_pick_all_picture"
             style="@style/ZjcText.Subhead"
             />
 
         <TextView
-            android:id="@+id/zjc_pick_folder_count_tv"
+            android:id="@+id/z_pick_folder_count_tv"
             android:layout_marginTop="@dimen/z_margin_small"
             tools:text="56 张"
             style="@style/ZjcText.Caption"
@@ -38,10 +38,10 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/zjc_pick_folder_select_iv"
+        android:id="@+id/z_pick_folder_select_iv"
         android:layout_width="@dimen/z_dimen_24"
         android:layout_height="@dimen/z_dimen_24"
         android:layout_marginEnd="@dimen/z_margin_large"
         android:layout_marginStart="@dimen/z_margin_normal"
-        android:src="@drawable/zjc_ic_radio_button_selector" />
+        android:src="@drawable/z_ic_radio_button_selector" />
 </LinearLayout>

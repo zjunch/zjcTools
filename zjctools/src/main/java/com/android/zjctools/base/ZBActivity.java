@@ -48,7 +48,7 @@ public abstract class ZBActivity extends ZjcActivity {
         //数据处理
         initData();
         //返回键处理
-        initBackView(R.id.zjc_bar_iv_back);
+        initBackView(R.id.z_bar_iv_back);
         initListener();
     }
 
@@ -58,18 +58,18 @@ public abstract class ZBActivity extends ZjcActivity {
 
 
     private  void initTitleBar(){
-        if(findViewById(R.id.zjc_lv_title)!=null){
-            zjcLvTitle=findViewById(R.id.zjc_lv_title);
-            zjcStatusBarHeightView=findViewById(R.id.zjc_bar_status_View);
-            zjcRvTitleBar=findViewById(R.id.zjc_bar_rv_title);
-            zjcLeftTitle=findViewById(R.id.zjc_bar_tv_left_title);
-            zjcCenterTitle=findViewById(R.id.zjc_bar_tv_center_title);
-            zjcRvEnd=findViewById(R.id.zjc_rv_end);
-            zjcTvEnd=findViewById(R.id.zjc_bar_tv_end);
-            zjcIvBack=findViewById(R.id.zjc_bar_iv_back);
-            zjcIvEnd=findViewById(R.id.zjc_bar_iv_end);
-            zjcIvEndSecond=findViewById(R.id.zjc_bar_iv_end_second);
-            zjcBottomLine=findViewById(R.id.zjc_bar_bottom_line);
+        if(findViewById(R.id.z_lv_title)!=null){
+            zjcLvTitle=findViewById(R.id.z_lv_title);
+            zjcStatusBarHeightView=findViewById(R.id.z_bar_status_View);
+            zjcRvTitleBar=findViewById(R.id.z_bar_rv_title);
+            zjcLeftTitle=findViewById(R.id.z_bar_tv_left_title);
+            zjcCenterTitle=findViewById(R.id.z_bar_tv_center_title);
+            zjcRvEnd=findViewById(R.id.z_rv_end);
+            zjcTvEnd=findViewById(R.id.z_bar_tv_end);
+            zjcIvBack=findViewById(R.id.z_bar_iv_back);
+            zjcIvEnd=findViewById(R.id.z_bar_iv_end);
+            zjcIvEndSecond=findViewById(R.id.z_bar_iv_end_second);
+            zjcBottomLine=findViewById(R.id.z_bar_bottom_line);
         }
     }
 

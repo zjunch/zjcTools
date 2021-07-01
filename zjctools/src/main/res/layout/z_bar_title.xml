@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:id="@+id/zjc_lv_title"
+    android:id="@+id/z_lv_title"
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <com.android.zjctools.widget.ZStatusBarHeightView
-        android:id="@+id/zjc_bar_status_View"
+        android:id="@+id/z_bar_status_View"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <RelativeLayout
-        android:id="@+id/zjc_bar_rv_title"
+        android:id="@+id/z_bar_rv_title"
         android:layout_width="match_parent"
         android:layout_height="48dp">
         <ImageView
-            android:id="@+id/zjc_bar_iv_back"
+            android:id="@+id/z_bar_iv_back"
             android:layout_width="@dimen/z_dimen_40"
             android:layout_height="@dimen/z_dimen_40"
             android:layout_centerVertical="true"
@@ -21,8 +21,8 @@
             android:src="@drawable/z_ic_back_color" />
 
         <TextView
-            android:id="@+id/zjc_bar_tv_left_title"
-            android:layout_toRightOf="@id/zjc_bar_iv_back"
+            android:id="@+id/z_bar_tv_left_title"
+            android:layout_toRightOf="@id/z_bar_iv_back"
             android:layout_width="wrap_content"
             android:paddingLeft="12dp"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:text="left标题" />
 
         <TextView
-            android:id="@+id/zjc_bar_tv_center_title"
+            android:id="@+id/z_bar_tv_center_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -43,12 +43,12 @@
             android:textSize="16sp"
             android:text="center标题" />
         <RelativeLayout
-            android:id="@+id/zjc_rv_end"
+            android:id="@+id/z_rv_end"
             android:layout_width="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_height="match_parent">
             <TextView
-                android:id="@+id/zjc_bar_tv_end"
+                android:id="@+id/z_bar_tv_end"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -58,7 +58,7 @@
                 android:visibility="gone"
                 android:textSize="14sp" />
             <ImageView
-                android:id="@+id/zjc_bar_iv_end"
+                android:id="@+id/z_bar_iv_end"
                 android:layout_width="@dimen/z_dimen_40"
                 android:layout_height="@dimen/z_dimen_40"
                 android:layout_centerVertical="true"
@@ -71,18 +71,18 @@
 
 
         <ImageView
-            android:id="@+id/zjc_bar_iv_end_second"
+            android:id="@+id/z_bar_iv_end_second"
             android:layout_width="@dimen/z_dimen_40"
             android:layout_height="@dimen/z_dimen_40"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/zjc_rv_end"
+            android:layout_toLeftOf="@id/z_rv_end"
             android:padding="10dp"
             android:visibility="gone"
             android:layout_marginRight="10dp"
             android:src="@drawable/z_ic_back_color" />
     </RelativeLayout>
     <View
-        android:id="@+id/zjc_bar_bottom_line"
+        android:id="@+id/z_bar_bottom_line"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/app_divide"/>

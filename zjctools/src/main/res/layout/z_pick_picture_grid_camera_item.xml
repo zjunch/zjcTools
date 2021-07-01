@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     >
     <LinearLayout
-        android:id="@+id/zjc_pick_grid_camera_rl"
+        android:id="@+id/z_pick_grid_camera_rl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/zGray54"
@@ -20,7 +20,7 @@
             android:tint="@color/z_white_54"
             />
         <TextView
-            android:text="@string/zjc_camera"
+            android:text="@string/z_camera"
             android:textColor="@color/z_white_54"
             style="@style/ZjcText.Subhead"
             />

@@ -34,11 +34,11 @@ public class FolderPopupWindow extends PopupWindow implements View.OnClickListen
         super(context);
 
         final View view = View.inflate(context, R.layout.z_pick_folder_list_window, null);
-        masker = view.findViewById(R.id.zjc_pick_folder_mask_ll);
+        masker = view.findViewById(R.id.z_pick_folder_mask_ll);
         masker.setOnClickListener(this);
         marginView = view.findViewById(R.id.margin);
         marginView.setOnClickListener(this);
-        listView = view.findViewById(R.id.zjc_pick_folder_lv);
+        listView = view.findViewById(R.id.z_pick_folder_lv);
         listView.setAdapter(adapter);
 
         setContentView(view);

@@ -84,7 +84,7 @@ public class SelectActivity extends ZBActivity {
         if (resultCode != RESULT_OK || data == null) {
             return;
         }
-        if (requestCode == ZConstant.ZJC_PICK_REQUEST_CODE) {//选择图片
+        if (requestCode == ZConstant.z_PICK_REQUEST_CODE) {//选择图片
             selecteds.clear();
             List<ZPictureBean> result = ZPicker.getInstance().getResultData();
             selecteds.addAll(result);

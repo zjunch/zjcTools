@@ -37,7 +37,7 @@ public class ZDisplayMultiActivity extends ZBActivity {
     protected void initUI() {
         viewPager=findViewById(R.id.display_view_pager);
         dotLayout=findViewById(R.id.display_dot_layout);
-        currentTv=findViewById(R.id.zjc_current_text);
+        currentTv=findViewById(R.id.z_current_text);
         setDarkTextStatusBar(false);
     }
 

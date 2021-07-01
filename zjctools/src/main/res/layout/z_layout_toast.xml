@@ -4,7 +4,7 @@
     android:layout_centerHorizontal="true"
     android:layout_height="wrap_content">
     <RelativeLayout
-        android:id="@+id/zjc_toast_bg"
+        android:id="@+id/z_toast_bg"
         android:layout_width="wrap_content"
         android:paddingTop="@dimen/z_dimen_8"
         android:paddingBottom="@dimen/z_dimen_8"
@@ -21,7 +21,7 @@
             android:layout_marginRight="@dimen/z_dimen_12"
             android:src="@drawable/z_ic_error"/>
         <TextView
-            android:id="@+id/zjc_toast_content"
+            android:id="@+id/z_toast_content"
             android:layout_toRightOf="@id/zjv_toast_icon"
             android:layout_width="wrap_content"
             style="@style/text_14_white"

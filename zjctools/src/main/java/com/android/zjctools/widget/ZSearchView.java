@@ -63,14 +63,14 @@ public class ZSearchView extends RelativeLayout {
 
 
     private void initViews(){
-        ivLeftSearchIcon=findViewById(R.id.zjc_iv_search_icon);
-        ivClear=findViewById(R.id.zjc_iv_clear);
-        evInput = findViewById(R.id.zjc_ev_Input);
-        tvInput = findViewById(R.id.zjc_tv_input);
-        rvLeftSearch=findViewById(R.id.zjc_rv_left_search);
-        rvRightSearch=findViewById(R.id.zjc_rv_search_right);
-        tvRightSearch=findViewById(R.id.zjc_tv_search);
-        ivRightSearChIcon=findViewById(R.id.zjc_iv_search);
+        ivLeftSearchIcon=findViewById(R.id.z_iv_search_icon);
+        ivClear=findViewById(R.id.z_iv_clear);
+        evInput = findViewById(R.id.z_ev_Input);
+        tvInput = findViewById(R.id.z_tv_input);
+        rvLeftSearch=findViewById(R.id.z_rv_left_search);
+        rvRightSearch=findViewById(R.id.z_rv_search_right);
+        tvRightSearch=findViewById(R.id.z_tv_search);
+        ivRightSearChIcon=findViewById(R.id.z_iv_search);
     }
 
 

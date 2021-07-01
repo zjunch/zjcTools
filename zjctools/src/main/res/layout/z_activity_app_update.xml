@@ -13,7 +13,7 @@
         android:background="@color/zWhite"
         android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/zjc_iv_bg"
+            android:id="@+id/z_iv_bg"
             android:layout_width="match_parent"
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
@@ -22,7 +22,7 @@
             android:src="@drawable/z_bg_app_update" />
 
         <TextView
-            android:id="@+id/zjc_tv_version"
+            android:id="@+id/z_tv_version"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
@@ -36,14 +36,14 @@
             android:id="@+id/tv_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/zjc_iv_bg"
+            android:layout_below="@+id/z_iv_bg"
             android:layout_marginLeft="18dp"
             android:text="更新内容"
             android:textColor="@color/zGray54"
             android:textSize="12sp" />
 
         <LinearLayout
-            android:id="@+id/zjc_lv_content"
+            android:id="@+id/z_lv_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_text"
@@ -54,11 +54,11 @@
 
 
         <ProgressBar
-            android:id="@+id/zjc_pg_update"
+            android:id="@+id/z_pg_update"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_below="@id/zjc_lv_content"
+            android:layout_below="@id/z_lv_content"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="13dp"
@@ -70,10 +70,10 @@
 
 
         <RelativeLayout
-            android:id="@+id/zjc_rv_update"
+            android:id="@+id/z_rv_update"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:layout_below="@+id/zjc_pg_update"
+            android:layout_below="@+id/z_pg_update"
             android:layout_marginTop="13dp"
             android:layout_marginBottom="26dp">
 

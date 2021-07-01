@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/zWhite"
-            android:text="@string/zjc_btn_cancel"
+            android:text="@string/z_btn_cancel"
             android:visibility="gone"
             android:textColor="@color/zGray54"
             android:textSize="@dimen/z_size_16"

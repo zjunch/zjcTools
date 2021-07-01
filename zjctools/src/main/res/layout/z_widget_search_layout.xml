@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/zjc_rv_all_search"
+    android:id="@+id/z_rv_all_search"
     android:layout_width="match_parent"
     android:layout_height="@dimen/z_dimen_40">
 
     <RelativeLayout
-        android:id="@+id/zjc_rv_left_search"
+        android:id="@+id/z_rv_left_search"
         android:background="@drawable/z_shape_corner4_greyf6"
-        android:layout_toLeftOf="@+id/zjc_rv_search_right"
+        android:layout_toLeftOf="@+id/z_rv_search_right"
         android:layout_width="match_parent"
         android:layout_height="@dimen/z_dimen_40">
         <ImageView
-            android:id="@+id/zjc_iv_search_icon"
+            android:id="@+id/z_iv_search_icon"
             android:layout_width="@dimen/z_dimen_40"
             android:layout_height="@dimen/z_dimen_40"
             android:layout_centerVertical="true"
             android:src="@drawable/z_ic_search" />
 
         <EditText
-            android:id="@+id/zjc_ev_Input"
+            android:id="@+id/z_ev_Input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toLeftOf="@+id/zjc_iv_clear"
-            android:layout_toRightOf="@id/zjc_iv_search_icon"
+            android:layout_toLeftOf="@+id/z_iv_clear"
+            android:layout_toRightOf="@id/z_iv_search_icon"
             android:background="@null"
             android:hint="搜索姓名…"
             android:imeOptions="actionSearch"
@@ -33,11 +33,11 @@
             android:textSize="@dimen/z_size_11" />
 
         <TextView
-            android:id="@+id/zjc_tv_input"
+            android:id="@+id/z_tv_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toLeftOf="@+id/zjc_iv_clear"
-            android:layout_toRightOf="@id/zjc_iv_search_icon"
+            android:layout_toLeftOf="@+id/z_iv_clear"
+            android:layout_toRightOf="@id/z_iv_search_icon"
             android:gravity="center_vertical"
             android:hint="搜索姓名…"
             android:paddingLeft="@dimen/z_dimen_6"
@@ -47,7 +47,7 @@
             android:visibility="gone" />
 
         <ImageView
-            android:id="@+id/zjc_iv_clear"
+            android:id="@+id/z_iv_clear"
             android:layout_width="@dimen/z_dimen_40"
             android:layout_height="@dimen/z_dimen_40"
             android:padding="@dimen/z_dimen_10"
@@ -58,12 +58,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/zjc_rv_search_right"
+        android:id="@+id/z_rv_search_right"
         android:layout_width="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_height="match_parent">
         <TextView
-            android:id="@+id/zjc_tv_search"
+            android:id="@+id/z_tv_search"
             android:layout_width="wrap_content"
             android:visibility="gone"
             style="@style/text_14_black33"
@@ -76,7 +76,7 @@
             android:layout_height="@dimen/z_dimen_40"/>
 
         <ImageView
-            android:id="@+id/zjc_iv_search"
+            android:id="@+id/z_iv_search"
             android:layout_width="@dimen/z_dimen_40"
             android:layout_height="@dimen/z_dimen_40"
             android:visibility="gone"

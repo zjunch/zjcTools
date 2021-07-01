@@ -22,7 +22,7 @@
         android:background="@color/z_black_12"
         android:layout_height="?android:attr/actionBarSize">
         <ImageButton
-            android:id="@+id/zjc_bar_iv_back"
+            android:id="@+id/z_bar_iv_back"
             style="@style/text_14_white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:src="@drawable/z_ic_back_color" />
 
         <TextView
-            android:id="@+id/zjc_current_text"
+            android:id="@+id/z_current_text"
             android:layout_centerInParent="true"
             android:textSize="20sp"
             android:textColor="@color/zWhite"

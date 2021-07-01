@@ -12,8 +12,8 @@
 <!--        android:layout_height="55dp"-->
 <!--        android:background="@color/zWhite"-->
 <!--        android:layout_alignParentBottom="true"-->
-<!--        app:zjc_tab_icon_wrap="false"-->
-<!--        app:zjc_tab_text_size="@dimen/z_size_12" />-->
+<!--        app:z_tab_icon_wrap="false"-->
+<!--        app:z_tab_text_size="@dimen/z_size_12" />-->
 
     <androidx.viewpager.widget.ViewPager
         android:background="@color/z_white_87"

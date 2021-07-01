@@ -168,7 +168,7 @@ public class ZPickScanPicture implements LoaderManager.LoaderCallbacks<Cursor> {
             if (data.getCount() > 0 && allPictures.size() > 0) {
                 //构造所有图片的集合
                 ZFolderBean allImagesFolder = new ZFolderBean();
-                allImagesFolder.name = activity.getResources().getString(R.string.zjc_pick_all_picture);
+                allImagesFolder.name = activity.getResources().getString(R.string.z_pick_all_picture);
                 allImagesFolder.path = "/";
                 allImagesFolder.cover = allPictures.get(0);
                 allImagesFolder.pictures = allPictures;

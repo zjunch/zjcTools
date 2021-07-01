@@ -24,7 +24,7 @@ public class ZWindowItemBinder extends AppItemBinder<String> {
 
     @Override
     protected void onBindView(AppHolder holder, String item) {
-        TextView titleTV = holder.getView(R.id.zjc_window_item_title_tv);
+        TextView titleTV = holder.getView(R.id.z_window_item_title_tv);
         titleTV.setText(item);
     }
 }

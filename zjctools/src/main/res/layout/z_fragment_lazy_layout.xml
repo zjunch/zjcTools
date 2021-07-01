@@ -8,14 +8,14 @@
 
     <!--懒加载内容容器-->
     <RelativeLayout
-        android:id="@+id/zjc_lazy_container"
+        android:id="@+id/z_lazy_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
 
     <!--懒加载进度提示-->
     <LinearLayout
-        android:id="@+id/zjc_lazy_loading_layout"
+        android:id="@+id/z_lazy_loading_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/zWhite"
@@ -30,7 +30,7 @@
             />
 
         <TextView
-            android:text="@string/zjc_loading"
+            android:text="@string/z_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/text_14_gray_99" />

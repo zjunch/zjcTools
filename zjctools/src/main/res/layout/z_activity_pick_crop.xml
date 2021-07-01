@@ -7,7 +7,7 @@
     android:background="@color/zBlack">
 
     <com.android.zjctools.widget.ZCropView
-        android:id="@+id/zjc_pick_crop_iv"
+        android:id="@+id/z_pick_crop_iv"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -17,13 +17,13 @@
         android:id="@+id/status_bar"
         android:background="@color/z_black_12"/>
     <com.android.zjctools.widget.ZTopBar
-        android:id="@+id/zjc_common_top_bar"
+        android:id="@+id/z_common_top_bar"
         android:layout_below="@id/status_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/z_black_12"
-        app:zv_end_btn="@string/zjc_pick_complete"
+        app:zv_end_btn="@string/z_pick_complete"
         app:zv_icon="@drawable/z_ic_back_color"
-        app:zv_title="@string/zjc_pick_crop_picture"
+        app:zv_title="@string/z_pick_crop_picture"
         app:zv_title_color="@color/z_black_87" />
 </RelativeLayout>

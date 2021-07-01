@@ -77,7 +77,7 @@ public class ZFolderAdapter extends BaseAdapter {
 
         ZFolderBean folder = getItem(position);
         holder.folderName.setText(folder.name);
-        holder.imageCount.setText(mActivity.getString(R.string.zjc_pick_folder_picture_count, folder.pictures.size()));
+        holder.imageCount.setText(mActivity.getString(R.string.z_pick_folder_picture_count, folder.pictures.size()));
 
         ZImgLoaderListener.Options options = new ZImgLoaderListener.Options(folder.cover.path);
         options.isRadius = true;
@@ -112,10 +112,10 @@ public class ZFolderAdapter extends BaseAdapter {
         ImageView mSelectView;
 
         public ViewHolder(View view) {
-            cover = view.findViewById(R.id.zjc_pick_folder_cover_iv);
-            folderName = view.findViewById(R.id.zjc_pick_folder_name_tv);
-            imageCount = view.findViewById(R.id.zjc_pick_folder_count_tv);
-            mSelectView = view.findViewById(R.id.zjc_pick_folder_select_iv);
+            cover = view.findViewById(R.id.z_pick_folder_cover_iv);
+            folderName = view.findViewById(R.id.z_pick_folder_name_tv);
+            imageCount = view.findViewById(R.id.z_pick_folder_count_tv);
+            mSelectView = view.findViewById(R.id.z_pick_folder_select_iv);
             view.setTag(this);
         }
     }

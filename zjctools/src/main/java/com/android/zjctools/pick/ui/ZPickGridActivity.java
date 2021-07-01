@@ -86,15 +86,15 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     @Override
     protected void initUI() {
         super.initUI();
-        mRecyclerView = findViewById(R.id.zjc_pick_grid_recycler_view);
+        mRecyclerView = findViewById(R.id.z_pick_grid_recycler_view);
         if(ZPicker.getInstance().getColorResIg()!=0){
             mRecyclerView.setBackgroundColor(ZColor.byRes(ZPicker.getInstance().getColorResIg()));
         }
-        mBottomBar = findViewById(R.id.zjc_pick_grid_bottom_bar_rl);
-        mBottomSpaceView = findViewById(R.id.zjc_pick_grid_bottom_space);
-        mChangeDirView = findViewById(R.id.zjc_pick_grid_choose_folder_rl);
-        mCurrDirView = findViewById(R.id.zjc_pick_grid_choose_folder_tv);
-        mPreviewBtn = findViewById(R.id.zjc_pick_grid_preview_btn);
+        mBottomBar = findViewById(R.id.z_pick_grid_bottom_bar_rl);
+        mBottomSpaceView = findViewById(R.id.z_pick_grid_bottom_space);
+        mChangeDirView = findViewById(R.id.z_pick_grid_choose_folder_rl);
+        mCurrDirView = findViewById(R.id.z_pick_grid_choose_folder_tv);
+        mPreviewBtn = findViewById(R.id.z_pick_grid_preview_btn);
 
         mPreviewBtn.setOnClickListener(viewListener);
         mChangeDirView.setOnClickListener(viewListener);
@@ -125,7 +125,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
         //ZPicker.getInstance().reset();
 
         isShowCamera = ZPicker.getInstance().isShowCamera();
-        List<ZPictureBean> pictures = (List<ZPictureBean>) getIntent().getSerializableExtra(ZConstant.ZJC_KEY_PICK_PICTURES);
+        List<ZPictureBean> pictures = (List<ZPictureBean>) getIntent().getSerializableExtra(ZConstant.Z_KEY_PICK_PICTURES);
         ZPicker.getInstance().setSelectedPictures(pictures);
 
         mFolderAdapter = new ZFolderAdapter(mActivity, null);
@@ -251,16 +251,16 @@ public class ZPickGridActivity extends ZPickBaseActivity {
         int selectLimit = ZPicker.getInstance().getSelectLimit();
         if (ZPicker.getInstance().isMultiMode()) {
             if (selectCount > 0) {
-                getTopBar().setEndBtn(ZStr.byResArgs(R.string.zjc_pick_complete_select, selectCount, selectLimit));
+                getTopBar().setEndBtn(ZStr.byResArgs(R.string.z_pick_complete_select, selectCount, selectLimit));
                 getTopBar().getEndBtn().setVisibility(View.VISIBLE);
                 getTopBar().setEndBtnTextColor(ZColor.byRes(R.color.app_theme_color));
-                mPreviewBtn.setText(ZStr.byResArgs(R.string.zjc_pick_preview_count, selectCount));
+                mPreviewBtn.setText(ZStr.byResArgs(R.string.z_pick_preview_count, selectCount));
                 mPreviewBtn.setEnabled(true);
             } else {
-                getTopBar().setEndBtn(ZStr.byRes(R.string.zjc_pick_complete));
+                getTopBar().setEndBtn(ZStr.byRes(R.string.z_pick_complete));
                 getTopBar().getEndBtn().setVisibility(View.GONE);
                 mPreviewBtn.setEnabled(false);
-                mPreviewBtn.setText(getResources().getString(R.string.zjc_pick_preview));
+                mPreviewBtn.setText(getResources().getString(R.string.z_pick_preview));
             }
         }
     }
@@ -272,7 +272,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
         // 判断第一个是不是相机，如果是，特殊处理
         if (ZPicker.getInstance().isShowCamera() && position == 0) {
             if (ZPicker.getInstance().getSelectPictureCount() >= ZPicker.getInstance().getSelectLimit()) {//图片个数超限
-                String toastMsg = ZStr.byResArgs(R.string.zjc_pick_select_limit, ZPicker.getInstance().getSelectLimit());
+                String toastMsg = ZStr.byResArgs(R.string.z_pick_select_limit, ZPicker.getInstance().getSelectLimit());
                 ZToast.create().showErrorBottom(toastMsg);
                 return;
             }
@@ -284,14 +284,14 @@ public class ZPickGridActivity extends ZPickBaseActivity {
                 intent.putExtra(ZConstant.KEY_PICK_CURRENT_SELECTED_POSITION, position);
                 intent.putExtra(ZConstant.KEY_PICK_PREVIEW_ALL, true);
 
-                intent.putExtra(ZConstant.ZJC_KEY_PICK_IS_ORIGIN, isOrigin);
-                startActivityForResult(intent, ZConstant.ZJC_PICK_REQUEST_CODE_PREVIEW);  //如果是多选，点击图片进入预览界面
+                intent.putExtra(ZConstant.Z_KEY_PICK_IS_ORIGIN, isOrigin);
+                startActivityForResult(intent, ZConstant.Z_PICK_REQUEST_CODE_PREVIEW);  //如果是多选，点击图片进入预览界面
             } else {
                 ZPicker.getInstance().clearSelectedPictures();
                 ZPicker.getInstance().addSelectedPicture(position, ZPicker.getInstance().getCurrentFolderPictures().get(position), true);
                 if (ZPicker.getInstance().isCrop()) {
                     Intent intent = new Intent(mActivity, ZPickCropActivity.class);
-                    startActivityForResult(intent, ZConstant.ZJC_PICK_REQUEST_CODE_CROP);  //单选需要裁剪，进入裁剪界面
+                    startActivityForResult(intent, ZConstant.Z_PICK_REQUEST_CODE_CROP);  //单选需要裁剪，进入裁剪界面
                 } else {
                     Intent intent = new Intent();
                     List<ZPictureBean> result = ZPicker.getInstance().getSelectedPictures();
@@ -317,11 +317,11 @@ public class ZPickGridActivity extends ZPickBaseActivity {
 
                 @Override
                 public void onComplete() {
-                    ZPicker.getInstance().takePicture(mActivity, ZConstant.ZJC_PICK_REQUEST_CODE_TAKE);
+                    ZPicker.getInstance().takePicture(mActivity, ZConstant.Z_PICK_REQUEST_CODE_TAKE);
                 }
             });
         } else {
-            ZPicker.getInstance().takePicture(mActivity, ZConstant.ZJC_PICK_REQUEST_CODE_TAKE);
+            ZPicker.getInstance().takePicture(mActivity, ZConstant.Z_PICK_REQUEST_CODE_TAKE);
         }
     }
 
@@ -364,14 +364,14 @@ public class ZPickGridActivity extends ZPickBaseActivity {
      * 界面控件点击事件
      */
     private View.OnClickListener viewListener = v -> {
-        if (v.getId() == R.id.zjc_pick_grid_choose_folder_rl) {
+        if (v.getId() == R.id.z_pick_grid_choose_folder_rl) {
             showFolderList();
-        } else if (v.getId() == R.id.zjc_pick_grid_preview_btn) {
+        } else if (v.getId() == R.id.z_pick_grid_preview_btn) {
             Intent intent = new Intent(mActivity, ZPickPreviewActivity.class);
             intent.putExtra(ZConstant.KEY_PICK_CURRENT_SELECTED_POSITION, 0);
-            intent.putExtra(ZConstant.ZJC_KEY_PICK_IS_ORIGIN, isOrigin);
+            intent.putExtra(ZConstant.Z_KEY_PICK_IS_ORIGIN, isOrigin);
             intent.putExtra(ZConstant.KEY_PICK_PREVIEW_ALL, false);
-            startActivityForResult(intent, ZConstant.ZJC_PICK_REQUEST_CODE_PREVIEW);
+            startActivityForResult(intent, ZConstant.Z_PICK_REQUEST_CODE_PREVIEW);
         }
     };
 
@@ -379,8 +379,8 @@ public class ZPickGridActivity extends ZPickBaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (data != null && data.getExtras() != null) {
-            if (resultCode == ZConstant.ZJC_PICK_RESULT_CODE_BACK) {
-                isOrigin = data.getBooleanExtra(ZConstant.ZJC_KEY_PICK_IS_ORIGIN, false);
+            if (resultCode == ZConstant.Z_PICK_RESULT_CODE_BACK) {
+                isOrigin = data.getBooleanExtra(ZConstant.Z_KEY_PICK_IS_ORIGIN, false);
             } else {
                 //从拍照界面返回
                 //点击 X , 没有选择照片
@@ -394,7 +394,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
             }
         } else {
             //如果是裁剪，因为裁剪指定了存储的Uri，所以返回的data一定为null
-            if (resultCode == RESULT_OK && requestCode == ZConstant.ZJC_PICK_REQUEST_CODE_TAKE) {
+            if (resultCode == RESULT_OK && requestCode == ZConstant.Z_PICK_REQUEST_CODE_TAKE) {
                 /**
                  * 2017-03-21 对机型做旋转处理
                  */
@@ -446,7 +446,7 @@ public class ZPickGridActivity extends ZPickBaseActivity {
                 ZPicker.notifyGalleryChange(mActivity, ZPicker.getInstance().getTakeImageFile());
                 if (ZPicker.getInstance().isCrop()) {
                     Intent intent = new Intent(mActivity, ZPickCropActivity.class);
-                    startActivityForResult(intent, ZConstant.ZJC_PICK_REQUEST_CODE_CROP);  //单选需要裁剪，进入裁剪界面
+                    startActivityForResult(intent, ZConstant.Z_PICK_REQUEST_CODE_CROP);  //单选需要裁剪，进入裁剪界面
                 } else {   //单选不需要裁剪，返回数据
 //                    Intent intent = new Intent();
 //                    List<ZPictureBean> result = ZPicker.getInstance().getSelectedPictures();

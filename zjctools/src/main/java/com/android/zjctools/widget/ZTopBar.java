@@ -70,12 +70,12 @@ public class ZTopBar extends RelativeLayout {
     private void init(Context context, AttributeSet attrs) {
         LayoutInflater.from(context).inflate(R.layout.z_widget_top_bar, this);
 
-        mIconBackBtn = findViewById(R.id.zjc_top_bar_back_icon);
-        mTitleView = findViewById(R.id.zjc_top_bar_title_tv);
-        mSubtitleView = findViewById(R.id.zjc_top_bar_subtitle_tv);
-        mEndContainer = findViewById(R.id.zjc_top_bar_end_container);
-        mEndBtn = findViewById(R.id.zjc_top_bar_end_btn);
-        mEndIconBtn = findViewById(R.id.zjc_top_bar_end_icon);
+        mIconBackBtn = findViewById(R.id.z_top_bar_back_icon);
+        mTitleView = findViewById(R.id.z_top_bar_title_tv);
+        mSubtitleView = findViewById(R.id.z_top_bar_subtitle_tv);
+        mEndContainer = findViewById(R.id.z_top_bar_end_container);
+        mEndBtn = findViewById(R.id.z_top_bar_end_btn);
+        mEndIconBtn = findViewById(R.id.z_top_bar_end_icon);
 
         mTitleColor = ZColor.byRes(R.color.z_title);
         mSubtitleColor = ZColor.byRes(R.color.z_subtitle);

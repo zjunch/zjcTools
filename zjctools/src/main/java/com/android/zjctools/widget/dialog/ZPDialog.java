@@ -61,12 +61,12 @@ public class ZPDialog {
      * 初始化对话框
      */
     private void initDialog() {
-        titleTV = view.findViewById(R.id.zjc_dialog_title_tv);
-        messageTV = view.findViewById(R.id.zjc_dialog_message_tv);
-        contentET = view.findViewById(R.id.zjc_dialog_content_et);
-        cancelTV = view.findViewById(R.id.zjc_dialog_cancel_btn);
-        confirmTV = view.findViewById(R.id.zjc_dialog_confirm_btn);
-        titleLine = view.findViewById(R.id.zjc_dialog_title_divide);
+        titleTV = view.findViewById(R.id.z_dialog_title_tv);
+        messageTV = view.findViewById(R.id.z_dialog_message_tv);
+        contentET = view.findViewById(R.id.z_dialog_content_et);
+        cancelTV = view.findViewById(R.id.z_dialog_cancel_btn);
+        confirmTV = view.findViewById(R.id.z_dialog_confirm_btn);
+        titleLine = view.findViewById(R.id.z_dialog_title_divide);
         if (dialog == null) {
             if (type == Type.PROGRESS) {
                 dialog = new Dialog(context);
@@ -287,7 +287,7 @@ public class ZPDialog {
         if(!TextUtils.isEmpty(alert)){
             contentAlert=alert;
         }else{
-            contentAlert=ZStr.byRes(R.string.zjc_input_default_toast);
+            contentAlert=ZStr.byRes(R.string.z_input_default_toast);
         }
     }
 

@@ -70,16 +70,16 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
     protected void initUI() {
         super.initUI();
         getTopBar().setEndBtnTextColor(ZColor.byRes(R.color.zWhite));
-        mBottomBar = findViewById(R.id.zjc_preview_bottom_bar);
-        mSelectCB = findViewById(R.id.zjc_preview_select_cb);
-        mOriginCB = findViewById(R.id.zjc_preview_origin_cb);
-        mSpaceView = findViewById(R.id.zjc_preview_bottom_space);
+        mBottomBar = findViewById(R.id.z_preview_bottom_bar);
+        mSelectCB = findViewById(R.id.z_preview_select_cb);
+        mOriginCB = findViewById(R.id.z_preview_origin_cb);
+        mSpaceView = findViewById(R.id.z_preview_bottom_space);
         setDarkTextStatusBar(false); //不需要把状态栏字体变成黑色
     }
 
     @Override
     protected void setupTopBar() {//重新 状态栏，不需要marginTop 状态栏高度
-        mTopBar = findViewById(R.id.zjc_common_top_bar);
+        mTopBar = findViewById(R.id.z_common_top_bar);
         if (mTopBar != null) {
             // 设置状态栏透明主题时，布局整体会上移，所以给头部加上状态栏的 margin 值，保证头部不会被覆盖
             mTopBar.setIconListener(v -> onBackPressed());
@@ -91,7 +91,7 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
 
         mCurrentPosition = getIntent().getIntExtra(ZConstant.KEY_PICK_CURRENT_SELECTED_POSITION, 0);
         isPreviewFolder = getIntent().getBooleanExtra(ZConstant.KEY_PICK_PREVIEW_ALL, false);
-        isOrigin = getIntent().getBooleanExtra(ZConstant.ZJC_KEY_PICK_IS_ORIGIN, false);
+        isOrigin = getIntent().getBooleanExtra(ZConstant.Z_KEY_PICK_IS_ORIGIN, false);
         mPictures=new ArrayList<>();
         if (isPreviewFolder) {
            // mPictures = ZPicker.getInstance().getCurrentFolderPictures();
@@ -101,11 +101,11 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
             mPictures.addAll(ZPicker.getInstance().getSelectedPictures());
         }
         mSelectedPictures = ZPicker.getInstance().getSelectedPictures();
-        getTopBar().setTitle(ZStr.byResArgs(R.string.zjc_pick_preview_picture_count, mCurrentPosition + 1, mPictures.size()));
+        getTopBar().setTitle(ZStr.byResArgs(R.string.z_pick_preview_picture_count, mCurrentPosition + 1, mPictures.size()));
         getTopBar().setIconListener(v -> {
             Intent intent = new Intent();
-            intent.putExtra(ZConstant.ZJC_KEY_PICK_IS_ORIGIN, isOrigin);
-            setResult(ZConstant.ZJC_PICK_RESULT_CODE_BACK, intent);
+            intent.putExtra(ZConstant.Z_KEY_PICK_IS_ORIGIN, isOrigin);
+            setResult(ZConstant.Z_PICK_RESULT_CODE_BACK, intent);
             onFinish();
         });
         getTopBar().setEndBtnListener(v -> {
@@ -121,7 +121,7 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
             onFinish();
         });
 
-        mOriginCB.setText(getString(R.string.zjc_pick_origin));
+        mOriginCB.setText(getString(R.string.z_pick_origin));
         mOriginCB.setOnCheckedChangeListener(this);
         mOriginCB.setChecked(isOrigin);
 
@@ -140,8 +140,8 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
             ZPictureBean VMPictureBean = mPictures.get(mCurrentPosition);
             int selectLimit = ZPicker.getInstance().getSelectLimit();
             if (mSelectCB.isChecked() && mSelectedPictures.size() >= selectLimit) {
-                ZToast.create().showErrorBottom(ZStr.byResArgs(R.string.zjc_pick_select_limit, selectLimit));
-//                VMToast.make(mActivity, ZStr.byResArgs(R.string.zjc_pick_select_limit, selectLimit)).error();
+                ZToast.create().showErrorBottom(ZStr.byResArgs(R.string.z_pick_select_limit, selectLimit));
+//                VMToast.make(mActivity, ZStr.byResArgs(R.string.z_pick_select_limit, selectLimit)).error();
                 mSelectCB.setChecked(false);
             } else {
                 ZPicker.getInstance().addSelectedPicture(mCurrentPosition, VMPictureBean, mSelectCB.isChecked());
@@ -188,7 +188,7 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
      * 初始化预览适配器
      */
     private void initViewPager() {
-        mViewPager = findViewById(R.id.zjc_pick_preview_viewpager);
+        mViewPager = findViewById(R.id.z_pick_preview_viewpager);
         mAdapter = new ZPreviewPageAdapter(mActivity, mPictures);
         mAdapter.setPreviewClickListener((view) -> onPictureClick());
         mViewPager.setAdapter(mAdapter);
@@ -202,7 +202,7 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
                 ZPictureBean item = mPictures.get(mCurrentPosition);
                 boolean isSelected = ZPicker.getInstance().isSelectPicture(item);
                 mSelectCB.setChecked(isSelected);
-                getTopBar().setTitle(ZStr.byResArgs(R.string.zjc_pick_preview_picture_count, mCurrentPosition + 1, mPictures.size()));
+                getTopBar().setTitle(ZStr.byResArgs(R.string.z_pick_preview_picture_count, mCurrentPosition + 1, mPictures.size()));
             }
         });
     }
@@ -216,10 +216,10 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
             if (ZPicker.getInstance().getSelectPictureCount() > 0) {
                 int selectCount = ZPicker.getInstance().getSelectPictureCount();
                 int selectLimit = ZPicker.getInstance().getSelectLimit();
-                String complete = ZStr.byResArgs(R.string.zjc_pick_complete_select, selectCount, selectLimit);
+                String complete = ZStr.byResArgs(R.string.z_pick_complete_select, selectCount, selectLimit);
                 getTopBar().setEndBtn(complete);
             } else {
-                getTopBar().setEndBtn(ZStr.byRes(R.string.zjc_pick_complete));
+                getTopBar().setEndBtn(ZStr.byRes(R.string.z_pick_complete));
             }
 
             if (mOriginCB.isChecked()) {
@@ -228,7 +228,7 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
                     size += VMPictureBean.size;
                 }
                 String fileSize = Formatter.formatFileSize(mActivity, size);
-                mOriginCB.setText(getString(R.string.zjc_pick_origin_size, fileSize));
+                mOriginCB.setText(getString(R.string.z_pick_origin_size, fileSize));
             }
         };
         ZPicker.getInstance().addOnSelectedPictureListener(mSelectedPictureListener);
@@ -238,8 +238,8 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
     @Override
     public void onBackPressed() {
         Intent intent = new Intent();
-        intent.putExtra(ZConstant.ZJC_KEY_PICK_IS_ORIGIN, isOrigin);
-        setResult(ZConstant.ZJC_PICK_RESULT_CODE_BACK, intent);
+        intent.putExtra(ZConstant.Z_KEY_PICK_IS_ORIGIN, isOrigin);
+        setResult(ZConstant.Z_PICK_RESULT_CODE_BACK, intent);
         finish();
         super.onBackPressed();
     }
@@ -247,7 +247,7 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         int id = buttonView.getId();
-        if (id == R.id.zjc_preview_origin_cb) {
+        if (id == R.id.z_preview_origin_cb) {
             if (isChecked) {
                 long size = 0;
                 for (ZPictureBean item : mSelectedPictures) {
@@ -255,10 +255,10 @@ public class ZPickPreviewActivity extends ZPickBaseActivity implements CompoundB
                 }
                 String fileSize = Formatter.formatFileSize(this, size);
                 isOrigin = true;
-                mOriginCB.setText(getString(R.string.zjc_pick_origin_size, fileSize));
+                mOriginCB.setText(getString(R.string.z_pick_origin_size, fileSize));
             } else {
                 isOrigin = false;
-                mOriginCB.setText(getString(R.string.zjc_pick_origin));
+                mOriginCB.setText(getString(R.string.z_pick_origin));
             }
         }
     }

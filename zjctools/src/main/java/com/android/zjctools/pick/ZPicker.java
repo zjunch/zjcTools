@@ -380,8 +380,8 @@ public class ZPicker {
      */
     public void startPicker(Activity activity) {
         Intent intent = new Intent(activity, ZPickGridActivity.class);
-        intent.putParcelableArrayListExtra(ZConstant.ZJC_KEY_PICK_PICTURES, (ArrayList<? extends Parcelable>) mSelectedPictures);
-        activity.startActivityForResult(intent, ZConstant.ZJC_PICK_REQUEST_CODE);
+        intent.putParcelableArrayListExtra(ZConstant.Z_KEY_PICK_PICTURES, (ArrayList<? extends Parcelable>) mSelectedPictures);
+        activity.startActivityForResult(intent, ZConstant.z_PICK_REQUEST_CODE);
     }
 
     /**
@@ -390,8 +390,8 @@ public class ZPicker {
      */
     public void startPicker(Fragment fragment) {
         Intent intent = new Intent(fragment.getContext(), ZPickGridActivity.class);
-        intent.putParcelableArrayListExtra(ZConstant.ZJC_KEY_PICK_PICTURES, (ArrayList<? extends Parcelable>) mSelectedPictures);
-        fragment.startActivityForResult(intent, ZConstant.ZJC_PICK_REQUEST_CODE);
+        intent.putParcelableArrayListExtra(ZConstant.Z_KEY_PICK_PICTURES, (ArrayList<? extends Parcelable>) mSelectedPictures);
+        fragment.startActivityForResult(intent, ZConstant.z_PICK_REQUEST_CODE);
     }
 
     /**

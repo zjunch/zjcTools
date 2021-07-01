@@ -40,7 +40,7 @@ public class ZPickCropActivity extends ZPickBaseActivity implements ZCropView.On
     @Override
     protected void initUI() {
         super.initUI();
-        mCropView = findViewById(R.id.zjc_pick_crop_iv);
+        mCropView = findViewById(R.id.z_pick_crop_iv);
         mCropView.setOnBitmapSaveCompleteListener(this);
         getTopBar().setIconListener(v -> {
             setResult(RESULT_CANCELED);
@@ -55,7 +55,7 @@ public class ZPickCropActivity extends ZPickBaseActivity implements ZCropView.On
 
     @Override
     protected void setupTopBar() {//重新 状态栏，不需要marginTop 状态栏高度
-        mTopBar = findViewById(R.id.zjc_common_top_bar);
+        mTopBar = findViewById(R.id.z_common_top_bar);
         if (mTopBar != null) {
             // 设置状态栏透明主题时，布局整体会上移，所以给头部加上状态栏的 margin 值，保证头部不会被覆盖
             mTopBar.setIconListener(v -> onBackPressed());

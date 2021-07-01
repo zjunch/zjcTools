@@ -63,12 +63,12 @@ public class ZAppUpdateActivity extends ZBActivity {
 
     @Override
     protected void initUI() {
-        iv_bg = findViewById(R.id.zjc_iv_bg);
-        tv_version = findViewById(R.id.zjc_tv_version);
+        iv_bg = findViewById(R.id.z_iv_bg);
+        tv_version = findViewById(R.id.z_tv_version);
         tv_cancel = findViewById(R.id.zjv_tv_cancel);
-        lv_content = findViewById(R.id.zjc_lv_content);
-        pg_update = findViewById(R.id.zjc_pg_update);
-        rvUpdate = findViewById(R.id.zjc_rv_update);
+        lv_content = findViewById(R.id.z_lv_content);
+        pg_update = findViewById(R.id.z_pg_update);
+        rvUpdate = findViewById(R.id.z_rv_update);
         if (!TextUtils.isEmpty(appUpdateBean.apkNewVersion)) {
             tv_version.setText("发现新版本:" + appUpdateBean.apkNewVersion);
         }

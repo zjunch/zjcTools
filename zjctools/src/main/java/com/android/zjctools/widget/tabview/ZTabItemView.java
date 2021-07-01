@@ -25,9 +25,9 @@ public class ZTabItemView extends RelativeLayout {
     public ZTabItemView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContentView = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.z_widget_tabitemview, this);
-        ivIcon = mContentView.findViewById(R.id.zjc_tab_icon);
-        tvTitle = mContentView.findViewById(R.id.zjc_tab_title);
-        tvRedPoint = mContentView.findViewById(R.id.zjc_tab_point);
+        ivIcon = mContentView.findViewById(R.id.z_tab_icon);
+        tvTitle = mContentView.findViewById(R.id.z_tab_title);
+        tvRedPoint = mContentView.findViewById(R.id.z_tab_point);
     }
 
     /**

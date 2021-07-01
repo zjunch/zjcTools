@@ -53,8 +53,8 @@ public abstract class ZLazyFragment extends ZjcFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.z_fragment_lazy_layout, container, false);
         mContext=getActivity();
-        mLazyContainer = view.findViewById(R.id.zjc_lazy_container);
-        mLazyLoadingLayout = view.findViewById(R.id.zjc_lazy_loading_layout);
+        mLazyContainer = view.findViewById(R.id.z_lazy_container);
+        mLazyLoadingLayout = view.findViewById(R.id.z_lazy_loading_layout);
         if (!isNeedLoading()) {
             mLazyLoadingLayout.setVisibility(View.GONE);
         }

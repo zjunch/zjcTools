@@ -6,17 +6,17 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/zjc_permission_dialog_content_tv"
+        android:id="@+id/z_permission_dialog_content_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/z_dimen_12"
         android:layout_marginTop="@dimen/z_dimen_8"
         android:layout_marginEnd="@dimen/z_dimen_24"
         style="@style/ZjcText.Body1"
-        android:text="@string/zjc_permission_again_reason" />
+        android:text="@string/z_permission_again_reason" />
 
     <com.android.zjctools.widget.ZViewGroup
-        android:id="@+id/zjc_permission_dialog_custom_vg"
+        android:id="@+id/z_permission_dialog_custom_vg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/z_dimen_24"
@@ -24,12 +24,12 @@
         android:layout_marginEnd="@dimen/z_dimen_24" />
 
     <Button
-        android:id="@+id/zjc_i_know_btn"
+        android:id="@+id/z_i_know_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/z_dimen_40"
         android:layout_marginStart="@dimen/z_dimen_24"
         android:layout_marginTop="@dimen/z_dimen_16"
         android:layout_marginEnd="@dimen/z_dimen_24"
         android:layout_marginBottom="@dimen/z_dimen_16"
-        android:text="@string/zjc_i_know" />
+        android:text="@string/z_i_know" />
 </LinearLayout>

@@ -74,7 +74,7 @@ public class TabviewActivity extends ZBActivity {
 //    private  View createTab(int index){
 //        ZTabItemView zTabItemView=new ZTabItemView(this);
 //        zTabItemView.setSImageSize(25,25);
-//        zTabItemView.setTabData(R.drawable.ic_friend_select,R.drawable.ic_friend_normal,R.color.zjc_blue_5c,R.color.zjcBlack,"我是"+index);
+//        zTabItemView.setTabData(R.drawable.ic_friend_select,R.drawable.ic_friend_normal,R.color.z_blue_5c,R.color.zjcBlack,"我是"+index);
 //        if(index==0){
 //            zTabItemView.setSelect(true);
 //        }
