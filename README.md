@@ -80,25 +80,25 @@ recycleview分割线（ZItemDecoration）,
                 android:id="@+id/ninePics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:zjc_nine_full_One="true"
-                app:zjc_nine_max_counts="9"
-                app:zjc_nine_average2_enable="true"
-                app:zjc_nine_show_un_counts="true"
-                app:zjc_nine_spacex="4"
-                app:zjc_nine_spacey="4"/>
+                app:z_nine_full_One="true"
+                app:z_nine_max_counts="9"
+                app:z_nine_average2_enable="true"
+                app:z_nine_show_un_counts="true"
+                app:z_nine_spacex="4"
+                app:z_nine_spacey="4"/>
         
        布局中使用实例
      <declare-styleable name="ZNinePicturesView">
-        <attr name="zjc_nine_spacex" format="integer"/><!--x 间距-->
-        <attr name="zjc_nine_spacey" format="integer"/><!--y 间距-->
-        <attr name="zjc_nine_average2_enable" format="boolean"/><!--两张图张图一行两个-->
-        <attr name="zjc_nine_average4_enable" format="boolean"/><!--四张图一行两个-->
-        <attr name="zjc_nine_12_Enable" format="boolean"/><!--三张图 左边一个右边两个-->
-        <attr name="zjc_nine_max_counts" format="integer"/><!--最多显示多少张-->
-        <attr name="zjc_nine_full_One" format="boolean"/><!--一张图的时候，一行一张- 默认16/9->
-        <attr name="zjc_nine_show_un_counts" format="boolean"/><!--是否有未展示的图片个数的文字显示-->
-        <attr name="zjc_nine_un_counts_textColor" format="color" /><!--未读图片个数的文字颜色-->
-        <attr name="zjc_nine_un_counts_textSzie" format="integer"/><!--未读图片个数的文字大小-->
+        <attr name="z_nine_spacex" format="integer"/><!--x 间距-->
+        <attr name="z_nine_spacey" format="integer"/><!--y 间距-->
+        <attr name="z_nine_average2_enable" format="boolean"/><!--两张图张图一行两个-->
+        <attr name="z_nine_average4_enable" format="boolean"/><!--四张图一行两个-->
+        <attr name="z_nine_12_Enable" format="boolean"/><!--三张图 左边一个右边两个-->
+        <attr name="z_nine_max_counts" format="integer"/><!--最多显示多少张-->
+        <attr name="z_nine_full_One" format="boolean"/><!--一张图的时候，一行一张- 默认16/9->
+        <attr name="z_nine_show_un_counts" format="boolean"/><!--是否有未展示的图片个数的文字显示-->
+        <attr name="z_nine_un_counts_textColor" format="color" /><!--未读图片个数的文字颜色-->
+        <attr name="z_nine_un_counts_textSzie" format="integer"/><!--未读图片个数的文字大小-->
     </declare-styleable>
     
   6.点赞头衔堆叠ZPileLayout
@@ -109,7 +109,7 @@ recycleview分割线（ZItemDecoration）,
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_centerVertical="true"
-      app:zjc_pileLayout_pileWidth="16dp" />   此处16dp是重叠宽度
+      app:z_pileLayout_pileWidth="16dp" />   此处16dp是重叠宽度
  
       添加需要堆叠的view
       zileLayout.addView(avtatView);
@@ -124,41 +124,41 @@ recycleview分割线（ZItemDecoration）,
                 android:layout_height="wrap_content"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
-                app:zjc_sv_desc_Hint="请输入"    
-                app:zjc_sv_Line_enable="true"
-                app:zjc_sv_title_text="单位名称" />   
+                app:z_sv_desc_Hint="请输入"    
+                app:z_sv_Line_enable="true"
+                app:z_sv_title_text="单位名称" />   
 
   8.ZSettingInputView(类似于ZsettingView,左侧是菜单名字，右侧是输入框)
     
           <!--是否显示底部分隔线-->
-        <attr name="zjc_siv_Line_enable" format="boolean" />
+        <attr name="z_siv_Line_enable" format="boolean" />
         <!--标题-->
-        <attr name="zjc_siv_title_text" format="string" />
+        <attr name="z_siv_title_text" format="string" />
         <!--底部分隔线颜色-->
-        <attr name="zjc_siv_line_color" format="color" />
+        <attr name="z_siv_line_color" format="color" />
         <!--右侧输入框hint-->
-        <attr name="zjc_siv_hint_text" format="string" />
+        <attr name="z_siv_hint_text" format="string" />
         <!--右侧输入框最多字符-->
-        <attr name="zjc_siv_max_counts" format="integer" />
+        <attr name="z_siv_max_counts" format="integer" />
         
    9.ZSearchView（搜索框）
          <declare-styleable name="ZSearchView">
         <!--是否显示清除-->
-        <attr name="zjc_srv_clear_enable" format="boolean" />
+        <attr name="z_srv_clear_enable" format="boolean" />
         <!--输入框search-->
-        <attr name="zjc_srv_search_hint" format="string" />
+        <attr name="z_srv_search_hint" format="string" />
         <!--是否有输入功能-->
-        <attr name="zjc_srv_search_input_enable" format="boolean" />
+        <attr name="z_srv_search_input_enable" format="boolean" />
 
         <!--是否显示右侧搜索文字-->
-        <attr name="zjc_srv_right_tv_search_enable" format="boolean" />
+        <attr name="z_srv_right_tv_search_enable" format="boolean" />
 
         <!--右侧搜索icon-->
-        <attr name="zjc_srv_right_iv_search_icon" format="reference" />
+        <attr name="z_srv_right_iv_search_icon" format="reference" />
         <!--是否显示右侧搜索文字-->
-        <attr name="zjc_srv_right_iv_search_enable" format="boolean" />
+        <attr name="z_srv_right_iv_search_enable" format="boolean" />
         <!--左侧侧搜索icon-->
-        <attr name="zjc_srv_left_iv_search_icon" format="reference" />
+        <attr name="z_srv_left_iv_search_icon" format="reference" />
 
       </declare-styleable>
    
