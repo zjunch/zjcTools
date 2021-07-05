@@ -62,7 +62,7 @@ public class ZSettingView extends LinearLayout {
         arrowResId=typedArray.getResourceId(R.styleable.ZSettingView_zv_sv_arrow_resId,R.drawable.arrow);
         titleDrawPadding= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_title_drawPadding, ZDimen.dp2px(context,10));
         drawLeftResId=typedArray.getResourceId(R.styleable.ZSettingView_zv_sv_title_drawLeft_resId,-1);
-        leftTitleWidth= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_left_title_width, ZDimen.dp2px(context,100));
+        leftTitleWidth= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_left_title_width, -1);
         typedArray.recycle();
         initView();
         setViews();
@@ -79,10 +79,12 @@ public class ZSettingView extends LinearLayout {
     }
 
     private void setViews() {
-        //左侧标题宽度
-        RelativeLayout.LayoutParams lp= (RelativeLayout.LayoutParams) tvTitle.getLayoutParams();
-        lp.width=leftTitleWidth;
-        tvTitle.setLayoutParams(lp);
+        //左侧标题宽度  等于-1 自适应
+        if(leftTitleWidth!=-1){
+            RelativeLayout.LayoutParams lp= (RelativeLayout.LayoutParams) tvTitle.getLayoutParams();
+            lp.width=leftTitleWidth;
+            tvTitle.setLayoutParams(lp);
+        }
         //左侧点距离左侧标题的margin
         RelativeLayout.LayoutParams pointLp= (RelativeLayout.LayoutParams) tvPoint.getLayoutParams();
         pointLp.rightMargin=pointMarginRightSpace;

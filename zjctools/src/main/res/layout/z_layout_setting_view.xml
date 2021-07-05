@@ -18,9 +18,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/tvPoint"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:gravity="center"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:gravity="center_vertical"
             android:text="标题" />
 
 
@@ -79,8 +79,8 @@
             android:gravity="right"
             android:hint=""
             android:layout_alignTop="@id/tvTitle"
-            android:paddingTop="10dp"
-            android:paddingBottom="@dimen/z_dimen_10"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
             android:paddingRight="@dimen/z_dimen_5"
             android:paddingLeft="10dp" />
     </RelativeLayout>
