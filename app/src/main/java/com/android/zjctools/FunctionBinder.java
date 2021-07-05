@@ -35,4 +35,5 @@ public class FunctionBinder extends AppItemBinder<FunctionBean> {
         ZSettingView settingView= holder.getView(R.id.sv_set_title);
         settingView.setTitle(item.title);
     }
+
 }
