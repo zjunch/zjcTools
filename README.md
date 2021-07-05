@@ -1,6 +1,6 @@
 # zjcTools常用工具库，
 
-com.zjun:zjcTools:0.1.2   已适配androidX
+com.github.zjunch:zjcTools:1.0.2   已适配androidX
 
 包含用基类，activity,fragment,app
 工具类：toast,bitmap，file,date，router color string.log..
