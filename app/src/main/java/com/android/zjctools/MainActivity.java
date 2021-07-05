@@ -26,7 +26,6 @@ import me.drakeet.multitype.MultiTypeAdapter;
 public class MainActivity extends ZBActivity {
     RecyclerView recycleView;
     FunctionBinder mBinder;
-
     Items items=new Items();
     MultiTypeAdapter  mAdapter=new MultiTypeAdapter();
 
