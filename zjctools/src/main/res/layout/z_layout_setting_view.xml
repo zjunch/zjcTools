@@ -66,6 +66,7 @@
             android:layout_alignTop="@id/tvTitle"
             android:layout_alignBottom="@id/tvTitle"
             android:layout_alignParentRight="true"
+            android:layout_marginLeft="2dp"
             android:src="@drawable/z_ic_arrow_right_gray"
             android:layout_marginTop="2dp" />
 
@@ -77,11 +78,10 @@
             android:layout_toLeftOf="@id/ivRightArrow"
             android:layout_toRightOf="@id/tvTitle"
             android:gravity="right"
-            android:hint=""
+            android:hint="大苏打"
             android:layout_alignTop="@id/tvTitle"
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
-            android:paddingRight="@dimen/z_dimen_5"
             android:paddingLeft="10dp" />
     </RelativeLayout>
 

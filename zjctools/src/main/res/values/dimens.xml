@@ -80,6 +80,7 @@
     <dimen name="z_dimen_4">4dp</dimen>
     <dimen name="z_dimen_5">5dp</dimen>
     <dimen name="z_dimen_6">6dp</dimen>
+    <dimen name="z_dimen_7">7dp</dimen>
     <dimen name="z_dimen_8">8dp</dimen>
     <dimen name="z_dimen_10">10dp</dimen>
     <dimen name="z_dimen_12">12dp</dimen>

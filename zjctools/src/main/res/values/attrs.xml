@@ -62,10 +62,16 @@
         <attr name="zv_sv_desc_Hint" format="string" />
         <!--右侧描述的字体颜色-->
         <attr name="zv_sv_desc_color" format="color" />
+        <!--右侧描述的字体颜色-->
+        <attr name="zv_sv_desc_hint_color" format="color" />
+
         <!--右侧描述文字-->
         <attr name="zv_sv_desc_text" format="string" />
         <!--右侧描述文字大小-->
         <attr name="zv_sv_desc_size" format="dimension" />
+
+        <!--中间标题-->
+        <attr name="zv_sv_center_text" format="string" />
 
         <attr name="zv_sv_center_size" format="dimension" />
 
@@ -76,6 +82,9 @@
         <attr name="zv_sv_title_drawPadding" format="dimension" />
 
         <attr name="zv_sv_title_drawLeft_resId" format="reference" />
+
+
+        <attr name="zv_sv_bottom_line_top" format="dimension" />
 
     </declare-styleable>
 

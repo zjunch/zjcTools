@@ -77,7 +77,7 @@
     <color name="z_subtitle">@color/zGray54</color>
     <color name="z_title">@color/z_black_87</color>
     <color name="z_caption">@color/z_black_87</color>
-
+    <color name="z_decoration">#e6e7e9</color>
 
 
 </resources>

@@ -20,16 +20,18 @@ import androidx.annotation.Nullable;
 
 /**
  *  created zjun 2019-09-23
+ *
+ *  android:paddingTop="6dp"
+ *  android:paddingBottom="6dp"
  */
 
 public class ZSettingView extends LinearLayout {
-
     TextView tvTitle,tvCenter,tvDesc,tvRightStar,tvPoint;//左侧标题 中间标题 有侧描述 左侧文字右侧的星  左侧的点
-    View mContentView,line;
+    View mContentView,bottomLine;
     boolean isShowLine,isShowPoint,isShowRightStar,isShowRightArrow; //是否显示分隔线、左侧的点，左侧文字右侧的星、右侧的进入箭头
-    private  String title,desc,descHint;
+    private  String title,centerTitle,desc,descHint;
     ImageView ivRightArrow; //右侧的箭头
-    private  int titleColor,centerColor,descColor;//左侧的标题，中间的标题，右侧的描述内容 文字颜色
+    private  int titleColor,centerColor,descColor,descHintColor;//左侧的标题，中间的标题，右侧的描述内容 文字颜色
     int titleSize,centerSize,descSize; //左侧的标题，中间的标题，右侧的描述内容 文字大小
     int arrowResId;   //右侧箭头图标resId
     int titleDrawPadding ;//左侧标题左侧的drawpadding
@@ -37,6 +39,11 @@ public class ZSettingView extends LinearLayout {
 
     int leftTitleWidth;   //左侧宽度
     int pointMarginRightSpace;
+
+    private  int bottomLineTop = 0;  //底部分割线 距离 上面内容的距离 （此处已经有desc的 padding 6dp）
+
+
+
     public ZSettingView(Context context) {
         super(context);
     }
@@ -53,7 +60,9 @@ public class ZSettingView extends LinearLayout {
         descColor = typedArray.getColor(R.styleable.ZSettingView_zv_sv_desc_color, ZColor.byRes(context,R.color.zGray3));
         titleColor=typedArray.getColor(R.styleable.ZSettingView_zv_sv_title_color, ZColor.byRes(context,R.color.zGray3));
         centerColor=typedArray.getColor(R.styleable.ZSettingView_zv_sv_center_color, ZColor.byRes(context,R.color.zGray3));
+        descHintColor=typedArray.getColor(R.styleable.ZSettingView_zv_sv_desc_hint_color, ZColor.byRes(context,R.color.zGray9));
         title= typedArray.getString(R.styleable.ZSettingView_zv_sv_title_text);
+        centerTitle= typedArray.getString(R.styleable.ZSettingView_zv_sv_center_text);
         descHint= typedArray.getString(R.styleable.ZSettingView_zv_sv_desc_Hint);
         desc= typedArray.getString(R.styleable.ZSettingView_zv_sv_desc_text);
         titleSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_title_size, ZDimen.sp2px(context,14));
@@ -63,6 +72,7 @@ public class ZSettingView extends LinearLayout {
         titleDrawPadding= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_title_drawPadding, ZDimen.dp2px(context,10));
         drawLeftResId=typedArray.getResourceId(R.styleable.ZSettingView_zv_sv_title_drawLeft_resId,-1);
         leftTitleWidth= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_left_title_width, -1);
+        bottomLineTop =(int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_bottom_line_top, ZDimen.dp2px(context,0));
         typedArray.recycle();
         initView();
         setViews();
@@ -72,7 +82,7 @@ public class ZSettingView extends LinearLayout {
         tvTitle=mContentView.findViewById(R.id.tvTitle);
         tvDesc=mContentView.findViewById(R.id.tvDesc);
         tvCenter=mContentView.findViewById(R.id.tvCenter);
-        line=mContentView.findViewById(R.id.line);
+        bottomLine=mContentView.findViewById(R.id.line);
         tvPoint=mContentView.findViewById(R.id.tvPoint);
         tvRightStar=mContentView.findViewById(R.id.tvRightStar);
         ivRightArrow=mContentView.findViewById(R.id.ivRightArrow);
@@ -92,11 +102,22 @@ public class ZSettingView extends LinearLayout {
 
 
         tvTitle.getPaint().setTextSize(titleSize);
-        tvDesc.getPaint().setTextSize(descSize);
-        tvCenter.getPaint().setTextSize(centerSize);
+        tvTitle.setTextColor(titleColor);
         if(!TextUtils.isEmpty(title)){
             tvTitle.setText(title);
         }
+
+        tvCenter.getPaint().setTextSize(centerSize);
+        tvCenter.setTextColor(centerColor);
+        if(!TextUtils.isEmpty(centerTitle)){
+            tvTitle.setText(centerTitle);
+        }
+
+
+
+        tvDesc.getPaint().setTextSize(descSize);
+        tvDesc.setTextColor(descColor);
+        tvDesc.setHintTextColor(descHintColor);
 
         if(!TextUtils.isEmpty(desc)){
             tvDesc.setText(desc);
@@ -105,11 +126,17 @@ public class ZSettingView extends LinearLayout {
         }else{
             tvDesc.setHint("");
         }
-        tvTitle.setTextColor(titleColor);
-        tvDesc.setTextColor(descColor);
-        tvCenter.setTextColor(centerColor);
         tvPoint.setVisibility(isShowPoint?View.VISIBLE:View.GONE);
-        line.setVisibility(isShowLine?View.VISIBLE:View.GONE);
+
+
+        bottomLine.setVisibility(isShowLine?View.VISIBLE:View.INVISIBLE);
+        if(bottomLine.getVisibility()==View.VISIBLE&&bottomLineTop!=0){
+            LinearLayout.LayoutParams  lp= (LayoutParams) bottomLine.getLayoutParams();
+            lp.topMargin=bottomLineTop;
+            bottomLine.setLayoutParams(lp);
+        }
+
+
         tvRightStar.setVisibility(isShowRightStar?View.VISIBLE:View.GONE);
         ivRightArrow.setVisibility(isShowRightArrow?View.VISIBLE:View.GONE);
         ivRightArrow.setImageResource(arrowResId);

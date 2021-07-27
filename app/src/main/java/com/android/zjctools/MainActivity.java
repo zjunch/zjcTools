@@ -54,7 +54,7 @@ public class MainActivity extends ZBActivity {
         recycleView=findViewById(R.id.recycleView);
         LinearLayoutManager manager= new LinearLayoutManager(this);
         recycleView.setLayoutManager(manager);
-        recycleView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.app_divide), ZDimen.dp2px(1)));
+      //  recycleView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.app_divide), ZDimen.dp2px(1)));
         mBinder=new FunctionBinder(mActivity);
         mAdapter.register(FunctionBean.class,mBinder);
         mAdapter.setItems(items);
