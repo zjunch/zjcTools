@@ -101,6 +101,7 @@ public class MainActivity extends ZBActivity {
         List<ZPermissionBean> listPermission=new ArrayList();
         listPermission.add(new ZPermissionBean(Manifest.permission.CAMERA));
         listPermission.add(new ZPermissionBean(Manifest.permission.WRITE_EXTERNAL_STORAGE));
+
         ZPermission.getInstance(this).
                 setEnableAgain(true).
                 setEnableRejectDialog(false).setEnableSettingDialog(true)
