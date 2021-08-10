@@ -2,6 +2,7 @@ package com.android.zjctools.utils.bitmap;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.text.TextUtils;
@@ -454,5 +455,14 @@ public class ZBitmap {
         }
         ZLog.d("saveBitmapToSDCard -end-");
         return result;
+    }
+
+
+    //创建BitMap
+    public static Bitmap createBitmapByView(View v) {
+        Bitmap bitmap = Bitmap.createBitmap(v.getWidth(), v.getHeight(),  Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        v.draw(canvas);
+        return bitmap;
     }
 }

@@ -46,6 +46,7 @@ public class MainActivity extends ZBActivity {
         items.add(new FunctionBean("测试file",4));
         items.add(new FunctionBean("app更新",5));
         items.add(new FunctionBean("色块",6));
+        items.add(new FunctionBean("media_九宫格",7));
 //        items.add(new FunctionBean("tabView",6));
     }
 
@@ -93,6 +94,8 @@ public class MainActivity extends ZBActivity {
                 Router.goAppUpdate(mActivity,appUpdateBean);
             }else if(item.type==6){
                 Router.goColorView(mActivity);
+            }else if(item.type==7){
+                Router.goNineMedia(mActivity);
             }
         });
     }

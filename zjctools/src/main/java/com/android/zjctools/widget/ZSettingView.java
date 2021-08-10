@@ -130,11 +130,9 @@ public class ZSettingView extends LinearLayout {
 
 
         bottomLine.setVisibility(isShowLine?View.VISIBLE:View.INVISIBLE);
-        if(bottomLine.getVisibility()==View.VISIBLE&&bottomLineTop!=0){
-            LinearLayout.LayoutParams  lp= (LayoutParams) bottomLine.getLayoutParams();
-            lp.topMargin=bottomLineTop;
-            bottomLine.setLayoutParams(lp);
-        }
+        LinearLayout.LayoutParams  lp= (LayoutParams) bottomLine.getLayoutParams();
+        lp.topMargin=bottomLineTop;
+        bottomLine.setLayoutParams(lp);
 
 
         tvRightStar.setVisibility(isShowRightStar?View.VISIBLE:View.GONE);

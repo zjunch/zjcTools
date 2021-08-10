@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.android.zjctools.widget.nineimages.ZNineMediaView
+        android:id="@+id/nineMedias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:zMedia_nine_full_One="true"
+        app:zMedia_nine_max_counts="9"
+        app:zMedia_nine_average2_enable="true"
+        app:zMedia_nine_show_un_counts="true"
+        app:zMedia_nine_spacex="4"
+        app:zMedia_nine_spacey="4"/>
+</LinearLayout>

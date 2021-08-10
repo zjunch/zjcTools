@@ -8,12 +8,15 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
+
+import static com.android.zjctools.utils.ZDimen.dp2px;
 
 /**
  * created zjun 2020-03-11
@@ -23,12 +26,14 @@ public class ZSettingInputView extends RelativeLayout {
     private final  int zjcMaxInputCount=30;//默认最多输入个数
     TextView textTitle;
     EditText input;
-    View mContentView,line;
+    View mContentView,bottomLine;
     boolean isShowLine;
     private  String title,hintText;
     private int  lineColor,titleColor,inputColor;
     private  int  maxInputCounts;
     int titleSize,descSize;
+    int bottomLineTop;
+
     public ZSettingInputView(Context context) {
         this(context,null);
     }
@@ -46,6 +51,7 @@ public class ZSettingInputView extends RelativeLayout {
         maxInputCounts= typedArray.getInt(R.styleable.ZSettingInputView_zv_siv_max_counts, zjcMaxInputCount);
         titleSize= (int) typedArray.getDimension(R.styleable.ZSettingInputView_zv_siv_title_size, ZDimen.sp2px(context,14));
         descSize= (int) typedArray.getDimension(R.styleable.ZSettingInputView_zv_siv_input_size, ZDimen.sp2px(context,14));
+        bottomLineTop = (int)typedArray.getDimension(R.styleable.ZSettingInputView_zv_siv_bottom_line_top, dp2px( 5));
         typedArray.recycle();
         initView();
         setViews();
@@ -68,8 +74,8 @@ public class ZSettingInputView extends RelativeLayout {
     private void initView() {
         textTitle=mContentView.findViewById(R.id.text_title);
         input=mContentView.findViewById(R.id.input);
-        line=mContentView.findViewById(R.id.line);
-        line.setBackgroundColor(lineColor);
+        bottomLine=mContentView.findViewById(R.id.line);
+        bottomLine.setBackgroundColor(lineColor);
         input.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxInputCounts)});
     }
 
@@ -106,11 +112,17 @@ public class ZSettingInputView extends RelativeLayout {
         input.setTextColor(inputColor);
         textTitle.getPaint().setTextSize(titleSize);
         input.getPaint().setTextSize(descSize);
+        //底部分割线
         if(isShowLine){
-            line.setVisibility(VISIBLE);
+            bottomLine.setVisibility(VISIBLE);
         }else{
-            line.setVisibility(GONE);
+            bottomLine.setVisibility(INVISIBLE);
         }
+        LinearLayout.LayoutParams lineLp= (LinearLayout.LayoutParams) bottomLine.getLayoutParams();
+        lineLp.topMargin=bottomLineTop;
+        bottomLine.setLayoutParams(lineLp);
+
+
         if(!TextUtils.isEmpty(title)){
             textTitle.setText(title);
         }

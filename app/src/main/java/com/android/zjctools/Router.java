@@ -8,6 +8,7 @@ import com.android.zjctools.appupdate.ZAppUpdateBean;
 import com.android.zjctools.appupdate.ZAppUpdateActivity;
 import com.android.zjctools.display.ZDisplayMultiActivity;
 import com.android.zjctools.file.TestFileActivity;
+import com.android.zjctools.ninepicture.NineMediaActivity;
 import com.android.zjctools.ninepicture.NinePictureActivity;
 import com.android.zjctools.router.ZParams;
 import com.android.zjctools.router.ZRouter;
@@ -49,6 +50,11 @@ public class Router extends ZRouter {
     public static  void goColorView(Activity activity){
         Intent intent=new Intent(activity,ColorViewActivity.class);
         overlay(activity,intent);
+    }
+
+
+    public static  void goNineMedia(Activity activity){
+        overlay(activity, NineMediaActivity.class);
     }
 
 

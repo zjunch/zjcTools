@@ -17,6 +17,7 @@
         <activity android:name=".SelectActivity" />
         <activity android:name=".ToastActivity" />
         <activity android:name=".ninepicture.NinePictureActivity" />
+        <activity android:name=".ninepicture.NineMediaActivity" />
         <activity android:name=".BottomWindowActivity" />
         <activity android:name=".display.ZDisplayMultiActivity" />
         <activity android:name=".display.ZDisplaySingleActivity" />

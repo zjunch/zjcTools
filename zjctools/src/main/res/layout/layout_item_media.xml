@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/z_red_f5"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivMediaCover"
+        android:layout_width="@dimen/z_dimen_40"
+        android:layout_centerInParent="true"
+        android:background="@color/zBlue"
+        android:layout_height="@dimen/z_dimen_40"/>
+    <ImageView
+        android:id="@+id/ivMediaIcon"
+        android:layout_width="@dimen/z_dimen_40"
+        android:layout_centerInParent="true"
+        android:src="@drawable/z_ic_camera"
+        android:layout_height="@dimen/z_dimen_40"/>
+</RelativeLayout>
