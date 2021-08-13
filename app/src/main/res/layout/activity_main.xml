@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/zWhite"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <include
         android:id="@+id/title_bar"
         layout="@layout/z_bar_title"></include>
+
+
+    <com.android.zjctools.widget.ZSettingInputView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/title_bar"
@@ -17,4 +24,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-</RelativeLayout>
+</LinearLayout>

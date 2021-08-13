@@ -40,9 +40,11 @@ public class ZSettingView extends LinearLayout {
     int leftTitleWidth;   //左侧宽度
     int pointMarginRightSpace;
 
-    private  int bottomLineTop = 0;  //底部分割线 距离 上面内容的距离 （此处已经有desc的 padding 6dp）
 
 
+    private int bottomLineTop = 20 ; //（此处已经有desc的 padding 6dp）
+
+    private int titlePaddingTop = 20 ; //底部分割线 距离 上面内容的距离
 
     public ZSettingView(Context context) {
         super(context);
@@ -72,6 +74,7 @@ public class ZSettingView extends LinearLayout {
         titleDrawPadding= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_title_drawPadding, ZDimen.dp2px(context,10));
         drawLeftResId=typedArray.getResourceId(R.styleable.ZSettingView_zv_sv_title_drawLeft_resId,-1);
         leftTitleWidth= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_left_title_width, -1);
+        titlePaddingTop =(int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_padding_top, ZDimen.dp2px(context,5));
         bottomLineTop =(int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_bottom_line_top, ZDimen.dp2px(context,0));
         typedArray.recycle();
         initView();
@@ -90,6 +93,8 @@ public class ZSettingView extends LinearLayout {
 
     private void setViews() {
         //左侧标题宽度  等于-1 自适应
+
+
         if(leftTitleWidth!=-1){
             RelativeLayout.LayoutParams lp= (RelativeLayout.LayoutParams) tvTitle.getLayoutParams();
             lp.width=leftTitleWidth;
@@ -101,6 +106,8 @@ public class ZSettingView extends LinearLayout {
         tvPoint.setLayoutParams(pointLp);
 
 
+        tvTitle.setPadding(0, titlePaddingTop, 0, 0);
+        tvDesc.setPadding(0, titlePaddingTop, 0, 0);
         tvTitle.getPaint().setTextSize(titleSize);
         tvTitle.setTextColor(titleColor);
         if(!TextUtils.isEmpty(title)){

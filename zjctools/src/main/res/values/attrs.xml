@@ -101,7 +101,7 @@
 
         <attr name="zv_sv_title_drawLeft_resId" format="reference" />
 
-
+        <attr name="zv_sv_padding_top" format="dimension" />
         <attr name="zv_sv_bottom_line_top" format="dimension" />
 
     </declare-styleable>

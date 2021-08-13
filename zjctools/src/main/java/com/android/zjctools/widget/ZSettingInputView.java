@@ -118,7 +118,7 @@ public class ZSettingInputView extends RelativeLayout {
         }else{
             bottomLine.setVisibility(INVISIBLE);
         }
-        LinearLayout.LayoutParams lineLp= (LinearLayout.LayoutParams) bottomLine.getLayoutParams();
+        RelativeLayout.LayoutParams lineLp= (RelativeLayout.LayoutParams) bottomLine.getLayoutParams();
         lineLp.topMargin=bottomLineTop;
         bottomLine.setLayoutParams(lineLp);
 
