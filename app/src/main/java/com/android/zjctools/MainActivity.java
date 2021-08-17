@@ -35,7 +35,6 @@ public class MainActivity extends ZBActivity {
     Items items=new Items();
     MultiTypeAdapter  mAdapter=new MultiTypeAdapter();
 
-
     @Override
     protected int layoutId() {
         return R.layout.activity_main;
