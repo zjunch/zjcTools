@@ -114,6 +114,12 @@ public class ZSettingView extends LinearLayout {
 
         tvTitle.setPadding(0, titlePaddingTop, 0, 0);
         tvDesc.setPadding(0, titlePaddingTop, 0, 0);
+
+        RelativeLayout.LayoutParams ivRightArrowLp= (RelativeLayout.LayoutParams) ivRightArrow.getLayoutParams();
+        ivRightArrowLp.topMargin=titlePaddingTop+ZDimen.dp2px(3);
+        ivRightArrow.setLayoutParams(ivRightArrowLp);
+
+
         tvTitle.getPaint().setTextSize(titleSize);
         tvTitle.setTextColor(titleColor);
         if(!TextUtils.isEmpty(title)){
