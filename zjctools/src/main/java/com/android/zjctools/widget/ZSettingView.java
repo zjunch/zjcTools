@@ -111,7 +111,6 @@ public class ZSettingView extends LinearLayout {
         pointLp.rightMargin=pointMarginRightSpace;
         tvPoint.setLayoutParams(pointLp);
 
-
         tvTitle.setPadding(0, titlePaddingTop, 0, 0);
         tvDesc.setPadding(0, titlePaddingTop, 0, 0);
 
