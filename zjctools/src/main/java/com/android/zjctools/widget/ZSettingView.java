@@ -27,7 +27,7 @@ import androidx.annotation.Nullable;
 
 public class ZSettingView extends LinearLayout {
     LinearLayout zlvContent;
-
+    Context mContext;
     TextView tvTitle,tvCenter,tvDesc,tvRightStar,tvPoint;//左侧标题 中间标题 有侧描述 左侧文字右侧的星  左侧的点
     View mContentView,bottomLine;
     boolean isShowLine,isShowPoint,isShowRightStar,isShowRightArrow; //是否显示分隔线、左侧的点，左侧文字右侧的星、右侧的进入箭头
@@ -49,12 +49,15 @@ public class ZSettingView extends LinearLayout {
     private int leftPadding = 0 ; //左侧间距
     private int rightPadding = 0 ; //右侧侧间距
 
+
+
     public ZSettingView(Context context) {
         super(context);
     }
 
     public ZSettingView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        mContext=context;
         mContentView= LayoutInflater.from(context).inflate(R.layout.z_layout_setting_view,this);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ZSettingView);
         isShowLine = typedArray.getBoolean(R.styleable.ZSettingView_zv_sv_Line_enable, true);
@@ -115,7 +118,7 @@ public class ZSettingView extends LinearLayout {
         tvDesc.setPadding(0, titlePaddingTop, 0, 0);
 
         RelativeLayout.LayoutParams ivRightArrowLp= (RelativeLayout.LayoutParams) ivRightArrow.getLayoutParams();
-        ivRightArrowLp.topMargin=titlePaddingTop+ZDimen.dp2px(3);
+        ivRightArrowLp.topMargin=titlePaddingTop+ZDimen.dp2px(mContext,3);
         ivRightArrow.setLayoutParams(ivRightArrowLp);
 
 

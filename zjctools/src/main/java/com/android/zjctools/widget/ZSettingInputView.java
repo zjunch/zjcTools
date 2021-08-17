@@ -18,7 +18,6 @@ import com.android.zjctools.utils.ZDimen;
 import com.android.zjcutils.R;
 
 import static com.android.zjctools.utils.ZDimen.dp2px;
-
 /**
  * created zjun 2020-03-11
  */
