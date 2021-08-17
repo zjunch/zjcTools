@@ -61,7 +61,6 @@ public class MainActivity extends ZBActivity {
     @Override
     protected void initUI() {
         recycleView=findViewById(R.id.recycleView);
-
         LinearLayoutManager manager= new LinearLayoutManager(this);
         recycleView.setLayoutManager(manager);
       //  recycleView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.app_divide), ZDimen.dp2px(1)));
