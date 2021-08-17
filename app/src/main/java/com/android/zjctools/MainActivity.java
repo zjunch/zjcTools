@@ -5,6 +5,7 @@ import android.Manifest;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aigestudio.wheelpicker.WheelPicker;
 import com.android.zjctools.appupdate.ZAppUpdateBean;
@@ -107,6 +108,7 @@ public class MainActivity extends ZBActivity {
             }else if(item.type==8){
                 TextView  pickerTitleTV=findViewById(R.id.pickerTitleTV);
                 TextView  pickerCancelTV=findViewById(R.id.pickerCancelTV);
+                TextView pickerConfirmTV=findViewById(R.id.pickerConfirmTV);
                 LinearLayout pickerMaskLL=findViewById(R.id.pickerMaskLL);
                 WheelPicker pickerGenderView=findViewById(R.id.pickerGenderView);
                 List<String> str=new ArrayList<>();
@@ -119,17 +121,19 @@ public class MainActivity extends ZBActivity {
                 pickerGenderView.setVisibility(View.VISIBLE);
                 pickerCancelTV.setOnClickListener(v ->pickerMaskLL.setVisibility (View.GONE)   );
                 pickerMaskLL.setOnClickListener(v -> pickerMaskLL.setVisibility (View.GONE)  );
-
+                pickerConfirmTV.setOnClickListener(v -> Toast.makeText(mActivity, str.get(pickerGenderView.getCurrentItemPosition()), Toast.LENGTH_SHORT).show());
             }else if(item.type==9){
                 TextView  pickerTitleTV=findViewById(R.id.pickerTitleTV);
                 TextView  pickerCancelTV=findViewById(R.id.pickerCancelTV);
                 LinearLayout pickerMaskLL=findViewById(R.id.pickerMaskLL);
                 ZAreaPicker pickerAreaView=findViewById(R.id.pickerAreaView);
+                TextView pickerConfirmTV=findViewById(R.id.pickerConfirmTV);
                 pickerTitleTV.setText("选择地区");
                 pickerMaskLL.setVisibility(View.VISIBLE);
                 pickerAreaView.setVisibility(View.VISIBLE);
                 pickerCancelTV.setOnClickListener(v ->pickerMaskLL.setVisibility (View.GONE)   );
                 pickerMaskLL.setOnClickListener(v -> pickerMaskLL.setVisibility (View.GONE)  );
+                pickerConfirmTV.setOnClickListener(v -> Toast.makeText(mActivity,pickerAreaView.getProvince()+pickerAreaView.getCity()+pickerAreaView.getArea(), Toast.LENGTH_SHORT).show());
             }
         });
     }

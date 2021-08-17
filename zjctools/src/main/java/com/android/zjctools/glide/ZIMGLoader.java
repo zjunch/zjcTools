@@ -1,5 +1,6 @@
 package com.android.zjctools.glide;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
@@ -96,6 +97,7 @@ public class ZIMGLoader {
         if (options.isBlur) {
             requestOptions.transform(new ZBlurTransformation());
         }
+        if(context==null||(context instanceof Activity&&((Activity) context).isFinishing()))return;
         GlideApp.with(context).load(options.url).apply(requestOptions).thumbnail(placeholder(context, options)).into(imageView);
     }
 
@@ -116,6 +118,8 @@ public class ZIMGLoader {
         if (options.isBlur) {
             requestOptions.transform(new ZBlurTransformation());
         }
+
+        if(context==null||(context instanceof Activity&&((Activity) context).isFinishing()))return;
         GlideApp.with(context).load(options.url).apply(requestOptions).thumbnail(placeholder(context, options, resId)).into(imageView);
     }
 
@@ -149,7 +153,6 @@ public class ZIMGLoader {
         if (options.isBlur) {
             requestOptions.transform(new ZBlurTransformation());
         }
-
         return GlideApp.with(context).load(resId).apply(requestOptions);
     }
 
