@@ -53,8 +53,8 @@ repositories {
     mavenCentral()
 }
 
-//  token :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
-//git remote set-url origin https://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@github.com/zjunch/zjcTools.git
+//  token :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
+//git remote set-url origin https://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@github.com/zjunch/zjcTools.git
 //apply plugin: 'com.github.dcendents.android-maven'
 //group='com.github.zjunch'
 
