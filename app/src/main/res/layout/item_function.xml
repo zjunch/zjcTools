@@ -18,6 +18,6 @@
         app:zv_sv_Line_enable="true"
         app:zv_sv_bottom_line_top="@dimen/z_dimen_10"
         app:zv_sv_title_drawPadding="5dp"
-        app:zv_sv_desc_text="交换机看过交换机看过交换机看过交换机看过交换机看过交换机看过交换机看过交换机看过交换机看过交换机看过"
+        app:zv_sv_desc_text="交换机看过交换机看过交换机看ssss"
         app:zv_sv_title_text=""/>
 </LinearLayout>

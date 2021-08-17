@@ -20,9 +20,9 @@ import androidx.core.app.NotificationCompat;
 
 
 public class ZNotificationUtils extends ContextWrapper {
-
+    public static final String APPLICATION_ID = "com.android.zjcutils";
     private NotificationManager mManager;
-    public static final String ANDROID_CHANNEL_ID = BuildConfig.APPLICATION_ID+"ANDROID";
+    public static final String ANDROID_CHANNEL_ID = APPLICATION_ID+"ANDROID";
     public static final String ANDROID_CHANNEL_NAME = "ANDROID CHANNEL";
     private Notification notification;
     static ZNotificationUtils instance;

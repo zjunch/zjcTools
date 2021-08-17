@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,19 +9,28 @@
     tools:context=".MainActivity">
 
     <include
-        android:id="@+id/title_bar"
         layout="@layout/z_bar_title"></include>
 
 
     <com.android.zjctools.widget.ZSettingInputView
+        android:id="@+id/zvInputs"
+        android:layout_below="@+id/z_lv_title"
         android:layout_width="match_parent"
+        app:zv_siv_hint_text="看见了空间"
+        android:paddingTop="@dimen/z_dimen_5"
+        app:zv_siv_title_text="看见立刻感觉"
+        app:zv_siv_bottom_line_top="@dimen/z_dimen_10"
+        app:zv_siv_Line_enable="true"
+        app:zv_siv_arrow_enable="true"
         android:layout_height="wrap_content"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/title_bar"
+        android:layout_below="@id/zvInputs"
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-</LinearLayout>
+    <!--引入选择器布局-->
+    <include layout="@layout/z_widget_picker_layout" />
+</RelativeLayout>

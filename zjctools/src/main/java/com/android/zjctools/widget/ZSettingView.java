@@ -26,6 +26,8 @@ import androidx.annotation.Nullable;
  */
 
 public class ZSettingView extends LinearLayout {
+    LinearLayout zlvContent;
+
     TextView tvTitle,tvCenter,tvDesc,tvRightStar,tvPoint;//左侧标题 中间标题 有侧描述 左侧文字右侧的星  左侧的点
     View mContentView,bottomLine;
     boolean isShowLine,isShowPoint,isShowRightStar,isShowRightArrow; //是否显示分隔线、左侧的点，左侧文字右侧的星、右侧的进入箭头
@@ -43,8 +45,9 @@ public class ZSettingView extends LinearLayout {
 
 
     private int bottomLineTop = 20 ; //（此处已经有desc的 padding 6dp）
-
     private int titlePaddingTop = 20 ; //底部分割线 距离 上面内容的距离
+    private int leftPadding = 0 ; //左侧间距
+    private int rightPadding = 0 ; //右侧侧间距
 
     public ZSettingView(Context context) {
         super(context);
@@ -70,18 +73,21 @@ public class ZSettingView extends LinearLayout {
         titleSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_title_size, ZDimen.sp2px(context,14));
         centerSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_center_size, ZDimen.sp2px(context,14));
         descSize= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_desc_size, ZDimen.sp2px(context,14));
-        arrowResId=typedArray.getResourceId(R.styleable.ZSettingView_zv_sv_arrow_resId,R.drawable.arrow);
+        arrowResId=typedArray.getResourceId(R.styleable.ZSettingView_zv_sv_arrow_resId,R.drawable.z_ic_arrow_right_gray);
         titleDrawPadding= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_title_drawPadding, ZDimen.dp2px(context,10));
         drawLeftResId=typedArray.getResourceId(R.styleable.ZSettingView_zv_sv_title_drawLeft_resId,-1);
         leftTitleWidth= (int) typedArray.getDimension(R.styleable.ZSettingView_zv_left_title_width, -1);
         titlePaddingTop =(int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_padding_top, ZDimen.dp2px(context,5));
-        bottomLineTop =(int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_bottom_line_top, ZDimen.dp2px(context,0));
+        bottomLineTop =(int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_bottom_line_top, ZDimen.dp2px(context,5));
+        leftPadding =(int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_padding_left, ZDimen.dp2px(context,0));
+        rightPadding=(int) typedArray.getDimension(R.styleable.ZSettingView_zv_sv_padding_right, ZDimen.dp2px(context,0));
         typedArray.recycle();
         initView();
         setViews();
     }
 
     private void initView() {
+        zlvContent=mContentView.findViewById(R.id.zlvContent);
         tvTitle=mContentView.findViewById(R.id.tvTitle);
         tvDesc=mContentView.findViewById(R.id.tvDesc);
         tvCenter=mContentView.findViewById(R.id.tvCenter);
@@ -93,7 +99,7 @@ public class ZSettingView extends LinearLayout {
 
     private void setViews() {
         //左侧标题宽度  等于-1 自适应
-
+        zlvContent.setPadding(leftPadding,0,rightPadding,0);
 
         if(leftTitleWidth!=-1){
             RelativeLayout.LayoutParams lp= (RelativeLayout.LayoutParams) tvTitle.getLayoutParams();

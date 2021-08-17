@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/zlvContent"
     xmlns:tools="http://schemas.android.com/tools"
     android:animateLayoutChanges="true"
     android:orientation="vertical"
@@ -20,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/tvPoint"
-            android:paddingTop="6dp"
+            android:paddingTop="5dp"
             android:gravity="center_vertical"
             android:text="标题" />
 
@@ -67,9 +68,8 @@
             android:layout_alignTop="@id/tvTitle"
             android:layout_alignBottom="@id/tvTitle"
             android:layout_alignParentRight="true"
-            android:layout_marginLeft="2dp"
             android:src="@drawable/z_ic_arrow_right_gray"
-            android:layout_marginTop="2dp" />
+            android:layout_marginTop="7dp" />
 
         <TextView
             android:id="@+id/tvDesc"
@@ -79,16 +79,16 @@
             android:layout_toLeftOf="@id/ivRightArrow"
             android:layout_toRightOf="@id/tvTitle"
             android:gravity="right"
-            android:hint="大苏打"
+            android:hint=""
             android:layout_alignTop="@id/tvTitle"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
+            android:paddingTop="5dp"
             android:paddingLeft="10dp" />
     </RelativeLayout>
 
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/z_dimen_5"
         android:layout_height="1dp"
         android:background="@color/app_divide" />
 </LinearLayout>

@@ -55,6 +55,10 @@
         <attr name="zv_siv_input_color" format="color" />
 
         <attr name="zv_siv_bottom_line_top" format="dimension" />
+
+        <!--是否显示右侧箭头-->
+        <attr name="zv_siv_arrow_enable" format="boolean" />
+
     </declare-styleable>
 
     <declare-styleable name="ZSettingView">
@@ -101,8 +105,18 @@
 
         <attr name="zv_sv_title_drawLeft_resId" format="reference" />
 
+
+        <!--上间距-->
         <attr name="zv_sv_padding_top" format="dimension" />
+
+        <!--下间距-->
         <attr name="zv_sv_bottom_line_top" format="dimension" />
+
+        <!--左间距-->
+        <attr name="zv_sv_padding_left" format="dimension" />
+
+        <!--右间距-->
+        <attr name="zv_sv_padding_right" format="dimension" />
 
     </declare-styleable>
 

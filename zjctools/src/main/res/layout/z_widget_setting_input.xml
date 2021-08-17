@@ -10,7 +10,7 @@
         style="@style/text_14_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/z_dimen_10"
+        android:paddingTop="@dimen/z_dimen_5"
         android:text="title" />
 
     <EditText
@@ -20,12 +20,23 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:layout_toRightOf="@id/text_title"
+        android:layout_toLeftOf="@+id/ivRightArrow"
         android:gravity="right"
-        android:hint=""
-        android:paddingLeft="30dp"
-        android:paddingTop="@dimen/z_dimen_10"
-        android:paddingBottom="@dimen/z_dimen_10"
+        android:hint="快捷键"
+        android:paddingLeft="20dp"
+        android:paddingTop="@dimen/z_dimen_5"
         android:textColorHint="@color/zGray54" />
+
+
+    <ImageView
+        android:id="@+id/ivRightArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/text_title"
+        android:layout_alignBottom="@id/text_title"
+        android:layout_marginTop="@dimen/z_dimen_7"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/z_ic_arrow_right_gray" />
 
     <View
         android:id="@+id/line"

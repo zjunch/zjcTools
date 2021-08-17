@@ -32,4 +32,11 @@
 
     <string name="z_progress_wait">请稍等...</string>
     <string name="z_input_default_toast">请输入内容</string>
+
+
+    <string name="btn_save">保存</string>
+    <string name="btn_submit">提交</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_confirm">确定</string>
+    <string name="btn_publish">发布</string>
 </resources>

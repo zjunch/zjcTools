@@ -2,7 +2,11 @@ package com.android.zjctools;
 
 
 import android.Manifest;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.aigestudio.wheelpicker.WheelPicker;
 import com.android.zjctools.appupdate.ZAppUpdateBean;
 import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.bean.FunctionBean;
@@ -12,6 +16,7 @@ import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZLog;
 import com.android.zjctools.utils.ZToast;
+import com.android.zjctools.widget.ZAreaPicker;
 import com.android.zjctools.widget.ZItemDecoration;
 
 import java.util.ArrayList;
@@ -47,12 +52,15 @@ public class MainActivity extends ZBActivity {
         items.add(new FunctionBean("app更新",5));
         items.add(new FunctionBean("色块",6));
         items.add(new FunctionBean("media_九宫格",7));
+        items.add(new FunctionBean("性别",8));
+        items.add(new FunctionBean("地区",9));
 //        items.add(new FunctionBean("tabView",6));
     }
 
     @Override
     protected void initUI() {
         recycleView=findViewById(R.id.recycleView);
+
         LinearLayoutManager manager= new LinearLayoutManager(this);
         recycleView.setLayoutManager(manager);
       //  recycleView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.app_divide), ZDimen.dp2px(1)));
@@ -96,6 +104,32 @@ public class MainActivity extends ZBActivity {
                 Router.goColorView(mActivity);
             }else if(item.type==7){
                 Router.goNineMedia(mActivity);
+            }else if(item.type==8){
+                TextView  pickerTitleTV=findViewById(R.id.pickerTitleTV);
+                TextView  pickerCancelTV=findViewById(R.id.pickerCancelTV);
+                LinearLayout pickerMaskLL=findViewById(R.id.pickerMaskLL);
+                WheelPicker pickerGenderView=findViewById(R.id.pickerGenderView);
+                List<String> str=new ArrayList<>();
+                str.add("男");
+                str.add("女");
+                str.add("保密");
+                pickerGenderView.setData(str);
+                pickerTitleTV.setText("选择性别");
+                pickerMaskLL.setVisibility(View.VISIBLE);
+                pickerGenderView.setVisibility(View.VISIBLE);
+                pickerCancelTV.setOnClickListener(v ->pickerMaskLL.setVisibility (View.GONE)   );
+                pickerMaskLL.setOnClickListener(v -> pickerMaskLL.setVisibility (View.GONE)  );
+
+            }else if(item.type==9){
+                TextView  pickerTitleTV=findViewById(R.id.pickerTitleTV);
+                TextView  pickerCancelTV=findViewById(R.id.pickerCancelTV);
+                LinearLayout pickerMaskLL=findViewById(R.id.pickerMaskLL);
+                ZAreaPicker pickerAreaView=findViewById(R.id.pickerAreaView);
+                pickerTitleTV.setText("选择地区");
+                pickerMaskLL.setVisibility(View.VISIBLE);
+                pickerAreaView.setVisibility(View.VISIBLE);
+                pickerCancelTV.setOnClickListener(v ->pickerMaskLL.setVisibility (View.GONE)   );
+                pickerMaskLL.setOnClickListener(v -> pickerMaskLL.setVisibility (View.GONE)  );
             }
         });
     }

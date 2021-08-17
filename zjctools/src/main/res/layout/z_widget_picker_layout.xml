@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pickerMaskLL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/z_half6"
+    android:elevation="@dimen/z_dimen_16"
+    app:layout_constraintStart_toStartOf="parent"
+    android:gravity="bottom"
+    android:visibility="gone"
+    android:orientation="vertical"
+    tools:visibility="visible"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/zWhite">
+
+
+        <TextView
+            android:id="@+id/pickerCancelTV"
+            android:textSize="@dimen/z_size_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/z_dimen_10"
+            android:paddingRight="@dimen/z_dimen_10"
+            android:text="@string/z_btn_cancel"
+            android:textColor="@color/zGray9"
+            android:paddingBottom="@dimen/z_dimen_20"
+            android:paddingTop="@dimen/z_dimen_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pickerTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/z_dimen_16"
+            android:text="生日"
+            app:layout_constraintTop_toTopOf="@+id/pickerCancelTV"
+            app:layout_constraintBottom_toBottomOf="@+id/pickerCancelTV"
+            android:textColor="@color/z_black_87"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/pickerConfirmTV"
+             android:textSize="@dimen/z_size_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/z_dimen_10"
+            android:text="@string/z_btn_ok"
+            android:textColor="@color/app_theme_color"
+            android:paddingLeft="@dimen/z_dimen_10"
+            android:paddingBottom="@dimen/z_dimen_20"
+            android:paddingTop="@dimen/z_dimen_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/pickerTitleLineV"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="@dimen/z_dimen_0_5"
+            android:background="@color/app_divide"
+            app:layout_constraintTop_toBottomOf="@+id/pickerConfirmTV"/>
+
+        <com.aigestudio.wheelpicker.widgets.WheelDatePicker
+            android:id="@+id/pickerBirthdayView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/z_dimen_256"
+            android:visibility="gone"
+            android:padding="@dimen/z_dimen_16"
+            tools:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pickerTitleLineV" />
+
+
+
+        <com.aigestudio.wheelpicker.WheelPicker
+            android:id="@+id/pickerGenderView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/z_dimen_256"
+            android:paddingLeft="@dimen/z_dimen_16"
+            android:paddingRight="@dimen/z_dimen_16"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pickerTitleLineV"
+            app:wheel_atmospheric="true"
+            app:wheel_curved="false"
+            app:wheel_cyclic="false"
+            app:wheel_indicator="true"
+            app:wheel_indicator_color="@color/z_black_12"
+            app:wheel_indicator_size="@dimen/z_dimen_1"
+            app:wheel_item_align="center"
+            app:wheel_item_space="@dimen/z_dimen_16"
+            app:wheel_item_text_color="@color/z_black_87"
+            app:wheel_item_text_size="@dimen/z_size_18"
+            app:wheel_selected_item_text_color="@color/app_theme_color" />
+
+        <com.android.zjctools.widget.ZAreaPicker
+            android:id="@+id/pickerAreaView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/z_dimen_256"
+            android:padding="@dimen/z_dimen_16"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pickerTitleLineV" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

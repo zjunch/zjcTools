@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -33,7 +34,9 @@ public class ZSettingInputView extends RelativeLayout {
     private  int  maxInputCounts;
     int titleSize,descSize;
     int bottomLineTop;
-
+    boolean isShowRightArrow=false;
+    ImageView ivRightArrow;
+    //左侧和输入框默认有  paddingTop 5 dp
     public ZSettingInputView(Context context) {
         this(context,null);
     }
@@ -51,7 +54,8 @@ public class ZSettingInputView extends RelativeLayout {
         maxInputCounts= typedArray.getInt(R.styleable.ZSettingInputView_zv_siv_max_counts, zjcMaxInputCount);
         titleSize= (int) typedArray.getDimension(R.styleable.ZSettingInputView_zv_siv_title_size, ZDimen.sp2px(context,14));
         descSize= (int) typedArray.getDimension(R.styleable.ZSettingInputView_zv_siv_input_size, ZDimen.sp2px(context,14));
-        bottomLineTop = (int)typedArray.getDimension(R.styleable.ZSettingInputView_zv_siv_bottom_line_top, dp2px( 5));
+        isShowRightArrow = (boolean)typedArray.getBoolean(R.styleable.ZSettingInputView_zv_siv_arrow_enable, false);
+        bottomLineTop = (int)typedArray.getDimension(R.styleable.ZSettingInputView_zv_siv_bottom_line_top, dp2px(context, 5));
         typedArray.recycle();
         initView();
         setViews();
@@ -73,6 +77,7 @@ public class ZSettingInputView extends RelativeLayout {
 
     private void initView() {
         textTitle=mContentView.findViewById(R.id.text_title);
+        ivRightArrow=mContentView.findViewById(R.id.ivRightArrow);
         input=mContentView.findViewById(R.id.input);
         bottomLine=mContentView.findViewById(R.id.line);
         bottomLine.setBackgroundColor(lineColor);
@@ -112,16 +117,23 @@ public class ZSettingInputView extends RelativeLayout {
         input.setTextColor(inputColor);
         textTitle.getPaint().setTextSize(titleSize);
         input.getPaint().setTextSize(descSize);
-        //底部分割线
+
+        RelativeLayout.LayoutParams lineLp= (RelativeLayout.LayoutParams) bottomLine.getLayoutParams();
+        lineLp.topMargin=bottomLineTop;
+        bottomLine.setLayoutParams(lineLp);
+//底部分割线
         if(isShowLine){
             bottomLine.setVisibility(VISIBLE);
         }else{
             bottomLine.setVisibility(INVISIBLE);
         }
-        RelativeLayout.LayoutParams lineLp= (RelativeLayout.LayoutParams) bottomLine.getLayoutParams();
-        lineLp.topMargin=bottomLineTop;
-        bottomLine.setLayoutParams(lineLp);
 
+
+        if(isShowRightArrow){
+            ivRightArrow.setVisibility(VISIBLE);
+        }else{
+            ivRightArrow.setVisibility(INVISIBLE);
+        }
 
         if(!TextUtils.isEmpty(title)){
             textTitle.setText(title);
