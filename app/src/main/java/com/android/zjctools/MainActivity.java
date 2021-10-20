@@ -114,6 +114,7 @@ public class MainActivity extends ZBActivity {
                 str.add("女");
                 str.add("保密");
                 pickerGenderView.setData(str);
+
                 pickerTitleTV.setText("选择性别");
                 pickerMaskLL.setVisibility(View.VISIBLE);
                 pickerGenderView.setVisibility(View.VISIBLE);
