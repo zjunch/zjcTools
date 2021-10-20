@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/ZJCTheme"
+        android:theme="@style/ZTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".ColorViewActivity"></activity>
         <activity android:name=".tab.TabviewActivity" />
@@ -23,7 +23,7 @@
         <activity android:name=".display.ZDisplaySingleActivity" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/ZJCTheme.Launcher">
+            android:theme="@style/ZTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

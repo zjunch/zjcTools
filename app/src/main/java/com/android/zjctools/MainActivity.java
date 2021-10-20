@@ -77,7 +77,7 @@ public class MainActivity extends ZBActivity {
     @Override
     protected void initListener() {
         super.initListener();
-        mBinder.setOnItemClickListener((action, item) -> {
+        mBinder.setOnItemClickListener((action, item,position) -> {
             if(item.type==0){
                 Router.goMainBottomWindow(mActivity);
             }else if(item.type==1){
