@@ -7,11 +7,11 @@ import com.android.zjctools.utils.ZLog;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ZjcActivity extends AppCompatActivity {
+public class ZActivity extends AppCompatActivity {
 
     protected String className = this.getClass().getSimpleName();
 
-    protected ZjcActivity mActivity;
+    protected ZActivity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

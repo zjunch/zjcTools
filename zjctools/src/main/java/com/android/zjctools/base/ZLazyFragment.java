@@ -14,12 +14,12 @@ import androidx.annotation.Nullable;
 
 
 /**
- * Create by lzan13 on 2019/04/11
+ * Create by zjun on 2019/04/11
  *
  * 自定义懒加载实现 Fragment 基类
  * 需注意: TODO 懒加载功能只能结合 ViewPager 才有效，其他清空不能使用
  */
-public abstract class ZLazyFragment extends ZjcFragment {
+public abstract class ZLazyFragment extends ZFragment {
 
     public Context mContext;
     // 是否已经初始化

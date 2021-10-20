@@ -15,7 +15,7 @@ import androidx.collection.SparseArrayCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * Created by lzan13 on 2018/4/27.
+ * Created by zjun on 2018/4/27.
  * Adapter 基类封装，主要是实现 Item 点击事件传递操作
  */
 public abstract class ZAdapter<T, VH extends ZHolder> extends RecyclerView.Adapter<ZHolder> {

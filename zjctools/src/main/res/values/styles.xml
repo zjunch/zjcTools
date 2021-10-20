@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="ZJCTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="ZTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -23,12 +23,12 @@
     </style>
 
     <!--启动主题-->
-    <style name="ZJCTheme.Launcher">
+    <style name="ZTheme.Launcher">
         <item name="android:windowBackground">@drawable/z_bg_launcher_shape</item>
     </style>
 
     <!--授权弹窗主题-->
-    <style name="ZJCTheme.Permission">
+    <style name="ZTheme.Permission">
         <item name="android:windowBackground">@color/zTransparent</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
@@ -38,7 +38,7 @@
     </style>
 
     <!--透明主题-->
-    <style name="ZJCTheme.Translucent">
+    <style name="ZTheme.Translucent">
         <item name="android:windowBackground">@color/zTransparent</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
@@ -125,14 +125,14 @@
     </style>
 
     <!--文字样式 Body1-->
-    <style name="ZjcText.Body1" parent="Base.TextAppearance.AppCompat.Body1">
+    <style name="ZText.Body1" parent="Base.TextAppearance.AppCompat.Body1">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/zGray54</item>
     </style>
 
     <!--文字样式 Body2 有加粗效果-->
-    <style name="ZjcText.Body2" parent="Base.TextAppearance.AppCompat.Body2">
+    <style name="ZText.Body2" parent="Base.TextAppearance.AppCompat.Body2">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/zGray54</item>
@@ -140,28 +140,28 @@
 
 
     <!--文字样式 Subhead-->
-    <style name="ZjcText.Subhead" parent="Base.TextAppearance.AppCompat.Subhead">
+    <style name="ZText.Subhead" parent="Base.TextAppearance.AppCompat.Subhead">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/z_subhead</item>
     </style>
 
     <!--文字样式 Menu-->
-    <style name="ZjcText.Menu" parent="Base.TextAppearance.AppCompat.Menu">
+    <style name="ZText.Menu" parent="Base.TextAppearance.AppCompat.Menu">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/z_menu</item>
     </style>
 
     <!--文字样式 Title-->
-    <style name="ZjcText.Title" parent="Base.TextAppearance.AppCompat.Title">
+    <style name="ZText.Title" parent="Base.TextAppearance.AppCompat.Title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/zWhite</item>
     </style>
 
     <!--文字样式 Caption-->
-    <style name="ZjcText.Caption" parent="Base.TextAppearance.AppCompat.Caption">
+    <style name="ZText.Caption" parent="Base.TextAppearance.AppCompat.Caption">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/z_caption</item>

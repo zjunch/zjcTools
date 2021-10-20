@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="ZJCTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="ZTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -25,7 +25,7 @@
     </style>
 
     <!--透明主题-->
-    <style name="ZJCTheme.Transparent">
+    <style name="ZTheme.Transparent">
         <item name="colorPrimary">@color/zTransparent</item>
         <item name="colorPrimaryDark">@color/zTransparent</item>
         <!-- 设置允许修改系统栏的背景色 比如导航栏 状态栏等-->
@@ -37,7 +37,7 @@
 
 
     <!--授权弹窗主题-->
-    <style name="ZJCTheme.Permission">
+    <style name="ZTheme.Permission">
         <item name="android:windowBackground">@color/zTransparent</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>

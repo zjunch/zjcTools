@@ -42,7 +42,7 @@
 
                 <TextView
                     android:id="@+id/z_pick_grid_choose_folder_tv"
-                    style="@style/ZjcText.Menu"
+                    style="@style/ZText.Menu"
                     android:layout_centerVertical="true"
                     android:ellipsize="end"
                     android:includeFontPadding="false"

@@ -15,7 +15,7 @@ public class ZjcApp extends Application {
      */
 
     protected static Context mContext;
-    public static List<ZjcActivity> activityList = new ArrayList<>();
+    public static List<ZActivity> activityList = new ArrayList<>();
 
     @Override
     public void onCreate() {
@@ -37,7 +37,7 @@ public class ZjcApp extends Application {
      *
      * @param activity 当前活动的 mActivity
      */
-    public static void putActivity(ZjcActivity activity) {
+    public static void putActivity(ZActivity activity) {
         if (!activityList.contains(activity)) {
             activityList.add(0, activity);
         }
@@ -62,14 +62,14 @@ public class ZjcApp extends Application {
      *
      * @param activity 要销毁的 mActivity
      */
-    public static void removeActivity(ZjcActivity activity) {
+    public static void removeActivity(ZActivity activity) {
         activityList.remove(activity);
     }
 
     /**
      * 获取栈顶的 mActivity
      */
-    public static ZjcActivity getTopActivity() {
+    public static ZActivity getTopActivity() {
         if (activityList.size() > 0) {
             return activityList.get(0);
         }

@@ -16,10 +16,10 @@ import androidx.fragment.app.Fragment;
 
 
 /**
- * Created by lzan13 on 2016/7/6.
+ * Created by zjun on 2019/7/6.
  * Fragment的基类，进行简单的封装，ViewPager 结合 Fragment 实现数据懒加载
  */
-public abstract class ZjcFragment extends Fragment {
+public abstract class ZFragment extends Fragment {
 
     protected String className = this.getClass().getSimpleName();
 

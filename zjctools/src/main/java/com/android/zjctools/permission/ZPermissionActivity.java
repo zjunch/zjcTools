@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.android.zjctools.utils.ZSystem;
 import com.android.zjctools.base.ZConstant;
-import com.android.zjctools.base.ZjcActivity;
+import com.android.zjctools.base.ZActivity;
 import com.android.zjctools.router.ZRouter;
 import com.android.zjctools.widget.ZViewGroup;
 import com.android.zjcutils.R;
@@ -32,7 +32,7 @@ import androidx.core.content.ContextCompat;
  *
  * 处理权限请求界面
  */
-public class ZPermissionActivity extends ZjcActivity {
+public class ZPermissionActivity extends ZActivity {
 
     // 权限申请
     private static final int REQUEST_PERMISSION = 100;

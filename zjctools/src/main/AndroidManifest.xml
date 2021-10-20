@@ -10,7 +10,7 @@
         <activity
             android:name="com.android.zjctools.permission.ZPermissionActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@style/ZJCTheme.Permission" /> <!-- 选择器界面 -->
+            android:theme="@style/ZTheme.Permission" /> <!-- 选择器界面 -->
 
         <activity
             android:name="com.android.zjctools.display.ZDisplayMultiActivity"
@@ -23,7 +23,7 @@
 
         <activity android:name="com.android.zjctools.appupdate.ZAppUpdateActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@style/ZJCTheme.Translucent" ></activity>
+            android:theme="@style/ZTheme.Translucent" ></activity>
         <activity
             android:name="com.android.zjctools.pick.ui.ZPickGridActivity"
             android:configChanges="orientation|screenSize"

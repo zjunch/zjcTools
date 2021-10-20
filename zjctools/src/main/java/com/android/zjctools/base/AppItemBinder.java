@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import me.drakeet.multitype.ItemViewBinder;
 
 /**
- * Create by lzan13 on 2020-01-05 19:18
+ * Create by zjun on 2020-01-05 19:18
  *
  * 封装多类型适配器
  */
@@ -53,7 +53,7 @@ public abstract class AppItemBinder<T> extends ItemViewBinder<T, AppItemBinder.A
     protected void onBindViewHolder(@NonNull AppHolder holder, @NonNull T item) {
         holder.itemView.setOnClickListener(v -> {
             if (mOnItemClickListener != null) {
-                mOnItemClickListener.onClick(ACTION_NORMAL, item);
+                mOnItemClickListener.onClick(ACTION_NORMAL, item, holder.getAdapterPosition());
             }
         });
         holder.itemView.setOnLongClickListener(v -> {
@@ -151,7 +151,7 @@ public abstract class AppItemBinder<T> extends ItemViewBinder<T, AppItemBinder.A
          * @param action 动作
          * @param item   实体对象
          */
-        void onClick(int action, T item);
+        void onClick(int action, T item,int position);
     }
 
     /**

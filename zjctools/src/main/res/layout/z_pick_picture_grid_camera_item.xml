@@ -22,7 +22,7 @@
         <TextView
             android:text="@string/z_camera"
             android:textColor="@color/z_white_54"
-            style="@style/ZjcText.Subhead"
+            style="@style/ZText.Subhead"
             />
     </LinearLayout>
 </com.android.zjctools.widget.ZSquareLayout>

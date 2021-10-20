@@ -26,14 +26,14 @@
         <TextView
             android:id="@+id/z_pick_folder_name_tv"
             tools:text="@string/z_pick_all_picture"
-            style="@style/ZjcText.Subhead"
+            style="@style/ZText.Subhead"
             />
 
         <TextView
             android:id="@+id/z_pick_folder_count_tv"
             android:layout_marginTop="@dimen/z_margin_small"
             tools:text="56 张"
-            style="@style/ZjcText.Caption"
+            style="@style/ZText.Caption"
             />
     </LinearLayout>
 

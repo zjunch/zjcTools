@@ -60,6 +60,7 @@ class ZAreaPicker @JvmOverloads constructor(context: Context, attrs: AttributeSe
         }
         commonPickerCity.setOnItemSelectedListener { _, _, position ->
             commonPickerArea.data = mCityList[position].area
+            commonPickerArea.setSelectedItemPosition(0,false)
         }
 
         val provinceList = mProvinceList.map { it.name }
@@ -76,10 +77,10 @@ class ZAreaPicker @JvmOverloads constructor(context: Context, attrs: AttributeSe
 
         val cityList = mCityList.map { it.name }
         commonPickerCity.data = cityList
-        commonPickerCity.selectedItemPosition = 0
+        commonPickerCity.setSelectedItemPosition(0,false)
 
         commonPickerArea.data = mCityList[0].area
-        commonPickerArea.selectedItemPosition = 0
+        commonPickerArea.setSelectedItemPosition(0,false)
     }
 
 

@@ -12,7 +12,7 @@
         android:layout_marginStart="@dimen/z_dimen_12"
         android:layout_marginTop="@dimen/z_dimen_8"
         android:layout_marginEnd="@dimen/z_dimen_24"
-        style="@style/ZjcText.Body1"
+        style="@style/ZText.Body1"
         android:text="@string/z_permission_again_reason" />
 
     <com.android.zjctools.widget.ZViewGroup
