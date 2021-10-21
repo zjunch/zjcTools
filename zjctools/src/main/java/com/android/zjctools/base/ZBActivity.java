@@ -13,12 +13,7 @@ import com.android.zjcutils.R;
 import androidx.fragment.app.FragmentActivity;
 
 public abstract class ZBActivity extends ZActivity {
-    LinearLayout zLvTitle;   //整个标题的头部
-    ZStatusBarHeightView zStatusBarHeightView;//模拟状态栏
-    RelativeLayout zRvTitleBar,zRvEnd; //除去状态栏高度的部分，、  最后面的保存按钮或者收藏等icon
-    TextView zLeftTitle,zCenterTitle,zTvEnd;//左侧标题， 中间标题， 右侧保存
-    ImageView zIvBack,zIvEnd,zIvEndSecond; //左侧的返回键，右侧的icon， 右侧第二个icon（从右往左）
-    View zBottomLine;
+
 
     public FragmentActivity mActivity;
 
@@ -38,7 +33,7 @@ public abstract class ZBActivity extends ZActivity {
         initStatusBar();
         setContentView(layoutId());
         //初始化标题view
-        initTitleBar();
+//        initTitleBar();
         //获取intent传参
         getValues();
         //初始话布局
@@ -57,123 +52,9 @@ public abstract class ZBActivity extends ZActivity {
     }
 
 
-    private  void initTitleBar(){
-        if(findViewById(R.id.z_lv_title)!=null){
-            zLvTitle=findViewById(R.id.z_lv_title);
-            zStatusBarHeightView=findViewById(R.id.z_bar_status_View);
-            zRvTitleBar=findViewById(R.id.z_bar_rv_title);
-            zLeftTitle=findViewById(R.id.z_bar_tv_left_title);
-            zCenterTitle=findViewById(R.id.z_bar_tv_center_title);
-            zRvEnd=findViewById(R.id.z_rv_end);
-            zTvEnd=findViewById(R.id.z_bar_tv_end);
-            zIvBack=findViewById(R.id.z_bar_iv_back);
-            zIvEnd=findViewById(R.id.z_bar_iv_end);
-            zIvEndSecond=findViewById(R.id.z_bar_iv_end_second);
-            zBottomLine=findViewById(R.id.z_bar_bottom_line);
-        }
-    }
-
-
-    /**
-     * 设置表栏颜色
-     * @param color
-     */
-    public  void setHeaderBackColor(int color){//R.color.white
-        if(zLvTitle!=null){
-            zLvTitle.setBackgroundColor(ZColor.byRes(color));
-        }
-    }
-
-    public  LinearLayout getHeader(){
-        return  zLvTitle;
-    }
-
-    /**
-     * 获取titlebar.注意使用时注意空的情况
-     * @return
-     */
-    public RelativeLayout getTitleBar(){
-        return zRvTitleBar;
-    }
-
-    /**
-     * 获取
-     * @return
-     */
-    public RelativeLayout getRvEnd(){
-        return zRvEnd;
-    }
-
-    /**
-     * 获取返回键view
-     * @return
-     */
-    public ImageView getImageBack(){
-        return zIvBack;
-    }
-
-
-    /**
-     * 获取状态栏等高view
-     * @return
-     */
-    public ZStatusBarHeightView getStatusView(){
-        return zStatusBarHeightView;
-    }
-
-
-    /**
-     * 获取左侧标题
-     * @return
-     */
-    public TextView getLeftTitleView(){
-        return zLeftTitle;
-    }
-
-
-    /**
-     * 获取中间标题
-     * @return
-     */
-    public TextView getCenterTitleView(){
-        return zCenterTitle;
-    }
-
-
-    /**
-     * 获取右侧保存
-     * @return
-     */
-    public TextView getEndTvView(){
-        return zTvEnd;
-    }
 
 
 
-    /**
-     * 获取右侧图片
-     * @return
-     */
-    public ImageView getEndIvView(){
-        return zIvEnd;
-    }
-
-    /**
-     * 获取倒数第二图片
-     * @return
-     */
-    public ImageView getEndIvSecondView(){
-        return zIvEndSecond;
-    }
-
-
-    /**
-     * 获取下划线
-     * @return
-     */
-    public View getBottomLine(){
-        return zBottomLine;
-    }
 
 
 
