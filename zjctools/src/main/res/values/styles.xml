@@ -43,6 +43,19 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+    <style name="ZTheme.Splash">
+        <item name="colorPrimary">@color/zTransparent</item>
+        <item name="colorPrimaryDark">@color/zTransparent</item>
+        <!-- 设置允许修改系统栏的背景色 比如导航栏 状态栏等-->
+        <!--半透明状态栏-->
+        <item name="android:windowBackground">@color/app_theme_color</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--设置导航栏半透明效果，TODO 设置导航栏半透明会导致布局下移，需注意-->
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+
+
     <style name="text_12_gray_99">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/zGray9</item>
