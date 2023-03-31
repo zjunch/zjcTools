@@ -23,8 +23,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 
-import com.android.zjctools.pick.ZPicker;
-import com.android.zjctools.pick.bean.ZPictureBean;
+import com.android.zjctools.imagepicker.bean.ZPictureBean;
 import com.android.zjctools.utils.ZDate;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.utils.ZFile;
@@ -121,9 +120,9 @@ public class ZCropView extends AppCompatImageView {
      * 初始化
      */
     private void init(Context context, AttributeSet attrs) {
-        mFocusWidth = ZDimen.dp2px(256);
-        mFocusHeight = ZDimen.dp2px(256);
-        mBorderWidth = ZDimen.dp2px(1);
+        mFocusWidth = ZDimen.INSTANCE.dp2px(256);
+        mFocusHeight = ZDimen.INSTANCE.dp2px(256);
+        mBorderWidth = ZDimen.INSTANCE.dp2px(1);
 
         handleAttrs(context, attrs);
 
@@ -604,29 +603,29 @@ public class ZCropView extends AppCompatImageView {
         mSaving = true;
 
         final ZPictureBean bean = new ZPictureBean();
-        bean.width = expectWidth;
-        bean.height = exceptHeight;
-        bean.mimeType = "image/jpg";
+        bean.setWidth(expectWidth);
+        bean.setHeight(exceptHeight);
+        bean.setMimeType("image/jpg");
 
         final Bitmap croppedImage = getCropBitmap(expectWidth, exceptHeight, isSaveRectangle);
         Bitmap.CompressFormat outputFormat = Bitmap.CompressFormat.JPEG;
-        saveFile= ZFile.createFile(folder, "IMG_", ".jpg");
+        saveFile= ZFile.INSTANCE.createFile(folder, "IMG_", ".jpg");
         if (mFocusStyle == Style.CIRCLE && !isSaveRectangle) {
             outputFormat = Bitmap.CompressFormat.PNG;
-            saveFile = ZFile.createFile(folder, "IMG_", ".png");
-            bean.mimeType = "image/png";
+            saveFile = ZFile.INSTANCE.createFile(folder, "IMG_", ".png");
+            bean.setMimeType("image/png");
         }
-        bean.name = saveFile.getName();
-        bean.path = saveFile.getAbsolutePath();
-        bean.cropPath=saveFile.getAbsolutePath();//
-        bean.addTime = ZDate.currentMilli();
+        bean.setName(saveFile.getName()) ;
+        bean.setPath(saveFile.getAbsolutePath());
+        bean.setCropPath(saveFile.getAbsolutePath());
+        bean.setAddTime(ZDate.currentMilli());
         final Bitmap.CompressFormat finalOutputFormat = outputFormat;
         new Thread() {
             @Override
             public void run() {
-                boolean result = ZBitmap.saveBitmapToSDCard(croppedImage, finalOutputFormat, bean.path);
+                boolean result = ZBitmap.saveBitmapToSDCard(croppedImage, finalOutputFormat, bean.getPath());
                 if (result) {
-                    ZPicker.notifyGalleryChange(getContext(), saveFile);//通知图片库更新
+                    //ZPicker.notifyGalleryChange(getContext(), saveFile);//通知图片库更新
                     Message.obtain(mHandler, SAVE_SUCCESS, bean).sendToTarget();
                 } else {
                     Message.obtain(mHandler, SAVE_ERROR, bean).sendToTarget();

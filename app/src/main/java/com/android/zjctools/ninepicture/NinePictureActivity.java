@@ -8,14 +8,13 @@ import com.android.zjctools.bean.NinePictureBean;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.widget.ZItemDecoration;
+import com.drakeet.multitype.MultiTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import me.drakeet.multitype.Items;
-import me.drakeet.multitype.MultiTypeAdapter;
 
 
 public class NinePictureActivity extends ZBActivity {
@@ -24,33 +23,31 @@ public class NinePictureActivity extends ZBActivity {
     List<NinePictureBean> nineBeans = new ArrayList<>();
 
     @Override
-    protected int layoutId() {
+    public int layoutId() {
         return R.layout.activity_glide_test_cach;
     }
 
     @Override
-    protected void initUI() {
+    public void initUI() {
+        super.initUI();
         recyclerView = findViewById(R.id.recycleView);
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         for (int i = 0; i < 12; i++) {
             List<String> urls = new ArrayList<>();
             NinePictureBean bean = new NinePictureBean();
             for (int j = 0; j < i + 1; j++) {
-                urls.add("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1208538952,1443328523&fm=26&gp=0.jpg");
+                urls.add("http://up.deskcity.org/pic_source/2f/f4/42/2ff442798331f6cc6005098766304e39.jpg");
             }
             bean.urls = urls;
             nineBeans.add(bean);
         }
         MultiTypeAdapter adapter = new MultiTypeAdapter();
-        adapter.register(NinePictureBean.class, new NinePictureBinder(mActivity));
-        Items items = new Items();
-        items.addAll(nineBeans);
-        adapter.setItems(items);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.z_black_12), ZDimen.dp2px(10)));
+        adapter.register(NinePictureBean.class, new NinePictureDelegate());
+        adapter.setItems(nineBeans);
+        recyclerView.addItemDecoration(ZItemDecoration.Companion.createVertical(mActivity, ZColor.INSTANCE.byRes(R.color.z_black_12), ZDimen.INSTANCE.dp2px(10)));
         recyclerView.setAdapter(adapter);
     }
 }

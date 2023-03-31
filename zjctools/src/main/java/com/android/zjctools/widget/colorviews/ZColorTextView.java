@@ -32,9 +32,9 @@ public class ZColorTextView extends View {
 
     private void init() {
         mPaint=new Paint();
-        mPaint.setTextSize(ZDimen.dp2px(12));
+        mPaint.setTextSize(ZDimen.INSTANCE.dp2px(12));
         mPaint.setAntiAlias(true);
-        mPaint.setColor(ZColor.byRes(R.color.zBlack));
+        mPaint.setColor(ZColor.INSTANCE.byRes(R.color.zBlack));
     }
 
     @Override
@@ -57,9 +57,18 @@ public class ZColorTextView extends View {
         if(mEnd==0||mWidth==0){
             return;
         }
-        for (int i = 0; i <mEnd-mStart ; i++) {
-           int textHeight= getTextBounds(String.valueOf(i+mStart),mPaint).height();
-            canvas.drawText(String.valueOf(i+mStart),i*mEachSpace,textHeight,mPaint);
+        for (int i = 0; i <=mEnd-mStart ; i++) {
+            Rect rect=   getTextBounds(String.valueOf(i+mStart),mPaint);
+            int textHeight= rect.height();
+            int textWidth=rect.width();
+            if(i==0){
+                canvas.drawText(String.valueOf(i+mStart),i*mEachSpace,textHeight,mPaint);
+            }else if(i+mStart==mEnd){
+                canvas.drawText(String.valueOf(i+mStart),i*mEachSpace-textWidth,textHeight,mPaint);
+            }else{
+                canvas.drawText(String.valueOf(i+mStart),i*mEachSpace-textWidth/2,textHeight,mPaint);
+            }
+
         }
     }
 

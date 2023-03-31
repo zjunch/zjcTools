@@ -44,8 +44,8 @@
 
                 <gradient
                     android:angle="0"
-                    android:endColor="#ff6666"
-                    android:startColor="#ff3333" />
+                    android:endColor="@color/app_theme_color"
+                    android:startColor="@color/app_theme_color" />
             </shape>
         </clip>
     </item>

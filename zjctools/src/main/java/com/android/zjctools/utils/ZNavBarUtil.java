@@ -55,7 +55,7 @@ public class ZNavBarUtil implements ViewTreeObserver.OnGlobalLayoutListener {
         } else if (orientation == ORIENTATION_HORIZONTAL) {
             heightDiff = mRootView.getWidth() - (mRect.right - mRect.left);
         }
-        int navigationBarHeight = ZDimen.hasNavigationBar() ? ZDimen.getNavigationBarHeight() : 0;
+        int navigationBarHeight = ZDimen.INSTANCE.hasNavigationBar() ? ZDimen.INSTANCE.getNavigationBarHeight() : 0;
         if (heightDiff >= navigationBarHeight && heightDiff < navigationBarHeight * 2) {
             if (!isShowNavigationBar && listener != null) {
                 listener.onShow(orientation, heightDiff);

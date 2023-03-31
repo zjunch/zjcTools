@@ -14,7 +14,7 @@
 
     <com.android.zjctools.widget.ZSettingInputView
         android:id="@+id/zvInputs"
-        android:layout_below="@+id/z_lv_title"
+        android:layout_below="@+id/zTopBarLv"
         android:layout_width="match_parent"
         app:zv_siv_hint_text="看见了空间"
         android:paddingTop="@dimen/z_dimen_5"
@@ -28,6 +28,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/zvInputs"
         android:id="@+id/recycleView"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_function"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

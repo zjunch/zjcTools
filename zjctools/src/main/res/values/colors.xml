@@ -10,6 +10,8 @@
     <color name="z_theme_primary_dark">@color/app_theme_color</color>
 
 
+    <color name="white_F5">#F5F5F5</color>
+
     <color name="zWhite">#FFF</color>
     <color name="z_white_54">#89ffffff</color>
     <color name="z_bg_dark">#f6f8f9</color>

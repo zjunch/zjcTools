@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.android.zjctools.widget.ZSettingView
-        android:id="@+id/sv_set_title"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
+    <data>
+        <variable
+            name="item"
+            type="com.android.zjctools.bean.FunctionBean" />
+    </data>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:zv_sv_desc_Hint=""
-        app:zv_sv_padding_top="15dp"
-        android:background="@color/z_white_54"
-        app:zv_sv_title_color="@color/z_red_87"
-        app:zv_sv_title_size="@dimen/z_size_14"
-        app:zv_sv_star_enable="true"
-        app:zv_sv_point_enable="true"
-        app:zv_sv_Line_enable="true"
-        app:zv_sv_bottom_line_top="15dp"
-        app:zv_sv_title_drawPadding="5dp"
-        app:zv_sv_desc_text="交换机看过交换"
-        app:zv_sv_title_text=""/>
-</LinearLayout>
+        android:layout_height="wrap_content">
+        <com.android.zjctools.widget.ZSettingView
+            android:id="@+id/svFunction"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:zsv_desc_Hint=""
+            app:zsv_padding_top="15dp"
+            android:background="@color/z_white_54"
+            app:zsv_title_color="@color/z_red_87"
+            app:zsv_title_size="@dimen/z_size_14"
+            app:zsv_showStar="true"
+            app:zsv_show_point="true"
+            app:zsv_show_bottomLine="true"
+            app:zsv_bottom_line_top="15dp"
+            app:zsv_title_drawPadding="5dp"
+            app:zsv_desc_text="交换机看过交换"
+            app:zsv_title_text="title"/>
+    </LinearLayout>
+
+</layout>

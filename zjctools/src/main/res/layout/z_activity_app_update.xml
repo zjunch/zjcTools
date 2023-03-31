@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/lvAll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/z_half5"
     android:orientation="vertical">
 
@@ -13,7 +13,7 @@
         android:background="@color/zWhite"
         android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/z_iv_bg"
+            android:id="@+id/zvUpdateBg"
             android:layout_width="match_parent"
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
@@ -22,7 +22,7 @@
             android:src="@drawable/z_bg_app_update" />
 
         <TextView
-            android:id="@+id/z_tv_version"
+            android:id="@+id/zvUpdateVersion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
@@ -33,20 +33,20 @@
 
 
         <TextView
-            android:id="@+id/tv_text"
+            android:id="@+id/zvUpdateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/z_iv_bg"
+            android:layout_below="@+id/zvUpdateBg"
             android:layout_marginLeft="18dp"
             android:text="更新内容"
             android:textColor="@color/zGray54"
             android:textSize="12sp" />
 
         <LinearLayout
-            android:id="@+id/z_lv_content"
+            android:id="@+id/zvUpdateContentLv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_text"
+            android:layout_below="@id/zvUpdateText"
             android:layout_marginTop="3dp"
             android:orientation="vertical">
 
@@ -54,31 +54,32 @@
 
 
         <ProgressBar
-            android:id="@+id/z_pg_update"
+            android:id="@+id/zvUpdateProgressRg"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_below="@id/z_lv_content"
+            android:layout_below="@id/zvUpdateContentLv"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="18dp"
             android:layout_marginTop="13dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="18dp"
             android:layout_marginBottom="13dp"
             android:progress="0"
+            tools:visibility="visible"
             android:progressDrawable="@drawable/z_progress_update_version"
             android:visibility="gone" />
 
 
         <RelativeLayout
-            android:id="@+id/z_rv_update"
+            android:id="@+id/zvUpdateButtonRv"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:layout_below="@+id/z_pg_update"
+            android:layout_below="@+id/zvUpdateProgressRg"
             android:layout_marginTop="13dp"
             android:layout_marginBottom="26dp">
 
             <TextView
-                android:id="@+id/zjv_tv_cancel"
+                android:id="@+id/zvUpdateCancelTv"
                 android:layout_width="97dp"
                 android:layout_height="34dp"
                 android:layout_marginLeft="10dp"
@@ -89,7 +90,7 @@
                 android:textSize="13sp" />
 
             <TextView
-                android:id="@+id/zjv_tv_load"
+                android:id="@+id/zvUpdateDownLoadTv"
                 android:layout_width="97dp"
                 android:layout_height="34dp"
                 android:layout_alignParentRight="true"

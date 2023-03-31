@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/zBlue</item>
+        <item name="colorAccent">@color/zTransparent</item>
         <!--界面背景色，为了优化 UI，这里设置为透明-->
         <item name="android:windowBackground">@color/zTransparent</item>
         <!--设置主题不需要ActionBar-->
@@ -197,5 +197,20 @@
 
     <style name="ZLoadingCircleProgress" parent="Theme.AppCompat.Light">
         <item name="colorAccent">@android:color/white</item>
+    </style>
+
+
+    <style name="horizontal_gray_divider">
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">#d9d9d9</item>
+    </style>
+
+    <!--  这个是加入的代码 -->
+    <style name="popupwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/picker_show2bottom</item>
+        <!-- 指定显示的动画xml -->
+        <item name="android:windowExitAnimation">@anim/picker_hide2bottom</item>
+        <!-- 指定消失的动画xml -->
     </style>
 </resources>

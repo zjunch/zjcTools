@@ -136,8 +136,8 @@ public class ZSearchView extends RelativeLayout {
      * @param size
      */
     public void setTextSize(int size) {
-        evInput.setTextSize(ZDimen.sp2px(size));
-        tvInput.setTextSize(ZDimen.sp2px(size));
+        evInput.setTextSize(ZDimen.INSTANCE.sp2px(size));
+        tvInput.setTextSize(ZDimen.INSTANCE.sp2px(size));
     }
 
     /**

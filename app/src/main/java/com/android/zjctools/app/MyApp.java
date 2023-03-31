@@ -1,14 +1,12 @@
 package com.android.zjctools.app;
 
-import com.android.zjctools.base.ZjcApp;
-import com.android.zjctools.glide.ZIMManager;
-import com.android.zjctools.pick.ZPicker;
+import android.app.Application;
 import com.android.zjctools.utils.ZTools;
 
-public class MyApp extends ZjcApp {
+public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        ZTools.init(mContext);
+        ZTools.INSTANCE.init(this);
     }
 }

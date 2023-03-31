@@ -63,60 +63,60 @@
 
     <declare-styleable name="ZSettingView">
         <!--是否显示底部分隔线-->
-        <attr name="zv_sv_Line_enable" format="boolean" />
+        <attr name="zsv_show_bottomLine" format="boolean" />
         <!--是否显示最左边点-->
-        <attr name="zv_sv_point_enable" format="boolean" />
+        <attr name="zsv_show_point" format="boolean" />
         <!--最左边点距离右侧标题-->
-        <attr name="zv_sv_left_point_right_space" format="dimension" />
+        <attr name="zsv_left_point_right_space" format="dimension" />
         <!--是否显示左侧title右侧有个star-->
-        <attr name="zv_sv_star_enable" format="boolean" />
+        <attr name="zsv_showStar" format="boolean" />
         <!--是否显示右侧箭头-->
-        <attr name="zv_sv_arrow_enable" format="boolean" />
+        <attr name="zsv_show_arrow" format="boolean" />
         <!--左侧标题颜色-->
-        <attr name="zv_sv_title_color" format="color" />
+        <attr name="zsv_title_color" format="color" />
         <!--左侧标题-->
-        <attr name="zv_sv_title_text" format="string" />
+        <attr name="zsv_title_text" format="string" />
         <!--左侧宽度标题-->
-        <attr name="zv_left_title_width" format="dimension" />
+        <attr name="zsv_left_title_width" format="dimension" />
         <!--左侧标题文字大小-->
-        <attr name="zv_sv_title_size" format="dimension" />
+        <attr name="zsv_title_size" format="dimension" />
         <!--右侧描述的hint-->
-        <attr name="zv_sv_desc_Hint" format="string" />
+        <attr name="zsv_desc_Hint" format="string" />
         <!--右侧描述的字体颜色-->
-        <attr name="zv_sv_desc_color" format="color" />
+        <attr name="zsv_desc_color" format="color" />
         <!--右侧描述的字体颜色-->
-        <attr name="zv_sv_desc_hint_color" format="color" />
+        <attr name="zsv_desc_hint_color" format="color" />
 
         <!--右侧描述文字-->
-        <attr name="zv_sv_desc_text" format="string" />
+        <attr name="zsv_desc_text" format="string" />
         <!--右侧描述文字大小-->
-        <attr name="zv_sv_desc_size" format="dimension" />
+        <attr name="zsv_desc_size" format="dimension" />
 
         <!--中间标题-->
-        <attr name="zv_sv_center_text" format="string" />
+        <attr name="zsv_center_text" format="string" />
 
-        <attr name="zv_sv_center_size" format="dimension" />
+        <attr name="zsv_center_size" format="dimension" />
 
-        <attr name="zv_sv_center_color" format="color" />
+        <attr name="zsv_center_color" format="color" />
 
-        <attr name="zv_sv_arrow_resId" format="reference" />
+        <attr name="zsv_arrow_resId" format="reference" />
 
-        <attr name="zv_sv_title_drawPadding" format="dimension" />
+        <attr name="zsv_title_drawPadding" format="dimension" />
 
-        <attr name="zv_sv_title_drawLeft_resId" format="reference" />
+        <attr name="zsv_title_drawLeft_resId" format="reference" />
 
 
         <!--上间距-->
-        <attr name="zv_sv_padding_top" format="dimension" />
+        <attr name="zsv_padding_top" format="dimension" />
 
         <!--下间距-->
-        <attr name="zv_sv_bottom_line_top" format="dimension" />
+        <attr name="zsv_bottom_line_top" format="dimension" />
 
         <!--左间距-->
-        <attr name="zv_sv_padding_left" format="dimension" />
+        <attr name="zsv_padding_left" format="dimension" />
 
         <!--右间距-->
-        <attr name="zv_sv_padding_right" format="dimension" />
+        <attr name="zsv_padding_right" format="dimension" />
 
     </declare-styleable>
 
@@ -220,34 +220,6 @@
     </declare-styleable>
 
 
-    <declare-styleable name="ZTabView">
-        <!--菜单icon 宽高自适应-->
-        <attr name="zv_tab_icon_wrap" format="boolean" />
-        <!--菜单文字大小-->
-        <attr name="zv_tab_text_size" format="dimension" />
-        <!--菜单icon margin top-->
-        <attr name="zv_tab_image_top" format="dimension" />
-        <!--菜单文字 margin top-->
-        <attr name="zv_tab_text_top" format="dimension" />
-        <attr name="zv_tab_text_bottom" format="dimension" />
-        <!--icon 宽高-->
-        <attr name="zv_tab_icon_width" format="dimension" />
-        <attr name="zv_tab_icon_height" format="dimension" />
-        <!--选中颜色-->
-        <attr name="zv_tab_select_color" format="color" />
-        <!--未选中颜色-->
-        <attr name="zv_tab_unSelect_color" format="color" />
-        <!--菜单小红点 margin top-->
-        <attr name="zv_tab_point_top" format="dimension" />
-        <!--菜单小红点 margin left-->
-        <attr name="zv_tab_point_left" format="dimension" />
-        <!--菜单小红点 宽度-->
-        <attr name="zv_tab_point_width" format="dimension" />
-        <!--菜单小红点 高度-->
-        <attr name="zv_tab_point_height" format="dimension" />
-        <!--菜单字体大小 高度-->
-        <attr name="zv_tab_point_text_size" format="dimension" />
-    </declare-styleable>
 
     <declare-styleable name="ZCircleProgressView">
         <attr name="zv_backWidth" format="dimension" />    <!--背景圆环宽度-->

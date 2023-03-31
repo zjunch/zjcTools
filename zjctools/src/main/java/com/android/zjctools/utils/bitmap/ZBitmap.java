@@ -315,11 +315,11 @@ public class ZBitmap {
         // 临时存放路径
         String tempPath;
         if(TextUtils.isEmpty(catalogueName)){
-            tempPath = ZFile.getSDCard() + "temp";
+            tempPath = ZFile.INSTANCE.getDCIM() + "temp";
         }else{
-            tempPath = ZFile.getSDCard() + catalogueName;
+            tempPath = ZFile.INSTANCE.getDCIM() + catalogueName;
         }
-        ZFile.createDirectory(tempPath);
+        ZFile.INSTANCE.createDirectory(tempPath);
         saveBitmapToSDCard(bitmap, tempPath + "/" + tempName);
         return tempPath + "/" + tempName;
     }

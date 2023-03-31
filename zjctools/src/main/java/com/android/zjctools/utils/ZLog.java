@@ -58,18 +58,18 @@ public class ZLog {
         mMaxCount = count;
         if (isEnableSave) {
             // 判断是否存在 sdcard
-            if (ZFile.hasSdcard()) {
-                mLogDir = ZFile.getFilesFromSDCard() + "logs/";
+            if (ZFile.INSTANCE.hasSdcard()) {
+                mLogDir = ZFile.INSTANCE.filesPath("logs") ;
             } else {
-                mLogDir = ZFile.getFilesFromData() + "logs/";
+                mLogDir = ZFile.INSTANCE.filesPath("logs") ;
             }
             mLogPath = mLogDir + ZDate.filenameDate() + ".log";
-            ZFile.createFile(mLogPath);
+            ZFile.INSTANCE.createFile(mLogPath);
             mQueue = new LinkedBlockingQueue<>();
             startSaveThread();
 
             // 异步处理
-            ZSystem.runTask(() -> { checkLog();});
+            ZSystem.INSTANCE.runTask(() -> { checkLog();});
         } else {
             if (mSaveThread != null) {
                 mSaveThread.interrupt();
@@ -266,7 +266,7 @@ public class ZLog {
         File logDir = new File(mLogDir);
         FilenameFilter filter = (File dir, String name) -> {
             // 过滤日志文件
-            if (ZFile.parseSuffix(name).equals(".log")) {
+            if (ZFile.INSTANCE.parseSuffix(name).equals(".log")) {
                 return true;
             }
             return false;
@@ -280,9 +280,9 @@ public class ZLog {
             int dot = file.getName().lastIndexOf(".");
             String zipPath = mLogDir + file.getName().substring(0, dot + 1) + "zip";
             if (i < mMaxCount) {
-                ZFile.zipFile(file.getAbsolutePath(), zipPath);
+                ZFile.INSTANCE.zipFile(file.getAbsolutePath(), zipPath);
             }
-            ZFile.deleteFile(file.getAbsolutePath());
+            ZFile.INSTANCE.deleteFile(file.getAbsolutePath());
         }
 
         /**
@@ -290,7 +290,7 @@ public class ZLog {
          */
         filter = (File dir, String name) -> {
             // 过滤日志文件
-            if (ZFile.parseSuffix(name).equals(".zip")) {
+            if (ZFile.INSTANCE.parseSuffix(name).equals(".zip")) {
                 return true;
             }
             return false;
@@ -299,7 +299,7 @@ public class ZLog {
         files = logDir.listFiles(filter);
         sortFiles(files);
         for (int i = 2; i < files.length; i++) {
-            ZFile.deleteFile(files[i].getAbsolutePath());
+            ZFile.INSTANCE.deleteFile(files[i].getAbsolutePath());
         }
     }
 

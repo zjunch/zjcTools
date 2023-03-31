@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 <com.android.zjctools.widget.colorviews.ZColorTextView
     android:id="@+id/vTimes"
     android:layout_width="match_parent"
@@ -11,5 +11,5 @@
         android:id="@+id/zColorViews"
         android:layout_width="match_parent"
         android:background="#999"
-        android:layout_height="@dimen/z_dimen_10"/>
+        android:layout_height="match_parent"/>
 </LinearLayout>

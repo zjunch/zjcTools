@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/z_window_item_title_tv"
+    <data>
+        <variable
+            name="item"
+            type="java.lang.String" />
+    </data>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="@dimen/z_dimen_16"
-        android:textColor="@color/zGray3"
-        android:textSize="@dimen/z_size_16"
-        tools:text="@string/app_name" />
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/zWindowItemTileTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/z_dimen_16"
+            android:textColor="@color/zGray3"
+            android:textSize="@dimen/z_size_16"
+            tools:text="@string/app_name" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/z_dimen_1"
-        android:background="@color/app_divide" />
-</LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/z_dimen_1"
+            android:background="@color/app_divide" />
+    </LinearLayout>
+
+</layout>

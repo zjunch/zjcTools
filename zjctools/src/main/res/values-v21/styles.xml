@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/zBlue</item>
+        <item name="colorAccent">@color/zTransparent</item>
         <!--界面背景色，为了优化 UI，这里设置为透明-->
         <item name="android:windowBackground">@color/zTransparent</item>
 
@@ -22,7 +22,7 @@
         <!--设置导航栏半透明效果，TODO 设置导航栏半透明会导致布局下移，需注意-->
         <item name="android:windowTranslucentNavigation">false</item>
         <!--设置状态栏颜色-->
-        <item name="android:statusBarColor">@color/z_theme_primary_dark</item>
+        <item name="android:statusBarColor">@color/zTransparent</item>
 
         <!-- 设置允许修改系统栏的背景色 比如导航栏 状态栏等-->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>

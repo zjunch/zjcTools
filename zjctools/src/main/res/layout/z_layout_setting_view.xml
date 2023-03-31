@@ -86,7 +86,7 @@
     </RelativeLayout>
 
     <View
-        android:id="@+id/line"
+        android:id="@+id/bottomLine"
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/z_dimen_5"
         android:layout_height="1dp"

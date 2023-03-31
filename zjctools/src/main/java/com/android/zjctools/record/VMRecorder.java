@@ -106,10 +106,10 @@ public class VMRecorder {
         // 设置录制状态
         isRecording = true;
 
-        if (ZStr.isEmpty(path)) {
+        if (ZStr.INSTANCE.isEmpty(path)) {
             // 这里默认保存在 /sdcard/android/data/packagename/files/下
             //File file = VMFile.createFile(VMFile.getFilesFromSDCard(), "VMVoice_", ".amr");
-            mRecordFile = ZFile.getFilesFromSDCard() + "VMVoice_" + ZDate.filenameDateTime() + ".amr";
+            mRecordFile = ZFile.INSTANCE.getMusic() + "VMVoice_" + ZDate.filenameDateTime() + ".amr";
         } else {
             //File file = VMFile.createFile(path, "VMVoice_", ".amr");
             mRecordFile = path;
@@ -157,7 +157,7 @@ public class VMRecorder {
             }
         }
         // 根据录制结果判断录音是否成功
-        if (!ZFile.isFileExists(mRecordFile)) {
+        if (!ZFile.INSTANCE.isFileExists(mRecordFile)) {
             ZLog.e("录音失败没有生成文件");
             return ERROR_FAILED;
         }
@@ -184,8 +184,8 @@ public class VMRecorder {
             }
         }
         // 取消录音，删除文件
-        if (ZFile.isFileExists(mRecordFile)) {
-            ZFile.deleteFile(mRecordFile);
+        if (ZFile.INSTANCE.isFileExists(mRecordFile)) {
+            ZFile.INSTANCE.deleteFile(mRecordFile);
         }
     }
 

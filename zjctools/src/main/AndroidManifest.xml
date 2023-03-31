@@ -3,6 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.android.zjcutils">
 
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
@@ -24,48 +34,65 @@
         <activity android:name="com.android.zjctools.appupdate.ZAppUpdateActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/ZTheme.Translucent" ></activity>
-        <activity
-            android:name="com.android.zjctools.pick.ui.ZPickGridActivity"
-            android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait" /> <!-- 剪切界面 -->
-        <activity
-            android:name="com.android.zjctools.pick.ui.ZPickCropActivity"
-            android:configChanges="orientation|screenSize"
-            android:hardwareAccelerated="false"
-            android:screenOrientation="portrait" /> <!-- 预览界面 -->
-        <activity
-            android:name="com.android.zjctools.pick.ui.ZPickPreviewActivity"
-            android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait" />
-
-        <provider
-            android:name="com.android.zjctools.pick.ZPickerProvider"
-            android:authorities="${applicationId}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/z_provider_paths" />
-        </provider>
 
         <service android:name="com.android.zjctools.appupdate.ZUpdateService" />
         <provider
             android:name="com.android.zjctools.appupdate.ZAppInstallProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true"
+            tools:ignore="Instantiatable">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/z_app_update_provider_paths" />
         </provider>
+
+
+
+        <!-- 图片和视频picker-->
+        <activity
+            android:name="com.android.zjctools.imagepicker.activity.crop.MultiImageCropActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.android.zjctools.imagepicker.activity.preview.MultiImagePreviewActivity"
+            android:multiprocess="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.android.zjctools.imagepicker.activity.singlecrop.SingleCropActivity"
+            android:multiprocess="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.android.zjctools.imagepicker.activity.multi.MultiImagePickerActivity"
+            android:multiprocess="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <provider
+            android:name="com.android.zjctools.imagepicker.utils.PickerFileProvider"
+            android:authorities="${applicationId}.picker.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/z_picker_file_paths" />
+        </provider>
+
+
+
+        <!--配置 Glide Module-->
+        <meta-data
+            android:name="com.android.zjctools.image.ZGlideModule"
+            android:value="AppGlideModule" />
+
+
     </application>
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

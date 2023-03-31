@@ -18,7 +18,7 @@ public class ZColorViews extends View {
     int mHeight = 0;//总宽度
     int mStart = 9;//起始时间
     int mEnd = 21;//结束时间
-    int mEachSpace = 0; //每一块的长度
+    float mEachSpace = 0f; //每一块的长度
     Paint mPaint;
 
     public ZColorViews(Context context) {
@@ -34,7 +34,7 @@ public class ZColorViews extends View {
          mPaint=new Paint();
          mPaint.setAntiAlias(true);
          mPaint.setStyle(Paint.Style.FILL);
-         mPaint.setColor(ZColor.byRes(R.color.zBlue));
+         mPaint.setColor(ZColor.INSTANCE.byRes(R.color.zBlue));
     }
 
     public ZColorViews setStartAndEnd(int start,int end) {
@@ -59,7 +59,7 @@ public class ZColorViews extends View {
         if (mWidth == 0) {
             mWidth = MeasureSpec.getSize(widthMeasureSpec);
             mHeight = MeasureSpec.getSize(heightMeasureSpec);
-            mEachSpace = mWidth / (mEnd - mStart);//这里没用padding直接减
+            mEachSpace = mWidth*1f / (mEnd - mStart);//这里没用padding直接减
         }
 
     }
@@ -69,15 +69,15 @@ public class ZColorViews extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (mZColorBeans == null || mZColorBeans.size() == 0) {
-            ZToast.create().showNormal("请设置Items");
+            ZToast.INSTANCE.showNormal("请设置Items");
             return;
         }
         for (int i = 0; i <mZColorBeans.size() ; i++) {
             ZColorBean zColorBean = mZColorBeans.get(i);
-            int startX=mEachSpace*(zColorBean.start-mStart);//起始未知
-            int endX=startX+mEachSpace*(zColorBean.end- zColorBean.start);
+            int startX= (int) (mEachSpace*(zColorBean.start-mStart));//起始未知
+            int endX= (int) (startX+mEachSpace*(zColorBean.end- zColorBean.start));
             RectF rectF=new RectF(startX,0,endX,mHeight);
-            mPaint.setColor(ZColor.byRes(zColorBean.colorId));
+            mPaint.setColor(ZColor.INSTANCE.byRes(zColorBean.colorId));
             canvas.drawRect(rectF,mPaint);
         }
 

@@ -9,10 +9,6 @@ import java.util.TimeZone;
 public class ZDate {
 
     /**
-     * 借用牛逼哄哄的 lzan13 代码
-     */
-
-    /**
      * 获取最近时间字符串
      */
     private static final long MINUTE = 60 * 1000;
@@ -98,7 +94,7 @@ public class ZDate {
      * @param dateStr 需要转换的日期
      */
     public static long milliFormUTC(String dateStr) {
-        if (ZStr.isEmpty(dateStr)) {
+        if (ZStr.INSTANCE.isEmpty(dateStr)) {
             return 0l;
         }
         try {

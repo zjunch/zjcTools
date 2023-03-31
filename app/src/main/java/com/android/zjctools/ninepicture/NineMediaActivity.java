@@ -12,12 +12,11 @@ import com.android.zjctools.model.ZMedia;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.widget.ZItemDecoration;
+import com.drakeet.multitype.MultiTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import me.drakeet.multitype.Items;
-import me.drakeet.multitype.MultiTypeAdapter;
 
 
 public class NineMediaActivity extends ZBActivity {
@@ -26,33 +25,33 @@ public class NineMediaActivity extends ZBActivity {
     List<NineMediaBean> nineBeans = new ArrayList<>();
 
     @Override
-    protected int layoutId() {
+    public int layoutId() {
         return R.layout.activity_glide_test_cach;
     }
 
     @Override
-    protected void initUI() {
+    public void initUI() {
+        super.initUI();
         recyclerView = findViewById(R.id.recycleView);
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
         for (int i = 0; i < 12; i++) {
             List<ZMedia> medias = new ArrayList<>();
             NineMediaBean bean = new NineMediaBean();
             for (int j = 0; j < i + 1; j++) {
-                medias.add(new ZMedia(j%2,"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1208538952,1443328523&fm=26&gp=0.jpg"));
+                medias.add(new ZMedia(j%2==0?1:2,"http://up.deskcity.org/pic_source/2f/f4/42/2ff442798331f6cc6005098766304e39.jpg"));
             }
             bean.medias = medias;
             nineBeans.add(bean);
         }
         MultiTypeAdapter adapter = new MultiTypeAdapter();
-        adapter.register(NineMediaBean.class, new NineMediaBinder(mActivity));
-        Items items = new Items();
-        items.addAll(nineBeans);
-        adapter.setItems(items);
+        adapter.register(NineMediaBean.class, new NineMediaDelegate());
+        adapter.setItems(nineBeans);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.z_black_12), ZDimen.dp2px(10)));
+        recyclerView.addItemDecoration(ZItemDecoration.Companion.createVertical(mActivity, ZColor.INSTANCE.byRes(R.color.z_black_12), ZDimen.INSTANCE.dp2px(10)));
         recyclerView.setAdapter(adapter);
+
     }
 }

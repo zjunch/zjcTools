@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="wrap_content">
-<TextView
-    android:id="@+id/tvTitle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="测试"/>
-    <com.android.zjctools.widget.colorviews.ZColorSpaceView
-        android:id="@+id/zColorSpaceView"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="item"
+            type="com.android.zjctools.widget.colorviews.ZColorInfo" />
+    </data>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/z_dimen_10"
+            android:text="测试"/>
+        <com.android.zjctools.widget.colorviews.ZColorSpaceView
+            android:id="@+id/zColorSpaceView"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/z_dimen_10"
+            android:layout_marginRight="@dimen/z_dimen_10"
+            android:layout_height="@dimen/z_dimen_40"/>
+    </LinearLayout>
+
+</layout>

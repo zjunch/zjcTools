@@ -15,49 +15,18 @@ public class BottomWindowActivity extends ZBActivity {
         List<String> strings=new ArrayList<>();
 
     @Override
-    protected int layoutId() {
+    public int layoutId() {
         return R.layout.activity_main2;
     }
 
     @Override
-    protected void initUI() {
+    public void initUI() {
         tvShowBottomWindow=findViewById(R.id.tvShowBottomWindow);
     }
 
-    @Override
-    protected void getValues() {
-        super.getValues();
-        for (int i = 0; i <3 ; i++) {
-            strings.add("第"+i+"个");
-        }
-    }
 
     @Override
-    protected void initData() {
+    public void initData() {
 
-    }
-
-    @Override
-    protected void initListener() {
-        super.initListener();
-        tvShowBottomWindow.setOnClickListener(v -> {
-            ZDialogUtils.showBottomWindow(mActivity, strings, position -> {
-
-            });
-//            ZPDialog dialog=ZDialogUtils.showAlertDialog(mActivity, "水水水水", new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                }
-//            });
-
-//        ZDialogUtils.showSelectDialog(mActivity, "水水水水","就看见看见" ,new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                }
-//            });
-
-        });
     }
 }

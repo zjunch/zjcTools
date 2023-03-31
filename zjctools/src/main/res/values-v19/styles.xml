@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/zBlue</item>
+        <item name="colorAccent">@color/zTransparent</item>
         <!--界面背景色，为了优化 UI，这里设置为透明-->
         <item name="android:windowBackground">@color/zTransparent</item>
 

@@ -246,7 +246,12 @@ public class ZPermission {
     public void requestStorage(PCallback callback) {
         ZPermissionBean bean = new ZPermissionBean(Manifest.permission.WRITE_EXTERNAL_STORAGE, "读写手机存储", "访问设备图片等文件需要 “访问手机存储” "
                 + "权限，请授权此权限");
-        setPermission(bean);
+        ZPermissionBean bean1 = new ZPermissionBean(Manifest.permission.READ_EXTERNAL_STORAGE, "读写手机存储", "访问设备图片等文件需要 “访问手机存储” "
+                + "权限，请授权此权限");
+        List<ZPermissionBean> permissions=new ArrayList<>();
+        permissions.add(bean);
+        permissions.add(bean1);
+        setPermissionList(permissions);
         requestPermission(callback);
     }
 

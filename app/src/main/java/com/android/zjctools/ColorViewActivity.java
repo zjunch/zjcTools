@@ -1,15 +1,13 @@
 package com.android.zjctools;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import me.drakeet.multitype.Items;
-import me.drakeet.multitype.MultiTypeAdapter;
 import com.android.zjctools.base.ZBActivity;
 import com.android.zjctools.widget.colorviews.ZColorInfo;
-import com.android.zjctools.tab.ColorViewBinder;
 import com.android.zjctools.utils.ZColor;
 import com.android.zjctools.utils.ZDimen;
 import com.android.zjctools.widget.ZItemDecoration;
 import com.android.zjctools.widget.colorviews.ZColorBean;
+import com.drakeet.multitype.MultiTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,15 +15,16 @@ import java.util.List;
 public class ColorViewActivity extends ZBActivity {
     RecyclerView recycleView;
 
-    Items items=new Items();
+
     MultiTypeAdapter mAdapter=new MultiTypeAdapter();
     @Override
-    protected int layoutId() {
+    public int layoutId() {
         return R.layout.activity_color_view;
     }
 
     @Override
-    protected void initUI() {
+    public void initUI() {
+        super.initUI();
         recycleView=findViewById(R.id.recycleView);
     }
 
@@ -48,19 +47,19 @@ public class ColorViewActivity extends ZBActivity {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
+        List <ZColorInfo> items=new ArrayList();
         items.clear();
         for (int i = 1; i <52 ; i++) {
             ZColorInfo ZColorInfo =  new ZColorInfo();
-            ZColorInfo.title=String.valueOf(i);
+            ZColorInfo.title="第"+i+"条";
             ZColorInfo.ZColorBeans =getColorBeans(i);
             items.add(ZColorInfo);
         }
         LinearLayoutManager manager= new LinearLayoutManager(this);
         recycleView.setLayoutManager(manager);
-        recycleView.addItemDecoration(ZItemDecoration.createVertical(mActivity, ZColor.byRes(R.color.app_divide), ZDimen.dp2px(1)));
-        ColorViewBinder  mBinder=new ColorViewBinder(mActivity);
-        mAdapter.register(ZColorInfo.class,mBinder);
+        recycleView.addItemDecoration(ZItemDecoration.Companion.createVertical(mActivity, ZColor.INSTANCE.byRes(R.color.app_divide), ZDimen.INSTANCE.dp2px(1)));
+        mAdapter.register(ZColorInfo.class, new ColorViewDelegate());
         mAdapter.setItems(items);
         recycleView.setAdapter(mAdapter);
     }

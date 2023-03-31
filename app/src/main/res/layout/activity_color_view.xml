@@ -7,13 +7,15 @@
     android:background="#f4f4f4"
     tools:context=".ColorViewActivity">
     <include
-        android:id="@+id/title_bar"
         layout="@layout/z_bar_title"></include>
     <androidx.recyclerview.widget.RecyclerView
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_bar"
+        app:layout_constraintTop_toBottomOf="@id/zTopBarLv"
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_color_view"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,5 +12,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_nine_picture"
         android:layout_height="match_parent"/>
 </LinearLayout>
