@@ -97,7 +97,7 @@ class ZNineMediaView @JvmOverloads constructor(var mContext: Context, attrs: Att
      * 添加图片urls
      *
      * @param medias
-     * @return
+     * @return  itemLayoutId  item布局
      */
     fun setMedias(medias: List<ZMedia>,itemLayoutId:Int=R.layout.layout_item_media): ZNineMediaView {
         mMedias!!.clear()

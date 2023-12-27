@@ -83,11 +83,11 @@ class VMRecordView @JvmOverloads constructor(
      */
     private fun checkPermission() {
         // 检查录音权限
-        if (ZPermission.getInstance(context).checkRecord()) {
+        if (ZPermission.checkRecord(context)) {
             isUsable = true
         } else {
             isUsable = false
-            ZPermission.getInstance(context).requestRecord(object : PCallback {
+            ZPermission.requestRecord(context,object : PCallback {
                 override fun onReject() {
                     isUsable = false
                     postInvalidate()
@@ -293,7 +293,7 @@ class VMRecordView @JvmOverloads constructor(
         Thread {
             while (isStartRecord) {
                 mRecordTime = System.currentTimeMillis() - mStartTime
-                mDecibel = VMRecorder.getInstance().decibel
+                mDecibel = VMRecorder.decibel
                 startOuterAnim()
                 postInvalidate()
                 // 每间隔 100 毫秒更新一次时间
@@ -312,7 +312,7 @@ class VMRecordView @JvmOverloads constructor(
     protected fun startRecord() {
         isStartRecord = true
         // 调用录音机开始录制音频
-        val code = VMRecorder.getInstance().startRecord(null)
+        val code = VMRecorder.startRecord(null)
         if (code == VMRecorder.ERROR_NONE) {
             setupRecordTime()
             recordStart()
@@ -333,10 +333,10 @@ class VMRecordView @JvmOverloads constructor(
      */
     protected fun stopRecord(cancel: Boolean) {
         if (cancel) {
-            VMRecorder.getInstance().cancelRecord()
+            VMRecorder.cancelRecord()
             recordCancel()
         } else {
-            val code = VMRecorder.getInstance().stopRecord()
+            val code = VMRecorder.stopRecord()
             if (code == VMRecorder.ERROR_FAILED) {
                 recordError(code, "录音失败")
             } else if (code == VMRecorder.ERROR_SYSTEM || mRecordTime < 1000) {
@@ -419,7 +419,7 @@ class VMRecordView @JvmOverloads constructor(
      */
     private fun recordComplete() {
         if (mRecordListener != null) {
-            mRecordListener!!.onComplete(VMRecorder.getInstance().recordFile, mRecordTime)
+            mRecordListener!!.onComplete(VMRecorder.recordFile, mRecordTime)
         }
     }
 
@@ -431,7 +431,7 @@ class VMRecordView @JvmOverloads constructor(
         isCancelRecord = false
         mStartTime = 0L
         mRecordTime = 0L
-        VMRecorder.getInstance().reset()
+        VMRecorder.reset()
     }
 
     /**

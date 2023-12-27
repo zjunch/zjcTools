@@ -2,17 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.zjctools">
 
+    <uses-permission android:name="REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".app.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:requestLegacyExternalStorage="true"
         android:theme="@style/ZTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ColorViewActivity"></activity>
+        <activity android:name=".Test"></activity>
+        <activity android:name=".ColorViewActivity" />
         <activity android:name=".tab.TabviewActivity" />
         <activity android:name=".file.TestFileActivity" />
         <activity android:name=".SelectActivity" />
@@ -32,8 +36,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="REQUEST_INSTALL_PACKAGES" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

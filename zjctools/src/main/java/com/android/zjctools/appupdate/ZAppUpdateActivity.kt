@@ -132,7 +132,7 @@ class ZAppUpdateActivity : ZBActivity() {
      * 获取权限
      */
     private fun requestStorePermission() {
-        ZPermission.getInstance(this).requestStorage(object : PCallback {
+        ZPermission.requestStorage(mActivity,object : PCallback {
             override fun onReject() {}
             override fun onComplete() {
                 toUpdateServiceDownload()

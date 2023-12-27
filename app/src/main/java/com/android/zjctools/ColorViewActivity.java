@@ -52,8 +52,8 @@ public class ColorViewActivity extends ZBActivity {
         items.clear();
         for (int i = 1; i <52 ; i++) {
             ZColorInfo ZColorInfo =  new ZColorInfo();
-            ZColorInfo.title="第"+i+"条";
-            ZColorInfo.ZColorBeans =getColorBeans(i);
+            ZColorInfo.setTitle("第"+i+"条");
+            ZColorInfo.setZColorBeans(getColorBeans(i));
             items.add(ZColorInfo);
         }
         LinearLayoutManager manager= new LinearLayoutManager(this);

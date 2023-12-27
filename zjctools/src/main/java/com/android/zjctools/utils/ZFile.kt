@@ -503,24 +503,21 @@ object ZFile {
      *
      * @return 返回得到的路径
      */
-    val packageName: String
-        get() = context.packageName
+    val packageName: String   get() = context.packageName
 
     /**
      * 获取 /data/app/packagename-1.apk 目录
      *
      * @return 返回得到的路径
      */
-    val packageCode: String
-        get() = context.packageCodePath
+    val packageCode: String get() = context.packageCodePath
 
     /**
      * 获取 /data/app/packagename-1.apk 目录
      *
      * @return 返回得到的路径
      */
-    val packageResource: String
-        get() = context.packageResourcePath
+    val packageResource: String get() = context.packageResourcePath
 
     /**
      * 根据 Uri 获取文件的真实路径，这个是网上的方法，用的还是比较多的，可以参考，

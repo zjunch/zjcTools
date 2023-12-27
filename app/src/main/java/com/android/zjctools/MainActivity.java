@@ -15,6 +15,7 @@ import com.android.zjctools.base.ZBItemDelegate;
 import com.android.zjctools.bean.FunctionBean;
 import com.android.zjctools.permission.ZPermission;
 import com.android.zjctools.permission.ZPermissionBean;
+import com.android.zjctools.utils.ZContactUtils;
 import com.android.zjctools.utils.ZToast;
 import com.android.zjctools.widget.ZAreaPicker;
 import com.drakeet.multitype.MultiTypeAdapter;
@@ -41,7 +42,6 @@ public class MainActivity extends ZBActivity {
 
 
     public void getValues() {
-
         items.clear();
         items.add(new FunctionBean("底部弹出window",0));
         items.add(new FunctionBean("九宫格",1));
@@ -145,13 +145,19 @@ public class MainActivity extends ZBActivity {
 
     private void  getPermission(){
         List<ZPermissionBean> listPermission=new ArrayList();
-        listPermission.add(new ZPermissionBean(Manifest.permission.CAMERA));
-        listPermission.add(new ZPermissionBean(Manifest.permission.WRITE_EXTERNAL_STORAGE));
+        ZPermissionBean permissionBean1= new ZPermissionBean();
+        permissionBean1.setPermission( Manifest.permission.CAMERA);
+        listPermission.add(permissionBean1);
 
-        ZPermission.getInstance(this).
-                setEnableAgain(true).
-                setEnableRejectDialog(false).setEnableSettingDialog(true)
-                .setPermissionList(listPermission).requestPermission(new ZPermission.PCallback() {
+        ZPermissionBean permissionBean2= new ZPermissionBean();
+        permissionBean2.setPermission( Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        listPermission.add(permissionBean2);
+
+        listPermission.add(permissionBean2);
+
+        ZPermission.INSTANCE.setEnableAgain(true)
+                .setEnableRejectDialog(false).setEnableSettingDialog(true)
+                .setPermissionList(listPermission).requestPermission(this,new ZPermission.PCallback() {
             @Override
             public void onReject() {
                 ZToast.INSTANCE.showNormal("onReject");

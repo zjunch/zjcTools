@@ -41,7 +41,7 @@ public class NinePictureActivity extends ZBActivity {
             for (int j = 0; j < i + 1; j++) {
                 urls.add("http://up.deskcity.org/pic_source/2f/f4/42/2ff442798331f6cc6005098766304e39.jpg");
             }
-            bean.urls = urls;
+            bean.setUrls(urls);
             nineBeans.add(bean);
         }
         MultiTypeAdapter adapter = new MultiTypeAdapter();

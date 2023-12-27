@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="6dp"
+            android:gravity="center_vertical"
+            android:text="选择器样式："
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_redBook"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="小红书剪裁" />
+
+            <RadioButton
+                android:id="@+id/rb_weChat"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="微信样式" />
+
+            <RadioButton
+                android:id="@+id/rb_custom"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="自定义样式" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="6dp"
+            android:gravity="center_vertical"
+            android:text="选择器文件加载类型："
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_JPEG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="JPEG" />
+
+            <CheckBox
+                android:id="@+id/cb_PNG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="PNG" />
+
+            <CheckBox
+                android:id="@+id/cb_GIF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="GIF" />
+
+            <CheckBox
+                android:id="@+id/cb_BMP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="BMP" />
+
+            <CheckBox
+                android:id="@+id/cb_WEBP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="WEBP" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_MPEG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="MPEG" />
+
+            <CheckBox
+                android:id="@+id/cb_MP4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="MP4" />
+
+            <CheckBox
+                android:id="@+id/cb_AVI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="AVI" />
+
+            <CheckBox
+                android:id="@+id/cb_MKV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="MKV" />
+
+            <CheckBox
+                android:id="@+id/cb_WEBM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="WEBM" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_TS"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="TS" />
+
+            <CheckBox
+                android:id="@+id/cb_QUICKTIME"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="QUICKTIME" />
+
+            <CheckBox
+                android:id="@+id/cb_THREEGPP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="THREEGPP" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="6dp"
+            android:gravity="center_vertical"
+            android:text="相关属性："
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_showCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="显示拍照" />
+
+            <CheckBox
+                android:id="@+id/cb_showOriginal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="显示原图" />
+
+            <CheckBox
+                android:id="@+id/cb_closePreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="关闭预览" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_videoSingle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="只能选择一个视频" />
+
+                <CheckBox
+                    android:id="@+id/cb_imageOrVideo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="只能选择图片或视频" />
+
+            </LinearLayout>
+
+
+            <CheckBox
+                android:id="@+id/cb_previewCanEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预览是否支持编辑"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/cb_singleAutoComplete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="单选时,点击item直接回调,无需选中" />
+
+            <CheckBox
+                android:id="@+id/cb_filterVideoPreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="大图预览时，过滤掉视频预览" />
+
+            <CheckBox
+                android:id="@+id/cb_autoJumpAloha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图片选择完是否调用自定义的多图剪裁页面(AlohaActivity)" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="6dp"
+            android:gravity="center_vertical"
+            android:text="连续选择时已选中列表状态："
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_nextPickType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_new"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="重新选择" />
+
+            <RadioButton
+                android:id="@+id/rb_shield"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="屏蔽已选择" />
+
+            <RadioButton
+                android:id="@+id/rb_save"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="记录已选择" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="6dp"
+            android:gravity="center_vertical"
+            android:text="打开类型："
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_openType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_multi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="选择器-多选" />
+
+            <RadioButton
+                android:id="@+id/rb_single"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="选择器-单选" />
+
+            <RadioButton
+                android:id="@+id/rb_crop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="选择器-剪裁" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rg_openType2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_autoCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="直接剪裁" />
+
+            <RadioButton
+                android:id="@+id/rb_takePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="直接拍照" />
+
+            <RadioButton
+                android:id="@+id/rb_takePhotoAndCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="直接拍照并剪裁" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/mCropSetLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                android:text="剪裁参数："
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_circle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开启圆形剪裁" />
+
+                <CheckBox
+                    android:id="@+id/cb_gap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开启留白剪裁" />
+
+                <CheckBox
+                    android:id="@+id/cb_gapBackground"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="留白透明背景" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mCropX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:text="cropX:1" />
+
+                <SeekBar
+                    android:id="@+id/mXSeekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="6"
+                    android:min="1"
+                    android:progress="1" />
+
+                <TextView
+                    android:id="@+id/mCropY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="cropY:1" />
+
+                <SeekBar
+                    android:id="@+id/mYSeekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="6"
+                    android:min="1"
+                    android:progress="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mCropMargin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:text="剪裁框间距:0" />
+
+                <SeekBar
+                    android:id="@+id/mMarginSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:max="200"
+                    android:progress="0" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp" />
+
+    </LinearLayout>
+</ScrollView>

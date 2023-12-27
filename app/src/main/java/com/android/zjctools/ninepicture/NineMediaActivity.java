@@ -43,7 +43,7 @@ public class NineMediaActivity extends ZBActivity {
             for (int j = 0; j < i + 1; j++) {
                 medias.add(new ZMedia(j%2==0?1:2,"http://up.deskcity.org/pic_source/2f/f4/42/2ff442798331f6cc6005098766304e39.jpg"));
             }
-            bean.medias = medias;
+            bean.setMedias(medias);
             nineBeans.add(bean);
         }
         MultiTypeAdapter adapter = new MultiTypeAdapter();

@@ -618,7 +618,7 @@ public class ZCropView extends AppCompatImageView {
         bean.setName(saveFile.getName()) ;
         bean.setPath(saveFile.getAbsolutePath());
         bean.setCropPath(saveFile.getAbsolutePath());
-        bean.setAddTime(ZDate.currentMilli());
+        bean.setAddTime(ZDate.INSTANCE.currentMilli());
         final Bitmap.CompressFormat finalOutputFormat = outputFormat;
         new Thread() {
             @Override

@@ -6,6 +6,11 @@
 
     <color name="picture_in">#3a5d8e</color>
 
+
+    <color name="z_app_main">#3a5d8e</color>
+
+    <color name="z_app_bg">#ffffff</color>
+
     <!--亮色主题，app 主题色-->
     <color name="z_theme_primary_dark">@color/app_theme_color</color>
 

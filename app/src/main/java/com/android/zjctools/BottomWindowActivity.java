@@ -4,8 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.android.zjctools.base.ZBActivity;
-import com.android.zjctools.utils.ZDialogUtils;
-import com.android.zjctools.widget.dialog.ZPDialog;
+
 
 import java.util.ArrayList;
 import java.util.List;

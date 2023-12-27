@@ -30,7 +30,6 @@ class NineMediaDelegate : ZBItemDelegate<NineMediaBean, ItemNineMediaBinding>() 
                 var img= itemView.findViewById<ImageView>(R.id.ivMediaCover)
                 var icon= itemView.findViewById<ImageView>(R.id.ivMediaIcon)
                 ZImgLoader.loadCover(img,media.mediaUrl)
-
                 icon.visibility=if(media.mediaType==1) View.GONE else View.VISIBLE
             }
 
